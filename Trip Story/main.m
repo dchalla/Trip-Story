@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DKCAppDelegate.h"
+#import "DTSAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
 	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([DKCAppDelegate class]));
+	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([DTSAppDelegate class]));
 	}
 }

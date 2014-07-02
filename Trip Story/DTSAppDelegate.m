@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 DKC. All rights reserved.
 //
 
-#import "DKCAppDelegate.h"
+#import "DTSAppDelegate.h"
 
-@implementation DKCAppDelegate
+@implementation DTSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -12,10 +12,10 @@
 		F95815041964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F958150A1964850B002207A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F95815081964850B002207A3 /* InfoPlist.strings */; };
 		F958150C1964850B002207A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F958150B1964850B002207A3 /* main.m */; };
-		F95815101964850B002207A3 /* DKCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F958150F1964850B002207A3 /* DKCAppDelegate.m */; };
+		F95815101964850B002207A3 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F958150F1964850B002207A3 /* DTSAppDelegate.m */; };
 		F95815131964850B002207A3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F95815111964850B002207A3 /* Main_iPhone.storyboard */; };
 		F95815161964850B002207A3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F95815141964850B002207A3 /* Main_iPad.storyboard */; };
-		F95815191964850B002207A3 /* DKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95815181964850B002207A3 /* DKCViewController.m */; };
+		F95815191964850B002207A3 /* DTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95815181964850B002207A3 /* DTSViewController.m */; };
 		F958151B1964850B002207A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F958151A1964850B002207A3 /* Images.xcassets */; };
 		F95815221964850B002207A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815211964850B002207A3 /* XCTest.framework */; };
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
@@ -41,12 +41,12 @@
 		F95815091964850B002207A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F958150B1964850B002207A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F958150D1964850B002207A3 /* Trip Story-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trip Story-Prefix.pch"; sourceTree = "<group>"; };
-		F958150E1964850B002207A3 /* DKCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKCAppDelegate.h; sourceTree = "<group>"; };
-		F958150F1964850B002207A3 /* DKCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKCAppDelegate.m; sourceTree = "<group>"; };
+		F958150E1964850B002207A3 /* DTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
+		F958150F1964850B002207A3 /* DTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
 		F95815121964850B002207A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		F95815151964850B002207A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		F95815171964850B002207A3 /* DKCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKCViewController.h; sourceTree = "<group>"; };
-		F95815181964850B002207A3 /* DKCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKCViewController.m; sourceTree = "<group>"; };
+		F95815171964850B002207A3 /* DTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSViewController.h; sourceTree = "<group>"; };
+		F95815181964850B002207A3 /* DTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTSViewController.m; sourceTree = "<group>"; };
 		F958151A1964850B002207A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F95815201964850B002207A3 /* Trip StoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trip StoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -108,12 +108,12 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
-				F958150E1964850B002207A3 /* DKCAppDelegate.h */,
-				F958150F1964850B002207A3 /* DKCAppDelegate.m */,
+				F958150E1964850B002207A3 /* DTSAppDelegate.h */,
+				F958150F1964850B002207A3 /* DTSAppDelegate.m */,
 				F95815111964850B002207A3 /* Main_iPhone.storyboard */,
 				F95815141964850B002207A3 /* Main_iPad.storyboard */,
-				F95815171964850B002207A3 /* DKCViewController.h */,
-				F95815181964850B002207A3 /* DKCViewController.m */,
+				F95815171964850B002207A3 /* DTSViewController.h */,
+				F95815181964850B002207A3 /* DTSViewController.m */,
 				F958151A1964850B002207A3 /* Images.xcassets */,
 				F95815061964850B002207A3 /* Supporting Files */,
 			);
@@ -175,7 +175,7 @@
 		F95814F41964850B002207A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = DKC;
+				CLASSPREFIX = DTS;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DKC;
 				TargetAttributes = {
@@ -229,9 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95815191964850B002207A3 /* DKCViewController.m in Sources */,
+				F95815191964850B002207A3 /* DTSViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
-				F95815101964850B002207A3 /* DKCAppDelegate.m in Sources */,
+				F95815101964850B002207A3 /* DTSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

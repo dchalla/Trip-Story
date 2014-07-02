@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 DKC. All rights reserved.
 //
 
-#import "DKCViewController.h"
+#import "DTSViewController.h"
 
-@interface DKCViewController ()
+@interface DTSViewController ()
 
 @end
 
-@implementation DKCViewController
+@implementation DTSViewController
 
 - (void)viewDidLoad
 {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DKCViewController : UIViewController
+@interface DTSViewController : UIViewController
 
 @end
