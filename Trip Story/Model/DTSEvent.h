@@ -42,5 +42,7 @@ typedef enum {
 @property (nonatomic) BOOL isAutoCreatedEvent;
 @property (nonatomic, readonly) UIColor *eventTopColor;
 @property (nonatomic, readonly) UIColor *eventBottomColor;
+@property (nonatomic, readonly) NSNumber *eventHours;
+@property (nonatomic, readonly) CGFloat tripStoryCellHeight;
 
 @end

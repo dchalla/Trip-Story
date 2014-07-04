@@ -73,13 +73,12 @@
 		[cell updateWithEvent:event];
 		return cell;
 	}
-    
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 100;
+	DTSEvent *event = self.eventsList[indexPath.row];
+	return event.tripStoryCellHeight;
 }
 
 @end

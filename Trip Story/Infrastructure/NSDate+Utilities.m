@@ -1,26 +1,19 @@
-/*
- Erica Sadun, http://ericasadun.com
- iPhone Developer's Cookbook 3.x and beyond
- BSD License, Use at your own risk
- */
-
-/*
- #import <humor.h> : Not planning to implement: dateByAskingBoyOut and dateByGettingBabysitter
- ----
- General Thanks: sstreza, Scott Lawrence, Kevin Ballard, NoOneButMe, Avi`, August Joki. Emanuele Vulcano, jcromartiej, Blagovest Dachev, Matthias Plappert,  Slava Bushtruk, Ali Servet Donmez, Ricardo1980, pip8786, Danny Thuerin, Dennis Madsen
- 
- Include GMT and time zone utilities?
-*/
+//
+//  NSDate+Utilities.m
+//  Trip Story
+//
+//  Created by Dinesh Challa on 7/3/14.
+//  Copyright (c) 2014 DKC. All rights reserved.
+//
 
 #import "NSDate+Utilities.h"
 
-// Thanks, AshFurrow
+
 static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit);
 
 @implementation NSDate (Utilities)
 
-// Courtesy of Lukasz Margielewski
-// Updated via Holger Haenisch
+
 + (NSCalendar *) currentCalendar
 {
     static NSCalendar *sharedCalendar = nil;
@@ -33,13 +26,11 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 
 + (NSDate *) dateWithDaysFromNow: (NSInteger) days
 {
-    // Thanks, Jim Morrison
 	return [[NSDate date] dateByAddingDays:days];
 }
 
 + (NSDate *) dateWithDaysBeforeNow: (NSInteger) days
 {
-    // Thanks, Jim Morrison
 	return [[NSDate date] dateBySubtractingDays:days];
 }
 
@@ -216,7 +207,7 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     return [self isSameMonthAsDate:[NSDate date]];
 }
 
-// Thanks Marcin Krzyzanowski, also for adding/subtracting years and months
+
 - (BOOL) isLastMonth
 {
     return [self isSameMonthAsDate:[[NSDate date] dateBySubtractingMonths:1]];
@@ -236,7 +227,6 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 
 - (BOOL) isThisYear
 {
-    // Thanks, baspellis
 	return [self isSameYearAsDate:[NSDate date]];
 }
 
@@ -266,13 +256,11 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	return ([self compare:aDate] == NSOrderedDescending);
 }
 
-// Thanks, markrickert
 - (BOOL) isInFuture
 {
     return ([self isLaterThanDate:[NSDate date]]);
 }
 
-// Thanks, markrickert
 - (BOOL) isInPast
 {
     return ([self isEarlierThanDate:[NSDate date]]);
@@ -296,7 +284,6 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 
 #pragma mark - Adjusting Dates
 
-// Thaks, rsjohnson
 - (NSDate *) dateByAddingYears: (NSInteger) dYears
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
@@ -378,11 +365,10 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	return [[NSDate currentCalendar] dateFromComponents:components];
 }
 
-// Thanks gsempe & mteece
 - (NSDate *) dateAtEndOfDay
 {
 	NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-	components.hour = 23; // Thanks Aleksey Kononov
+	components.hour = 23;
 	components.minute = 59;
 	components.second = 59;
 	return [[NSDate currentCalendar] dateFromComponents:components];
@@ -402,16 +388,16 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	return (NSInteger) (ti / D_MINUTE);
 }
 
-- (NSInteger) hoursAfterDate: (NSDate *) aDate
+- (CGFloat) hoursAfterDate: (NSDate *) aDate
 {
 	NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-	return (NSInteger) (ti / D_HOUR);
+	return (CGFloat) (ti / D_HOUR);
 }
 
-- (NSInteger) hoursBeforeDate: (NSDate *) aDate
+- (CGFloat) hoursBeforeDate: (NSDate *) aDate
 {
 	NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
-	return (NSInteger) (ti / D_HOUR);
+	return (CGFloat) (ti / D_HOUR);
 }
 
 - (NSInteger) daysAfterDate: (NSDate *) aDate
@@ -426,7 +412,6 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	return (NSInteger) (ti / D_DAY);
 }
 
-// Thanks, dmitrydims
 // I have not yet thoroughly tested this
 - (NSInteger)distanceInDaysToDate:(NSDate *)anotherDate
 {

@@ -17,5 +17,4 @@
 
 
 - (void)updateWithEvent:(DTSEvent *)event;
-
 @end

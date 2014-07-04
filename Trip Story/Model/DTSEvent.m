@@ -8,6 +8,7 @@
 
 #import "DTSEvent.h"
 #import "UIColor+Utilities.h"
+#import "NSDate+Utilities.h"
 
 @implementation DTSEvent
 
@@ -101,6 +102,20 @@
 		default:
 			return [UIColor colorWithHexString:@"898C90"];
 	}
+}
+
+
+- (NSNumber *)eventHours
+{
+	return @(fabsf([self.startDateTime hoursBeforeDate:self.endDateTime]));
+}
+
+- (CGFloat)tripStoryCellHeight
+{
+	CGFloat hours = [self.eventHours floatValue];
+	CGFloat height = hours * (200/8);
+	height = MIN(200,MAX(60, height));
+	return height;
 }
 
 @end

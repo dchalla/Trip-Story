@@ -1,8 +1,10 @@
-/*
- Erica Sadun, http://ericasadun.com
- iPhone Developer's Cookbook 3.x and beyond
- BSD License, Use at your own risk
- */
+//
+//  NSDate+Utilities.h
+//  Trip Story
+//
+//  Created by Dinesh Challa on 7/3/14.
+//  Copyright (c) 2014 DKC. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 
@@ -89,8 +91,8 @@
 // Retrieving intervals
 - (NSInteger) minutesAfterDate: (NSDate *) aDate;
 - (NSInteger) minutesBeforeDate: (NSDate *) aDate;
-- (NSInteger) hoursAfterDate: (NSDate *) aDate;
-- (NSInteger) hoursBeforeDate: (NSDate *) aDate;
+- (CGFloat) hoursAfterDate: (NSDate *) aDate;
+- (CGFloat) hoursBeforeDate: (NSDate *) aDate;
 - (NSInteger) daysAfterDate: (NSDate *) aDate;
 - (NSInteger) daysBeforeDate: (NSDate *) aDate;
 - (NSInteger)distanceInDaysToDate:(NSDate *)anotherDate;

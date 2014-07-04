@@ -60,7 +60,7 @@
 - (void)createDummyEventsList
 {
 	self.eventsList = [NSMutableArray array];
-	
+	int j = DTSEventTypeActivity;
 	for (int i=0; i <= 10; i++)
 	{
 		DTSEvent *event = [[DTSEvent alloc] init];
@@ -69,7 +69,7 @@
 		event.eventID = [NSString stringWithFormat:@"%@%d",@"Dummy Event",i];
 		if (i%2 == 0)
 		{
-			event.eventType = DTSEventTypeActivity;
+			event.eventType = j++;
 		}
 		else
 		{
@@ -77,9 +77,14 @@
 		}
 		
 		event.startDateTime = [[NSDate date] dateByAddingHours:i*4];
-		event.endDateTime = [event.startDateTime dateByAddingHours:1];
+		event.endDateTime = [event.startDateTime dateByAddingHours:[ self getRandomNumberBetween:1 maxNumber:10]];
 		[self.eventsList addObject:event];
 	}
+}
+
+- (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
+{
+    return min + arc4random() % (max - min + 1);
 }
 
 @end

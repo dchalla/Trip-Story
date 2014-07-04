@@ -52,7 +52,6 @@
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-	[self updateBackgroundLayerFrame];
 }
 
 - (void)updateBackgroundLayerFrame
@@ -60,14 +59,17 @@
 	CGRect frame = self.bubbleView.bounds;
 	frame.origin.x = 0;
 	frame.origin.y = 0;
-	frame.size.height = frame.size.height +5;
+	frame.size.height = self.event.tripStoryCellHeight;
 	self.backgroundLayer.frame = frame;
 }
 
-
-
 - (void)prepareForReuse
 {
+	if (_backgroundLayer)
+	{
+		[self.backgroundLayer removeFromSuperlayer];
+		_backgroundLayer = nil;
+	}
 	self.eventNameLabel.text = @"";
 	self.startTimelabel.text = @"";
 	self.endTimeLabel.text = @"";

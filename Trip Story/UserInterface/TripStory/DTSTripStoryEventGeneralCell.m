@@ -30,10 +30,13 @@
 	
 }
 
-
 - (void)prepareForReuse
 {
 	self.startTimelabel.text = @"";
 	self.endTimeLabel.text = @"";
 }
+
+
+
+
 @end
