@@ -7,12 +7,19 @@
 //
 
 #import "DTSAppDelegate.h"
+#import "DTSTripDetailsViewController.h"
 
 @implementation DTSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	UIViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+	self.window.rootViewController = nvc;
+	[self.window makeKeyAndVisible];
+	
     return YES;
 }
 							

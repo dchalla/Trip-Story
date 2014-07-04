@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */; };
+		F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */; };
+		F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */; };
+		F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7671965AAF2003A0B72 /* DTSEvent.m */; };
+		F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E76A1965AC0A003A0B72 /* DTSLocation.m */; };
+		F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E76D1965C22C003A0B72 /* NSDate+Utilities.m */; };
+		F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E77519660CE0003A0B72 /* DTSTripStoryEventActivityCell.m */; };
+		F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F954E77619660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib */; };
+		F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E77A1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m */; };
+		F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F954E77B1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib */; };
+		F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E77F19664777003A0B72 /* UIColor+Utilities.m */; };
+		F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E78219664967003A0B72 /* UIView+Utilities.m */; };
 		F95815001964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815021964850B002207A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815011964850B002207A3 /* CoreGraphics.framework */; };
 		F95815041964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F958150A1964850B002207A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F95815081964850B002207A3 /* InfoPlist.strings */; };
 		F958150C1964850B002207A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F958150B1964850B002207A3 /* main.m */; };
-		F95815101964850B002207A3 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F958150F1964850B002207A3 /* DTSAppDelegate.m */; };
-		F95815131964850B002207A3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F95815111964850B002207A3 /* Main_iPhone.storyboard */; };
-		F95815161964850B002207A3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F95815141964850B002207A3 /* Main_iPad.storyboard */; };
-		F95815191964850B002207A3 /* DTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95815181964850B002207A3 /* DTSViewController.m */; };
 		F958151B1964850B002207A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F958151A1964850B002207A3 /* Images.xcassets */; };
 		F95815221964850B002207A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815211964850B002207A3 /* XCTest.framework */; };
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
@@ -33,6 +41,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
+		F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
+		F954E75A1964CA5A003A0B72 /* DTSTripDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewController.h; sourceTree = "<group>"; };
+		F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripDetailsViewController.m; sourceTree = "<group>"; };
+		F954E7601964CAA1003A0B72 /* DTSTripStoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryTableViewController.h; sourceTree = "<group>"; };
+		F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryTableViewController.m; sourceTree = "<group>"; };
+		F954E7661965AAF2003A0B72 /* DTSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEvent.h; sourceTree = "<group>"; };
+		F954E7671965AAF2003A0B72 /* DTSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEvent.m; sourceTree = "<group>"; };
+		F954E7691965AC0A003A0B72 /* DTSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocation.h; sourceTree = "<group>"; };
+		F954E76A1965AC0A003A0B72 /* DTSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocation.m; sourceTree = "<group>"; };
+		F954E76C1965C22C003A0B72 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		F954E76D1965C22C003A0B72 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		F954E77419660CE0003A0B72 /* DTSTripStoryEventActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryEventActivityCell.h; sourceTree = "<group>"; };
+		F954E77519660CE0003A0B72 /* DTSTripStoryEventActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryEventActivityCell.m; sourceTree = "<group>"; };
+		F954E77619660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryEventActivityCell.xib; sourceTree = "<group>"; };
+		F954E7791966410F003A0B72 /* DTSTripStoryEventGeneralCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryEventGeneralCell.h; sourceTree = "<group>"; };
+		F954E77A1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryEventGeneralCell.m; sourceTree = "<group>"; };
+		F954E77B1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryEventGeneralCell.xib; sourceTree = "<group>"; };
+		F954E77E19664777003A0B72 /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
+		F954E77F19664777003A0B72 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
+		F954E78119664967003A0B72 /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
+		F954E78219664967003A0B72 /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
 		F95814FC1964850B002207A3 /* Trip Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95814FF1964850B002207A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F95815011964850B002207A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -41,12 +71,6 @@
 		F95815091964850B002207A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F958150B1964850B002207A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F958150D1964850B002207A3 /* Trip Story-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trip Story-Prefix.pch"; sourceTree = "<group>"; };
-		F958150E1964850B002207A3 /* DTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
-		F958150F1964850B002207A3 /* DTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
-		F95815121964850B002207A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		F95815151964850B002207A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		F95815171964850B002207A3 /* DTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSViewController.h; sourceTree = "<group>"; };
-		F95815181964850B002207A3 /* DTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTSViewController.m; sourceTree = "<group>"; };
 		F958151A1964850B002207A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F95815201964850B002207A3 /* Trip StoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trip StoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,6 +100,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F954E7561964CA5A003A0B72 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				F954E7651964CB88003A0B72 /* General */,
+				F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */,
+				F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */,
+				F954E7591964CA5A003A0B72 /* TripDetails */,
+				F954E75C1964CA5A003A0B72 /* TripEvents */,
+				F954E75D1964CA5A003A0B72 /* TripStory */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		F954E7591964CA5A003A0B72 /* TripDetails */ = {
+			isa = PBXGroup;
+			children = (
+				F954E75A1964CA5A003A0B72 /* DTSTripDetailsViewController.h */,
+				F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */,
+			);
+			path = TripDetails;
+			sourceTree = "<group>";
+		};
+		F954E75C1964CA5A003A0B72 /* TripEvents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TripEvents;
+			sourceTree = "<group>";
+		};
+		F954E75D1964CA5A003A0B72 /* TripStory */ = {
+			isa = PBXGroup;
+			children = (
+				F954E7601964CAA1003A0B72 /* DTSTripStoryTableViewController.h */,
+				F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */,
+				F954E77419660CE0003A0B72 /* DTSTripStoryEventActivityCell.h */,
+				F954E77519660CE0003A0B72 /* DTSTripStoryEventActivityCell.m */,
+				F954E77619660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib */,
+				F954E7791966410F003A0B72 /* DTSTripStoryEventGeneralCell.h */,
+				F954E77A1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m */,
+				F954E77B1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib */,
+			);
+			path = TripStory;
+			sourceTree = "<group>";
+		};
+		F954E7631964CB61003A0B72 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F954E76C1965C22C003A0B72 /* NSDate+Utilities.h */,
+				F954E76D1965C22C003A0B72 /* NSDate+Utilities.m */,
+				F954E77E19664777003A0B72 /* UIColor+Utilities.h */,
+				F954E77F19664777003A0B72 /* UIColor+Utilities.m */,
+				F954E78119664967003A0B72 /* UIView+Utilities.h */,
+				F954E78219664967003A0B72 /* UIView+Utilities.m */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		F954E7641964CB61003A0B72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F954E7661965AAF2003A0B72 /* DTSEvent.h */,
+				F954E7671965AAF2003A0B72 /* DTSEvent.m */,
+				F954E7691965AC0A003A0B72 /* DTSLocation.h */,
+				F954E76A1965AC0A003A0B72 /* DTSLocation.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F954E7651964CB88003A0B72 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		F95814F31964850B002207A3 = {
 			isa = PBXGroup;
 			children = (
@@ -108,12 +207,9 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
-				F958150E1964850B002207A3 /* DTSAppDelegate.h */,
-				F958150F1964850B002207A3 /* DTSAppDelegate.m */,
-				F95815111964850B002207A3 /* Main_iPhone.storyboard */,
-				F95815141964850B002207A3 /* Main_iPad.storyboard */,
-				F95815171964850B002207A3 /* DTSViewController.h */,
-				F95815181964850B002207A3 /* DTSViewController.m */,
+				F954E7631964CB61003A0B72 /* Infrastructure */,
+				F954E7641964CB61003A0B72 /* Model */,
+				F954E7561964CA5A003A0B72 /* UserInterface */,
 				F958151A1964850B002207A3 /* Images.xcassets */,
 				F95815061964850B002207A3 /* Supporting Files */,
 			);
@@ -208,9 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95815161964850B002207A3 /* Main_iPad.storyboard in Resources */,
+				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
-				F95815131964850B002207A3 /* Main_iPhone.storyboard in Resources */,
+				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,9 +325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95815191964850B002207A3 /* DTSViewController.m in Sources */,
+				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
+				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
+				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
+				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
+				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
+				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
+				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
-				F95815101964850B002207A3 /* DTSAppDelegate.m in Sources */,
+				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
+				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
+				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,22 +363,6 @@
 				F95815091964850B002207A3 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F95815111964850B002207A3 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F95815121964850B002207A3 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		F95815141964850B002207A3 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F95815151964850B002207A3 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DTSViewController : UIViewController
+@interface DTSTripDetailsViewController : UIViewController
 
 @end
