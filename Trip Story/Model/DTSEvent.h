@@ -21,6 +21,7 @@ typedef enum {
 	DTSEventTypeActivityWalking,
 	DTSEventTypeActivityDancing,
 	DTSEventTypeSleep,
+	DTSEventTypePlaceholder,
 }DTSEventType;
 
 typedef enum {
@@ -39,7 +40,7 @@ typedef enum {
 @property (nonatomic, strong) NSArray *locations;
 @property (nonatomic) DTSEventType eventType;
 @property (nonatomic, readonly) DTSEventKind eventKind;
-@property (nonatomic) BOOL isAutoCreatedEvent;
+@property (nonatomic) BOOL isPlaceHolderEvent;
 @property (nonatomic, readonly) UIColor *eventTopColor;
 @property (nonatomic, readonly) UIColor *eventBottomColor;
 @property (nonatomic, readonly) NSNumber *eventHours;

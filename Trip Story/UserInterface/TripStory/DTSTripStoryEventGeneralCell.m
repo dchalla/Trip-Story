@@ -25,10 +25,20 @@
 - (void)updateWithEvent:(DTSEvent *)event
 {
 	self.event = event;
-	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"hh:mm"];
-	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"hh:mm"];
+	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm"];
+	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm"];
+	
+	if (event.isPlaceHolderEvent)
+	{
+		self.eventLineView.backgroundColor = [UIColor redColor];
+	}
+	else
+	{
+		self.eventLineView.backgroundColor = [UIColor lightGrayColor];
+	}
 	
 }
+
 
 - (void)prepareForReuse
 {

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTSTrip.h"
 
 @interface DTSTripStoryTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *eventsList;
+@property (nonatomic, strong) DTSTrip *trip;
 
 @end

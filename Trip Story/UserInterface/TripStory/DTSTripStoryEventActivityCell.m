@@ -40,8 +40,8 @@
 {
 	self.event = event;
 	self.eventNameLabel.text = event.eventName;
-	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"hh:mm"];
-	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"hh:mm"];
+	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm"];
+	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm"];
 	
 	self.bubbleView.layer.masksToBounds = YES;
 	[self.bubbleView.layer insertSublayer:self.backgroundLayer atIndex:0];

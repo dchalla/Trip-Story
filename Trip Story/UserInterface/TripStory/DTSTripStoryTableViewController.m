@@ -51,12 +51,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.eventsList count];
+    return [self.trip.eventsList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	DTSEvent *event = self.eventsList[indexPath.row];
+	DTSEvent *event = self.trip.eventsList[indexPath.row];
 	if (event.eventKind == DTSEventKindActivity)
 	{
 		DTSTripStoryEventActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:kDTSTripStoryEventActivityCell forIndexPath:indexPath];
@@ -77,7 +77,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	DTSEvent *event = self.eventsList[indexPath.row];
+	DTSEvent *event = self.trip.eventsList[indexPath.row];
 	return event.tripStoryCellHeight;
 }
 
