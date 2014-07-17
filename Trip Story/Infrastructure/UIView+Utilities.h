@@ -11,5 +11,8 @@
 @interface UIView (Utilities)
 
 + (CAGradientLayer *)gradientLayerWithTopColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor;
+- (UIImage *)dts_snapshotImage;
+- (UIImage *)dts_lightBlurredSnapshotImage;
+- (UIImage *)dts_darkBlurredSnapshotImage;
 
 @end

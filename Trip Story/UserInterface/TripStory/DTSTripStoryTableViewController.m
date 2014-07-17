@@ -11,6 +11,8 @@
 #import "DTSLocation.h"
 #import "DTSTripStoryEventActivityCell.h"
 #import "DTSTripStoryEventGeneralCell.h"
+#import "DTSEventsEntryTableViewController.h"
+#import "UIView+Utilities.h"
 
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
@@ -33,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
     self.view.backgroundColor = [UIColor clearColor];
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	[self.tableView registerClass:[DTSTripStoryEventActivityCell class] forCellReuseIdentifier:kDTSTripStoryEventActivityCell];

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */; };
+		F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */; };
+		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
 		F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */; };
 		F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */; };
 		F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */; };
@@ -42,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryTableViewController.h; sourceTree = "<group>"; };
+		F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryTableViewController.m; sourceTree = "<group>"; };
+		F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		F948C7E319787A24000A2A3B /* DTSModalDismissProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSModalDismissProtocol.h; sourceTree = "<group>"; };
+		F948C7E4197883F1000A2A3B /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
 		F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
 		F954E75A1964CA5A003A0B72 /* DTSTripDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewController.h; sourceTree = "<group>"; };
@@ -103,9 +113,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F948C7DB1978693B000A2A3B /* TripEventsEntry */ = {
+			isa = PBXGroup;
+			children = (
+				F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */,
+				F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */,
+			);
+			path = TripEventsEntry;
+			sourceTree = "<group>";
+		};
+		F948C7E2197879F6000A2A3B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F948C7E319787A24000A2A3B /* DTSModalDismissProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F948C7DB1978693B000A2A3B /* TripEventsEntry */,
 				F954E7651964CB88003A0B72 /* General */,
 				F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */,
 				F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */,
@@ -150,12 +178,16 @@
 		F954E7631964CB61003A0B72 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */,
+				F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */,
 				F954E76C1965C22C003A0B72 /* NSDate+Utilities.h */,
 				F954E76D1965C22C003A0B72 /* NSDate+Utilities.m */,
 				F954E77E19664777003A0B72 /* UIColor+Utilities.h */,
 				F954E77F19664777003A0B72 /* UIColor+Utilities.m */,
 				F954E78119664967003A0B72 /* UIView+Utilities.h */,
 				F954E78219664967003A0B72 /* UIView+Utilities.m */,
+				F948C7E4197883F1000A2A3B /* UIViewController+Utilities.h */,
+				F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -212,6 +244,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F948C7E2197879F6000A2A3B /* Protocols */,
 				F954E7631964CB61003A0B72 /* Infrastructure */,
 				F954E7641964CB61003A0B72 /* Model */,
 				F954E7561964CA5A003A0B72 /* UserInterface */,
@@ -332,7 +365,9 @@
 			files = (
 				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
+				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
+				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
@@ -340,6 +375,7 @@
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
 				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
+				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
 			);

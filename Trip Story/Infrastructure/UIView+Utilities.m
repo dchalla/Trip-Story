@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Utilities.h"
+#import "UIImage+ImageEffects.h"
 
 @implementation UIView (Utilities)
 
@@ -20,6 +21,27 @@
     gradientLayer.locations = gradientLocations;
 	
     return gradientLayer;
+}
+
+- (UIImage *)dts_snapshotImage
+{
+	UIGraphicsBeginImageContextWithOptions(self.frame.size, YES, [UIScreen mainScreen].scale);
+	[self drawViewHierarchyInRect:self.frame afterScreenUpdates:YES];
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return image;
+}
+
+- (UIImage *)dts_lightBlurredSnapshotImage
+{
+	UIImage *image = [self dts_snapshotImage];
+	return [image applyLightEffect];
+}
+
+- (UIImage *)dts_darkBlurredSnapshotImage
+{
+	UIImage *image = [self dts_snapshotImage];
+	return [image applyDarkEffect];
 }
 
 @end

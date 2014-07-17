@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTSModalDismissProtocol.h"
 
-@interface DTSTripDetailsViewController : UIViewController
+@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol>
 
 @end
