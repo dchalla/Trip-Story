@@ -10,6 +10,8 @@
 		F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */; };
 		F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */; };
 		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
+		F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */; };
+		F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */; };
 		F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */; };
 		F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */; };
 		F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */; };
@@ -52,6 +54,9 @@
 		F948C7E319787A24000A2A3B /* DTSModalDismissProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSModalDismissProtocol.h; sourceTree = "<group>"; };
 		F948C7E4197883F1000A2A3B /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
 		F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
+		F948C7E719789643000A2A3B /* DTSEventTextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventTextEntryTableViewCell.h; sourceTree = "<group>"; };
+		F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventTextEntryTableViewCell.m; sourceTree = "<group>"; };
+		F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventTextEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
 		F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
 		F954E75A1964CA5A003A0B72 /* DTSTripDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewController.h; sourceTree = "<group>"; };
@@ -118,6 +123,9 @@
 			children = (
 				F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */,
 				F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */,
+				F948C7E719789643000A2A3B /* DTSEventTextEntryTableViewCell.h */,
+				F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */,
+				F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */,
 			);
 			path = TripEventsEntry;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
+				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
@@ -367,6 +376,7 @@
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
+				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
