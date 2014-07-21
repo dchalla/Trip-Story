@@ -12,6 +12,8 @@
 		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
 		F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */; };
 		F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */; };
+		F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7EF1979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m */; };
+		F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F948C7F01979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib */; };
 		F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */; };
 		F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */; };
 		F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F954E7611964CAA1003A0B72 /* DTSTripStoryTableViewController.m */; };
@@ -34,6 +36,9 @@
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F99712661971D07E00F2F8FA /* DTSTrip.m */; };
+		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
+		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
+		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,10 @@
 		F948C7E719789643000A2A3B /* DTSEventTextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventTextEntryTableViewCell.h; sourceTree = "<group>"; };
 		F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventTextEntryTableViewCell.m; sourceTree = "<group>"; };
 		F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventTextEntryTableViewCell.xib; sourceTree = "<group>"; };
+		F948C7ED1979CF17000A2A3B /* DTSEntryTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEntryTableViewCellDelegate.h; sourceTree = "<group>"; };
+		F948C7EE1979EC95000A2A3B /* DTSEventDateEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventDateEntryTableViewCell.h; sourceTree = "<group>"; };
+		F948C7EF1979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventDateEntryTableViewCell.m; sourceTree = "<group>"; };
+		F948C7F01979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventDateEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAppDelegate.h; sourceTree = "<group>"; };
 		F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSAppDelegate.m; sourceTree = "<group>"; };
 		F954E75A1964CA5A003A0B72 /* DTSTripDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewController.h; sourceTree = "<group>"; };
@@ -92,6 +101,11 @@
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F99712651971D07E00F2F8FA /* DTSTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTrip.h; sourceTree = "<group>"; };
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
+		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
+		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
+		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
+		F9F92577197C3FF800D92941 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		F9F92578197C3FF800D92941 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,12 @@
 				F948C7E719789643000A2A3B /* DTSEventTextEntryTableViewCell.h */,
 				F948C7E819789643000A2A3B /* DTSEventTextEntryTableViewCell.m */,
 				F948C7E919789643000A2A3B /* DTSEventTextEntryTableViewCell.xib */,
+				F948C7EE1979EC95000A2A3B /* DTSEventDateEntryTableViewCell.h */,
+				F948C7EF1979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m */,
+				F948C7F01979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib */,
+				F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */,
+				F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */,
+				F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */,
 			);
 			path = TripEventsEntry;
 			sourceTree = "<group>";
@@ -134,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				F948C7E319787A24000A2A3B /* DTSModalDismissProtocol.h */,
+				F948C7ED1979CF17000A2A3B /* DTSEntryTableViewCellDelegate.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -196,6 +217,8 @@
 				F954E78219664967003A0B72 /* UIView+Utilities.m */,
 				F948C7E4197883F1000A2A3B /* UIViewController+Utilities.h */,
 				F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */,
+				F9F92577197C3FF800D92941 /* NSString+Utilities.h */,
+				F9F92578197C3FF800D92941 /* NSString+Utilities.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -350,7 +373,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
+				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
@@ -374,12 +399,15 @@
 			files = (
 				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
+				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
+				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
+				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,

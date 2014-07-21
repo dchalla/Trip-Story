@@ -72,6 +72,7 @@
 {
 	
 	DTSEventsEntryTableViewController *eventsEntryVC = [[DTSEventsEntryTableViewController alloc] initWithStyle:UITableViewStylePlain];
+	eventsEntryVC.event = [[DTSEvent alloc] init];
 	eventsEntryVC.dismissDelegate = self;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
 	[navVC.navigationBar setBarTintColor:[UIColor blackColor]];

@@ -13,10 +13,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-yD-WZT">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUy-iV-F2g" userLabel="BackgroundView">
+                        <rect key="frame" x="0.0" y="5" width="320" height="59"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="center" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-yD-WZT">
                         <rect key="frame" x="10" y="10" width="300" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.070000000000000007" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -24,8 +29,12 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="DUy-iV-F2g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4ka-nZ-f2R"/>
                     <constraint firstAttribute="bottom" secondItem="t0e-yD-WZT" secondAttribute="bottom" constant="10" id="CNb-Es-dXn"/>
+                    <constraint firstAttribute="bottom" secondItem="DUy-iV-F2g" secondAttribute="bottom" constant="5" id="EmV-IU-VaS"/>
+                    <constraint firstAttribute="trailing" secondItem="DUy-iV-F2g" secondAttribute="trailing" id="aOr-rO-TMz"/>
                     <constraint firstItem="t0e-yD-WZT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cih-Ou-XTi"/>
+                    <constraint firstItem="DUy-iV-F2g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eAo-mY-vU1"/>
                     <constraint firstItem="t0e-yD-WZT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="luf-OQ-ZrT"/>
                     <constraint firstAttribute="trailing" secondItem="t0e-yD-WZT" secondAttribute="trailing" constant="10" id="ug1-3R-3LN"/>
                 </constraints>

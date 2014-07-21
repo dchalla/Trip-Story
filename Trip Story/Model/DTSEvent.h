@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DTSLocation.h"
 
 typedef enum {
-	DTSEventTypeTravelFlight = 1,
-	DTSEventTypeTravelCar,
-	DTSEventTypeRestaurant,
-	DTSEventTypeActivity,
+	DTSEventTypeActivity = 0,
 	DTSEventTypeActivityHiking,
 	DTSEventTypeActivitySwimming,
 	DTSEventTypeActivityAdventure,
@@ -20,6 +18,11 @@ typedef enum {
 	DTSEventTypeActivityBiking,
 	DTSEventTypeActivityWalking,
 	DTSEventTypeActivityDancing,
+	DTSEventTypeTravelFlight,
+	DTSEventTypeTravelCar,
+	DTSEventTypeTravelWater,
+	DTSEventTypeTravelRoad,
+	DTSEventTypeRestaurant,
 	DTSEventTypeSleep,
 	DTSEventTypePlaceholder,
 }DTSEventType;
@@ -37,7 +40,7 @@ typedef enum {
 @property (nonatomic, strong) NSString *eventDescription;
 @property (nonatomic, strong) NSDate *startDateTime;
 @property (nonatomic, strong) NSDate *endDateTime;
-@property (nonatomic, strong) NSArray *locations;
+@property (nonatomic, strong) DTSLocation *location;
 @property (nonatomic) DTSEventType eventType;
 @property (nonatomic, readonly) DTSEventKind eventKind;
 @property (nonatomic) BOOL isPlaceHolderEvent;
@@ -45,5 +48,8 @@ typedef enum {
 @property (nonatomic, readonly) UIColor *eventBottomColor;
 @property (nonatomic, readonly) NSNumber *eventHours;
 @property (nonatomic, readonly) CGFloat tripStoryCellHeight;
+
+- (NSString *)eventTypeStringForEventType:(DTSEventType)type;
+- (NSArray *)eventTypeStringsArray;
 
 @end

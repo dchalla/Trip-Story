@@ -12,6 +12,35 @@
 
 @implementation DTSEvent
 
+- (id)init
+{
+	self = [super init];
+	if (self)
+	{
+		_startDateTime = [NSDate date];
+		_endDateTime = [self.startDateTime dateByAddingHours:2];
+	}
+	return self;
+}
+
+- (void)setStartDateTime:(NSDate *)startDateTime
+{
+	_startDateTime = startDateTime;
+	if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+	{
+		_endDateTime = [self.startDateTime dateByAddingHours:2];
+	}
+}
+
+- (void)setEndDateTime:(NSDate *)endDateTime
+{
+	_endDateTime = endDateTime;
+	if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+	{
+		_startDateTime = [self.endDateTime dateByAddingHours:-2];
+	}
+}
+
 - (DTSEventKind)eventKind
 {
 	switch (self.eventType)
@@ -104,10 +133,57 @@
 	}
 }
 
-
 - (NSNumber *)eventHours
 {
 	return @(fabsf([self.startDateTime hoursBeforeDate:self.endDateTime]));
+}
+
+- (NSString *)eventTypeStringForEventType:(DTSEventType)type
+{
+	switch (type)
+	{
+		case DTSEventTypeActivity:
+			return @"Other Activity";
+		case DTSEventTypeActivityAdventure:
+			return @"Adventure";
+		case DTSEventTypeActivityBiking:
+			return @"Biking";
+		case DTSEventTypeActivityDancing:
+			return @"Dancing";
+		case DTSEventTypeActivityHiking:
+			return @"Hiking";
+		case DTSEventTypeActivityRunning:
+			return @"Running";
+		case DTSEventTypeActivitySwimming:
+			return @"Swimming";
+		case DTSEventTypeActivityWalking:
+			return @"Walking";
+		case DTSEventTypeRestaurant:
+			return @"Restaurant";
+		case DTSEventTypeSleep:
+			return @"Sleeping";
+		case DTSEventTypeTravelCar:
+			return @"Travel by Car";
+		case DTSEventTypeTravelFlight:
+			return @"Travel by Flight";
+		case DTSEventTypeTravelRoad:
+			return @"Travel by Road";
+		case DTSEventTypeTravelWater:
+			return @"Travel by Water";
+			
+		default:
+			return @"Other";
+	}
+}
+
+- (NSArray *)eventTypeStringsArray
+{
+	NSMutableArray *eventsArray = [NSMutableArray array];
+	for (int i = 0; i < 14; i++)
+	{
+		[eventsArray addObject:[self eventTypeStringForEventType:i]];
+	}
+	return [eventsArray copy];
 }
 
 - (CGFloat)tripStoryCellHeight
