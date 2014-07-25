@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DTSEventLocationEntryTableViewCell" id="KGk-i7-Jjw" customClass="DTSEventLocationEntryTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOf-Iz-czr" userLabel="BackgroundView">
+                        <rect key="frame" x="0.0" y="5" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-XM-3xl">
+                        <rect key="frame" x="10" y="10" width="300" height="39"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="hoA-XM-3xl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2Bp-iF-E9u"/>
+                    <constraint firstAttribute="trailing" secondItem="eOf-Iz-czr" secondAttribute="trailing" id="4ja-df-UJE"/>
+                    <constraint firstItem="eOf-Iz-czr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="8YH-7W-dCS"/>
+                    <constraint firstItem="eOf-Iz-czr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NLr-CI-vZa"/>
+                    <constraint firstAttribute="bottom" secondItem="hoA-XM-3xl" secondAttribute="bottom" constant="10" id="Q40-Xw-k1B"/>
+                    <constraint firstAttribute="trailing" secondItem="hoA-XM-3xl" secondAttribute="trailing" constant="10" id="eOp-MA-PQ9"/>
+                    <constraint firstItem="hoA-XM-3xl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="geV-U9-V6A"/>
+                    <constraint firstAttribute="bottom" secondItem="eOf-Iz-czr" secondAttribute="bottom" constant="5" id="ig5-R1-GuL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="label" destination="hoA-XM-3xl" id="6DF-GF-0p0"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -11,10 +11,14 @@
 #import "DTSEventTextEntryTableViewCell.h"
 #import "DTSEventDateEntryTableViewCell.h"
 #import "DTSEventPickerEntryTableViewCell.h"
+#import "DTSEventLocationEntryTableViewCell.h"
+#import "DTSLocationEntryViewController.h"
+#import "UIView+Utilities.h"
 
 #define kDTSEventTextEntryTableViewCell @"DTSEventTextEntryTableViewCell"
 #define kDTSEventDateEntryTableViewCell @"DTSEventDateEntryTableViewCell"
 #define kDTSEventPickerEntryTableViewCell @"DTSEventPickerEntryTableViewCell"
+#define kDTSEventLocationEntryTableViewCell @"DTSEventLocationEntryTableViewCell"
 #define kFieldValue @"fieldValue"
 #define kPlaceHolderValue @"placeHolderValue"
 #define kIdentifier @"identifier"
@@ -89,6 +93,9 @@ typedef enum {
 	
 	[self.tableView registerClass:[DTSEventPickerEntryTableViewCell class] forCellReuseIdentifier:kDTSEventPickerEntryTableViewCell];
 	[self.tableView registerNib:[UINib nibWithNibName:kDTSEventPickerEntryTableViewCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kDTSEventPickerEntryTableViewCell];
+	
+	[self.tableView registerClass:[DTSEventLocationEntryTableViewCell class] forCellReuseIdentifier:kDTSEventLocationEntryTableViewCell];
+	[self.tableView registerNib:[UINib nibWithNibName:kDTSEventLocationEntryTableViewCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kDTSEventLocationEntryTableViewCell];
 	
 	[self createTableData];
 }
@@ -205,7 +212,7 @@ typedef enum {
 			break;
 		case DTSEventEntryFieldTypePlace:
 		{
-			
+			[self presentLocationSearchController];
 		}
 			break;
 		case DTSEventEntryFieldTypeEventType:
@@ -251,7 +258,7 @@ typedef enum {
 			break;
 		case DTSEventEntryFieldTypePlace:
 		{
-			return [self eventNameTableViewCellForTableView:tableView atIndexPath:indexPath];
+			return [self eventLocationTableViewCellForTableView:tableView atIndexPath:indexPath];
 		}
 			break;
 		case DTSEventEntryFieldTypeEventType:
@@ -324,6 +331,17 @@ typedef enum {
 	cell.placeHolderValue = dict[kPlaceHolderValue];
 	cell.pickerValue = @(self.event.eventType);
 	cell.pickerData = [self.event eventTypeStringsArray];
+	
+    return cell;
+}
+
+- (UITableViewCell *)eventLocationTableViewCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
+{
+	DTSEventLocationEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDTSEventLocationEntryTableViewCell forIndexPath:indexPath];
+	NSDictionary *dict = self.tableData[indexPath.row];
+    cell.identifier = dict[kIdentifier];
+	cell.placeHolderValue = dict[kPlaceHolderValue];
+	cell.fieldValue = self.event.location;
 	
     return cell;
 }
@@ -465,7 +483,7 @@ typedef enum {
 		{
 			if ([value isKindOfClass:[NSNumber class]])
 			{
-				self.event.eventType = ((NSNumber *)value).integerValue;
+				self.event.eventType = (DTSEventType)((NSNumber *)value).integerValue;
 				[self.tableView reloadData];
 			}
 		}
@@ -481,6 +499,20 @@ typedef enum {
 {
 	NSIndexPath *tempIndexPath = [NSIndexPath indexPathForRow:((NSNumber *)identifier).integerValue inSection:0];
 	[self tableView:self.tableView didSelectRowAtIndexPath:tempIndexPath];
+}
+
+
+- (void)presentLocationSearchController
+{
+	DTSLocationEntryViewController *locationSearchVC = [[DTSLocationEntryViewController alloc] initWithNibName:@"DTSLocationEntryViewController" bundle:[NSBundle mainBundle]];
+	locationSearchVC.dismissDelegate = self;
+	locationSearchVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
+	[self presentViewController:locationSearchVC animated:YES completion:^{}];
+}
+
+- (void)dismissViewController
+{
+	[self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 

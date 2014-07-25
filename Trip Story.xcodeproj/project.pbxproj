@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */; };
+		F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */; };
+		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
+		F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */; };
+		F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91CBD3B1981D7FC00BC3021 /* MapKit.framework */; };
 		F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */; };
 		F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */; };
 		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
@@ -52,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocationEntryViewController.h; sourceTree = "<group>"; };
+		F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocationEntryViewController.m; sourceTree = "<group>"; };
+		F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventLocationEntryTableViewCell.h; sourceTree = "<group>"; };
+		F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventLocationEntryTableViewCell.m; sourceTree = "<group>"; };
+		F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventLocationEntryTableViewCell.xib; sourceTree = "<group>"; };
+		F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSLocationEntryViewController.xib; sourceTree = "<group>"; };
+		F91CBD3B1981D7FC00BC3021 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryTableViewController.h; sourceTree = "<group>"; };
 		F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryTableViewController.m; sourceTree = "<group>"; };
 		F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */,
 				F95815021964850B002207A3 /* CoreGraphics.framework in Frameworks */,
 				F95815041964850B002207A3 /* UIKit.framework in Frameworks */,
 				F95815001964850B002207A3 /* Foundation.framework in Frameworks */,
@@ -146,6 +159,12 @@
 				F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */,
 				F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */,
 				F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */,
+				F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */,
+				F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */,
+				F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */,
+				F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */,
+				F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */,
+				F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */,
 			);
 			path = TripEventsEntry;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 		F95814FE1964850B002207A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F91CBD3B1981D7FC00BC3021 /* MapKit.framework */,
 				F95814FF1964850B002207A3 /* Foundation.framework */,
 				F95815011964850B002207A3 /* CoreGraphics.framework */,
 				F95815031964850B002207A3 /* UIKit.framework */,
@@ -374,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
+				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
+				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
@@ -401,6 +423,7 @@
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
+				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
@@ -416,6 +439,7 @@
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
+				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #import "DTSModalDismissProtocol.h"
 #import "DTSEntryTableViewCellDelegate.h"
 
-@interface DTSEventsEntryTableViewController : UITableViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSEntryTableViewCellDelegate>
+@interface DTSEventsEntryTableViewController : UITableViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSEntryTableViewCellDelegate,DTSModalDismissProtocol>
 
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 @property (nonatomic, strong) DTSEvent *event;
