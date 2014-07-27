@@ -9,6 +9,7 @@
 #import "DTSLocationEntryViewController.h"
 #import "UIViewController+Utilities.h"
 #import <MapKit/MapKit.h>
+#import "DTSLocation.h"
 
 @interface DTSLocationEntryViewController ()
 
@@ -49,25 +50,19 @@
 	self.tableView.contentInset = UIEdgeInsetsMake(self.searchBar.frame.origin.y + self.searchBar.frame.size.height, 0, 0, 0);
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
-	self.tableView.separatorColor = [UIColor blackColor];
-	[self.segmentControl addTarget:self action:@selector(segmentControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	[self.cancelButton addTarget:self action:@selector(cancelButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 	self.searchBar.delegate = self;
 	self.searchBar.keyboardType = UIKeyboardAppearanceDark;
 	[self updateBackgroundImage];
+	[self hideSearchModal];
 }
 
-- (void)segmentControlValueChanged:(id)sender
+- (void)viewWillDisappear:(BOOL)animated
 {
-	if (self.segmentControl.selectedSegmentIndex == 0)
-	{
-		self.searchBar.placeholder = @"Enter a place to search";
-	}
-	else
-	{
-		self.searchBar.placeholder = @"Enter an address to search";
-	}
+	[super viewWillDisappear:YES];
+	[self.searchQuery cancel];
 }
 
 - (void)cancelButtonTapped:(id)sender
@@ -81,6 +76,7 @@
 {
 	[self.searchBar resignFirstResponder];
 	[self.searchQuery cancel];
+	[self showSearchModalWithMessage:YES];
 	MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
 	request.naturalLanguageQuery = searchBar.text;
 	MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
@@ -88,10 +84,42 @@
 		NSLog(@"Map Items: %@", response.mapItems);
 		self.tableData = response.mapItems;
 		[self.tableView reloadData];
+		[self hideSearchModal];
 	}];
 	self.searchQuery = search;
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+	[self showSearchModalWithMessage:NO];
+}
+
+- (void)showSearchModalWithMessage:(BOOL)showMessage
+{
+	if (showMessage)
+	{
+		self.searchingLabel.alpha = 1;
+	}
+	else
+	{
+		self.searchingLabel.alpha = 0;
+	}
+	[UIView animateWithDuration:0.2 animations:^{
+		self.searchModalView.alpha = 1;
+	}];
+}
+
+- (void)hideSearchModal
+{
+	[UIView animateWithDuration:0.2 animations:^{
+		self.searchModalView.alpha = 0;
+	}];
+}
+
+- (IBAction)searchModalTapped:(id)sender {
+	[self hideSearchModal];
+	[self.searchBar resignFirstResponder];
+}
 
 #pragma mark UIViewControllerAnimatedTransitioningDelegate
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -136,7 +164,13 @@
 	if (cell == nil)
 	{
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+		UIView *bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.frame.size.height -1, cell.frame.size.width, 1)];
+		bottomLineView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+		bottomLineView.backgroundColor = [UIColor blackColor];
+		[cell addSubview:bottomLineView];
+		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	}
+	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	cell.backgroundColor = [UIColor clearColor];
 	cell.contentView.backgroundColor = [UIColor clearColor];
 	cell.textLabel.backgroundColor = [UIColor clearColor];
@@ -147,15 +181,20 @@
 	NSString *streetAddress = mapItem.placemark.thoroughfare.length > 0 ? mapItem.placemark.thoroughfare:@"";
 	NSString *city = mapItem.placemark.locality.length > 0?mapItem.placemark.locality : @"";
 	NSString *state = mapItem.placemark.administrativeArea.length > 0?mapItem.placemark.administrativeArea:@"";
-	NSString *country = mapItem.placemark.subAdministrativeArea.length > 0?mapItem.placemark.subAdministrativeArea:@"";
-	NSString *detailedText = [NSString stringWithFormat:@"%@ %@ %@ %@",streetAddress,city,state,country];
+	NSString *country = mapItem.placemark.country.length > 0?mapItem.placemark.country:@"";
+	NSString *zipCode = mapItem.placemark.postalCode.length > 0?mapItem.placemark.postalCode:@"";
+	NSString *detailedText = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",streetAddress,city,state,country,zipCode];
 	cell.detailTextLabel.text = detailedText;
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+	DTSLocation *location = [[DTSLocation alloc] init];
+	MKMapItem *mapItem= self.tableData[indexPath.row];
+	location.mapItem = mapItem;
+	[self.entryDelegate placeEntryCompletedWithValue:location];
+	[self.dismissDelegate dismissViewController];
 }
 
 

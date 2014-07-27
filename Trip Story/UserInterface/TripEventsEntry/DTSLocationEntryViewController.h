@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSModalDismissProtocol.h"
+#import "DTSEntryTableViewCellDelegate.h"
 
 @interface DTSLocationEntryViewController : UIViewController <UISearchBarDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *topNavigationBar;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) id<DTSModalDismissProtocol> dismissDelegate;
 @property (nonatomic, assign) BOOL presenting;
+@property (weak, nonatomic) IBOutlet UIView *searchModalView;
+@property (weak, nonatomic) IBOutlet UILabel *searchingLabel;
+@property (weak, nonatomic) id<DTSEntryTableViewCellDelegate> entryDelegate;
 
 @end

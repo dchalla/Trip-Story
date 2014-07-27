@@ -12,6 +12,13 @@
 
 @implementation DTSEvent
 
++ (DTSEvent *)eventFromEvent:(DTSEvent *)event
+{
+	DTSEvent *newEvent = [[DTSEvent alloc] init];
+	[newEvent copyFromEvent:event];
+	return newEvent;
+}
+
 - (id)init
 {
 	self = [super init];
@@ -193,5 +200,18 @@
 	height = MIN(200,MAX(60, height));
 	return height;
 }
+
+- (void)copyFromEvent:(DTSEvent *)event
+{
+	self.eventID = event.eventID;
+	self.eventName = event.eventName;
+	self.eventDescription = event.eventDescription;
+	self.startDateTime = event.startDateTime;
+	self.endDateTime = event.endDateTime;
+	self.location = [event.location copy];
+	self.eventType = event.eventType;
+	self.isPlaceHolderEvent = event.isPlaceHolderEvent;
+}
+
 
 @end

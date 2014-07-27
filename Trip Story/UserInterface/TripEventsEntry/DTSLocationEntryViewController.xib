@@ -9,7 +9,8 @@
                 <outlet property="backgroundImageView" destination="iyl-8p-Hgi" id="JiZ-qZ-pDN"/>
                 <outlet property="cancelButton" destination="3uZ-fz-AuI" id="cvy-uX-W6N"/>
                 <outlet property="searchBar" destination="5bm-13-kgf" id="AUS-Cf-Wp4"/>
-                <outlet property="segmentControl" destination="z5Y-bN-iwg" id="nK8-VH-Db6"/>
+                <outlet property="searchModalView" destination="MK6-hU-aLg" id="Qjf-6J-Vvt"/>
+                <outlet property="searchingLabel" destination="q0l-2O-nRC" id="bac-Ih-yCb"/>
                 <outlet property="tableView" destination="NaL-IC-a8W" id="2Bw-ve-njx"/>
                 <outlet property="topNavigationBar" destination="GLF-LS-WwY" id="Pcv-cc-bfS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7p4-i8-taE"/>
@@ -49,19 +50,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z5Y-bN-iwg">
-                    <rect key="frame" x="60" y="8" width="200" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="adB-NS-wHb"/>
-                    </constraints>
-                    <segments>
-                        <segment title="Place"/>
-                        <segment title="Address"/>
-                    </segments>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </segmentedControl>
-                <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Enter a place to search" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-13-kgf">
+                <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search a place or address" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-13-kgf">
                     <rect key="frame" x="0.0" y="42" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -69,20 +58,52 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIe-0j-ncb">
+                    <rect key="frame" x="115" y="11" width="91" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK6-hU-aLg">
+                    <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-2O-nRC">
+                            <rect key="frame" x="112" y="57" width="96" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.52000000000000002" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="q0l-2O-nRC" firstAttribute="top" secondItem="MK6-hU-aLg" secondAttribute="top" constant="57" id="fzA-eS-Rhd"/>
+                        <constraint firstAttribute="centerX" secondItem="q0l-2O-nRC" secondAttribute="centerX" id="lOV-GG-N4d"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="he1-Zv-cwt" appends="YES" id="RLv-qT-HWU"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="z5Y-bN-iwg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="2yY-iV-RL9"/>
-                <constraint firstItem="5bm-13-kgf" firstAttribute="top" secondItem="z5Y-bN-iwg" secondAttribute="bottom" constant="6" id="3KM-zQ-9NB"/>
                 <constraint firstItem="NaL-IC-a8W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Q6-dC-QD6"/>
+                <constraint firstItem="xIe-0j-ncb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="Ezq-kl-MFn"/>
+                <constraint firstAttribute="bottom" secondItem="MK6-hU-aLg" secondAttribute="bottom" id="Hdt-JN-3L3"/>
                 <constraint firstItem="3uZ-fz-AuI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="JXl-pJ-SsB"/>
+                <constraint firstAttribute="centerX" secondItem="xIe-0j-ncb" secondAttribute="centerX" id="Mcg-1A-IsW"/>
+                <constraint firstItem="5bm-13-kgf" firstAttribute="top" secondItem="GLF-LS-WwY" secondAttribute="bottom" constant="-46" id="NHx-Rk-Dh4"/>
+                <constraint firstItem="MK6-hU-aLg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O3G-7f-fsy"/>
                 <constraint firstItem="iyl-8p-Hgi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RLM-Qk-sZO"/>
                 <constraint firstAttribute="trailing" secondItem="GLF-LS-WwY" secondAttribute="trailing" id="Rfy-8N-RiE"/>
                 <constraint firstAttribute="trailing" secondItem="NaL-IC-a8W" secondAttribute="trailing" id="Rpb-vG-dPg"/>
-                <constraint firstAttribute="centerX" secondItem="z5Y-bN-iwg" secondAttribute="centerX" id="T0D-nf-zB6"/>
                 <constraint firstItem="NaL-IC-a8W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U3Z-Mu-fTM"/>
                 <constraint firstItem="5bm-13-kgf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ukd-P4-iXn"/>
                 <constraint firstItem="iyl-8p-Hgi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aF7-0W-K0h"/>
+                <constraint firstAttribute="trailing" secondItem="MK6-hU-aLg" secondAttribute="trailing" id="fFg-05-inH"/>
                 <constraint firstItem="GLF-LS-WwY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hL5-B3-wfZ"/>
                 <constraint firstItem="GLF-LS-WwY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="n5R-uJ-Pk6"/>
                 <constraint firstAttribute="trailing" secondItem="5bm-13-kgf" secondAttribute="trailing" id="nOd-23-3p8"/>
@@ -90,9 +111,15 @@
                 <constraint firstAttribute="bottom" secondItem="iyl-8p-Hgi" secondAttribute="bottom" id="rEl-An-nGD"/>
                 <constraint firstItem="3uZ-fz-AuI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="rw4-yN-lHE"/>
                 <constraint firstAttribute="trailing" secondItem="iyl-8p-Hgi" secondAttribute="trailing" id="rwk-97-Asm"/>
+                <constraint firstItem="MK6-hU-aLg" firstAttribute="top" secondItem="GLF-LS-WwY" secondAttribute="bottom" id="zTY-Fy-XMi"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tapGestureRecognizer id="he1-Zv-cwt">
+            <connections>
+                <action selector="searchModalTapped:" destination="-1" id="ejH-S8-678"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

@@ -53,6 +53,10 @@
 	NSString *valueString = @"";
 	if (self.pickerValue && self.pickerData)
 	{
+		if ([self.pickerValue integerValue] >= self.pickerData.count)
+		{
+			_pickerValue = @(0);
+		}
 		valueString = [NSString stringWithFormat:@" %@",self.pickerData[self.pickerValue.integerValue]];
 		if (valueString.length <= 0)
 		{

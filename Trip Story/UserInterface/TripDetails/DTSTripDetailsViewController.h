@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSModalDismissProtocol.h"
+#import "DTSAddEventDelegate.h"
+#import "DTSTripDetailsContainerDelegate.h"
 
-@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol>
+@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate>
 
 @end

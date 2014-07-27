@@ -19,6 +19,8 @@
 
 @interface DTSTripStoryTableViewController ()
 
+@property (nonatomic) BOOL isInEditMode;
+
 @end
 
 @implementation DTSTripStoryTableViewController
@@ -32,10 +34,15 @@
     return self;
 }
 
+- (void)refreshView
+{
+	[self.tableView reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+	self.isInEditMode = YES;
     self.view.backgroundColor = [UIColor clearColor];
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	[self.tableView registerClass:[DTSTripStoryEventActivityCell class] forCellReuseIdentifier:kDTSTripStoryEventActivityCell];
@@ -82,6 +89,14 @@
 {
 	DTSEvent *event = self.trip.eventsList[indexPath.row];
 	return event.tripStoryCellHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (self.isInEditMode)
+	{
+		[self.containerDelegate showEditEventEntryAtIndex:indexPath.row];
+	}
 }
 
 @end

@@ -51,5 +51,7 @@ typedef enum {
 
 - (NSString *)eventTypeStringForEventType:(DTSEventType)type;
 - (NSArray *)eventTypeStringsArray;
+- (void)copyFromEvent:(DTSEvent *)event;
++ (DTSEvent *)eventFromEvent:(DTSEvent *)event;
 
 @end

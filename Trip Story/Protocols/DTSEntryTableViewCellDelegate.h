@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DTSLocation.h"
 
 @protocol DTSEntryTableViewCellDelegate <NSObject>
 
 - (void)entryCompleteForIdentifier:(id)identifier withValue:(id)value;
 - (void)didSelectCellForIdentifier:(id)identifier;
+- (void)placeEntryCompletedWithValue:(DTSLocation *)location;
 
 @end

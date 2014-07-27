@@ -8,6 +8,20 @@
 
 #import "DTSLocation.h"
 
+
 @implementation DTSLocation
+
+- (NSString *)locationName
+{
+	if (!_locationName && _mapItem)
+	{
+		return self.mapItem.name;
+	}
+	else if(_locationName)
+	{
+		return _locationName;
+	}
+	return @"";
+}
 
 @end

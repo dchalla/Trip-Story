@@ -111,8 +111,11 @@
 		F958151A1964850B002207A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F95815201964850B002207A3 /* Trip StoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trip StoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsContainerDelegate.h; sourceTree = "<group>"; };
 		F99712651971D07E00F2F8FA /* DTSTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTrip.h; sourceTree = "<group>"; };
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
+		F9A6EF081984556300562957 /* DTSAddEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAddEventDelegate.h; sourceTree = "<group>"; };
+		F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewControllerProtocol.h; sourceTree = "<group>"; };
 		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
 		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -174,6 +177,9 @@
 			children = (
 				F948C7E319787A24000A2A3B /* DTSModalDismissProtocol.h */,
 				F948C7ED1979CF17000A2A3B /* DTSEntryTableViewCellDelegate.h */,
+				F9A6EF081984556300562957 /* DTSAddEventDelegate.h */,
+				F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */,
+				F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

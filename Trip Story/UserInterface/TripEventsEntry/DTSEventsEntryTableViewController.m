@@ -40,6 +40,7 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@property (nonatomic, strong) DTSEvent *originalEvent;
 
 @end
 
@@ -58,6 +59,11 @@ typedef enum {
 {
 	_blurredBackgroundImage = blurredBackgroundImage;
 	[self updateBackgroundImage];
+}
+
+- (void)setEvent:(DTSEvent *)event{
+	_event = event;
+	self.originalEvent = [DTSEvent eventFromEvent:event];
 }
 
 - (void)updateBackgroundImage
@@ -83,6 +89,10 @@ typedef enum {
 	
 	UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
 	[self.navigationItem setRightBarButtonItem:doneBarButton];
+	
+	UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
+	[self.navigationItem setLeftBarButtonItem:cancelBarButton];
+	
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	[self.tableView registerClass:[DTSEventTextEntryTableViewCell class] forCellReuseIdentifier:kDTSEventTextEntryTableViewCell];
@@ -154,6 +164,14 @@ typedef enum {
 
 - (void)doneButtonTapped
 {
+	self.event.isPlaceHolderEvent = NO;
+	[self.addEventDelegate didAddEvent:self.event isNew:self.isNewEvent];
+	[self.dismissDelegate dismissViewController];
+}
+
+- (void)cancelButtonTapped
+{
+	[self.event copyFromEvent:self.originalEvent];
 	[self.dismissDelegate dismissViewController];
 }
 
@@ -438,6 +456,13 @@ typedef enum {
 }
 
 #pragma mark EntryCellDelegate
+
+- (void)placeEntryCompletedWithValue:(DTSLocation *)location
+{
+	self.event.location = location;
+	[self.tableView reloadData];
+}
+
 - (void)entryCompleteForIdentifier:(id)identifier withValue:(id)value
 {
 	switch (((NSNumber *)identifier).integerValue)
@@ -507,6 +532,7 @@ typedef enum {
 	DTSLocationEntryViewController *locationSearchVC = [[DTSLocationEntryViewController alloc] initWithNibName:@"DTSLocationEntryViewController" bundle:[NSBundle mainBundle]];
 	locationSearchVC.dismissDelegate = self;
 	locationSearchVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
+	locationSearchVC.entryDelegate = self;
 	[self presentViewController:locationSearchVC animated:YES completion:^{}];
 }
 

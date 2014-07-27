@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MKMapItem.h>
 
 @interface DTSLocation : NSObject
 
@@ -16,5 +17,7 @@
 @property (nonatomic, strong) NSString *locationCountry;
 @property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *locationID;
+@property (nonatomic, strong) MKMapItem *mapItem;
+
 
 @end

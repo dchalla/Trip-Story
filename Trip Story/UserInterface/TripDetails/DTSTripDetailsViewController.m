@@ -50,6 +50,7 @@
 	[self. trip createDummyEventsList];
 	//End testing
 	self.tripStoryVC.trip = self.trip;
+	self.tripStoryVC.containerDelegate = self;
 	self.tripStoryVC.view.frame = self.view.frame;
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	self.title = @"My Trip";
@@ -71,9 +72,18 @@
 - (void)addEventButtonTapped
 {
 	
+	DTSEvent *event = [[DTSEvent alloc] init];
+	[self showUpdateEventWithEvent:event isNew:YES];
+	
+}
+
+- (void)showUpdateEventWithEvent:(DTSEvent *)event isNew:(BOOL)isNew
+{
 	DTSEventsEntryTableViewController *eventsEntryVC = [[DTSEventsEntryTableViewController alloc] initWithStyle:UITableViewStylePlain];
-	eventsEntryVC.event = [[DTSEvent alloc] init];
+	eventsEntryVC.event = event;
 	eventsEntryVC.dismissDelegate = self;
+	eventsEntryVC.addEventDelegate = self;
+	eventsEntryVC.isNewEvent = isNew;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
 	[navVC.navigationBar setBarTintColor:[UIColor blackColor]];
 	navVC.transitioningDelegate = eventsEntryVC;
@@ -81,7 +91,15 @@
 	[self presentViewController:navVC animated:YES completion:^{
 		
 	}];
-	
+}
+
+- (void)didAddEvent:(DTSEvent *)event isNew:(BOOL)isNew
+{
+	if (isNew)
+	{
+		[self.trip addEvent:event];
+	}
+	[self.tripStoryVC refreshView];
 }
 
 - (void)dismissViewController
@@ -89,6 +107,19 @@
 	[self dismissViewControllerAnimated:YES completion:^{
 		
 	}];
+}
+
+#pragma mark - containerDelegate
+- (void)showNewEventEntry
+{
+	
+}
+
+- (void)showEditEventEntryAtIndex:(NSInteger)index
+{
+	DTSEvent *event = self.trip.eventsList[index];
+	BOOL isNew = event.isPlaceHolderEvent;
+	[self showUpdateEventWithEvent:event isNew:isNew];
 }
 
 @end

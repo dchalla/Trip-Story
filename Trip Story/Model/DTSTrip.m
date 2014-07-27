@@ -7,15 +7,22 @@
 //
 
 #import "DTSTrip.h"
-#import "DTSEvent.h"
+
 #import "NSDate+Utilities.h"
 
 @implementation DTSTrip
 
+- (NSMutableArray *)originalEventsList
+{
+	if (!_originalEventsList)
+	{
+		_originalEventsList = [NSMutableArray array];
+	}
+	return _originalEventsList;
+}
 
 - (void)createDummyEventsList
 {
-	self.originalEventsList = [NSMutableArray array];
 	int j = DTSEventTypeActivity;
 	for (int i=0; i <= 10; i++)
 	{
@@ -39,9 +46,15 @@
 	[self fillInPlaceholderEvents];
 }
 
+- (void)addEvent:(DTSEvent *)event
+{
+	[self.originalEventsList addObject:event];
+	[self fillInPlaceholderEvents];
+}
+
 - (void)fillInPlaceholderEvents
 {
-	[self sortEventsBasedOnTime:self.originalEventsList];
+	[self sortOriginalList];
 	int i = 0;
 	for (DTSEvent *event in self.originalEventsList)
 	{
@@ -64,7 +77,7 @@
 		}
 		i++;
 	}
-	[self sortEventsBasedOnTime:self.eventsList];
+	[self sortEventsList];
 }
 
 - (DTSEvent *)placeHolderEventWithStartDateTime:(NSDate *)startDateTime endDateTime:(NSDate *)endDateTime
@@ -79,7 +92,7 @@
 	return placeHolderEvent;
 }
 
-- (void)sortEventsBasedOnTime:(NSMutableArray *)eventList
+- (NSMutableArray *)sortedEventsBasedOnTime:(NSMutableArray *)eventList
 {
 	NSArray *sortedArray;
 	sortedArray = [eventList sortedArrayUsingComparator:^NSComparisonResult(DTSEvent *a, DTSEvent *b) {
@@ -87,7 +100,17 @@
 		NSDate *second = b.startDateTime;
 		return [first compare:second];
 	}];
-	eventList = [sortedArray mutableCopy];
+	return [sortedArray mutableCopy];
+}
+
+- (void)sortOriginalList
+{
+	self.originalEventsList = [self sortedEventsBasedOnTime:self.originalEventsList];
+}
+
+- (void)sortEventsList
+{
+	self.eventsList = [self sortedEventsBasedOnTime:self.eventsList];
 }
 
 - (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max

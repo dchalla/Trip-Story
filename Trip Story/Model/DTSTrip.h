@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DTSEvent.h"
 
 @interface DTSTrip : NSObject
 
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *originalEventsList;
 
 - (void)createDummyEventsList;
+- (void)addEvent:(DTSEvent *)event;
 
 @end
