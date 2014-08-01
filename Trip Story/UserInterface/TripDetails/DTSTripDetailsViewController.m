@@ -72,7 +72,7 @@
 - (void)addEventButtonTapped
 {
 	
-	DTSEvent *event = [[DTSEvent alloc] init];
+	DTSEvent *event = [self.trip newEvent];
 	[self showUpdateEventWithEvent:event isNew:YES];
 	
 }
@@ -98,6 +98,10 @@
 	if (isNew)
 	{
 		[self.trip addEvent:event];
+	}
+	else
+	{
+		[self.trip fillInPlaceholderEvents];
 	}
 	[self.tripStoryVC refreshView];
 }

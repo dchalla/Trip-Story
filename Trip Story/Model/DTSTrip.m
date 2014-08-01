@@ -52,44 +52,85 @@
 	[self fillInPlaceholderEvents];
 }
 
+- (DTSEvent *)newEvent
+{
+	DTSEvent *event = [self.originalEventsList lastObject];
+	DTSEvent *newEvent = [[DTSEvent alloc] init];
+	if (event)
+	{
+		newEvent.startDateTime = event.endDateTime;
+	}
+	return newEvent;
+}
+
 - (void)fillInPlaceholderEvents
 {
 	[self sortOriginalList];
 	int i = 0;
+	self.eventsList = [NSMutableArray array];
 	for (DTSEvent *event in self.originalEventsList)
 	{
-		if (i != 0 && i < self.originalEventsList.count -1)
+		if (i != 0 && i < self.originalEventsList.count)
 		{
 			
 			DTSEvent *previousEvent =self.originalEventsList[i-1];
 			CGFloat hoursDifference = [previousEvent.endDateTime hoursBeforeDate:event.startDateTime];
-			if (hoursDifference > 1)
+			if (hoursDifference > 0.5)
 			{
-				DTSEvent *placeHolderEvent = [self placeHolderEventWithStartDateTime:previousEvent.endDateTime endDateTime:event.startDateTime];
+				DTSEvent *placeHolderEvent = [self placeHolderEventWithPreviousEvent:previousEvent nextEvent:event];
 				[self.eventsList addObject:placeHolderEvent];
 			}
-			[self.eventsList addObject:event];
 		}
-		else if (i==0)
-		{
-			self.eventsList = [NSMutableArray array];
-			[self.eventsList addObject:event];
-		}
+		[self.eventsList addObject:event];
 		i++;
 	}
 	[self sortEventsList];
 }
 
-- (DTSEvent *)placeHolderEventWithStartDateTime:(NSDate *)startDateTime endDateTime:(NSDate *)endDateTime
+- (DTSEvent *)placeHolderEventWithPreviousEvent:(DTSEvent *)previousEvent nextEvent:(DTSEvent *)nextEvent
 {
 	DTSEvent *placeHolderEvent = [[DTSEvent alloc] init];
 	placeHolderEvent.isPlaceHolderEvent = YES;
 	placeHolderEvent.eventName = @"Unknown";
 	placeHolderEvent.eventID = @"placeHolder";
-	placeHolderEvent.eventType = DTSEventTypePlaceholder;
-	placeHolderEvent.startDateTime = startDateTime;
-	placeHolderEvent.endDateTime = endDateTime;
+	placeHolderEvent.startDateTime = previousEvent.startDateTime;
+	placeHolderEvent.endDateTime = previousEvent.endDateTime;
+	
+	placeHolderEvent.eventType = [self eventTypeForPlaceHolderEventBetweenPreviousEvent:previousEvent nextEvent:nextEvent];
+	
 	return placeHolderEvent;
+}
+
+- (DTSEventType)eventTypeForPlaceHolderEventBetweenPreviousEvent:(DTSEvent *)prevEvent nextEvent:(DTSEvent *)nextEvent
+{
+	if (prevEvent.location.mapItem && nextEvent.location.mapItem)
+	{
+		CLLocationDistance distance = [prevEvent.location.mapItem.placemark.location distanceFromLocation:nextEvent.location.mapItem.placemark.location];
+		double disanceMiles =  distance * 0.00062137;
+		double hours = [prevEvent.endDateTime hoursBeforeDate:nextEvent.startDateTime];
+		double speed = disanceMiles/hours;
+		if (speed > 150)
+		{
+			return DTSEventTypeTravelFlight;
+		}
+		else if (speed > 20 && speed<=150)
+		{
+			return DTSEventTypeTravelCar;
+		}
+		else if (speed > 10 && speed<=20)
+		{
+			return DTSEventTypeTravelRoad;
+		}
+		else
+		{
+			return DTSEventTypeActivityWalking;
+		}
+			
+	}
+	else
+	{
+		return DTSEventTypePlaceholder;
+	}
 }
 
 - (NSMutableArray *)sortedEventsBasedOnTime:(NSMutableArray *)eventList

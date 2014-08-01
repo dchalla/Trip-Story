@@ -208,7 +208,7 @@
 	self.eventDescription = event.eventDescription;
 	self.startDateTime = event.startDateTime;
 	self.endDateTime = event.endDateTime;
-	self.location = [event.location copy];
+	self.location = event.location;
 	self.eventType = event.eventType;
 	self.isPlaceHolderEvent = event.isPlaceHolderEvent;
 }

@@ -22,5 +22,7 @@
 
 - (void)createDummyEventsList;
 - (void)addEvent:(DTSEvent *)event;
+- (DTSEvent *)newEvent;
+- (void)fillInPlaceholderEvents;
 
 @end

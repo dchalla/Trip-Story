@@ -30,7 +30,7 @@
 	
 	if (event.isPlaceHolderEvent)
 	{
-		self.eventLineView.backgroundColor = [UIColor redColor];
+		self.eventLineView.backgroundColor = [UIColor darkGrayColor];
 	}
 	else
 	{
