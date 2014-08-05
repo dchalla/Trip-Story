@@ -34,6 +34,12 @@
     // Initialization code
 	self.bubbleView.layer.cornerRadius = 8;
 	self.backgroundColor = [UIColor clearColor];
+	self.placeLabel.text =@"";
+	self.eventNameLabel.text = @"";
+	self.startTimelabel.text = @"";
+	self.endTimeLabel.text = @"";
+	self.descriptionLabel.text = @"";
+	self.placeLabel.text =@"";
 }
 
 - (void)updateWithEvent:(DTSEvent *)event
@@ -42,6 +48,16 @@
 	self.eventNameLabel.text = event.eventName;
 	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm"];
 	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm"];
+	if (event.eventDescription.length > 0)
+	{
+		self.descriptionLabel.text = event.eventDescription;
+	}
+	
+	if (event.location.displayLocationCityState.length > 0)
+	{
+		self.placeLabel.text = event.location.displayLocationCityState;
+	}
+	
 	
 	self.bubbleView.layer.masksToBounds = YES;
 	[self.bubbleView.layer insertSublayer:self.backgroundLayer atIndex:0];
@@ -73,6 +89,8 @@
 	self.eventNameLabel.text = @"";
 	self.startTimelabel.text = @"";
 	self.endTimeLabel.text = @"";
+	self.descriptionLabel.text = @"";
+	self.placeLabel.text =@"";
 }
 
 

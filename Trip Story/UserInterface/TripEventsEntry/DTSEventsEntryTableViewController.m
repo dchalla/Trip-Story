@@ -41,6 +41,7 @@ typedef enum {
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 @property (nonatomic, strong) DTSEvent *originalEvent;
+@property (nonatomic) BOOL isValueChanged;
 
 @end
 
@@ -53,6 +54,12 @@ typedef enum {
 		_tableData = [NSMutableArray array];
 	}
 	return _tableData;
+}
+
+- (void)setIsValueChanged:(BOOL)isValueChanged
+{
+	_isValueChanged = isValueChanged;
+	[self updateRightBarButton];
 }
 
 - (void)setBlurredBackgroundImage:(UIImage *)blurredBackgroundImage
@@ -84,6 +91,7 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	self.title = @"Add Event";
 	
@@ -108,6 +116,7 @@ typedef enum {
 	[self.tableView registerNib:[UINib nibWithNibName:kDTSEventLocationEntryTableViewCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kDTSEventLocationEntryTableViewCell];
 	
 	[self createTableData];
+	self.isValueChanged = NO;
 }
 
 - (void)createTableData
@@ -459,12 +468,14 @@ typedef enum {
 
 - (void)placeEntryCompletedWithValue:(DTSLocation *)location
 {
+	self.isValueChanged = YES;
 	self.event.location = location;
 	[self.tableView reloadData];
 }
 
 - (void)entryCompleteForIdentifier:(id)identifier withValue:(id)value
 {
+	self.isValueChanged = YES;
 	switch (((NSNumber *)identifier).integerValue)
 	{
 		case DTSEventEntryFieldTypeName:
@@ -539,6 +550,18 @@ typedef enum {
 - (void)dismissViewController
 {
 	[self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (void)updateRightBarButton
+{
+	if (self.isValueChanged || (self.isNewEvent && !self.event.isPlaceHolderEvent))
+	{
+		self.navigationItem.rightBarButtonItem.enabled = YES;
+	}
+	else
+	{
+		self.navigationItem.rightBarButtonItem.enabled = NO;
+	}
 }
 
 

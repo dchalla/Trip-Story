@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *locationID;
 @property (nonatomic, strong) MKMapItem *mapItem;
+@property (nonatomic, readonly) NSString *displayLocationCityState;
 
 
 @end

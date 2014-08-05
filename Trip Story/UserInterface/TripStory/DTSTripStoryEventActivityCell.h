@@ -15,6 +15,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *startTimelabel;
 @property (nonatomic, weak) IBOutlet UILabel *endTimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *eventNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
 - (void)updateWithEvent:(DTSEvent *)event;
 

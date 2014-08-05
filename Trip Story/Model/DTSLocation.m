@@ -24,4 +24,13 @@
 	return @"";
 }
 
+- (NSString *)displayLocationCityState
+{
+	if (self.mapItem.placemark.locality.length > 0 && self.mapItem.placemark.administrativeArea.length > 0 && self.locationName)
+	{
+		return [NSString stringWithFormat:@"%@, %@, %@",self.locationName,self.mapItem.placemark.locality,self.mapItem.placemark.administrativeArea];
+	}
+	return self.locationName;
+}
+
 @end

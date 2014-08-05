@@ -93,8 +93,8 @@
 	placeHolderEvent.isPlaceHolderEvent = YES;
 	placeHolderEvent.eventName = @"Unknown";
 	placeHolderEvent.eventID = @"placeHolder";
-	placeHolderEvent.startDateTime = previousEvent.startDateTime;
-	placeHolderEvent.endDateTime = previousEvent.endDateTime;
+	placeHolderEvent.startDateTime = previousEvent.endDateTime;
+	placeHolderEvent.endDateTime = nextEvent.startDateTime;
 	
 	placeHolderEvent.eventType = [self eventTypeForPlaceHolderEventBetweenPreviousEvent:previousEvent nextEvent:nextEvent];
 	
