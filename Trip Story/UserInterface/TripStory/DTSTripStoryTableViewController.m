@@ -13,6 +13,7 @@
 #import "DTSTripStoryEventGeneralCell.h"
 #import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
+#import "DTSTableViewCellParallaxProtocol.h"
 
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
@@ -50,6 +51,11 @@
 	
 	[self.tableView registerClass:[DTSTripStoryEventGeneralCell class] forCellReuseIdentifier:kDTSTripStoryEventGeneralCell];
 	[self.tableView registerNib:[UINib nibWithNibName:kDTSTripStoryEventGeneralCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kDTSTripStoryEventGeneralCell];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self scrollViewDidScroll:self.tableView];
 }
 
 #pragma mark - Table view data source
@@ -97,6 +103,20 @@
 	{
 		[self.containerDelegate showEditEventEntryAtIndex:indexPath.row];
 	}
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	
+    // Get visible cells on table view.
+    NSArray *visibleCells = [self.tableView visibleCells];
+	
+    for (UITableViewCell *cell in visibleCells) {
+		if ([cell conformsToProtocol:@protocol(DTSTableViewCellParallaxProtocol)])
+		{
+			[cell performSelector:@selector(didScrollOnTableView:) withObject:self.tableView];
+		}
+    }
 }
 
 @end

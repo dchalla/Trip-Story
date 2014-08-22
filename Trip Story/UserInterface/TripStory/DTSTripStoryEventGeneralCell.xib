@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -35,10 +35,33 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTC-JF-QSF" userLabel="icon-View">
+                        <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarNoDoorsIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Uaq-Th-X3B">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="87r-zS-8r3"/>
+                                    <constraint firstAttribute="width" constant="30" id="HuS-rw-dtB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Uaq-Th-X3B" secondAttribute="centerX" id="3bd-z4-kJY"/>
+                            <constraint firstAttribute="height" constant="30" id="JhK-L1-37x"/>
+                            <constraint firstAttribute="centerY" secondItem="Uaq-Th-X3B" secondAttribute="centerY" id="QMg-7A-B2p"/>
+                            <constraint firstAttribute="width" constant="30" id="Z5d-Gx-4MX"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wqX-AV-65a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0HG-R8-WTa"/>
+                    <constraint firstItem="wqX-AV-65a" firstAttribute="leading" secondItem="PTC-JF-QSF" secondAttribute="trailing" constant="-20" id="8oG-cO-lpa"/>
                     <constraint firstItem="4k6-rj-vOm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Gbb-Wm-Dqw"/>
+                    <constraint firstItem="PTC-JF-QSF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nhr-ax-eqh"/>
                     <constraint firstItem="wqX-AV-65a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="58" id="WFS-Pj-Wig"/>
                     <constraint firstItem="4k6-rj-vOm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Yp3-cL-Dpz"/>
                     <constraint firstAttribute="bottom" secondItem="wqX-AV-65a" secondAttribute="bottom" id="hdI-o3-txb"/>
@@ -49,8 +72,14 @@
             <connections>
                 <outlet property="endTimeLabel" destination="9kW-ek-RPW" id="sfY-XK-Opz"/>
                 <outlet property="eventLineView" destination="wqX-AV-65a" id="cBd-TF-4kM"/>
+                <outlet property="parallaxImageView" destination="Uaq-Th-X3B" id="u2p-yF-KX0"/>
+                <outlet property="parallaxImageViewOriginYConstraint" destination="Nhr-ax-eqh" id="OEq-qt-nDt"/>
+                <outlet property="parallaxView" destination="PTC-JF-QSF" id="HRM-Bo-9gB"/>
                 <outlet property="startTimelabel" destination="4k6-rj-vOm" id="bVl-qX-quv"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="CarNoDoorsIcon.png" width="512" height="512"/>
+    </resources>
 </document>

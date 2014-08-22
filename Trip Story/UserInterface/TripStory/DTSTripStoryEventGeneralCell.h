@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSEvent.h"
+#import "DTSTableViewCellParallaxProtocol.h"
 
-@interface DTSTripStoryEventGeneralCell : UITableViewCell
+@interface DTSTripStoryEventGeneralCell : UITableViewCell<DTSTableViewCellParallaxProtocol>
 
 @property (nonatomic, strong) IBOutlet UIView *eventLineView;
 @property (nonatomic, weak) IBOutlet UILabel *startTimelabel;
 @property (nonatomic, weak) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *parallaxImageView;
+@property (weak, nonatomic) IBOutlet UIView *parallaxView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *parallaxImageViewOriginYConstraint;
 
 
 - (void)updateWithEvent:(DTSEvent *)event;

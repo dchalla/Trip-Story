@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90CEE7D19932F9F002E9CE9 /* CarNoDoorsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */; };
 		F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */; };
 		F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */; };
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
+		F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarNoDoorsIcon.png; sourceTree = "<group>"; };
 		F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocationEntryViewController.h; sourceTree = "<group>"; };
 		F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocationEntryViewController.m; sourceTree = "<group>"; };
 		F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventLocationEntryTableViewCell.h; sourceTree = "<group>"; };
@@ -148,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F90CEE7B19932F9F002E9CE9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		F948C7DB1978693B000A2A3B /* TripEventsEntry */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +191,7 @@
 				F9A6EF081984556300562957 /* DTSAddEventDelegate.h */,
 				F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */,
 				F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */,
+				F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F90CEE7B19932F9F002E9CE9 /* Images */,
 				F948C7E2197879F6000A2A3B /* Protocols */,
 				F954E7631964CB61003A0B72 /* Infrastructure */,
 				F954E7641964CB61003A0B72 /* Model */,
@@ -399,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90CEE7D19932F9F002E9CE9 /* CarNoDoorsIcon.png in Resources */,
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
