@@ -53,18 +53,16 @@
 	switch (self.eventType)
 	{
 		case DTSEventTypeActivity:
-		case DTSEventTypeActivityAdventure:
-		case DTSEventTypeActivityBiking:
-		case DTSEventTypeActivityDancing:
+		case DTSEventTypeActivityStayHotel:
+		case DTSEventTypeActivityDining:
+		case DTSEventTypeActivitySightSeeing:
 		case DTSEventTypeActivityHiking:
-		case DTSEventTypeActivityRunning:
-		case DTSEventTypeActivitySwimming:
-		case DTSEventTypeActivityWalking:
+		case DTSEventTypeActivityBiking:
+		case DTSEventTypeActivityWaterSports:
 			return DTSEventKindActivity;
-		case DTSEventTypeRestaurant:
-		case DTSEventTypeSleep:
-		case DTSEventTypeTravelCar:
-		case DTSEventTypeTravelFlight:
+		case DTSEventTypeTravelByAir:
+		case DTSEventTypeTravelByRoad:
+		case DTSEventTypeTravelByWater:
 			return DTSEventKindGeneral;
 			
 		default:
@@ -74,31 +72,34 @@
 
 - (UIColor *)eventTopColor
 {
-	switch (self.eventType)
+	return [[self class] topColorForEventType:self.eventType];
+}
+
++ (UIColor *)topColorForEventType:(DTSEventType)eventType
+{
+	switch (eventType)
 	{
 		case DTSEventTypeActivity:
 			return [UIColor colorWithHexString:@"FF5E3A"];
-		case DTSEventTypeActivityAdventure:
-			return [UIColor colorWithHexString:@"FF9500"];
-		case DTSEventTypeActivityBiking:
+		case DTSEventTypeActivityStayHotel:
+			return [UIColor colorWithHexString:@"EF4DB6"];
+		case DTSEventTypeActivityDining:
 			return [UIColor colorWithHexString:@"FFDB4C"];
-		case DTSEventTypeActivityDancing:
+		case DTSEventTypeActivitySightSeeing:
 			return [UIColor colorWithHexString:@"87FC70"];
 		case DTSEventTypeActivityHiking:
 			return [UIColor colorWithHexString:@"52EDC7"];
-		case DTSEventTypeActivityRunning:
+		case DTSEventTypeActivityBiking:
 			return [UIColor colorWithHexString:@"1AD6FD"];
-		case DTSEventTypeActivitySwimming:
+		case DTSEventTypeActivityWaterSports:
 			return [UIColor colorWithHexString:@"C644FC"];
-		case DTSEventTypeActivityWalking:
-			return [UIColor colorWithHexString:@"EF4DB6"];
-		case DTSEventTypeRestaurant:
+		case DTSEventTypeTravelByRoad:
+			return [UIColor colorWithHexString:@"FF9500"];
+		case DTSEventTypeTravelByAir:
 			return [UIColor colorWithHexString:@"5856D6"];
-		case DTSEventTypeSleep:
+		case DTSEventTypeTravelByWater:
 			return [UIColor colorWithHexString:@"DBDDDE"];
-		case DTSEventTypeTravelCar:
-			return [UIColor colorWithHexString:@"DBDDDE"];
-		case DTSEventTypeTravelFlight:
+		case DTSEventTypePlaceholder:
 			return [UIColor colorWithHexString:@"DBDDDE"];
 			
 		default:
@@ -108,31 +109,34 @@
 
 - (UIColor *)eventBottomColor
 {
-	switch (self.eventType)
+	return [[self class] bottomColorForEventType:self.eventType];
+}
+
++ (UIColor *)bottomColorForEventType:(DTSEventType)eventType
+{
+	switch (eventType)
 	{
 		case DTSEventTypeActivity:
 			return [UIColor colorWithHexString:@"FF2A68"];
-		case DTSEventTypeActivityAdventure:
+		case DTSEventTypeActivityStayHotel:
+			return [UIColor colorWithHexString:@"C643FC"];
+		case DTSEventTypeActivityDining:
 			return [UIColor colorWithHexString:@"FF5E3A"];
-		case DTSEventTypeActivityBiking:
-			return [UIColor colorWithHexString:@"FF5E3A"];
-		case DTSEventTypeActivityDancing:
+		case DTSEventTypeActivitySightSeeing:
 			return [UIColor colorWithHexString:@"0BD318"];
 		case DTSEventTypeActivityHiking:
 			return [UIColor colorWithHexString:@"5AC8FB"];
-		case DTSEventTypeActivityRunning:
+		case DTSEventTypeActivityBiking:
 			return [UIColor colorWithHexString:@"1D62F0"];
-		case DTSEventTypeActivitySwimming:
+		case DTSEventTypeActivityWaterSports:
 			return [UIColor colorWithHexString:@"5856D6"];
-		case DTSEventTypeActivityWalking:
-			return [UIColor colorWithHexString:@"C643FC"];
-		case DTSEventTypeRestaurant:
+		case DTSEventTypeTravelByRoad:
+			return [UIColor colorWithHexString:@"FF5E3A"];
+		case DTSEventTypeTravelByAir:
 			return [UIColor colorWithHexString:@"5856D6"];
-		case DTSEventTypeSleep:
+		case DTSEventTypeTravelByWater:
 			return [UIColor colorWithHexString:@"898C90"];
-		case DTSEventTypeTravelCar:
-			return [UIColor colorWithHexString:@"898C90"];
-		case DTSEventTypeTravelFlight:
+		case DTSEventTypePlaceholder:
 			return [UIColor colorWithHexString:@"898C90"];
 			
 		default:
@@ -150,33 +154,25 @@
 	switch (type)
 	{
 		case DTSEventTypeActivity:
-			return @"Other Activity";
-		case DTSEventTypeActivityAdventure:
-			return @"Adventure";
-		case DTSEventTypeActivityBiking:
-			return @"Biking";
-		case DTSEventTypeActivityDancing:
-			return @"Dancing";
+			return @"Other";
+		case DTSEventTypeActivityStayHotel:
+			return @"Stay/Lodging";
+		case DTSEventTypeActivityDining:
+			return @"Dining";
+		case DTSEventTypeActivitySightSeeing:
+			return @"Sightseeing";
 		case DTSEventTypeActivityHiking:
 			return @"Hiking";
-		case DTSEventTypeActivityRunning:
-			return @"Running";
-		case DTSEventTypeActivitySwimming:
-			return @"Swimming";
-		case DTSEventTypeActivityWalking:
-			return @"Walking";
-		case DTSEventTypeRestaurant:
-			return @"Restaurant";
-		case DTSEventTypeSleep:
-			return @"Sleeping";
-		case DTSEventTypeTravelCar:
-			return @"Travel by Car";
-		case DTSEventTypeTravelFlight:
-			return @"Travel by Flight";
-		case DTSEventTypeTravelRoad:
-			return @"Travel by Road";
-		case DTSEventTypeTravelWater:
-			return @"Travel by Water";
+		case DTSEventTypeActivityBiking:
+			return @"Biking";
+		case DTSEventTypeActivityWaterSports:
+			return @"Water Sports";
+		case DTSEventTypeTravelByRoad:
+			return @"Travel By Road";
+		case DTSEventTypeTravelByAir:
+			return @"Travel By Air";
+		case DTSEventTypeTravelByWater:
+			return @"Travel By Water";
 			
 		default:
 			return @"Other";
@@ -186,7 +182,7 @@
 - (NSArray *)eventTypeStringsArray
 {
 	NSMutableArray *eventsArray = [NSMutableArray array];
-	for (int i = 0; i < 14; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		[eventsArray addObject:[self eventTypeStringForEventType:i]];
 	}
@@ -199,6 +195,20 @@
 	CGFloat height = hours * (200/8);
 	height = MIN(200,MAX(60, height));
 	return height;
+}
+
+- (BOOL)isTravelEvent
+{
+	switch (self.eventType)
+	{
+		case DTSEventTypeTravelByAir:
+		case DTSEventTypeTravelByRoad:
+		case DTSEventTypeTravelByWater:
+			return YES;
+
+		default:
+			return NO;
+	}
 }
 
 - (void)copyFromEvent:(DTSEvent *)event

@@ -10,29 +10,29 @@
 	<string>Trip Story</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CF339254-3C19-44A5-8D8B-E9337980D357</key>
+		<key>D6F1392CEF2154BEBDB81C32F5232FB70E7DA02C</key>
 		<string>https://github.com/dchalla/Trip-Story.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Trip Story.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CF339254-3C19-44A5-8D8B-E9337980D357</key>
+		<key>D6F1392CEF2154BEBDB81C32F5232FB70E7DA02C</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dchalla/Trip-Story.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CF339254-3C19-44A5-8D8B-E9337980D357</string>
+	<string>D6F1392CEF2154BEBDB81C32F5232FB70E7DA02C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CF339254-3C19-44A5-8D8B-E9337980D357</string>
+			<string>D6F1392CEF2154BEBDB81C32F5232FB70E7DA02C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Trip-Story</string>
 		</dict>

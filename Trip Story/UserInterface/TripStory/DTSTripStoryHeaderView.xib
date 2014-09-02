@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DTSTripStoryHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-HF-Wee">
+                    <rect key="frame" x="123" y="10" width="75" height="26.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrH-w4-2Yf">
+                    <rect key="frame" x="90" y="54" width="140" height="140"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuS-iA-aqf">
+                            <rect key="frame" x="25" y="60" width="90" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="rYY-VN-8rE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="94k-L1-nra"/>
+                        <constraint firstAttribute="centerY" secondItem="TuS-iA-aqf" secondAttribute="centerY" id="G12-ny-V8u"/>
+                        <constraint firstAttribute="width" constant="140" id="PO2-a8-EYS"/>
+                        <constraint firstAttribute="centerX" secondItem="TuS-iA-aqf" secondAttribute="centerX" id="ejU-bC-pFD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ba4-HF-Wee" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="3yl-rZ-ggV"/>
+                <constraint firstItem="MrH-w4-2Yf" firstAttribute="top" secondItem="Ba4-HF-Wee" secondAttribute="bottom" constant="18" id="Znr-HT-P63"/>
+                <constraint firstAttribute="bottom" secondItem="MrH-w4-2Yf" secondAttribute="bottom" constant="36" id="ccz-ZY-mYr"/>
+                <constraint firstAttribute="centerX" secondItem="Ba4-HF-Wee" secondAttribute="centerX" id="fli-dx-XwB"/>
+                <constraint firstAttribute="centerX" secondItem="MrH-w4-2Yf" secondAttribute="centerX" id="lAs-sV-Edl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pieView" destination="MrH-w4-2Yf" id="Kgo-gz-dc7"/>
+                <outlet property="tripDurationLabel" destination="TuS-iA-aqf" id="Dcs-bQ-aae"/>
+                <outlet property="tripTitle" destination="Ba4-HF-Wee" id="fQe-Bc-DJv"/>
+            </connections>
+            <point key="canvasLocation" x="253" y="475"/>
+        </view>
+    </objects>
+</document>

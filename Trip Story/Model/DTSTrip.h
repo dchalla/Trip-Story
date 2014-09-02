@@ -24,5 +24,8 @@
 - (void)addEvent:(DTSEvent *)event;
 - (DTSEvent *)newEvent;
 - (void)fillInPlaceholderEvents;
+- (NSArray *)eventsDurationArray;
+- (NSString *)tripDurationString;
+- (NSNumber *)tripDurationHours;
 
 @end

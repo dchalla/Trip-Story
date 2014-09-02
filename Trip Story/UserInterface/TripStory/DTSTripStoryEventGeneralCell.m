@@ -42,11 +42,27 @@
 		self.eventLineView.backgroundColor = [UIColor lightGrayColor];
 	}
 	
-	if (event.eventType == DTSEventTypeTravelCar)
+	if (event.isTravelEvent)
 	{
 		self.parallaxView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
 		self.parallaxView.layer.borderColor = [UIColor whiteColor].CGColor;
-		UIImage *icon = [[UIImage imageNamed:@"CarNoDoorsIcon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *icon = nil;
+		switch (self.event.eventType)
+		{
+			case DTSEventTypeTravelByRoad:
+				icon = [[UIImage imageNamed:@"car88.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				break;
+			case DTSEventTypeTravelByAir:
+				icon = [[UIImage imageNamed:@"airplane21.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				break;
+			case DTSEventTypeTravelByWater:
+				icon = [[UIImage imageNamed:@"waterTravel.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				break;
+				
+			default:
+				break;
+		}
+		
 		self.parallaxImageView.image = icon;
 		self.parallaxImageView.tintColor = [UIColor blackColor];
 	}

@@ -36,7 +36,7 @@
 		}
 		else
 		{
-			event.eventType = DTSEventTypeTravelCar;
+			event.eventType = DTSEventTypeTravelByRoad;
 		}
 		
 		event.startDateTime = [[NSDate date] dateByAddingHours:i*10];
@@ -111,19 +111,19 @@
 		double speed = disanceMiles/hours;
 		if (speed > 150)
 		{
-			return DTSEventTypeTravelFlight;
+			return DTSEventTypeTravelByAir;
 		}
 		else if (speed > 20 && speed<=150)
 		{
-			return DTSEventTypeTravelCar;
+			return DTSEventTypeTravelByRoad;
 		}
 		else if (speed > 10 && speed<=20)
 		{
-			return DTSEventTypeTravelRoad;
+			return DTSEventTypeTravelByRoad;
 		}
 		else
 		{
-			return DTSEventTypeActivityWalking;
+			return DTSEventTypeTravelByRoad;
 		}
 			
 	}
@@ -154,9 +154,118 @@
 	self.eventsList = [self sortedEventsBasedOnTime:self.eventsList];
 }
 
+
+- (NSArray *)eventsDurationArray
+{
+	NSMutableArray *eventsArray = [NSMutableArray array];
+	for (int i = 0; i < 10; i++)
+	{
+		[eventsArray addObject:[self eventTypeDurationInTrip:i]];
+	}
+	return [eventsArray copy];
+}
+
+- (NSNumber *)eventTypeDurationInTrip:(DTSEventType)eventType
+{
+	NSArray *events = [self allTripEventsOfEventType:eventType];
+	CGFloat duration = 0;
+	for (DTSEvent *event in events)
+	{
+		duration += event.eventHours.floatValue;
+	}
+	return @(duration);
+}
+
+- (NSString *)tripDurationString
+{
+	NSNumber *tripHours = [self tripDurationHours];
+	NSInteger days = tripHours.floatValue/24;
+	NSInteger hours = tripHours.integerValue%24;
+	NSString *durationString = @"";
+	if ([NSDateComponentsFormatter class])
+	{
+		NSDateComponentsFormatter *dateComponentsFromatter = [[NSDateComponentsFormatter alloc] init];
+		dateComponentsFromatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
+		
+		NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+		dateComponents.day = days;
+		dateComponents.hour = hours;
+		
+		durationString = [dateComponentsFromatter stringFromDateComponents:dateComponents];
+		durationString = [durationString stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
+	}
+	else
+	{
+		NSString *daysString = @"";
+		NSString *hoursString = @"";
+		if (days > 1)
+		{
+			daysString = [NSString stringWithFormat:@"%ld days",days];
+		}
+		else if(days > 0)
+		{
+			daysString = [NSString stringWithFormat:@"%ld day",days];
+		}
+		
+		if (hours > 1)
+		{
+			hoursString = [NSString stringWithFormat:@"%ld hours",hours];
+		}
+		else if(hours > 0)
+		{
+			hoursString = [NSString stringWithFormat:@"%ld hour",hours];
+		}
+		if (daysString.length > 0)
+		{
+			if (hoursString.length > 0)
+			{
+				durationString = [NSString stringWithFormat:@"%@\n%@",daysString,hoursString];
+			}
+			else
+			{
+				durationString = daysString;
+			}
+		}
+		else if(hoursString.length > 0)
+		{
+			durationString = hoursString;
+		}
+	}
+	
+	return durationString;
+	
+}
+
+- (NSNumber *)tripDurationHours
+{
+	CGFloat totalduration = 0;
+	for (DTSEvent *event in self.eventsList)
+	{
+		totalduration = event.eventHours.floatValue + totalduration;
+	}
+	return @(totalduration);
+}
+
+
+- (NSArray *)allTripEventsOfEventType:(DTSEventType)eventType
+{
+	NSMutableArray *eventsArray = [NSMutableArray array];
+	for (DTSEvent *event in self.eventsList)
+	{
+		if (event.eventType == eventType)
+		{
+			[eventsArray addObject:event];
+		}
+	}
+	return [eventsArray copy];
+}
+
+
 - (NSInteger)getRandomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
 {
     return min + arc4random() % (max - min + 1);
 }
+
+
 
 @end

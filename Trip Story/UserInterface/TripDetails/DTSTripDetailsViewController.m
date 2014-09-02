@@ -53,7 +53,7 @@
 	self.tripStoryVC.containerDelegate = self;
 	self.tripStoryVC.view.frame = self.view.frame;
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-	self.title = @"My Trip";
+	//self.title = @"My Trip";
 }
 
 - (void)viewWillAppear:(BOOL)animated

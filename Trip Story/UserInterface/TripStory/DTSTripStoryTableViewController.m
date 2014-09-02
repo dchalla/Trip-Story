@@ -14,6 +14,7 @@
 #import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
 #import "DTSTableViewCellParallaxProtocol.h"
+#import "DTSTripStoryHeaderView.h"
 
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
@@ -21,10 +22,17 @@
 @interface DTSTripStoryTableViewController ()
 
 @property (nonatomic) BOOL isInEditMode;
+@property (nonatomic, strong) DTSTripStoryHeaderView *headerView;
 
 @end
 
 @implementation DTSTripStoryTableViewController
+
+- (void)setTrip:(DTSTrip *)trip
+{
+	_trip = trip;
+	[self updateHeaderView];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,9 +43,19 @@
     return self;
 }
 
+- (DTSTripStoryHeaderView *)headerView
+{
+	if (!_headerView)
+	{
+		_headerView = [[[NSBundle mainBundle] loadNibNamed:@"DTSTripStoryHeaderView" owner:self options:nil] objectAtIndex:0];
+	}
+	return _headerView;
+}
+
 - (void)refreshView
 {
 	[self.tableView reloadData];
+	[self updateHeaderView];
 }
 
 - (void)viewDidLoad
@@ -51,11 +69,31 @@
 	
 	[self.tableView registerClass:[DTSTripStoryEventGeneralCell class] forCellReuseIdentifier:kDTSTripStoryEventGeneralCell];
 	[self.tableView registerNib:[UINib nibWithNibName:kDTSTripStoryEventGeneralCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kDTSTripStoryEventGeneralCell];
+	[self updateHeaderView];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	[self scrollViewDidScroll:self.tableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	self.headerView.viewAppeared = YES;
+}
+
+- (void)updateHeaderView
+{
+	if (self.trip.eventsList.count > 0)
+	{
+		self.headerView.trip = self.trip;
+		self.tableView.tableHeaderView = self.headerView;
+	}
+	else
+	{
+		self.tableView.tableHeaderView = nil;
+	}
 }
 
 #pragma mark - Table view data source

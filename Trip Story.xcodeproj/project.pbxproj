@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F90CEE7D19932F9F002E9CE9 /* CarNoDoorsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */; };
 		F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */; };
 		F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */; };
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
@@ -42,6 +41,20 @@
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F99712661971D07E00F2F8FA /* DTSTrip.m */; };
+		F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13A19B398A800622CC9 /* airplane21.png */; };
+		F9BEC13E19B398A800622CC9 /* boat17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13B19B398A800622CC9 /* boat17.png */; };
+		F9BEC13F19B398A800622CC9 /* car88.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13C19B398A800622CC9 /* car88.png */; };
+		F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14019B39E9500622CC9 /* sailboat.png */; };
+		F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14219B39EFC00622CC9 /* sailing7.png */; };
+		F9BEC14519B39FB500622CC9 /* sailing8.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14419B39FB500622CC9 /* sailing8.png */; };
+		F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14619B3A17100622CC9 /* paralympic17.png */; };
+		F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14819B3A22300622CC9 /* anchor2.png */; };
+		F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14A19B3A42100622CC9 /* waterTravel.png */; };
+		F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */; };
+		F9F012EE19B522CF00176944 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EA19B522CF00176944 /* PieElement.m */; };
+		F9F012EF19B522CF00176944 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EC19B522CF00176944 /* PieLayer.m */; };
+		F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */; };
+		F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */; };
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
@@ -59,7 +72,6 @@
 
 /* Begin PBXFileReference section */
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
-		F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarNoDoorsIcon.png; sourceTree = "<group>"; };
 		F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocationEntryViewController.h; sourceTree = "<group>"; };
 		F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocationEntryViewController.m; sourceTree = "<group>"; };
 		F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventLocationEntryTableViewCell.h; sourceTree = "<group>"; };
@@ -119,6 +131,25 @@
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
 		F9A6EF081984556300562957 /* DTSAddEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAddEventDelegate.h; sourceTree = "<group>"; };
 		F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewControllerProtocol.h; sourceTree = "<group>"; };
+		F9BEC13A19B398A800622CC9 /* airplane21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane21.png; sourceTree = "<group>"; };
+		F9BEC13B19B398A800622CC9 /* boat17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boat17.png; sourceTree = "<group>"; };
+		F9BEC13C19B398A800622CC9 /* car88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car88.png; sourceTree = "<group>"; };
+		F9BEC14019B39E9500622CC9 /* sailboat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sailboat.png; sourceTree = "<group>"; };
+		F9BEC14219B39EFC00622CC9 /* sailing7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sailing7.png; sourceTree = "<group>"; };
+		F9BEC14419B39FB500622CC9 /* sailing8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sailing8.png; sourceTree = "<group>"; };
+		F9BEC14619B3A17100622CC9 /* paralympic17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paralympic17.png; sourceTree = "<group>"; };
+		F9BEC14819B3A22300622CC9 /* anchor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anchor2.png; sourceTree = "<group>"; };
+		F9BEC14A19B3A42100622CC9 /* waterTravel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterTravel.png; sourceTree = "<group>"; };
+		F9F012E619B522CF00176944 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
+		F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
+		F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
+		F9F012E919B522CF00176944 /* PieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieElement.h; sourceTree = "<group>"; };
+		F9F012EA19B522CF00176944 /* PieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieElement.m; sourceTree = "<group>"; };
+		F9F012EB19B522CF00176944 /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieLayer.h; sourceTree = "<group>"; };
+		F9F012EC19B522CF00176944 /* PieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieLayer.m; sourceTree = "<group>"; };
+		F9F012F119B524D900176944 /* DTSTripStoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryHeaderView.h; sourceTree = "<group>"; };
+		F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryHeaderView.m; sourceTree = "<group>"; };
+		F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryHeaderView.xib; sourceTree = "<group>"; };
 		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
 		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -154,7 +185,15 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F90CEE7C19932F9F002E9CE9 /* CarNoDoorsIcon.png */,
+				F9BEC14A19B3A42100622CC9 /* waterTravel.png */,
+				F9BEC14819B3A22300622CC9 /* anchor2.png */,
+				F9BEC14619B3A17100622CC9 /* paralympic17.png */,
+				F9BEC14419B39FB500622CC9 /* sailing8.png */,
+				F9BEC14219B39EFC00622CC9 /* sailing7.png */,
+				F9BEC14019B39E9500622CC9 /* sailboat.png */,
+				F9BEC13A19B398A800622CC9 /* airplane21.png */,
+				F9BEC13B19B398A800622CC9 /* boat17.png */,
+				F9BEC13C19B398A800622CC9 /* car88.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -199,6 +238,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F9F012E519B522CF00176944 /* MagicPieLayer */,
 				F948C7DB1978693B000A2A3B /* TripEventsEntry */,
 				F954E7651964CB88003A0B72 /* General */,
 				F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */,
@@ -237,6 +277,9 @@
 				F954E7791966410F003A0B72 /* DTSTripStoryEventGeneralCell.h */,
 				F954E77A1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m */,
 				F954E77B1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib */,
+				F9F012F119B524D900176944 /* DTSTripStoryHeaderView.h */,
+				F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */,
+				F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */,
 			);
 			path = TripStory;
 			sourceTree = "<group>";
@@ -335,6 +378,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9F012E519B522CF00176944 /* MagicPieLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F9F012E619B522CF00176944 /* MagicPieLayer.h */,
+				F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */,
+				F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */,
+				F9F012E919B522CF00176944 /* PieElement.h */,
+				F9F012EA19B522CF00176944 /* PieElement.m */,
+				F9F012EB19B522CF00176944 /* PieLayer.h */,
+				F9F012EC19B522CF00176944 /* PieLayer.m */,
+			);
+			path = MagicPieLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,15 +469,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90CEE7D19932F9F002E9CE9 /* CarNoDoorsIcon.png in Resources */,
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
+				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
+				F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
+				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
+				F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */,
+				F9BEC14519B39FB500622CC9 /* sailing8.png in Resources */,
+				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
+				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
+				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
+				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
+				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,12 +508,16 @@
 				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
+				F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
+				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
+				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
+				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,

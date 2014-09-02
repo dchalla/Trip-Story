@@ -11,19 +11,15 @@
 
 typedef enum {
 	DTSEventTypeActivity = 0,
+	DTSEventTypeActivityStayHotel,
+	DTSEventTypeActivityDining,
+	DTSEventTypeActivitySightSeeing,
 	DTSEventTypeActivityHiking,
-	DTSEventTypeActivitySwimming,
-	DTSEventTypeActivityAdventure,
-	DTSEventTypeActivityRunning,
 	DTSEventTypeActivityBiking,
-	DTSEventTypeActivityWalking,
-	DTSEventTypeActivityDancing,
-	DTSEventTypeTravelFlight,
-	DTSEventTypeTravelCar,
-	DTSEventTypeTravelWater,
-	DTSEventTypeTravelRoad,
-	DTSEventTypeRestaurant,
-	DTSEventTypeSleep,
+	DTSEventTypeActivityWaterSports,
+	DTSEventTypeTravelByRoad,
+	DTSEventTypeTravelByAir,
+	DTSEventTypeTravelByWater,
 	DTSEventTypePlaceholder,
 }DTSEventType;
 
@@ -48,10 +44,14 @@ typedef enum {
 @property (nonatomic, readonly) UIColor *eventBottomColor;
 @property (nonatomic, readonly) NSNumber *eventHours;
 @property (nonatomic, readonly) CGFloat tripStoryCellHeight;
+@property (nonatomic, readonly) BOOL isTravelEvent;
 
 - (NSString *)eventTypeStringForEventType:(DTSEventType)type;
 - (NSArray *)eventTypeStringsArray;
 - (void)copyFromEvent:(DTSEvent *)event;
 + (DTSEvent *)eventFromEvent:(DTSEvent *)event;
+
++ (UIColor *)topColorForEventType:(DTSEventType)eventType;
++ (UIColor *)bottomColorForEventType:(DTSEventType)eventType;
 
 @end
