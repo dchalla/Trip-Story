@@ -223,5 +223,18 @@
 	self.isPlaceHolderEvent = event.isPlaceHolderEvent;
 }
 
+#pragma mark - MKAnnotation methods
+- (NSString *)title {
+	return self.eventName;
+}
+
+- (NSString *)subtitle {
+	return self.eventDescription;
+}
+
+- (CLLocationCoordinate2D)coordinate {
+	return self.location.mapItem.placemark.location.coordinate;
+}
+
 
 @end

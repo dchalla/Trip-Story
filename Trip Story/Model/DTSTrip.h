@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *eventsList;
 @property (nonatomic, strong) NSMutableArray *locationsList;
 @property (nonatomic, strong) NSMutableArray *originalEventsList;
+@property (nonatomic, readonly) NSArray *eventsWithLocationList;
 
 - (void)createDummyEventsList;
 - (void)addEvent:(DTSEvent *)event;

@@ -11,6 +11,6 @@
 #import "DTSAddEventDelegate.h"
 #import "DTSTripDetailsContainerDelegate.h"
 
-@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate>
+@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @end

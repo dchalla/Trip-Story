@@ -14,11 +14,17 @@
 #import "DTSTrip.h"
 #import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
+#import "DTSTripDetailsMapViewController.h"
+#import "HMSegmentedControl.h"
 
 @interface DTSTripDetailsViewController ()
 
 @property (nonatomic, strong) DTSTripStoryTableViewController *tripStoryVC;
+@property (nonatomic, strong) DTSTripDetailsMapViewController *tripMapVC;
 @property (nonatomic, strong) DTSTrip *trip;
+@property (nonatomic, strong) UIPageViewController *pageVC;
+@property (nonatomic, strong) NSArray *pagedViewControllers;
+@property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 
 @end
 
@@ -33,6 +39,15 @@
 	return _tripStoryVC;
 }
 
+- (DTSTripDetailsMapViewController *)tripMapVC
+{
+	if (!_tripMapVC)
+	{
+		_tripMapVC = [[DTSTripDetailsMapViewController alloc] init];
+	}
+	return _tripMapVC;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,8 +58,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 	self.view.backgroundColor = [UIColor colorWithRed:15/255.0 green:17/255.0 blue:22/255.0 alpha:1];
-	[self.view addSubview:self.tripStoryVC.view];
-	[self addChildViewController:self.tripStoryVC];
+	
+	[self setupSegmentControl];
+	
+	self.pagedViewControllers = @[self.tripStoryVC,self.tripMapVC];
+	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
+	self.pageVC.delegate = self;
+	self.pageVC.dataSource = self;
+	[self.pageVC setViewControllers:@[self.pagedViewControllers.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished){}];
+	
+	
+	[self addChildViewController:self.pageVC];
+	[self.view addSubview:self.pageVC.view];
+	[self.pageVC didMoveToParentViewController:self];
+	
 	//Testing
 	self.trip = [[DTSTrip alloc] init];
 	[self. trip createDummyEventsList];
@@ -53,7 +80,22 @@
 	self.tripStoryVC.containerDelegate = self;
 	self.tripStoryVC.view.frame = self.view.frame;
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-	//self.title = @"My Trip";
+	
+	self.tripMapVC.trip = self.trip;
+	
+}
+
+- (void)setupSegmentControl
+{
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Map"]];
+	self.segmentedControl.frame = CGRectMake(0, 0, 100, 30);
+	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+	self.segmentedControl.backgroundColor = [UIColor clearColor];
+	self.segmentedControl.textColor = [UIColor whiteColor];
+	self.segmentedControl.font = [UIFont systemFontOfSize:12];
+	self.segmentedControl.selectedTextColor = [UIColor whiteColor];
+	self.navigationItem.titleView = self.segmentedControl;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,6 +166,95 @@
 	DTSEvent *event = self.trip.eventsList[index];
 	BOOL isNew = event.isPlaceHolderEvent;
 	[self showUpdateEventWithEvent:event isNew:isNew];
+}
+
+#pragma mark - UIPageViewControllerDataSource
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+	int afterVCIndex = -1;
+	int i =0;
+	for (UIViewController *vc in self.pagedViewControllers)
+	{
+		if (vc == viewController)
+		{
+			afterVCIndex = i+1;
+			break;
+		}
+		i++;
+	}
+	if (afterVCIndex >=0 && afterVCIndex < self.pagedViewControllers.count)
+	{
+		return self.pagedViewControllers[afterVCIndex];
+	}
+	return nil;
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+	int beforeVCIndex = -1;
+	int i =0;
+	for (UIViewController *vc in self.pagedViewControllers)
+	{
+		if (vc == viewController)
+		{
+			beforeVCIndex = i-1;
+			break;
+		}
+		i++;
+	}
+	if (beforeVCIndex >=0 && beforeVCIndex < self.pagedViewControllers.count)
+	{
+		return self.pagedViewControllers[beforeVCIndex];
+	}
+	return nil;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+	if (completed)
+	{
+		[self.segmentedControl setSelectedSegmentIndex:[self currentPageVCIndex] animated:YES];
+	}
+}
+
+- (NSInteger)currentPageVCIndex
+{
+	NSInteger i =0;
+	for (UIViewController *vc in self.pagedViewControllers)
+	{
+		if (vc == self.pageVC.viewControllers.firstObject)
+		{
+			break;
+		}
+		i++;
+	}
+	return i;
+}
+
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl
+{
+	if (segmentedControl.selectedSegmentIndex > self.pagedViewControllers.count-1)
+	{//dont do anything if wrong index is given
+		return;
+	}
+	NSInteger i = [self currentPageVCIndex];
+	UIPageViewControllerNavigationDirection direction;
+	if (i > segmentedControl.selectedSegmentIndex)
+	{
+		direction = UIPageViewControllerNavigationDirectionReverse;
+	}
+	else if (i < segmentedControl.selectedSegmentIndex)
+	{
+		direction = UIPageViewControllerNavigationDirectionForward;
+	}
+	else
+	{
+		return;
+	}
+	
+	
+	[self.pageVC setViewControllers:@[self.pagedViewControllers[segmentedControl.selectedSegmentIndex]] direction:direction animated:YES completion:^(BOOL finished){}];
 }
 
 @end

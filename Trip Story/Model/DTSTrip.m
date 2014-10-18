@@ -266,6 +266,19 @@
     return min + arc4random() % (max - min + 1);
 }
 
+- (NSArray *)eventsWithLocationList
+{
+	NSMutableArray *eventsWithLocationList = [NSMutableArray array];
+	for (DTSEvent *event in self.eventsList)
+	{
+		if (event.location && event.location.mapItem)
+		{
+			[eventsWithLocationList addObject:event];
+		}
+	}
+	return [eventsWithLocationList copy];
+}
+
 
 
 @end

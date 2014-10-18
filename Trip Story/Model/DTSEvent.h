@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DTSLocation.h"
+#import <MapKit/MapKit.h>
 
 typedef enum {
 	DTSEventTypeActivity = 0,
@@ -29,7 +30,7 @@ typedef enum {
 	DTSEventKindUnknown
 }DTSEventKind;
 
-@interface DTSEvent : NSObject
+@interface DTSEvent : NSObject<MKAnnotation>
 
 @property (nonatomic, strong) NSString *eventID;
 @property (nonatomic, strong) NSString *eventName;
