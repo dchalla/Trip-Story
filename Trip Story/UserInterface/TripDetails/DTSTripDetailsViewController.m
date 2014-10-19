@@ -16,6 +16,8 @@
 #import "UIView+Utilities.h"
 #import "DTSTripDetailsMapViewController.h"
 #import "HMSegmentedControl.h"
+#import "DTSTripEventsViewController.h"
+
 
 @interface DTSTripDetailsViewController ()
 
@@ -25,6 +27,7 @@
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
+@property (nonatomic, strong) DTSTripEventsViewController *tripEventsVC;
 
 @end
 
@@ -35,6 +38,7 @@
 	if (!_tripStoryVC)
 	{
 		_tripStoryVC = [[DTSTripStoryTableViewController alloc] initWithStyle:UITableViewStylePlain];
+		_tripStoryVC.containerDelegate = self;
 	}
 	return _tripStoryVC;
 }
@@ -46,6 +50,17 @@
 		_tripMapVC = [[DTSTripDetailsMapViewController alloc] init];
 	}
 	return _tripMapVC;
+}
+
+- (DTSTripEventsViewController *)tripEventsVC
+{
+	if (!_tripEventsVC)
+	{
+		_tripEventsVC = [[DTSTripEventsViewController alloc] initWithCollectionViewLayout:[[TGLStackedLayout alloc] init]];
+		_tripEventsVC.stackedLayout.layoutMargin = UIEdgeInsetsZero;
+		_tripEventsVC.exposedLayoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+	}
+	return _tripEventsVC;
 }
 
 - (void)viewDidLoad
@@ -61,7 +76,7 @@
 	
 	[self setupSegmentControl];
 	
-	self.pagedViewControllers = @[self.tripStoryVC,self.tripMapVC];
+	self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC,self.tripMapVC];
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;
 	self.pageVC.dataSource = self;
@@ -86,19 +101,22 @@
 	self.trip = [[DTSTrip alloc] init];
 	[self. trip createDummyEventsList];
 	//End testing
-	self.tripStoryVC.trip = self.trip;
-	self.tripStoryVC.containerDelegate = self;
-	self.tripStoryVC.view.frame = self.view.frame;
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	
-	self.tripMapVC.trip = self.trip;
+	for (UIViewController *vc in self.pagedViewControllers)
+	{
+		if ([vc conformsToProtocol:@protocol(DTSTripDetailsProtocol)])
+		{
+			[vc setValue:self.trip forKey:@"trip"];
+		}
+	}
 	
 }
 
 - (void)setupSegmentControl
 {
-	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Map"]];
-	self.segmentedControl.frame = CGRectMake(0, 0, 100, 30);
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Map"]];
+	self.segmentedControl.frame = CGRectMake(0, 0, 200, 30);
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
 	self.segmentedControl.backgroundColor = [UIColor clearColor];

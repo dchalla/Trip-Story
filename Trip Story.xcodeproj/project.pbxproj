@@ -45,6 +45,11 @@
 		F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */; };
 		F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */; };
 		F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */; };
+		F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8919F3922200321E2C /* TGLExposedLayout.m */; };
+		F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8B19F3922200321E2C /* TGLStackedLayout.m */; };
+		F9B44F9019F3922200321E2C /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8D19F3922200321E2C /* TGLStackedViewController.m */; };
+		F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */; };
+		F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */; };
 		F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13A19B398A800622CC9 /* airplane21.png */; };
 		F9BEC13E19B398A800622CC9 /* boat17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13B19B398A800622CC9 /* boat17.png */; };
 		F9BEC13F19B398A800622CC9 /* car88.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13C19B398A800622CC9 /* car88.png */; };
@@ -143,6 +148,19 @@
 		F9B44F8319F323E300321E2C /* DTSViewLayoutProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSViewLayoutProtocol.h; sourceTree = "<group>"; };
 		F9B44F8419F3386F00321E2C /* DTSMKPolyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSMKPolyLine.h; path = TripMap/DTSMKPolyLine.h; sourceTree = "<group>"; };
 		F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSMKPolyLine.m; path = TripMap/DTSMKPolyLine.m; sourceTree = "<group>"; };
+		F9B44F8819F3922200321E2C /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
+		F9B44F8919F3922200321E2C /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
+		F9B44F8A19F3922200321E2C /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
+		F9B44F8B19F3922200321E2C /* TGLStackedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLStackedLayout.m; sourceTree = "<group>"; };
+		F9B44F8C19F3922200321E2C /* TGLStackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedViewController.h; sourceTree = "<group>"; };
+		F9B44F8D19F3922200321E2C /* TGLStackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLStackedViewController.m; sourceTree = "<group>"; };
+		F9B44F9219F3929D00321E2C /* DTSTripEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripEventsViewController.h; path = TripEvents/DTSTripEventsViewController.h; sourceTree = "<group>"; };
+		F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripEventsViewController.m; path = TripEvents/DTSTripEventsViewController.m; sourceTree = "<group>"; };
+		F9B44F9519F397D900321E2C /* DTSTripDetailsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsProtocol.h; sourceTree = "<group>"; };
+		F9B44F9619F3A3D500321E2C /* DTSTripEventsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripEventsCollectionViewCell.h; path = TripEvents/DTSTripEventsCollectionViewCell.h; sourceTree = "<group>"; };
+		F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripEventsCollectionViewCell.m; path = TripEvents/DTSTripEventsCollectionViewCell.m; sourceTree = "<group>"; };
+		F9B44F9919F474B200321E2C /* DTSCollectionCardCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCollectionCardCellDelegate.h; sourceTree = "<group>"; };
+		F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCollectionCardsViewControllerProtocol.h; sourceTree = "<group>"; };
 		F9BEC13A19B398A800622CC9 /* airplane21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane21.png; sourceTree = "<group>"; };
 		F9BEC13B19B398A800622CC9 /* boat17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boat17.png; sourceTree = "<group>"; };
 		F9BEC13C19B398A800622CC9 /* car88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car88.png; sourceTree = "<group>"; };
@@ -244,6 +262,9 @@
 				F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */,
 				F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */,
 				F9B44F8319F323E300321E2C /* DTSViewLayoutProtocol.h */,
+				F9B44F9519F397D900321E2C /* DTSTripDetailsProtocol.h */,
+				F9B44F9919F474B200321E2C /* DTSCollectionCardCellDelegate.h */,
+				F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -251,6 +272,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F9B44F9119F3924500321E2C /* TripEvents */,
 				F9B3F73C19F0AEA200BC6052 /* TripMap */,
 				F9F012E519B522CF00176944 /* MagicPieLayer */,
 				F948C7DB1978693B000A2A3B /* TripEventsEntry */,
@@ -258,7 +280,6 @@
 				F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */,
 				F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */,
 				F954E7591964CA5A003A0B72 /* TripDetails */,
-				F954E75C1964CA5A003A0B72 /* TripEvents */,
 				F954E75D1964CA5A003A0B72 /* TripStory */,
 			);
 			path = UserInterface;
@@ -271,13 +292,6 @@
 				F954E75B1964CA5A003A0B72 /* DTSTripDetailsViewController.m */,
 			);
 			path = TripDetails;
-			sourceTree = "<group>";
-		};
-		F954E75C1964CA5A003A0B72 /* TripEvents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TripEvents;
 			sourceTree = "<group>";
 		};
 		F954E75D1964CA5A003A0B72 /* TripStory */ = {
@@ -301,6 +315,7 @@
 		F954E7631964CB61003A0B72 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F9B44F8719F3922200321E2C /* TGLStackedViewController */,
 				F9B44F8019F20DE500321E2C /* HMSegmentedControl.h */,
 				F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */,
 				F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */,
@@ -404,6 +419,30 @@
 				F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */,
 			);
 			name = TripMap;
+			sourceTree = "<group>";
+		};
+		F9B44F8719F3922200321E2C /* TGLStackedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F9B44F8819F3922200321E2C /* TGLExposedLayout.h */,
+				F9B44F8919F3922200321E2C /* TGLExposedLayout.m */,
+				F9B44F8A19F3922200321E2C /* TGLStackedLayout.h */,
+				F9B44F8B19F3922200321E2C /* TGLStackedLayout.m */,
+				F9B44F8C19F3922200321E2C /* TGLStackedViewController.h */,
+				F9B44F8D19F3922200321E2C /* TGLStackedViewController.m */,
+			);
+			path = TGLStackedViewController;
+			sourceTree = "<group>";
+		};
+		F9B44F9119F3924500321E2C /* TripEvents */ = {
+			isa = PBXGroup;
+			children = (
+				F9B44F9619F3A3D500321E2C /* DTSTripEventsCollectionViewCell.h */,
+				F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */,
+				F9B44F9219F3929D00321E2C /* DTSTripEventsViewController.h */,
+				F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */,
+			);
+			name = TripEvents;
 			sourceTree = "<group>";
 		};
 		F9F012E519B522CF00176944 /* MagicPieLayer */ = {
@@ -534,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B44F9019F3922200321E2C /* TGLStackedViewController.m in Sources */,
 				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
@@ -546,12 +586,14 @@
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
+				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
 				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
+				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
@@ -561,7 +603,9 @@
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
+				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
+				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

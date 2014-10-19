@@ -10,7 +10,7 @@
 #import "DTSTrip.h"
 #import <MapKit/MapKit.h>
 #import "DTSViewLayoutProtocol.h"
+#import "DTSTripDetailsProtocol.h"
 
-@interface DTSTripDetailsMapViewController : UIViewController<MKMapViewDelegate, DTSViewLayoutProtocol>
-@property (nonatomic, strong) DTSTrip *trip;
+@interface DTSTripDetailsMapViewController : UIViewController<MKMapViewDelegate, DTSViewLayoutProtocol, DTSTripDetailsProtocol>
 @end

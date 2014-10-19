@@ -30,6 +30,7 @@
 
 @synthesize topLayoutGuideLength = _topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength = _bottomLayoutGuideLength;
+@synthesize trip = _trip;
 
 
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength

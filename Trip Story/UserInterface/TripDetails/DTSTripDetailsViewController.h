@@ -11,6 +11,7 @@
 #import "DTSAddEventDelegate.h"
 #import "DTSTripDetailsContainerDelegate.h"
 #import "DTSViewLayoutProtocol.h"
+#import "DTSTripDetailsProtocol.h"
 
 @interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 

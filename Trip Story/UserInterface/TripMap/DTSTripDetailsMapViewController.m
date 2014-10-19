@@ -20,6 +20,7 @@
 
 @synthesize topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength;
+@synthesize trip = _trip;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
