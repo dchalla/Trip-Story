@@ -279,6 +279,127 @@
 	return [eventsWithLocationList copy];
 }
 
+- (NSArray *)startAndEndTravelEventsArray
+{
+	NSMutableArray *startAndEndTravelEventsArray = [NSMutableArray array];
+	NSArray *listOfTravelEvents = [self listOfTravelEvents];
+	for (DTSEvent *event in listOfTravelEvents)
+	{
+		DTSEvent *eventWithLocation = event;
+		if (!(event.location && event.location.mapItem))
+		{
+			DTSLocation *foundLocation = [self locationForTravelEvent:event];
+			if (foundLocation)
+			{
+				DTSEvent *copiedEvent = [DTSEvent eventFromEvent:event];
+				copiedEvent.location = foundLocation;
+				eventWithLocation = copiedEvent;
+			}
+		}
+		NSArray *startAndEndEventSet = [self startEndEventSetForEvent:eventWithLocation];
+		if (startAndEndEventSet)
+		{
+			[startAndEndTravelEventsArray addObject:startAndEndEventSet];
+		}
+	}
+	return [startAndEndTravelEventsArray copy];
+}
+
+- (NSArray *)listOfTravelEvents
+{
+	NSMutableArray *listOfTravelEvents = [NSMutableArray array];
+	for (DTSEvent *event in self.eventsList)
+	{
+		if (event.isTravelEvent)
+		{
+			[listOfTravelEvents addObject:event];
+		}
+	}
+	return [listOfTravelEvents copy];
+}
+
+- (NSArray *)startEndEventSetForEvent:(DTSEvent *)event
+{
+	if ([event.eventID isEqualToString:((DTSEvent *)self.eventsList.firstObject).eventID])
+	{//if first event then pair is next event
+		DTSEvent *eventPair = [self nextEventWithLocationForEvent:event];
+		if (eventPair)
+		{
+			return @[event,eventPair];
+		}
+	}
+	else
+	{//if not first event then pair is previous event
+		DTSEvent *eventPair = [self previousEventWithLocationForEvent:event];
+		if (eventPair)
+		{
+			return @[eventPair,event];
+		}
+	}
+	return nil;
+}
+
+- (DTSEvent *)nextEventWithLocationForEvent:(DTSEvent *)event
+{
+	BOOL foundGivenEvent = NO;
+	for (DTSEvent *eventInList in self.eventsList)
+	{
+		if (foundGivenEvent && eventInList.location && eventInList.location.mapItem)
+		{
+			return eventInList;
+		}
+		if ([event.eventID isEqualToString:eventInList.eventID])
+		{
+			foundGivenEvent = YES;
+		}
+	}
+	return nil;
+}
+
+- (DTSEvent *)previousEventWithLocationForEvent:(DTSEvent *)event
+{
+	BOOL foundGivenEvent = NO;
+	for (DTSEvent *eventInList in [self.eventsList reverseObjectEnumerator])
+	{
+		if (foundGivenEvent && eventInList.location && eventInList.location.mapItem)
+		{
+			return eventInList;
+		}
+		if ([event.eventID isEqualToString:eventInList.eventID])
+		{
+			foundGivenEvent = YES;
+		}
+	}
+	return nil;
+}
+
+- (DTSLocation *)locationForTravelEvent:(DTSEvent *)travelEvent
+{
+	if (travelEvent.isTravelEvent)
+	{
+		BOOL foundGivenEvent = NO;
+		for (DTSEvent *eventInList in self.eventsList)
+		{
+			if (foundGivenEvent && eventInList.location && eventInList.location.mapItem)
+			{
+				if (eventInList.isTravelEvent)
+				{
+					return nil;
+				}
+				else
+				{
+					return eventInList.location;
+				}
+			}
+			if ([travelEvent.eventID isEqualToString:eventInList.eventID])
+			{
+				foundGivenEvent = YES;
+			}
+		}
+	}
+	return nil;
+}
+
 
 
 @end

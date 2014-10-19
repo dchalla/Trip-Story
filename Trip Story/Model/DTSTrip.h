@@ -28,5 +28,9 @@
 - (NSArray *)eventsDurationArray;
 - (NSString *)tripDurationString;
 - (NSNumber *)tripDurationHours;
+- (NSArray *)startAndEndTravelEventsArray;
+- (NSArray *)listOfTravelEvents;
+- (NSArray *)startEndEventSetForEvent:(DTSEvent *)event;
+- (DTSEvent *)nextEventWithLocationForEvent:(DTSEvent *)event;
 
 @end

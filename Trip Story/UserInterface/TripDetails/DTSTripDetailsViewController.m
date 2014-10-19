@@ -72,6 +72,16 @@
 	[self.view addSubview:self.pageVC.view];
 	[self.pageVC didMoveToParentViewController:self];
 	
+	for (UIViewController *vc in self.pagedViewControllers)
+	{
+		if ([vc conformsToProtocol:@protocol(DTSViewLayoutProtocol)])
+		{
+			
+			[vc setValue:@(self.navigationController.navigationBar.frame.size.height) forKey:@"topLayoutGuideLength"];
+			[vc setValue:@0 forKey:@"bottomLayoutGuideLength"];
+		}
+	}
+	
 	//Testing
 	self.trip = [[DTSTrip alloc] init];
 	[self. trip createDummyEventsList];

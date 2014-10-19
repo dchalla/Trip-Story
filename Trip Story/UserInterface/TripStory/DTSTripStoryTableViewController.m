@@ -28,6 +28,22 @@
 
 @implementation DTSTripStoryTableViewController
 
+@synthesize topLayoutGuideLength = _topLayoutGuideLength;
+@synthesize bottomLayoutGuideLength = _bottomLayoutGuideLength;
+
+
+- (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
+{
+	_topLayoutGuideLength = topLayoutGuideLength;
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void)setBottomLayoutGuideLength:(CGFloat)bottomLayoutGuideLength
+{
+	_bottomLayoutGuideLength = bottomLayoutGuideLength;
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
 - (void)setTrip:(DTSTrip *)trip
 {
 	_trip = trip;
@@ -75,6 +91,7 @@
 {
 	[super viewWillAppear:animated];
 	[self scrollViewDidScroll:self.tableView];
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 
 - (void)viewDidAppear:(BOOL)animated

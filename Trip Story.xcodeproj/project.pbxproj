@@ -44,6 +44,7 @@
 		F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B3F73E19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m */; };
 		F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */; };
 		F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */; };
+		F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */; };
 		F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13A19B398A800622CC9 /* airplane21.png */; };
 		F9BEC13E19B398A800622CC9 /* boat17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13B19B398A800622CC9 /* boat17.png */; };
 		F9BEC13F19B398A800622CC9 /* car88.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13C19B398A800622CC9 /* car88.png */; };
@@ -139,6 +140,9 @@
 		F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripDetailsMapViewController.xib; path = TripMap/DTSTripDetailsMapViewController.xib; sourceTree = "<group>"; };
 		F9B44F8019F20DE500321E2C /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		F9B44F8319F323E300321E2C /* DTSViewLayoutProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSViewLayoutProtocol.h; sourceTree = "<group>"; };
+		F9B44F8419F3386F00321E2C /* DTSMKPolyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSMKPolyLine.h; path = TripMap/DTSMKPolyLine.h; sourceTree = "<group>"; };
+		F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSMKPolyLine.m; path = TripMap/DTSMKPolyLine.m; sourceTree = "<group>"; };
 		F9BEC13A19B398A800622CC9 /* airplane21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane21.png; sourceTree = "<group>"; };
 		F9BEC13B19B398A800622CC9 /* boat17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boat17.png; sourceTree = "<group>"; };
 		F9BEC13C19B398A800622CC9 /* car88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car88.png; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */,
 				F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */,
 				F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */,
+				F9B44F8319F323E300321E2C /* DTSViewLayoutProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -395,6 +400,8 @@
 				F9B3F73D19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.h */,
 				F9B3F73E19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m */,
 				F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */,
+				F9B44F8419F3386F00321E2C /* DTSMKPolyLine.h */,
+				F9B44F8519F3386F00321E2C /* DTSMKPolyLine.m */,
 			);
 			name = TripMap;
 			sourceTree = "<group>";
@@ -536,6 +543,7 @@
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
+				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
