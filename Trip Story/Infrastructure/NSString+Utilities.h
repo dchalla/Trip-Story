@@ -13,5 +13,6 @@
 + (NSAttributedString *) attributedString:(NSString *)headString tailString:(NSString *)tailString headColor:(UIColor *)headColor tailColor:(UIColor *)tailColor headFont:(UIFont *)headFont tailFont:(UIFont *)tailFont;
 + (NSAttributedString *) defaultColorAndFontAttributedString:(NSString *)headString tailString:(NSString *)tailString;
 + (NSAttributedString *) defaultFontAttributedString:(NSString *)headString tailString:(NSString *)tailString headColor:(UIColor *)headColor tailColor:(UIColor *)tailColor;
++ (NSString *)durationStringForHours:(NSNumber *)totalhours;
 
 @end

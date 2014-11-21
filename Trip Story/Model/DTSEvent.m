@@ -80,25 +80,23 @@
 	switch (eventType)
 	{
 		case DTSEventTypeActivity:
-			return [UIColor colorWithHexString:@"FF5E3A"];
+			return [UIColor colorWithRed:255.0/255.0 green:119.0/255.0 blue:0/255.0 alpha:1];// [UIColor colorWithHexString:@"FF5E3A"];
 		case DTSEventTypeActivityStayHotel:
-			return [UIColor colorWithHexString:@"EF4DB6"];
+			return [UIColor colorWithRed:235.0/255.0 green:58.0/255.0 blue:53.0/255.0 alpha:1];//[UIColor colorWithHexString:@"EF4DB6"];
 		case DTSEventTypeActivityDining:
-			return [UIColor colorWithHexString:@"FFDB4C"];
+			return [UIColor colorWithRed:179.0/255.0 green:67.0/255.0 blue:204.0/255.0 alpha:1];//[UIColor colorWithHexString:@"FF9500"];
 		case DTSEventTypeActivitySightSeeing:
-			return [UIColor colorWithHexString:@"87FC70"];
+			return [UIColor colorWithRed:255.0/255.0 green:61.0/255.0 blue:119.0/255.0 alpha:1];//[UIColor colorWithHexString:@"87FC70"];
 		case DTSEventTypeActivityHiking:
-			return [UIColor colorWithHexString:@"52EDC7"];
+			return [UIColor colorWithRed:5.0/255.0 green:132.0/255.0 blue:222.0/255.0 alpha:1];//[UIColor colorWithHexString:@"52EDC7"];
 		case DTSEventTypeActivityBiking:
-			return [UIColor colorWithHexString:@"1AD6FD"];
+			return [UIColor colorWithRed:8.0/255.0 green:56.0/255.0 blue:240.0/255.0 alpha:1];//[UIColor colorWithHexString:@"1AD6FD"];
 		case DTSEventTypeActivityWaterSports:
-			return [UIColor colorWithHexString:@"C644FC"];
+			return [UIColor colorWithRed:54.0/255.0 green:168.0/255.0 blue:0/255.0 alpha:1];//[UIColor colorWithHexString:@"C644FC"];
 		case DTSEventTypeTravelByRoad:
-			return [UIColor colorWithHexString:@"FF9500"];
 		case DTSEventTypeTravelByAir:
-			return [UIColor colorWithHexString:@"5856D6"];
 		case DTSEventTypeTravelByWater:
-			return [UIColor colorWithHexString:@"DBDDDE"];
+			return [UIColor colorWithRed:49.0/255.0 green:24.0/255.0 blue:170.0/255.0 alpha:1];//[UIColor colorWithHexString:@"1D62F0"];
 		case DTSEventTypePlaceholder:
 			return [UIColor colorWithHexString:@"DBDDDE"];
 			
@@ -114,6 +112,7 @@
 
 + (UIColor *)bottomColorForEventType:(DTSEventType)eventType
 {
+	return [[self class] topColorForEventType:eventType];
 	switch (eventType)
 	{
 		case DTSEventTypeActivity:
@@ -131,11 +130,9 @@
 		case DTSEventTypeActivityWaterSports:
 			return [UIColor colorWithHexString:@"5856D6"];
 		case DTSEventTypeTravelByRoad:
-			return [UIColor colorWithHexString:@"FF5E3A"];
 		case DTSEventTypeTravelByAir:
-			return [UIColor colorWithHexString:@"5856D6"];
 		case DTSEventTypeTravelByWater:
-			return [UIColor colorWithHexString:@"898C90"];
+			return [UIColor colorWithHexString:@"1AD6FD"];
 		case DTSEventTypePlaceholder:
 			return [UIColor colorWithHexString:@"898C90"];
 			

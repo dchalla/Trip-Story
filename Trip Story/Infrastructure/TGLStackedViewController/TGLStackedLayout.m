@@ -58,8 +58,8 @@
 
 - (void)initLayout {
     
-    self.layoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
-    self.topReveal = 120.0;
+    self.layoutMargin = UIEdgeInsetsMake(10.0, 0.0, 0.0, 0.0);
+    self.topReveal = 80.0;
     self.bounceFactor = 0.2;
 }
 
@@ -175,7 +175,7 @@
     
     if (CGSizeEqualToSize(itemSize, CGSizeZero)) {
         
-        itemSize = CGSizeMake(CGRectGetWidth(self.collectionView.bounds) - self.layoutMargin.left - self.layoutMargin.right, CGRectGetHeight(self.collectionView.bounds) - self.layoutMargin.top - self.layoutMargin.bottom - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom);
+        itemSize = CGSizeMake(CGRectGetWidth(self.collectionView.bounds) - self.layoutMargin.left - self.layoutMargin.right, CGRectGetHeight(self.collectionView.bounds) - self.layoutMargin.top - self.layoutMargin.bottom - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom - 40 -10);
     }
 
     // Honor overwritten contentOffset

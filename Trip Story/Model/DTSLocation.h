@@ -19,6 +19,5 @@
 @property (nonatomic, strong) NSString *locationID;
 @property (nonatomic, strong) MKMapItem *mapItem;
 @property (nonatomic, readonly) NSString *displayLocationCityState;
-
-
+@property (nonatomic, readonly) NSString *displayFullAddress;
 @end

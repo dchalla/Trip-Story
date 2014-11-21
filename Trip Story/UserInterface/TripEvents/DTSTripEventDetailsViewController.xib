@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DTSTripEventDetailsViewController">
+            <connections>
+                <outlet property="eventTitleLabel" destination="aso-3m-bOJ" id="cGi-7e-HHi"/>
+                <outlet property="eventTypeLabel" destination="w3r-LS-4lH" id="FSh-PR-64X"/>
+                <outlet property="tableView" destination="IXa-y8-nCs" id="p6a-4u-vKJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hawaii" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aso-3m-bOJ">
+                    <rect key="frame" x="20" y="20" width="64.5" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3r-LS-4lH">
+                    <rect key="frame" x="20" y="44" width="82" height="16.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IXa-y8-nCs">
+                    <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EP2-SL-8Ev"/>
+                        <outlet property="delegate" destination="-1" id="3Jb-uv-zL9"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.53725490200000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IXa-y8-nCs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="7P5-ps-k2g"/>
+                <constraint firstAttribute="trailing" secondItem="IXa-y8-nCs" secondAttribute="trailing" id="B2t-nf-gvW"/>
+                <constraint firstItem="w3r-LS-4lH" firstAttribute="top" secondItem="aso-3m-bOJ" secondAttribute="bottom" id="GFj-et-poB"/>
+                <constraint firstItem="w3r-LS-4lH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="H7s-6P-JqP"/>
+                <constraint firstItem="IXa-y8-nCs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sfi-Rm-eHt"/>
+                <constraint firstAttribute="bottom" secondItem="IXa-y8-nCs" secondAttribute="bottom" id="aZ0-AO-mX5"/>
+                <constraint firstItem="aso-3m-bOJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="dua-Dr-Pu2"/>
+                <constraint firstItem="aso-3m-bOJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="u5s-e1-xmc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="104" y="239"/>
+        </view>
+    </objects>
+</document>

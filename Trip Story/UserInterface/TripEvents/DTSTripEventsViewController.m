@@ -24,11 +24,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	self.view.backgroundColor = [UIColor colorWithRed:15/255.0 green:17/255.0 blue:22/255.0 alpha:1];
+	self.collectionView.backgroundColor = [UIColor colorWithRed:15/255.0 green:17/255.0 blue:22/255.0 alpha:1];
 	self.stackedLayout.fillHeight = YES;
 	self.stackedLayout.alwaysBounce = YES;
 	
 	[self.collectionView registerClass:[DTSTripEventsCollectionViewCell class] forCellWithReuseIdentifier:kEventsCellReuseIdentifier];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.collectionView reloadData];
 }
 
 #pragma mark - CollectionViewDataSource protocol

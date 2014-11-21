@@ -41,6 +41,10 @@
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F99712661971D07E00F2F8FA /* DTSTrip.m */; };
+		F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99EBA061A1DBC3700290D8A /* DTSTripEventDetailsViewController.m */; };
+		F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */; };
+		F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99EBA0B1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m */; };
+		F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */; };
 		F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B3F73E19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m */; };
 		F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */; };
 		F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */; };
@@ -138,6 +142,12 @@
 		F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsContainerDelegate.h; sourceTree = "<group>"; };
 		F99712651971D07E00F2F8FA /* DTSTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTrip.h; sourceTree = "<group>"; };
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
+		F99EBA051A1DBC3700290D8A /* DTSTripEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripEventDetailsViewController.h; path = TripEvents/DTSTripEventDetailsViewController.h; sourceTree = "<group>"; };
+		F99EBA061A1DBC3700290D8A /* DTSTripEventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripEventDetailsViewController.m; path = TripEvents/DTSTripEventDetailsViewController.m; sourceTree = "<group>"; };
+		F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripEventDetailsViewController.xib; path = TripEvents/DTSTripEventDetailsViewController.xib; sourceTree = "<group>"; };
+		F99EBA0A1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSEventDetailsInfoTableViewCell.h; path = TripEvents/DTSEventDetailsInfoTableViewCell.h; sourceTree = "<group>"; };
+		F99EBA0B1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSEventDetailsInfoTableViewCell.m; path = TripEvents/DTSEventDetailsInfoTableViewCell.m; sourceTree = "<group>"; };
+		F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSEventDetailsInfoTableViewCell.xib; path = TripEvents/DTSEventDetailsInfoTableViewCell.xib; sourceTree = "<group>"; };
 		F9A6EF081984556300562957 /* DTSAddEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAddEventDelegate.h; sourceTree = "<group>"; };
 		F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewControllerProtocol.h; sourceTree = "<group>"; };
 		F9B3F73D19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripDetailsMapViewController.h; path = TripMap/DTSTripDetailsMapViewController.h; sourceTree = "<group>"; };
@@ -441,6 +451,12 @@
 				F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */,
 				F9B44F9219F3929D00321E2C /* DTSTripEventsViewController.h */,
 				F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */,
+				F99EBA051A1DBC3700290D8A /* DTSTripEventDetailsViewController.h */,
+				F99EBA061A1DBC3700290D8A /* DTSTripEventDetailsViewController.m */,
+				F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */,
+				F99EBA0A1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.h */,
+				F99EBA0B1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m */,
+				F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */,
 			);
 			name = TripEvents;
 			sourceTree = "<group>";
@@ -537,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
+				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
@@ -545,6 +562,7 @@
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
+				F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */,
 				F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
@@ -598,6 +616,7 @@
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,
+				F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
 				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
@@ -606,6 +625,7 @@
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
+				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

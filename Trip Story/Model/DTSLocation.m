@@ -33,4 +33,34 @@
 	return self.locationName;
 }
 
+
+- (NSString *)displayFullAddress
+{
+	NSMutableString *address = [[NSMutableString alloc] initWithString:@""];
+	
+	[self appendInformation:self.mapItem.placemark.name toAddress:address];
+	[self appendInformation:self.mapItem.placemark.thoroughfare toAddress:address];
+	[self appendInformation:self.mapItem.placemark.locality toAddress:address];
+	[self appendInformation:self.mapItem.placemark.subAdministrativeArea toAddress:address];
+	[self appendInformation:self.mapItem.placemark.administrativeArea toAddress:address];
+	[self appendInformation:self.mapItem.placemark.country toAddress:address];
+	[self appendInformation:self.mapItem.placemark.postalCode toAddress:address];
+	return [address copy];
+}
+
+- (void)appendInformation:(NSString *)info toAddress:(NSMutableString *)address
+{
+	if (!address || info.length == 0)
+	{
+		return;
+	}
+	if (address.length > 0)
+	{
+		[address appendFormat:@", %@",info];
+	}
+	else
+	{
+		[address appendString:info];
+	}
+}
 @end

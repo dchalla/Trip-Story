@@ -483,4 +483,5 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
 	return components.year;
 }
+
 @end

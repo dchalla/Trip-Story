@@ -34,5 +34,64 @@
 	return [[self class] attributedString:headString tailString:tailString headColor:headColor tailColor:tailColor headFont:[UIFont fontWithName:@"HelveticaNeue" size:14] tailFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
 }
 
++ (NSString *)durationStringForHours:(NSNumber *)totalhours
+{
+	NSInteger days = totalhours.floatValue/24;
+	NSInteger hours = totalhours.integerValue%24;
+	NSString *durationString = @"";
+	if ([NSDateComponentsFormatter class])
+	{
+		NSDateComponentsFormatter *dateComponentsFromatter = [[NSDateComponentsFormatter alloc] init];
+		dateComponentsFromatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
+		
+		NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+		dateComponents.day = days;
+		dateComponents.hour = hours;
+		
+		durationString = [dateComponentsFromatter stringFromDateComponents:dateComponents];
+		durationString = [durationString stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
+	}
+	else
+	{
+		NSString *daysString = @"";
+		NSString *hoursString = @"";
+		if (days > 1)
+		{
+			daysString = [NSString stringWithFormat:@"%ld days",days];
+		}
+		else if(days > 0)
+		{
+			daysString = [NSString stringWithFormat:@"%ld day",days];
+		}
+		
+		if (hours > 1)
+		{
+			hoursString = [NSString stringWithFormat:@"%ld hours",hours];
+		}
+		else if(hours > 0)
+		{
+			hoursString = [NSString stringWithFormat:@"%ld hour",hours];
+		}
+		if (daysString.length > 0)
+		{
+			if (hoursString.length > 0)
+			{
+				durationString = [NSString stringWithFormat:@"%@\n%@",daysString,hoursString];
+			}
+			else
+			{
+				durationString = daysString;
+			}
+		}
+		else if(hoursString.length > 0)
+		{
+			durationString = hoursString;
+		}
+	}
+	
+	return durationString;
+	
+}
+
 
 @end

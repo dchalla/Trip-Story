@@ -9,9 +9,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+Utilities.h"
 #import "DTSTripEventsCollectionViewCell.h"
+#import "DTSTripEventDetailsViewController.h"
 
 @interface DTSTripEventsCollectionViewCell ()
-@property (nonatomic, strong) UIView *cardView;
+@property (nonatomic, strong) DTSTripEventDetailsViewController *eventDetailsVC;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (strong, nonatomic) DTSEvent *event;
 @property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
@@ -33,31 +34,23 @@
 	}
 }
 
-- (CAGradientLayer *)gradientLayer
-{
-	if (!_gradientLayer)
-	{
-		_gradientLayer = [UIView gradientLayerWithTopColor:self.event.eventTopColor bottomColor:self.event.eventBottomColor];
-		_gradientLayer.masksToBounds = YES;
-		_gradientLayer.cornerRadius = 10;
-	}
-	return _gradientLayer;
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(frame), CGRectGetHeight(frame))];
 	if (self) {
-		self.cardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
+		self.eventDetailsVC = [[DTSTripEventDetailsViewController alloc] initWithNibName:@"DTSTripEventDetailsViewController" bundle:[NSBundle mainBundle]];
+		[((UIViewController *)self.delegate) addChildViewController:self.eventDetailsVC];
+		[self.eventDetailsVC didMoveToParentViewController:((UIViewController *)self.delegate)];
+		self.eventDetailsVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+		self.eventDetailsVC.view.layer.cornerRadius = 10;
+		[self.contentView addSubview:self.eventDetailsVC.view];
 		
-		self.cardView.layer.cornerRadius = 10;
-		self.cardView.clipsToBounds = YES;
-		[self.contentView addSubview:self.cardView];
 		
 		self.layer.shadowColor = [UIColor blackColor].CGColor;
 		self.layer.shadowOffset = CGSizeMake(0, -2);
 		self.layer.shadowOpacity = 0.5f;
-		self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:10].CGPath;
+		self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:0].CGPath;
 		
 		self.clipsToBounds = NO;
 		
@@ -71,31 +64,13 @@
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-	[self updateGradientLayerFrame];
+	self.eventDetailsVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
 }
 
 - (void)updateViewWithEvent:(DTSEvent *)event
 {
 	self.event = event;
-	[self.layer insertSublayer:self.gradientLayer atIndex:0];
-	[self updateGradientLayerFrame];
-}
-
-- (void)updateGradientLayerFrame
-{
-	CGRect frame = self.bounds;
-	frame.origin.x = 0;
-	frame.origin.y = 0;
-	self.gradientLayer.frame = frame;
-}
-
-- (void)prepareForReuse
-{
-	if (_gradientLayer)
-	{
-		[self.gradientLayer removeFromSuperlayer];
-		_gradientLayer = nil;
-	}
+	[self.eventDetailsVC updateViewWithEvent:self.event];
 }
 
 - (void)panning:(UIPanGestureRecognizer *)recognizer

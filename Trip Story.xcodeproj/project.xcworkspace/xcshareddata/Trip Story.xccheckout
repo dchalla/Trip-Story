@@ -14,7 +14,7 @@
 		<string>https://github.com/dchalla/Trip-Story.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Trip Story.xcodeproj/project.xcworkspace</string>
+	<string>Trip Story.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D6F1392CEF2154BEBDB81C32F5232FB70E7DA02C</key>
