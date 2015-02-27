@@ -41,7 +41,6 @@
 	[self appendInformation:self.mapItem.placemark.name toAddress:address];
 	[self appendInformation:self.mapItem.placemark.thoroughfare toAddress:address];
 	[self appendInformation:self.mapItem.placemark.locality toAddress:address];
-	[self appendInformation:self.mapItem.placemark.subAdministrativeArea toAddress:address];
 	[self appendInformation:self.mapItem.placemark.administrativeArea toAddress:address];
 	[self appendInformation:self.mapItem.placemark.country toAddress:address];
 	[self appendInformation:self.mapItem.placemark.postalCode toAddress:address];

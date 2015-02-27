@@ -523,6 +523,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DKC;
 				TargetAttributes = {
+					F95814FB1964850B002207A3 = {
+						DevelopmentTeam = 46TZ85ZB65;
+					};
 					F958151F1964850B002207A3 = {
 						TestTargetID = F95814FB1964850B002207A3;
 					};
