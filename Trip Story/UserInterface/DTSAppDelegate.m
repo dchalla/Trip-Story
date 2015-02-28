@@ -7,15 +7,22 @@
 //
 
 #import "DTSAppDelegate.h"
-#import "DTSTripDetailsViewController.h"
+#import "DTSListOfTripsCollectionViewController.h"
+#import <Parse/Parse.h>
 
 @implementation DTSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	
+	[Parse setApplicationId:@"vD1gL4YcvheVfDOdl7gk4ZPIUQ8rPkOZuHUUT6h5"
+				  clientKey:@"Nb8PDaKSm9UcKxyvFNbk2hTII6Q5SOUhCFIxZ0Fy"];
+	
+	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	UIViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	UIViewController *vc = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
 	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
 	self.window.rootViewController = nvc;
 	[self.window makeKeyAndVisible];

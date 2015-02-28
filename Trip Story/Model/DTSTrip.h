@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DTSEvent.h"
+#import <Parse/Parse.h>
+#import <Parse/PFSubclassing.h>
 
-@interface DTSTrip : NSObject
+@interface DTSTrip : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *tripName;
 @property (nonatomic, strong) NSString *tripDescription;
@@ -32,5 +34,7 @@
 - (NSArray *)listOfTravelEvents;
 - (NSArray *)startEndEventSetForEvent:(DTSEvent *)event;
 - (DTSEvent *)nextEventWithLocationForEvent:(DTSEvent *)event;
+
++ (NSString *)parseClassName;
 
 @end

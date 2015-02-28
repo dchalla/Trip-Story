@@ -10,16 +10,49 @@
 
 #import "NSDate+Utilities.h"
 #import "NSString+Utilities.h"
+#import <PFObject+Subclass.h>
 
 @implementation DTSTrip
 
+@dynamic tripDescription;
+@dynamic tripName;
+@dynamic tripRating;
+@dynamic tripRatingListID;
+@dynamic locationsList;
+@dynamic eventsList;
+@dynamic originalEventsList;
+@dynamic numberOfRatings;
+
++ (void)load {
+	[self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+	return @"DTSTrip";
+}
+
+- (id)init
+{
+	self = [super init];
+	if (self)
+	{
+		
+	}
+	return self;
+}
+
 - (NSMutableArray *)originalEventsList
 {
-	if (!_originalEventsList)
+	if (![self objectForKey:@"originalEventsList"])
 	{
-		_originalEventsList = [NSMutableArray array];
+		self.originalEventsList = [NSMutableArray array];
 	}
-	return _originalEventsList;
+	return [self objectForKey:@"originalEventsList"];
+}
+
+- (void)setOriginalEventsList:(NSMutableArray *)originalEventsList
+{
+	[self setObject:originalEventsList forKey:@"originalEventsList"];
 }
 
 - (void)createDummyEventsList
@@ -27,7 +60,7 @@
 	int j = DTSEventTypeActivity;
 	for (int i=0; i <= 10; i++)
 	{
-		DTSEvent *event = [[DTSEvent alloc] init];
+		DTSEvent *event = [DTSEvent object];
 		event.eventName = [NSString stringWithFormat:@"%@%d",@"Dummy Event",i];
 		event.eventDescription = @"Funtime, Lets go Kayaking. It was so much fun to enjoy our trip. Its Truly heaven.";
 		event.eventID = [NSString stringWithFormat:@"%@%d",@"Dummy Event",i];
@@ -56,7 +89,7 @@
 - (DTSEvent *)newEvent
 {
 	DTSEvent *event = [self.originalEventsList lastObject];
-	DTSEvent *newEvent = [[DTSEvent alloc] init];
+	DTSEvent *newEvent = [DTSEvent object];
 	if (event)
 	{
 		newEvent.startDateTime = event.endDateTime;
@@ -90,7 +123,7 @@
 
 - (DTSEvent *)placeHolderEventWithPreviousEvent:(DTSEvent *)previousEvent nextEvent:(DTSEvent *)nextEvent
 {
-	DTSEvent *placeHolderEvent = [[DTSEvent alloc] init];
+	DTSEvent *placeHolderEvent = [DTSEvent object];
 	placeHolderEvent.isPlaceHolderEvent = YES;
 	placeHolderEvent.eventName = @"Unknown";
 	placeHolderEvent.eventID = @"placeHolder";

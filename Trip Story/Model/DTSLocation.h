@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MKMapItem.h>
+#import <Parse/Parse.h>
+#import <Parse/PFSubclassing.h>
+#import "DTSPlacemark.h"
 
-@interface DTSLocation : NSObject
+@interface DTSLocation : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *locationCity;
 @property (nonatomic, strong) NSNumber *locationZipcode;
@@ -18,6 +21,10 @@
 @property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *locationID;
 @property (nonatomic, strong) MKMapItem *mapItem;
+@property (nonatomic, strong) DTSPlacemark *dtsPlacemark;
 @property (nonatomic, readonly) NSString *displayLocationCityState;
 @property (nonatomic, readonly) NSString *displayFullAddress;
+
++ (NSString *)parseClassName;
+
 @end

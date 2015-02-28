@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0D68BA0E9CDAD5460ED53F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3D228BB7DE78C1AEC24A25 /* libPods.a */; };
 		F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */; };
 		F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */; };
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
@@ -68,6 +69,9 @@
 		F9F012EF19B522CF00176944 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EC19B522CF00176944 /* PieLayer.m */; };
 		F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */; };
 		F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */; };
+		F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */; };
+		F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */; };
+		F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */; };
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
@@ -84,6 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E3D228BB7DE78C1AEC24A25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		75582DF559755091FEAA98D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
 		F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocationEntryViewController.h; sourceTree = "<group>"; };
 		F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocationEntryViewController.m; sourceTree = "<group>"; };
@@ -190,6 +197,12 @@
 		F9F012F119B524D900176944 /* DTSTripStoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryHeaderView.h; sourceTree = "<group>"; };
 		F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryHeaderView.m; sourceTree = "<group>"; };
 		F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryHeaderView.xib; sourceTree = "<group>"; };
+		F9F05D371AA15D44002C4A42 /* DTSPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSPlacemark.h; sourceTree = "<group>"; };
+		F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSPlacemark.m; sourceTree = "<group>"; };
+		F9F05D3B1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSListOfTripsCollectionViewController.h; path = ListOfTrips/DTSListOfTripsCollectionViewController.h; sourceTree = "<group>"; };
+		F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSListOfTripsCollectionViewController.m; path = ListOfTrips/DTSListOfTripsCollectionViewController.m; sourceTree = "<group>"; };
+		F9F05D3F1AA18F43002C4A42 /* NSObject+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DTSAdditions.h"; sourceTree = "<group>"; };
+		F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DTSAdditions.m"; sourceTree = "<group>"; };
 		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
 		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -206,6 +219,7 @@
 				F95815021964850B002207A3 /* CoreGraphics.framework in Frameworks */,
 				F95815041964850B002207A3 /* UIKit.framework in Frameworks */,
 				F95815001964850B002207A3 /* Foundation.framework in Frameworks */,
+				C0D68BA0E9CDAD5460ED53F9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +236,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AB186AE3684639817914C0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */,
+				75582DF559755091FEAA98D5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +305,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F9F05D3A1AA16743002C4A42 /* ListOfTrips */,
 				F9B44F9119F3924500321E2C /* TripEvents */,
 				F9B3F73C19F0AEA200BC6052 /* TripMap */,
 				F9F012E519B522CF00176944 /* MagicPieLayer */,
@@ -340,6 +364,8 @@
 				F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */,
 				F9F92577197C3FF800D92941 /* NSString+Utilities.h */,
 				F9F92578197C3FF800D92941 /* NSString+Utilities.m */,
+				F9F05D3F1AA18F43002C4A42 /* NSObject+DTSAdditions.h */,
+				F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -353,6 +379,8 @@
 				F954E76A1965AC0A003A0B72 /* DTSLocation.m */,
 				F99712651971D07E00F2F8FA /* DTSTrip.h */,
 				F99712661971D07E00F2F8FA /* DTSTrip.m */,
+				F9F05D371AA15D44002C4A42 /* DTSPlacemark.h */,
+				F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +398,7 @@
 				F95815051964850B002207A3 /* Trip Story */,
 				F95814FE1964850B002207A3 /* Frameworks */,
 				F95814FD1964850B002207A3 /* Products */,
+				3AB186AE3684639817914C0A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +419,7 @@
 				F95815011964850B002207A3 /* CoreGraphics.framework */,
 				F95815031964850B002207A3 /* UIKit.framework */,
 				F95815211964850B002207A3 /* XCTest.framework */,
+				5E3D228BB7DE78C1AEC24A25 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -475,6 +505,15 @@
 			path = MagicPieLayer;
 			sourceTree = "<group>";
 		};
+		F9F05D3A1AA16743002C4A42 /* ListOfTrips */ = {
+			isa = PBXGroup;
+			children = (
+				F9F05D3B1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.h */,
+				F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */,
+			);
+			name = ListOfTrips;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,9 +521,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F95815311964850B002207A3 /* Build configuration list for PBXNativeTarget "Trip Story" */;
 			buildPhases = (
+				90A71373D154E4B8836AA27D /* Check Pods Manifest.lock */,
 				F95814F81964850B002207A3 /* Sources */,
 				F95814F91964850B002207A3 /* Frameworks */,
 				F95814FA1964850B002207A3 /* Resources */,
+				F3A9D86473421DB75B623D21 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -589,6 +630,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90A71373D154E4B8836AA27D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F3A9D86473421DB75B623D21 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F95814F81964850B002207A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -610,6 +684,7 @@
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
 				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
+				F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
@@ -622,6 +697,8 @@
 				F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
 				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
+				F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */,
+				F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
@@ -735,6 +812,7 @@
 		};
 		F95815321964850B002207A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -748,6 +826,7 @@
 		};
 		F95815331964850B002207A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75582DF559755091FEAA98D5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

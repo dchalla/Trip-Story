@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "DTSLocation.h"
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+#import <Parse/PFSubclassing.h>
 
 typedef enum {
 	DTSEventTypeActivity = 0,
@@ -30,7 +32,7 @@ typedef enum {
 	DTSEventKindUnknown
 }DTSEventKind;
 
-@interface DTSEvent : NSObject<MKAnnotation>
+@interface DTSEvent : PFObject<MKAnnotation,PFSubclassing>
 
 @property (nonatomic, strong) NSString *eventID;
 @property (nonatomic, strong) NSString *eventName;
@@ -54,5 +56,7 @@ typedef enum {
 
 + (UIColor *)topColorForEventType:(DTSEventType)eventType;
 + (UIColor *)bottomColorForEventType:(DTSEventType)eventType;
+
++ (NSString *)parseClassName;
 
 @end

@@ -23,7 +23,6 @@
 
 @property (nonatomic, strong) DTSTripStoryTableViewController *tripStoryVC;
 @property (nonatomic, strong) DTSTripDetailsMapViewController *tripMapVC;
-@property (nonatomic, strong) DTSTrip *trip;
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
@@ -97,10 +96,15 @@
 		}
 	}
 	
-	//Testing
-	self.trip = [[DTSTrip alloc] init];
-	[self. trip createDummyEventsList];
-	//End testing
+	if (!self.trip)
+	{
+		//Testing
+		self.trip = [DTSTrip object];
+		[self.trip createDummyEventsList];
+		[self saveTripToParse];
+		//End testing
+	}
+	
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	
 	for (UIViewController *vc in self.pagedViewControllers)
@@ -110,7 +114,6 @@
 			[vc setValue:self.trip forKey:@"trip"];
 		}
 	}
-	
 }
 
 - (void)setupSegmentControl
@@ -174,6 +177,7 @@
 		[self.trip fillInPlaceholderEvents];
 	}
 	[self.tripStoryVC refreshView];
+	[self saveTripToParse];
 }
 
 - (void)dismissViewController
@@ -283,6 +287,21 @@
 	
 	
 	[self.pageVC setViewControllers:@[self.pagedViewControllers[segmentedControl.selectedSegmentIndex]] direction:direction animated:YES completion:^(BOOL finished){}];
+}
+
+#pragma mark - saveTrip
+
+- (void)saveTripToParse
+{
+	[self.trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+		if (succeeded) {
+			// The object has been saved.
+			NSLog(@"Succeeded");
+		} else {
+			// There was a problem, check error.description
+			NSLog(@"Failed");
+		}
+	}];
 }
 
 @end

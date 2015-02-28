@@ -7,21 +7,47 @@
 //
 
 #import "DTSLocation.h"
+#import <PFObject+Subclass.h>
 
 
 @implementation DTSLocation
+@dynamic locationCity;
+@dynamic locationCountry;
+@dynamic locationID;
+@dynamic locationName;
+@dynamic locationZipcode;
+@dynamic street;
+@dynamic dtsPlacemark;
+
++ (void)load {
+	[self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+	return @"DTSLocation";
+}
 
 - (NSString *)locationName
 {
-	if (!_locationName && _mapItem)
+	return self.mapItem.name;	
+}
+
+- (void)setMapItem:(MKMapItem *)mapItem
+{
+	if (!self.dtsPlacemark)
 	{
-		return self.mapItem.name;
+		self.dtsPlacemark = [DTSPlacemark object];
 	}
-	else if(_locationName)
+	[self.dtsPlacemark updateWithMkMapItem:mapItem];
+}
+
+- (MKMapItem *)mapItem
+{
+	if (self.dtsPlacemark)
 	{
-		return _locationName;
+		return [self.dtsPlacemark mapItem];
 	}
-	return @"";
+	return nil;
 }
 
 - (NSString *)displayLocationCityState

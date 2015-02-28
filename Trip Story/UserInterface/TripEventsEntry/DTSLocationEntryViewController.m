@@ -190,7 +190,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	DTSLocation *location = [[DTSLocation alloc] init];
+	DTSLocation *location = [DTSLocation object];
 	MKMapItem *mapItem= self.tableData[indexPath.row];
 	location.mapItem = mapItem;
 	[self.entryDelegate placeEntryCompletedWithValue:location];

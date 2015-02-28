@@ -9,12 +9,30 @@
 #import "DTSEvent.h"
 #import "UIColor+Utilities.h"
 #import "NSDate+Utilities.h"
+#import <PFObject+Subclass.h>
 
 @implementation DTSEvent
 
+@dynamic eventID;
+@dynamic eventName;
+@dynamic eventDescription;
+@dynamic location;
+@dynamic eventType;
+@dynamic isPlaceHolderEvent;
+@dynamic startDateTime;
+@dynamic endDateTime;
+
++ (void)load {
+	[self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+	return @"DTSEvent";
+}
+
 + (DTSEvent *)eventFromEvent:(DTSEvent *)event
 {
-	DTSEvent *newEvent = [[DTSEvent alloc] init];
+	DTSEvent *newEvent = [DTSEvent object];
 	[newEvent copyFromEvent:event];
 	return newEvent;
 }
@@ -24,27 +42,42 @@
 	self = [super init];
 	if (self)
 	{
-		_startDateTime = [NSDate date];
-		_endDateTime = [self.startDateTime dateByAddingHours:2];
 	}
 	return self;
 }
 
+- (NSDate *)startDateTime
+{
+	return [self objectForKey:@"startDateTime"];
+}
+
 - (void)setStartDateTime:(NSDate *)startDateTime
 {
-	_startDateTime = startDateTime;
-	if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+	[self setObject:startDateTime forKey:@"startDateTime"];
+	if (self.endDateTime)
 	{
-		_endDateTime = [self.startDateTime dateByAddingHours:2];
+		if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+		{
+			self.endDateTime = [self.startDateTime dateByAddingHours:2];
+		}
 	}
+	
+}
+
+- (NSDate *)endDateTime
+{
+	return [self objectForKey:@"endDateTime"];
 }
 
 - (void)setEndDateTime:(NSDate *)endDateTime
 {
-	_endDateTime = endDateTime;
-	if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+	[self setObject:endDateTime forKey:@"endDateTime"];
+	if (self.startDateTime)
 	{
-		_startDateTime = [self.endDateTime dateByAddingHours:-2];
+		if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+		{
+			self.startDateTime = [self.endDateTime dateByAddingHours:-2];
+		}
 	}
 }
 

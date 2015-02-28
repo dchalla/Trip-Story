@@ -48,7 +48,6 @@
 - (void)setTrip:(DTSTrip *)trip
 {
 	_trip = trip;
-	[self updateHeaderView];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -93,6 +92,7 @@
 	[super viewWillAppear:animated];
 	[self scrollViewDidScroll:self.tableView];
 	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+	[self refreshView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
