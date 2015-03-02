@@ -71,14 +71,18 @@
 
 - (void)setEndDateTime:(NSDate *)endDateTime
 {
-	[self setObject:endDateTime forKey:@"endDateTime"];
-	if (self.startDateTime)
+	if (endDateTime)
 	{
-		if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+		[self setObject:endDateTime forKey:@"endDateTime"];
+		if (self.startDateTime)
 		{
-			self.startDateTime = [self.endDateTime dateByAddingHours:-2];
+			if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+			{
+				self.startDateTime = [self.endDateTime dateByAddingHours:-2];
+			}
 		}
 	}
+	
 }
 
 - (DTSEventKind)eventKind

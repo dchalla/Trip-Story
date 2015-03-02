@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "DTSTrip.h"
 #import "DTSTripDetailsViewController.h"
+#import "DTSTripCollectionViewCell.h"
 
 @interface DTSListOfTripsCollectionViewController ()
 
@@ -19,7 +20,7 @@
 
 @implementation DTSListOfTripsCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +29,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[DTSTripCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTripCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
     
 }
 
@@ -42,9 +44,8 @@ static NSString * const reuseIdentifier = @"Cell";
 {
 	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
 	[query includeKey:@"originalEventsList"];
-	[query includeKey:@"eventsList"];
-	[query includeKey:@"eventsList.location"];
-	[query includeKey:@"eventsList.location.dtsPlacemark"];
+	[query includeKey:@"originalEventsList.location"];
+	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error)
 		{
@@ -70,12 +71,28 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	DTSTrip *trip = nil;
+	if (indexPath.row == self.tripsList.count)
+	{
+		
+	}
+	else
+	{
+		trip = dynamic_cast_oc(self.tripsList[indexPath.row], DTSTrip);
+	}
+    DTSTripCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 	cell.backgroundColor = [UIColor redColor];
+	[trip fillInPlaceholderEvents];
+	[cell updateViewWithTrip:trip];
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	return CGSizeMake(self.view.frame.size.width, 300);
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

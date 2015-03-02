@@ -48,6 +48,7 @@
 - (void)setTrip:(DTSTrip *)trip
 {
 	_trip = trip;
+	[self updateHeaderView];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -103,14 +104,17 @@
 
 - (void)updateHeaderView
 {
-	if (self.trip.eventsList.count > 0)
+	if (self.tableView)
 	{
-		self.headerView.trip = self.trip;
-		self.tableView.tableHeaderView = self.headerView;
-	}
-	else
-	{
-		self.tableView.tableHeaderView = nil;
+		if (self.trip.eventsList.count > 0)
+		{
+			self.headerView.trip = self.trip;
+			self.tableView.tableHeaderView = self.headerView;
+		}
+		else
+		{
+			self.tableView.tableHeaderView = nil;
+		}
 	}
 }
 

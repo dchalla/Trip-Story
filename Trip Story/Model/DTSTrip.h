@@ -34,6 +34,8 @@
 - (NSArray *)listOfTravelEvents;
 - (NSArray *)startEndEventSetForEvent:(DTSEvent *)event;
 - (DTSEvent *)nextEventWithLocationForEvent:(DTSEvent *)event;
+- (NSDate *)startTimeOfTrip;
+- (NSDate *)endTimeOfTrip;
 
 + (NSString *)parseClassName;
 

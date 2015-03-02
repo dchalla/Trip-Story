@@ -12,6 +12,12 @@
 #import "NSString+Utilities.h"
 #import <PFObject+Subclass.h>
 
+@interface DTSTrip() {
+	NSMutableArray *_eventsList;
+}
+
+@end
+
 @implementation DTSTrip
 
 @dynamic tripDescription;
@@ -19,7 +25,6 @@
 @dynamic tripRating;
 @dynamic tripRatingListID;
 @dynamic locationsList;
-@dynamic eventsList;
 @dynamic originalEventsList;
 @dynamic numberOfRatings;
 
@@ -36,9 +41,18 @@
 	self = [super init];
 	if (self)
 	{
-		
 	}
 	return self;
+}
+
+- (NSMutableArray *)eventsList
+{
+	return _eventsList;
+}
+
+- (void)setEventsList:(NSMutableArray *)eventsList
+{
+	_eventsList = eventsList;
 }
 
 - (NSMutableArray *)originalEventsList
@@ -376,6 +390,26 @@
 				foundGivenEvent = YES;
 			}
 		}
+	}
+	return nil;
+}
+
+- (NSDate *)startTimeOfTrip
+{
+	DTSEvent *firstEvent = self.eventsList.firstObject;
+	if (firstEvent)
+	{
+		return firstEvent.startDateTime;
+	}
+	return nil;
+}
+
+- (NSDate *)endTimeOfTrip
+{
+	DTSEvent *lastEvent = self.eventsList.lastObject;
+	if (lastEvent)
+	{
+		return lastEvent.endDateTime;
 	}
 	return nil;
 }

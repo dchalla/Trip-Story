@@ -72,6 +72,8 @@
 		F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */; };
 		F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */; };
 		F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */; };
+		F9F05D441AA23AC1002C4A42 /* DTSTripCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */; };
+		F9F05D461AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */; };
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
@@ -203,6 +205,9 @@
 		F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSListOfTripsCollectionViewController.m; path = ListOfTrips/DTSListOfTripsCollectionViewController.m; sourceTree = "<group>"; };
 		F9F05D3F1AA18F43002C4A42 /* NSObject+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DTSAdditions.h"; sourceTree = "<group>"; };
 		F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DTSAdditions.m"; sourceTree = "<group>"; };
+		F9F05D421AA23AC1002C4A42 /* DTSTripCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripCollectionViewCell.h; path = ListOfTrips/DTSTripCollectionViewCell.h; sourceTree = "<group>"; };
+		F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripCollectionViewCell.m; path = ListOfTrips/DTSTripCollectionViewCell.m; sourceTree = "<group>"; };
+		F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripCollectionViewCell.xib; path = ListOfTrips/DTSTripCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
 		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -510,6 +515,9 @@
 			children = (
 				F9F05D3B1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.h */,
 				F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */,
+				F9F05D421AA23AC1002C4A42 /* DTSTripCollectionViewCell.h */,
+				F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */,
+				F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */,
 			);
 			name = ListOfTrips;
 			sourceTree = "<group>";
@@ -615,6 +623,7 @@
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
+				F9F05D461AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
@@ -692,6 +701,7 @@
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
+				F9F05D441AA23AC1002C4A42 /* DTSTripCollectionViewCell.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,
 				F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */,

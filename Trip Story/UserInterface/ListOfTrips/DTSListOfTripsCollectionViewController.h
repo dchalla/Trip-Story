@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DTSListOfTripsCollectionViewController : UICollectionViewController
+@interface DTSListOfTripsCollectionViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout>
 
 @end
