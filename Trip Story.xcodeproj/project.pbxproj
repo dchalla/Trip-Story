@@ -64,6 +64,7 @@
 		F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14619B3A17100622CC9 /* paralympic17.png */; };
 		F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14819B3A22300622CC9 /* anchor2.png */; };
 		F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14A19B3A42100622CC9 /* waterTravel.png */; };
+		F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EA06571AA57F99007573EC /* LaunchScreen.xib */; };
 		F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */; };
 		F9F012EE19B522CF00176944 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EA19B522CF00176944 /* PieElement.m */; };
 		F9F012EF19B522CF00176944 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EC19B522CF00176944 /* PieLayer.m */; };
@@ -189,6 +190,7 @@
 		F9BEC14619B3A17100622CC9 /* paralympic17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paralympic17.png; sourceTree = "<group>"; };
 		F9BEC14819B3A22300622CC9 /* anchor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anchor2.png; sourceTree = "<group>"; };
 		F9BEC14A19B3A42100622CC9 /* waterTravel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterTravel.png; sourceTree = "<group>"; };
+		F9EA06571AA57F99007573EC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = LaunchScreen/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9F012E619B522CF00176944 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
 		F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
 		F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F9EA06561AA57F6E007573EC /* LaunchScreen */,
 				F90CEE7B19932F9F002E9CE9 /* Images */,
 				F948C7E2197879F6000A2A3B /* Protocols */,
 				F954E7631964CB61003A0B72 /* Infrastructure */,
@@ -494,6 +497,14 @@
 				F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */,
 			);
 			name = TripEvents;
+			sourceTree = "<group>";
+		};
+		F9EA06561AA57F6E007573EC /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F9EA06571AA57F99007573EC /* LaunchScreen.xib */,
+			);
+			name = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		F9F012E519B522CF00176944 /* MagicPieLayer */ = {
@@ -608,6 +619,7 @@
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
+				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
 				F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
@@ -780,7 +792,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -813,7 +825,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -829,6 +841,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -843,6 +856,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

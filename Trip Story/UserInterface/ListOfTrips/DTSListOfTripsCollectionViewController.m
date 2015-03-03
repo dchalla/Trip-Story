@@ -31,6 +31,8 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
     // Register cell classes
     [self.collectionView registerClass:[DTSTripCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTripCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
+	self.view.backgroundColor = [UIColor colorWithRed:23/255.0 green:24/255.0 blue:27/255.0 alpha:1];
+	self.title = @"Trip Story";
     
 }
 
@@ -81,7 +83,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 		trip = dynamic_cast_oc(self.tripsList[indexPath.row], DTSTrip);
 	}
     DTSTripCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-	cell.backgroundColor = [UIColor redColor];
+	cell.backgroundColor = [UIColor colorWithRed:23/255.0 green:24/255.0 blue:27/255.0 alpha:1];
 	[trip fillInPlaceholderEvents];
 	[cell updateViewWithTrip:trip];
     return cell;

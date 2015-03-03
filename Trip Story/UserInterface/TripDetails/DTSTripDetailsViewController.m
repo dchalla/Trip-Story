@@ -70,7 +70,7 @@
 	[self.navigationItem setRightBarButtonItem:addBarButton];
 	
 	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+	//self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 	self.view.backgroundColor = [UIColor colorWithRed:15/255.0 green:17/255.0 blue:22/255.0 alpha:1];
 	
 	[self setupSegmentControl];
@@ -104,8 +104,6 @@
 		[self saveTripToParse];
 		//End testing
 	}
-	
-	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	
 	for (UIViewController *vc in self.pagedViewControllers)
 	{

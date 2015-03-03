@@ -53,14 +53,16 @@
 
 - (void)setStartDateTime:(NSDate *)startDateTime
 {
-	[self setObject:startDateTime forKey:@"startDateTime"];
-	if (self.endDateTime)
+	if (startDateTime)
 	{
-		if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
+		[self setObject:startDateTime forKey:@"startDateTime"];
+		
+		if (!self.endDateTime ||[self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
 		{
 			self.endDateTime = [self.startDateTime dateByAddingHours:2];
 		}
 	}
+	
 	
 }
 
@@ -74,12 +76,10 @@
 	if (endDateTime)
 	{
 		[self setObject:endDateTime forKey:@"endDateTime"];
-		if (self.startDateTime)
+		
+		if (!self.startDateTime || [self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
 		{
-			if ([self.startDateTime minutesBeforeDate:self.endDateTime]<=0)
-			{
-				self.startDateTime = [self.endDateTime dateByAddingHours:-2];
-			}
+			self.startDateTime = [self.endDateTime dateByAddingHours:-2];
 		}
 	}
 	
@@ -239,7 +239,7 @@
 		case DTSEventTypeTravelByRoad:
 		case DTSEventTypeTravelByWater:
 			return YES;
-
+			
 		default:
 			return NO;
 	}

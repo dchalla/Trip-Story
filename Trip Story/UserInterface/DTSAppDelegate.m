@@ -24,6 +24,8 @@
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	UIViewController *vc = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
 	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+	nvc.navigationBar.barTintColor = [UIColor blackColor];
+	nvc.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	self.window.rootViewController = nvc;
 	[self.window makeKeyAndVisible];
 	
