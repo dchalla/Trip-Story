@@ -55,6 +55,7 @@
 		F9B44F9019F3922200321E2C /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8D19F3922200321E2C /* TGLStackedViewController.m */; };
 		F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */; };
 		F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */; };
+		F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BBF9561AA774850076CD78 /* DTSUserAuthHelper.m */; };
 		F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13A19B398A800622CC9 /* airplane21.png */; };
 		F9BEC13E19B398A800622CC9 /* boat17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13B19B398A800622CC9 /* boat17.png */; };
 		F9BEC13F19B398A800622CC9 /* car88.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13C19B398A800622CC9 /* car88.png */; };
@@ -181,6 +182,8 @@
 		F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripEventsCollectionViewCell.m; path = TripEvents/DTSTripEventsCollectionViewCell.m; sourceTree = "<group>"; };
 		F9B44F9919F474B200321E2C /* DTSCollectionCardCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCollectionCardCellDelegate.h; sourceTree = "<group>"; };
 		F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCollectionCardsViewControllerProtocol.h; sourceTree = "<group>"; };
+		F9BBF9551AA774850076CD78 /* DTSUserAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserAuthHelper.h; path = UserAuth/DTSUserAuthHelper.h; sourceTree = "<group>"; };
+		F9BBF9561AA774850076CD78 /* DTSUserAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserAuthHelper.m; path = UserAuth/DTSUserAuthHelper.m; sourceTree = "<group>"; };
 		F9BEC13A19B398A800622CC9 /* airplane21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane21.png; sourceTree = "<group>"; };
 		F9BEC13B19B398A800622CC9 /* boat17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boat17.png; sourceTree = "<group>"; };
 		F9BEC13C19B398A800622CC9 /* car88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car88.png; sourceTree = "<group>"; };
@@ -434,6 +437,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F9BBF9541AA774130076CD78 /* UserAuth */,
 				F9EA06561AA57F6E007573EC /* LaunchScreen */,
 				F90CEE7B19932F9F002E9CE9 /* Images */,
 				F948C7E2197879F6000A2A3B /* Protocols */,
@@ -497,6 +501,15 @@
 				F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */,
 			);
 			name = TripEvents;
+			sourceTree = "<group>";
+		};
+		F9BBF9541AA774130076CD78 /* UserAuth */ = {
+			isa = PBXGroup;
+			children = (
+				F9BBF9551AA774850076CD78 /* DTSUserAuthHelper.h */,
+				F9BBF9561AA774850076CD78 /* DTSUserAuthHelper.m */,
+			);
+			name = UserAuth;
 			sourceTree = "<group>";
 		};
 		F9EA06561AA57F6E007573EC /* LaunchScreen */ = {
@@ -707,6 +720,7 @@
 				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
 				F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
+				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,

@@ -11,6 +11,7 @@
 #import "DTSTrip.h"
 #import "DTSTripDetailsViewController.h"
 #import "DTSTripCollectionViewCell.h"
+#import "DTSUserAuthHelper.h"
 
 @interface DTSListOfTripsCollectionViewController ()
 
@@ -24,7 +25,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+	[PFUser logOut];
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -39,7 +40,9 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 	[self fetchTripsList];
+	
 }
 
 - (void)fetchTripsList
