@@ -7,7 +7,7 @@
 //
 
 #import "DTSAppDelegate.h"
-#import "DTSListOfTripsCollectionViewController.h"
+#import "DTSRootViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
@@ -24,12 +24,15 @@
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	UIViewController *vc = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+	UIViewController *vc = [[DTSRootViewController alloc] init];
 	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
 	nvc.navigationBar.barTintColor = [UIColor blackColor];
 	nvc.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+	nvc.navigationBarHidden = YES;
 	self.window.rootViewController = nvc;
 	[self.window makeKeyAndVisible];
+	
+	[self setupUIAppearance];
 	
     return YES;
 }
@@ -70,6 +73,12 @@
 	return [FBAppCall handleOpenURL:url
 				  sourceApplication:sourceApplication
 						withSession:[PFFacebookUtils session]];
+}
+
+- (void)setupUIAppearance
+{
+	[[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 

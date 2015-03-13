@@ -17,6 +17,7 @@
 #import "DTSTripDetailsMapViewController.h"
 #import "HMSegmentedControl.h"
 #import "DTSTripEventsViewController.h"
+#import "UIColor+Utilities.h"
 
 
 @interface DTSTripDetailsViewController ()
@@ -65,13 +66,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+	[self setupBackBarButton];
 	UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEventButtonTapped)];
 	[self.navigationItem setRightBarButtonItem:addBarButton];
 	
 	// Do any additional setup after loading the view, typically from a nib.
 	//self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-	self.view.backgroundColor = [UIColor colorWithRed:15/255.0 green:17/255.0 blue:22/255.0 alpha:1];
+	self.view.backgroundColor = [UIColor primaryColor];
 	
 	[self setupSegmentControl];
 	
@@ -124,12 +125,14 @@
 	self.segmentedControl.textColor = [UIColor whiteColor];
 	self.segmentedControl.font = [UIFont systemFontOfSize:12];
 	self.segmentedControl.selectedTextColor = [UIColor whiteColor];
+	self.segmentedControl.selectionIndicatorColor = [UIColor selectionColor];
 	self.navigationItem.titleView = self.segmentedControl;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -291,6 +294,12 @@
 
 - (void)saveTripToParse
 {
+	self.trip.user = [PFUser currentUser];
+	
+	PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
+	[photoACL setPublicReadAccess:YES];
+	self.trip.ACL = photoACL;
+	
 	[self.trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
 			// The object has been saved.
@@ -300,6 +309,17 @@
 			NSLog(@"Failed");
 		}
 	}];
+}
+
+#pragma mark - backBarButton
+- (void)setupBackBarButton
+{
+	UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+								initWithTitle:@""
+								style:UIBarButtonItemStylePlain
+								target:nil
+								action:nil];
+	//[self.navigationItem setBackBarButtonItem:btnBack];
 }
 
 @end

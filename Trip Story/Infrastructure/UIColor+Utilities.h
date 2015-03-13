@@ -12,5 +12,9 @@
 
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 + (NSString *)hexValuesFromUIColor:(UIColor *)color;
++ (UIColor *)selectionColor;
++ (UIColor *)primaryColor;
++ (UIColor *)secondaryColor;
+
 
 @end

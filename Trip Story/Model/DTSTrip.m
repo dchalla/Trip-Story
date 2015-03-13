@@ -27,6 +27,7 @@
 @dynamic locationsList;
 @dynamic originalEventsList;
 @dynamic numberOfRatings;
+@dynamic user;
 
 + (void)load {
 	[self registerSubclass];

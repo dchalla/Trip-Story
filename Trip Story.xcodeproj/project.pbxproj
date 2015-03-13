@@ -41,6 +41,38 @@
 		F95815221964850B002207A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815211964850B002207A3 /* XCTest.framework */; };
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
+		F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21001AB297FA009CC03E /* DTSActivity.m */; };
+		F96B21041AB29BA6009CC03E /* DTSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21031AB29BA6009CC03E /* DTSUser.m */; };
+		F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21071AB3564B009CC03E /* DTSRootViewController.m */; };
+		F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210A1AB362AA009CC03E /* 1-selected.png */; };
+		F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210B1AB362AA009CC03E /* 1-selected@2x.png */; };
+		F96B211C1AB362AA009CC03E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210C1AB362AA009CC03E /* 1.png */; };
+		F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210D1AB362AA009CC03E /* 1@2x.png */; };
+		F96B211E1AB362AA009CC03E /* 2-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210E1AB362AA009CC03E /* 2-selected.png */; };
+		F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210F1AB362AA009CC03E /* 2-selected@2x.png */; };
+		F96B21201AB362AA009CC03E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21101AB362AA009CC03E /* 2.png */; };
+		F96B21211AB362AA009CC03E /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21111AB362AA009CC03E /* 2@2x.png */; };
+		F96B21221AB362AA009CC03E /* 3-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21121AB362AA009CC03E /* 3-selected.png */; };
+		F96B21231AB362AA009CC03E /* 3-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21131AB362AA009CC03E /* 3-selected@2x.png */; };
+		F96B21241AB362AA009CC03E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21141AB362AA009CC03E /* 3.png */; };
+		F96B21251AB362AA009CC03E /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21151AB362AA009CC03E /* 3@2x.png */; };
+		F96B21261AB362AA009CC03E /* 4-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21161AB362AA009CC03E /* 4-selected.png */; };
+		F96B21271AB362AA009CC03E /* 4-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21171AB362AA009CC03E /* 4-selected@2x.png */; };
+		F96B21281AB362AA009CC03E /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21181AB362AA009CC03E /* 4.png */; };
+		F96B21291AB362AA009CC03E /* 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21191AB362AA009CC03E /* 4@2x.png */; };
+		F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B212B1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m */; };
+		F96B21311AB38524009CC03E /* addTrip.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B212D1AB38524009CC03E /* addTrip.png */; };
+		F96B21321AB38524009CC03E /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B212E1AB38524009CC03E /* edit.png */; };
+		F96B21331AB38524009CC03E /* explore.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B212F1AB38524009CC03E /* explore.png */; };
+		F96B21341AB38524009CC03E /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21301AB38524009CC03E /* users.png */; };
+		F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21351AB389E7009CC03E /* addTrip@2x.png */; };
+		F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21361AB389E7009CC03E /* addTrip@3x.png */; };
+		F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21371AB389E7009CC03E /* edit@2x.png */; };
+		F96B21401AB389E7009CC03E /* edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21381AB389E7009CC03E /* edit@3x.png */; };
+		F96B21411AB389E7009CC03E /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B21391AB389E7009CC03E /* explore@2x.png */; };
+		F96B21421AB389E7009CC03E /* explore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213A1AB389E7009CC03E /* explore@3x.png */; };
+		F96B21431AB389E7009CC03E /* users@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213B1AB389E7009CC03E /* users@2x.png */; };
+		F96B21441AB389E7009CC03E /* users@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213C1AB389E7009CC03E /* users@3x.png */; };
 		F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F99712661971D07E00F2F8FA /* DTSTrip.m */; };
 		F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99EBA061A1DBC3700290D8A /* DTSTripEventDetailsViewController.m */; };
 		F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */; };
@@ -150,6 +182,42 @@
 		F958151A1964850B002207A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F95815201964850B002207A3 /* Trip StoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trip StoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F96B20FF1AB297FA009CC03E /* DTSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSActivity.h; sourceTree = "<group>"; };
+		F96B21001AB297FA009CC03E /* DTSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSActivity.m; sourceTree = "<group>"; };
+		F96B21021AB29BA6009CC03E /* DTSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSUser.h; sourceTree = "<group>"; };
+		F96B21031AB29BA6009CC03E /* DTSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSUser.m; sourceTree = "<group>"; };
+		F96B21061AB3564B009CC03E /* DTSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSRootViewController.h; path = RootVC/DTSRootViewController.h; sourceTree = "<group>"; };
+		F96B21071AB3564B009CC03E /* DTSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSRootViewController.m; path = RootVC/DTSRootViewController.m; sourceTree = "<group>"; };
+		F96B210A1AB362AA009CC03E /* 1-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-selected.png"; sourceTree = "<group>"; };
+		F96B210B1AB362AA009CC03E /* 1-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-selected@2x.png"; sourceTree = "<group>"; };
+		F96B210C1AB362AA009CC03E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		F96B210D1AB362AA009CC03E /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		F96B210E1AB362AA009CC03E /* 2-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-selected.png"; sourceTree = "<group>"; };
+		F96B210F1AB362AA009CC03E /* 2-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-selected@2x.png"; sourceTree = "<group>"; };
+		F96B21101AB362AA009CC03E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		F96B21111AB362AA009CC03E /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
+		F96B21121AB362AA009CC03E /* 3-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3-selected.png"; sourceTree = "<group>"; };
+		F96B21131AB362AA009CC03E /* 3-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3-selected@2x.png"; sourceTree = "<group>"; };
+		F96B21141AB362AA009CC03E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		F96B21151AB362AA009CC03E /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
+		F96B21161AB362AA009CC03E /* 4-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4-selected.png"; sourceTree = "<group>"; };
+		F96B21171AB362AA009CC03E /* 4-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4-selected@2x.png"; sourceTree = "<group>"; };
+		F96B21181AB362AA009CC03E /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		F96B21191AB362AA009CC03E /* 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4@2x.png"; sourceTree = "<group>"; };
+		F96B212A1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DTSEmptyBackButton.h"; sourceTree = "<group>"; };
+		F96B212B1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DTSEmptyBackButton.m"; sourceTree = "<group>"; };
+		F96B212D1AB38524009CC03E /* addTrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addTrip.png; sourceTree = "<group>"; };
+		F96B212E1AB38524009CC03E /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		F96B212F1AB38524009CC03E /* explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explore.png; sourceTree = "<group>"; };
+		F96B21301AB38524009CC03E /* users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = users.png; sourceTree = "<group>"; };
+		F96B21351AB389E7009CC03E /* addTrip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addTrip@2x.png"; sourceTree = "<group>"; };
+		F96B21361AB389E7009CC03E /* addTrip@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addTrip@3x.png"; sourceTree = "<group>"; };
+		F96B21371AB389E7009CC03E /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		F96B21381AB389E7009CC03E /* edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@3x.png"; sourceTree = "<group>"; };
+		F96B21391AB389E7009CC03E /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
+		F96B213A1AB389E7009CC03E /* explore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@3x.png"; sourceTree = "<group>"; };
+		F96B213B1AB389E7009CC03E /* users@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users@2x.png"; sourceTree = "<group>"; };
+		F96B213C1AB389E7009CC03E /* users@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users@3x.png"; sourceTree = "<group>"; };
 		F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsContainerDelegate.h; sourceTree = "<group>"; };
 		F99712651971D07E00F2F8FA /* DTSTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTrip.h; sourceTree = "<group>"; };
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
@@ -258,6 +326,7 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F96B21091AB362AA009CC03E /* tabbarIcons */,
 				F9BEC14A19B3A42100622CC9 /* waterTravel.png */,
 				F9BEC14819B3A22300622CC9 /* anchor2.png */,
 				F9BEC14619B3A17100622CC9 /* paralympic17.png */,
@@ -315,6 +384,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F96B21051AB2A69F009CC03E /* RootVC */,
 				F9F05D3A1AA16743002C4A42 /* ListOfTrips */,
 				F9B44F9119F3924500321E2C /* TripEvents */,
 				F9B3F73C19F0AEA200BC6052 /* TripMap */,
@@ -376,6 +446,8 @@
 				F9F92578197C3FF800D92941 /* NSString+Utilities.m */,
 				F9F05D3F1AA18F43002C4A42 /* NSObject+DTSAdditions.h */,
 				F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */,
+				F96B212A1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.h */,
+				F96B212B1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -391,6 +463,10 @@
 				F99712661971D07E00F2F8FA /* DTSTrip.m */,
 				F9F05D371AA15D44002C4A42 /* DTSPlacemark.h */,
 				F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */,
+				F96B20FF1AB297FA009CC03E /* DTSActivity.h */,
+				F96B21001AB297FA009CC03E /* DTSActivity.m */,
+				F96B21021AB29BA6009CC03E /* DTSUser.h */,
+				F96B21031AB29BA6009CC03E /* DTSUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +535,50 @@
 				F958150D1964850B002207A3 /* Trip Story-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F96B21051AB2A69F009CC03E /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				F96B21061AB3564B009CC03E /* DTSRootViewController.h */,
+				F96B21071AB3564B009CC03E /* DTSRootViewController.m */,
+			);
+			name = RootVC;
+			sourceTree = "<group>";
+		};
+		F96B21091AB362AA009CC03E /* tabbarIcons */ = {
+			isa = PBXGroup;
+			children = (
+				F96B21351AB389E7009CC03E /* addTrip@2x.png */,
+				F96B21361AB389E7009CC03E /* addTrip@3x.png */,
+				F96B21371AB389E7009CC03E /* edit@2x.png */,
+				F96B21381AB389E7009CC03E /* edit@3x.png */,
+				F96B21391AB389E7009CC03E /* explore@2x.png */,
+				F96B213A1AB389E7009CC03E /* explore@3x.png */,
+				F96B213B1AB389E7009CC03E /* users@2x.png */,
+				F96B213C1AB389E7009CC03E /* users@3x.png */,
+				F96B212D1AB38524009CC03E /* addTrip.png */,
+				F96B212E1AB38524009CC03E /* edit.png */,
+				F96B212F1AB38524009CC03E /* explore.png */,
+				F96B21301AB38524009CC03E /* users.png */,
+				F96B210A1AB362AA009CC03E /* 1-selected.png */,
+				F96B210B1AB362AA009CC03E /* 1-selected@2x.png */,
+				F96B210C1AB362AA009CC03E /* 1.png */,
+				F96B210D1AB362AA009CC03E /* 1@2x.png */,
+				F96B210E1AB362AA009CC03E /* 2-selected.png */,
+				F96B210F1AB362AA009CC03E /* 2-selected@2x.png */,
+				F96B21101AB362AA009CC03E /* 2.png */,
+				F96B21111AB362AA009CC03E /* 2@2x.png */,
+				F96B21121AB362AA009CC03E /* 3-selected.png */,
+				F96B21131AB362AA009CC03E /* 3-selected@2x.png */,
+				F96B21141AB362AA009CC03E /* 3.png */,
+				F96B21151AB362AA009CC03E /* 3@2x.png */,
+				F96B21161AB362AA009CC03E /* 4-selected.png */,
+				F96B21171AB362AA009CC03E /* 4-selected@2x.png */,
+				F96B21181AB362AA009CC03E /* 4.png */,
+				F96B21191AB362AA009CC03E /* 4@2x.png */,
+			);
+			path = tabbarIcons;
 			sourceTree = "<group>";
 		};
 		F9B3F73C19F0AEA200BC6052 /* TripMap */ = {
@@ -628,29 +748,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96B21251AB362AA009CC03E /* 3@2x.png in Resources */,
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
+				F96B21271AB362AA009CC03E /* 4-selected@2x.png in Resources */,
+				F96B21281AB362AA009CC03E /* 4.png in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
+				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
+				F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */,
+				F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
+				F96B21241AB362AA009CC03E /* 3.png in Resources */,
+				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
+				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
+				F96B21421AB389E7009CC03E /* explore@3x.png in Resources */,
+				F96B21401AB389E7009CC03E /* edit@3x.png in Resources */,
+				F96B21201AB362AA009CC03E /* 2.png in Resources */,
 				F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */,
+				F96B21341AB38524009CC03E /* users.png in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
+				F96B211E1AB362AA009CC03E /* 2-selected.png in Resources */,
+				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
+				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
+				F96B21291AB362AA009CC03E /* 4@2x.png in Resources */,
+				F96B21411AB389E7009CC03E /* explore@2x.png in Resources */,
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
 				F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */,
 				F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */,
+				F96B21231AB362AA009CC03E /* 3-selected@2x.png in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
+				F96B21221AB362AA009CC03E /* 3-selected.png in Resources */,
+				F96B21311AB38524009CC03E /* addTrip.png in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
 				F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */,
 				F9BEC14519B39FB500622CC9 /* sailing8.png in Resources */,
+				F96B21331AB38524009CC03E /* explore.png in Resources */,
+				F96B211C1AB362AA009CC03E /* 1.png in Resources */,
+				F96B21441AB389E7009CC03E /* users@3x.png in Resources */,
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
+				F96B21211AB362AA009CC03E /* 2@2x.png in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
+				F96B21321AB38524009CC03E /* edit.png in Resources */,
+				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
 				F9F05D461AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
+				F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,10 +857,13 @@
 				F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
+				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
+				F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
+				F96B21041AB29BA6009CC03E /* DTSUser.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
@@ -722,6 +873,7 @@
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
+				F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,

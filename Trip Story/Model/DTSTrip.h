@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *locationsList;
 @property (nonatomic, strong) NSMutableArray *originalEventsList;
 @property (nonatomic, readonly) NSArray *eventsWithLocationList;
+@property (nonatomic, strong) PFUser *user;
 
 - (void)createDummyEventsList;
 - (void)addEvent:(DTSEvent *)event;

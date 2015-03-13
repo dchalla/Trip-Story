@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface DTSListOfTripsCollectionViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout>
+#import "DTSUser.h"
+#import "DTSViewLayoutProtocol.h"
+@interface DTSListOfTripsCollectionViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
 
 @end

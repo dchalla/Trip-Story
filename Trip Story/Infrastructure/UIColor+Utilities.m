@@ -79,6 +79,22 @@
     
 }
 
++ (UIColor *)selectionColor
+{
+	return [UIColor colorWithRed:223/255.0 green:44/255.0 blue:46/255.0 alpha:1];
+}
+
+
++ (UIColor *)primaryColor
+{
+	return [UIColor colorWithRed:23/255.0 green:23/255.0 blue:23/255.0 alpha:1];
+}
+
++ (UIColor *)secondaryColor
+{
+	return [UIColor colorWithRed:5/255.0 green:5/255.0 blue:5/255.0 alpha:1];
+}
+
 
 
 @end

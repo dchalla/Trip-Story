@@ -12,6 +12,7 @@
 #import "DTSTripDetailsViewController.h"
 #import "DTSTripCollectionViewCell.h"
 #import "DTSUserAuthHelper.h"
+#import "UIColor+Utilities.h"
 
 @interface DTSListOfTripsCollectionViewController ()
 
@@ -20,20 +21,20 @@
 @end
 
 @implementation DTSListOfTripsCollectionViewController
+@synthesize topLayoutGuideLength;
+@synthesize bottomLayoutGuideLength;
 
 static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	[PFUser logOut];
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
     [self.collectionView registerClass:[DTSTripCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTripCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
-	self.view.backgroundColor = [UIColor colorWithRed:23/255.0 green:24/255.0 blue:27/255.0 alpha:1];
+	self.view.backgroundColor = [UIColor secondaryColor];
+	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"Trip Story";
+	self.collectionView.contentInset = UIEdgeInsetsMake(self.collectionView.contentInset.top, 0, self.bottomLayoutGuideLength, 0);
     
 }
 
@@ -46,11 +47,17 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 }
 
 - (void)fetchTripsList
-{
+{	
 	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+	if ([DTSUser currentUser])
+	{
+		[query whereKey:@"user" equalTo:[DTSUser currentUser]];
+	}
+	
 	[query includeKey:@"originalEventsList"];
 	[query includeKey:@"originalEventsList.location"];
 	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
+	[query orderByDescending:@"createdAt"];
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error)
 		{
@@ -86,7 +93,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 		trip = dynamic_cast_oc(self.tripsList[indexPath.row], DTSTrip);
 	}
     DTSTripCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-	cell.backgroundColor = [UIColor colorWithRed:23/255.0 green:24/255.0 blue:27/255.0 alpha:1];
+	cell.backgroundColor = [UIColor primaryColor];
 	[trip fillInPlaceholderEvents];
 	[cell updateViewWithTrip:trip];
     return cell;
@@ -113,7 +120,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 	
 	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
 	vc.trip = trip;
-	[self.navigationController pushViewController:vc animated:YES];
+	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
 }
 
 /*
