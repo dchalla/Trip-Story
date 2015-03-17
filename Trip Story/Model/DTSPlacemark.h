@@ -21,6 +21,7 @@
 +(NSString *)parseClassName;
 
 - (MKMapItem *)mapItem;
+- (MKPlacemark *)mkplacemark;
 - (void)updateWithMkMapItem:(MKMapItem *)mapItem;
 
 @end

@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C0D68BA0E9CDAD5460ED53F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3D228BB7DE78C1AEC24A25 /* libPods.a */; };
+		F91015791AB4CBA7006A6FC6 /* DTSSpringboardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015721AB4CBA7006A6FC6 /* DTSSpringboardItemView.m */; };
+		F910157A1AB4CBA7006A6FC6 /* DTSSpringboardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015741AB4CBA7006A6FC6 /* DTSSpringboardScrollView.m */; };
+		F910157B1AB4CBA7006A6FC6 /* DTSSpringboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015761AB4CBA7006A6FC6 /* DTSSpringboardView.m */; };
+		F910157F1AB4DA50006A6FC6 /* DTSSpringboardItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F910157E1AB4DA50006A6FC6 /* DTSSpringboardItemModel.m */; };
+		F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */; };
+		F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */; };
+		F910158C1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F910158B1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m */; };
 		F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */; };
 		F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */; };
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
@@ -42,7 +49,6 @@
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
 		F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21001AB297FA009CC03E /* DTSActivity.m */; };
-		F96B21041AB29BA6009CC03E /* DTSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21031AB29BA6009CC03E /* DTSUser.m */; };
 		F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21071AB3564B009CC03E /* DTSRootViewController.m */; };
 		F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210A1AB362AA009CC03E /* 1-selected.png */; };
 		F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210B1AB362AA009CC03E /* 1-selected@2x.png */; };
@@ -97,6 +103,8 @@
 		F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14619B3A17100622CC9 /* paralympic17.png */; };
 		F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14819B3A22300622CC9 /* anchor2.png */; };
 		F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14A19B3A42100622CC9 /* waterTravel.png */; };
+		F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC091AB7776900B82895 /* DTSConstants.m */; };
+		F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */; };
 		F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EA06571AA57F99007573EC /* LaunchScreen.xib */; };
 		F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */; };
 		F9F012EE19B522CF00176944 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EA19B522CF00176944 /* PieElement.m */; };
@@ -104,10 +112,7 @@
 		F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */; };
 		F9F012F519B5251A00176944 /* DTSTripStoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */; };
 		F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */; };
-		F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */; };
 		F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */; };
-		F9F05D441AA23AC1002C4A42 /* DTSTripCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */; };
-		F9F05D461AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */; };
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
@@ -128,6 +133,19 @@
 		75582DF559755091FEAA98D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
+		F91015711AB4CBA7006A6FC6 /* DTSSpringboardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSpringboardItemView.h; path = Timeline/Springboard/DTSSpringboardItemView.h; sourceTree = "<group>"; };
+		F91015721AB4CBA7006A6FC6 /* DTSSpringboardItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSpringboardItemView.m; path = Timeline/Springboard/DTSSpringboardItemView.m; sourceTree = "<group>"; };
+		F91015731AB4CBA7006A6FC6 /* DTSSpringboardScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSpringboardScrollView.h; path = Timeline/Springboard/DTSSpringboardScrollView.h; sourceTree = "<group>"; };
+		F91015741AB4CBA7006A6FC6 /* DTSSpringboardScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSpringboardScrollView.m; path = Timeline/Springboard/DTSSpringboardScrollView.m; sourceTree = "<group>"; };
+		F91015751AB4CBA7006A6FC6 /* DTSSpringboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSpringboardView.h; path = Timeline/Springboard/DTSSpringboardView.h; sourceTree = "<group>"; };
+		F91015761AB4CBA7006A6FC6 /* DTSSpringboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSpringboardView.m; path = Timeline/Springboard/DTSSpringboardView.m; sourceTree = "<group>"; };
+		F910157D1AB4DA50006A6FC6 /* DTSSpringboardItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSpringboardItemModel.h; path = Timeline/Springboard/DTSSpringboardItemModel.h; sourceTree = "<group>"; };
+		F910157E1AB4DA50006A6FC6 /* DTSSpringboardItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSpringboardItemModel.m; path = Timeline/Springboard/DTSSpringboardItemModel.m; sourceTree = "<group>"; };
+		F91015801AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTimelineCollectionViewCell.h; path = Timeline/DTSTimelineCollectionViewCell.h; sourceTree = "<group>"; };
+		F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTimelineCollectionViewCell.m; path = Timeline/DTSTimelineCollectionViewCell.m; sourceTree = "<group>"; };
+		F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTimelineCollectionViewCell.xib; path = Timeline/DTSTimelineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F910158A1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTimelineCollectionViewController.h; path = Timeline/DTSTimelineCollectionViewController.h; sourceTree = "<group>"; };
+		F910158B1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTimelineCollectionViewController.m; path = Timeline/DTSTimelineCollectionViewController.m; sourceTree = "<group>"; };
 		F91CBD2F197EFDAD00BC3021 /* DTSLocationEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSLocationEntryViewController.h; sourceTree = "<group>"; };
 		F91CBD30197EFDAD00BC3021 /* DTSLocationEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSLocationEntryViewController.m; sourceTree = "<group>"; };
 		F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventLocationEntryTableViewCell.h; sourceTree = "<group>"; };
@@ -184,8 +202,6 @@
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F96B20FF1AB297FA009CC03E /* DTSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSActivity.h; sourceTree = "<group>"; };
 		F96B21001AB297FA009CC03E /* DTSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSActivity.m; sourceTree = "<group>"; };
-		F96B21021AB29BA6009CC03E /* DTSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSUser.h; sourceTree = "<group>"; };
-		F96B21031AB29BA6009CC03E /* DTSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSUser.m; sourceTree = "<group>"; };
 		F96B21061AB3564B009CC03E /* DTSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSRootViewController.h; path = RootVC/DTSRootViewController.h; sourceTree = "<group>"; };
 		F96B21071AB3564B009CC03E /* DTSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSRootViewController.m; path = RootVC/DTSRootViewController.m; sourceTree = "<group>"; };
 		F96B210A1AB362AA009CC03E /* 1-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-selected.png"; sourceTree = "<group>"; };
@@ -261,6 +277,10 @@
 		F9BEC14619B3A17100622CC9 /* paralympic17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paralympic17.png; sourceTree = "<group>"; };
 		F9BEC14819B3A22300622CC9 /* anchor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anchor2.png; sourceTree = "<group>"; };
 		F9BEC14A19B3A42100622CC9 /* waterTravel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterTravel.png; sourceTree = "<group>"; };
+		F9C6BC081AB7776900B82895 /* DTSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSConstants.h; sourceTree = "<group>"; };
+		F9C6BC091AB7776900B82895 /* DTSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSConstants.m; sourceTree = "<group>"; };
+		F9C6BC0B1AB778CB00B82895 /* PFUser+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFUser+DTSAdditions.h"; sourceTree = "<group>"; };
+		F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFUser+DTSAdditions.m"; sourceTree = "<group>"; };
 		F9EA06571AA57F99007573EC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = LaunchScreen/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9F012E619B522CF00176944 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
 		F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
@@ -274,13 +294,8 @@
 		F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryHeaderView.xib; sourceTree = "<group>"; };
 		F9F05D371AA15D44002C4A42 /* DTSPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSPlacemark.h; sourceTree = "<group>"; };
 		F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSPlacemark.m; sourceTree = "<group>"; };
-		F9F05D3B1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSListOfTripsCollectionViewController.h; path = ListOfTrips/DTSListOfTripsCollectionViewController.h; sourceTree = "<group>"; };
-		F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSListOfTripsCollectionViewController.m; path = ListOfTrips/DTSListOfTripsCollectionViewController.m; sourceTree = "<group>"; };
 		F9F05D3F1AA18F43002C4A42 /* NSObject+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DTSAdditions.h"; sourceTree = "<group>"; };
 		F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DTSAdditions.m"; sourceTree = "<group>"; };
-		F9F05D421AA23AC1002C4A42 /* DTSTripCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripCollectionViewCell.h; path = ListOfTrips/DTSTripCollectionViewCell.h; sourceTree = "<group>"; };
-		F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripCollectionViewCell.m; path = ListOfTrips/DTSTripCollectionViewCell.m; sourceTree = "<group>"; };
-		F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripCollectionViewCell.xib; path = ListOfTrips/DTSTripCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9F92572197B148400D92941 /* DTSEventPickerEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventPickerEntryTableViewCell.h; sourceTree = "<group>"; };
 		F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventPickerEntryTableViewCell.m; sourceTree = "<group>"; };
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -340,6 +355,34 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		F910156F1AB4CAEA006A6FC6 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				F91015701AB4CAF3006A6FC6 /* springboard */,
+				F91015801AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.h */,
+				F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */,
+				F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */,
+				F910158A1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.h */,
+				F910158B1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		F91015701AB4CAF3006A6FC6 /* springboard */ = {
+			isa = PBXGroup;
+			children = (
+				F91015711AB4CBA7006A6FC6 /* DTSSpringboardItemView.h */,
+				F91015721AB4CBA7006A6FC6 /* DTSSpringboardItemView.m */,
+				F91015731AB4CBA7006A6FC6 /* DTSSpringboardScrollView.h */,
+				F91015741AB4CBA7006A6FC6 /* DTSSpringboardScrollView.m */,
+				F91015751AB4CBA7006A6FC6 /* DTSSpringboardView.h */,
+				F91015761AB4CBA7006A6FC6 /* DTSSpringboardView.m */,
+				F910157D1AB4DA50006A6FC6 /* DTSSpringboardItemModel.h */,
+				F910157E1AB4DA50006A6FC6 /* DTSSpringboardItemModel.m */,
+			);
+			name = springboard;
+			sourceTree = "<group>";
+		};
 		F948C7DB1978693B000A2A3B /* TripEventsEntry */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,8 +427,8 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F910156F1AB4CAEA006A6FC6 /* Timeline */,
 				F96B21051AB2A69F009CC03E /* RootVC */,
-				F9F05D3A1AA16743002C4A42 /* ListOfTrips */,
 				F9B44F9119F3924500321E2C /* TripEvents */,
 				F9B3F73C19F0AEA200BC6052 /* TripMap */,
 				F9F012E519B522CF00176944 /* MagicPieLayer */,
@@ -448,6 +491,10 @@
 				F9F05D401AA18F43002C4A42 /* NSObject+DTSAdditions.m */,
 				F96B212A1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.h */,
 				F96B212B1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m */,
+				F9C6BC081AB7776900B82895 /* DTSConstants.h */,
+				F9C6BC091AB7776900B82895 /* DTSConstants.m */,
+				F9C6BC0B1AB778CB00B82895 /* PFUser+DTSAdditions.h */,
+				F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -465,8 +512,6 @@
 				F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */,
 				F96B20FF1AB297FA009CC03E /* DTSActivity.h */,
 				F96B21001AB297FA009CC03E /* DTSActivity.m */,
-				F96B21021AB29BA6009CC03E /* DTSUser.h */,
-				F96B21031AB29BA6009CC03E /* DTSUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -654,18 +699,6 @@
 			path = MagicPieLayer;
 			sourceTree = "<group>";
 		};
-		F9F05D3A1AA16743002C4A42 /* ListOfTrips */ = {
-			isa = PBXGroup;
-			children = (
-				F9F05D3B1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.h */,
-				F9F05D3C1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m */,
-				F9F05D421AA23AC1002C4A42 /* DTSTripCollectionViewCell.h */,
-				F9F05D431AA23AC1002C4A42 /* DTSTripCollectionViewCell.m */,
-				F9F05D451AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib */,
-			);
-			name = ListOfTrips;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,6 +806,7 @@
 				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
 				F96B21291AB362AA009CC03E /* 4@2x.png in Resources */,
+				F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */,
 				F96B21411AB389E7009CC03E /* explore@2x.png in Resources */,
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
@@ -795,7 +829,6 @@
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
 				F96B21321AB38524009CC03E /* edit.png in Resources */,
 				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
-				F9F05D461AA23AFF002C4A42 /* DTSTripCollectionViewCell.xib in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
 				F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */,
@@ -860,16 +893,19 @@
 				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
 				F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
+				F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */,
+				F910157A1AB4CBA7006A6FC6 /* DTSSpringboardScrollView.m in Sources */,
+				F91015791AB4CBA7006A6FC6 /* DTSSpringboardItemView.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
+				F910158C1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m in Sources */,
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
-				F96B21041AB29BA6009CC03E /* DTSUser.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
 				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
-				F9F05D3D1AA176DC002C4A42 /* DTSListOfTripsCollectionViewController.m in Sources */,
+				F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
@@ -879,7 +915,7 @@
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
-				F9F05D441AA23AC1002C4A42 /* DTSTripCollectionViewCell.m in Sources */,
+				F910157F1AB4DA50006A6FC6 /* DTSSpringboardItemModel.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,
 				F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */,
@@ -888,12 +924,14 @@
 				F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */,
 				F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
+				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
+				F910157B1AB4CBA7006A6FC6 /* DTSSpringboardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

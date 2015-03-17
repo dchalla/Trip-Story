@@ -761,5 +761,13 @@
     if (self.indexChangeBlock)
         self.indexChangeBlock(index);
 }
+#pragma mark - Blur
+- (void)addDarkBlurBackground
+{
+	UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+	UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
+	blurView.frame = self.bounds;
+	[self insertSubview:blurView belowSubview:self.scrollView];
+}
 
 @end

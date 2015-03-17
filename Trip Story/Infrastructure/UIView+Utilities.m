@@ -44,4 +44,35 @@
 	return [image applyDarkEffect];
 }
 
++ (id)dts_viewFromNibWithName:(NSString*)nibName owner:(id)owner bundle:(NSBundle*)inBundle
+{
+	UINib* nib = [UINib nibWithNibName:nibName bundle:inBundle];
+	
+	return [self dts_viewFromNib:nib owner:owner];
+}
+
++ (id)dts_viewFromNibWithName:(NSString*)nibName bundle:(NSBundle*)inBundle
+{
+	return [UIView dts_viewFromNibWithName:nibName owner:nil bundle:inBundle];
+}
+
++ (id)dts_viewFromNib:(UINib*)nib owner:(id)owner
+{
+	id view = nil;
+	if(nib)
+	{
+		NSArray* loadedObjects = [nib instantiateWithOwner:owner options:nil];
+		if(loadedObjects && loadedObjects.count > 0)
+			view = [loadedObjects objectAtIndex:0];
+		
+		NSAssert(view, @"View could not be loaded from nib");
+	}
+	
+	return view;
+}
+
++ (id)dts_viewFromNib:(UINib*)nib {
+	return [UIView dts_viewFromNib:nib owner:nil];
+}
+
 @end

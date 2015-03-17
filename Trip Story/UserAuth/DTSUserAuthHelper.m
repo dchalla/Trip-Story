@@ -7,7 +7,8 @@
 //
 
 #import "DTSUserAuthHelper.h"
-
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "DTSConstants.h"
 
 
 @implementation DTSUserAuthHelper
@@ -64,6 +65,7 @@ shouldBeginLogInWithUsername:(NSString *)username
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
 	[[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
+	[self updateFacebookDetailsForTheUser];
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController
@@ -99,6 +101,42 @@ shouldBeginLogInWithUsername:(NSString *)username
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController
 {
 	[[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Facebook related stuff
+- (void)updateFacebookDetailsForTheUser
+{
+	BOOL isLinkedToFacebook = [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]];
+	if (isLinkedToFacebook)
+	{
+		[FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+			
+			if (!error) {
+				
+				NSDictionary<FBGraphUser> *me = (NSDictionary<FBGraphUser> *)result;
+				
+				// Store the Facebook Id
+				
+				[[PFUser currentUser] setObject:me.objectID forKey:DTSUser_Facebook_ID];
+				[[PFUser currentUser] setObject:me.name forKey:DTSUser_Facebook_NAME];
+				
+				[[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+					
+					if (!error) {
+						
+						NSLog(@"Saved successfully");
+						
+					} else {
+						
+						NSLog(@"Error in saving");
+						
+					}
+					
+				}];
+			}
+		}];
+	}
+
 }
 
 

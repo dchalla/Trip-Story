@@ -49,7 +49,7 @@
 		dateComponents.hour = hours;
 		
 		durationString = [dateComponentsFromatter stringFromDateComponents:dateComponents];
-		durationString = [durationString stringByReplacingOccurrencesOfString:@"," withString:@"\n"];
+		durationString = [durationString stringByReplacingOccurrencesOfString:@", " withString:@"\n"];
 	}
 	else
 	{

@@ -37,6 +37,11 @@
 - (DTSEvent *)nextEventWithLocationForEvent:(DTSEvent *)event;
 - (NSDate *)startTimeOfTrip;
 - (NSDate *)endTimeOfTrip;
+- (NSDictionary *)tripEventTypeColorDict;
+- (NSString *)tripTagsString;
+- (NSArray *)tripTagsArray;
+- (NSArray *)tripCityStateArray;
+- (NSArray *)tripEventTypeStringsArray;
 
 + (NSString *)parseClassName;
 

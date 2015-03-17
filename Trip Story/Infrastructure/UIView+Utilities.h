@@ -14,5 +14,5 @@
 - (UIImage *)dts_snapshotImage;
 - (UIImage *)dts_lightBlurredSnapshotImage;
 - (UIImage *)dts_darkBlurredSnapshotImage;
-
++ (id)dts_viewFromNibWithName:(NSString*)nibName bundle:(NSBundle*)inBundle;
 @end

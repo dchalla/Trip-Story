@@ -415,6 +415,89 @@
 	return nil;
 }
 
+- (NSDictionary *)tripEventTypeColorDict
+{
+	NSMutableDictionary *eventsTypeDict = [NSMutableDictionary dictionary];
+	for (DTSEvent *event in self.originalEventsList)
+	{
+		[eventsTypeDict setObject:[DTSEvent topColorForEventType:event.eventType] forKey:@(event.eventType)];
+	}
+	return [eventsTypeDict copy];
+}
+
+- (NSString *)tripTagsString
+{
+	return [[self tripTagsArray] componentsJoinedByString:@", "];
+}
+
+- (NSArray *)tripTagsArray
+{
+	NSArray *tripCityStateArray = [self tripCityStateArray];
+	NSArray *tripEventTypeStringsArray = [self tripEventTypeStringsArray];
+	return [tripCityStateArray arrayByAddingObjectsFromArray:tripEventTypeStringsArray];
+}
+
+- (NSArray *)tripCityStateArray
+{
+	NSMutableArray *countryStateCityNameArray = [NSMutableArray array];
+	
+	NSMutableDictionary *stateDict = [NSMutableDictionary dictionary];
+	NSMutableDictionary *cityDict = [NSMutableDictionary dictionary];
+	NSMutableDictionary *countryDict = [NSMutableDictionary dictionary];
+	NSMutableDictionary *nameDict = [NSMutableDictionary dictionary];
+	
+	NSArray *eventsWithLocation = [self eventsWithLocationList];
+	
+	for (DTSEvent *event in eventsWithLocation)
+	{
+		NSString *city = event.location.mapItem.placemark.locality;
+		NSString *state = event.location.mapItem.placemark.administrativeArea;
+		NSString *country = event.location.mapItem.placemark.country;
+		NSString *name = event.location.dtsPlacemark.mkplacemark.name;
+		if (name.length > 0 && !stateDict[name] && !cityDict[name] && !nameDict[name] && !countryDict[name])
+		{
+			nameDict[name] = name;
+		}
+		if (city.length > 0 && !stateDict[city] && !cityDict[city] && !nameDict[city] && !countryDict[city])
+		{
+			cityDict[city] = city;
+		}
+		if (state.length > 0 && !stateDict[state] && !cityDict[state] && !nameDict[state] && !countryDict[state])
+		{
+			stateDict[state] = state;
+		}
+		if (country.length > 0 && !stateDict[country] && !cityDict[country] && !nameDict[country] && !countryDict[country])
+		{
+			countryDict[country] = country;
+		}
+	}
+	NSArray *dictArray = @[countryDict,stateDict,cityDict,nameDict];
+	for (int i = 0; i < 4; i++)
+	{
+		NSMutableDictionary *dict = dictArray[i];
+		for (NSString *mapItemString in dict)
+		{
+			[countryStateCityNameArray addObject:mapItemString];
+		}
+	}
+	return [countryStateCityNameArray copy];
+}
+
+- (NSArray *)tripEventTypeStringsArray
+{
+	NSMutableArray *tripEventTypeStringsArray = [NSMutableArray array];
+	NSMutableDictionary *eventsTypeDict = [NSMutableDictionary dictionary];
+	for (DTSEvent *event in self.originalEventsList)
+	{
+		[eventsTypeDict setObject:[event eventTypeStringForEventType:event.eventType] forKey:@(event.eventType)];
+	}
+	[eventsTypeDict enumerateKeysAndObjectsUsingBlock:^(NSNumber *eventType, NSString *eventTypeString, BOOL *stop){
+		[tripEventTypeStringsArray addObject:eventTypeString];
+	}];
+	
+	return [tripEventTypeStringsArray copy];
+}
+
 
 
 @end

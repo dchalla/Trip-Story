@@ -35,6 +35,19 @@
 	return nil;
 }
 
+- (MKPlacemark *)mkplacemark
+{
+	if (self.longitude != 0 && self.latitude != 0)
+	{
+		MKPlacemark *mkplacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.latitude, self.longitude) addressDictionary:self.addressDictionary];
+		if (mkplacemark)
+		{
+			return  mkplacemark;
+		}
+	}
+	return nil;
+}
+
 - (void)updateWithMkMapItem:(MKMapItem *)mapItem {
 	if (mapItem && mapItem.placemark)
 	{

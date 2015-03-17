@@ -8,8 +8,10 @@
 
 #import "DTSRootViewController.h"
 #import "HMSegmentedControl.h"
-#import "DTSListOfTripsCollectionViewController.h"
+#import "DTSTimelineCollectionViewController.h"
 #import "UIColor+Utilities.h"
+#import "DTSTrip.h"
+#import "DTSUserAuthHelper.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -18,37 +20,37 @@
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, strong) NSArray *pagedViewControllers;
-@property (nonatomic, strong) DTSListOfTripsCollectionViewController *timeLineVC;
-@property (nonatomic, strong) DTSListOfTripsCollectionViewController *addTripVC;
-@property (nonatomic, strong) DTSListOfTripsCollectionViewController *userVC;
+@property (nonatomic, strong) DTSTimelineCollectionViewController *timeLineVC;
+@property (nonatomic, strong) DTSTimelineCollectionViewController *addTripVC;
+@property (nonatomic, strong) DTSTimelineCollectionViewController *userVC;
 
 @end
 
 @implementation DTSRootViewController
 
-- (DTSListOfTripsCollectionViewController *)timeLineVC
+- (DTSTimelineCollectionViewController *)timeLineVC
 {
 	if (!_timeLineVC)
 	{
-		_timeLineVC = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+		_timeLineVC = [[DTSTimelineCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSTrip parseClassName]];
 	}
 	return _timeLineVC;
 }
 
-- (DTSListOfTripsCollectionViewController *)addTripVC
+- (DTSTimelineCollectionViewController *)addTripVC
 {
 	if (!_addTripVC)
 	{
-		_addTripVC = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+		_addTripVC = [[DTSTimelineCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSTrip parseClassName]];
 	}
 	return _addTripVC;
 }
 
-- (DTSListOfTripsCollectionViewController *)userVC
+- (DTSTimelineCollectionViewController *)userVC
 {
 	if (!_userVC)
 	{
-		_userVC = [[DTSListOfTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+		_userVC = [[DTSTimelineCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSTrip parseClassName]];
 	}
 	return _userVC;
 }
@@ -70,6 +72,7 @@
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = YES;
 	[self updateSegmentFrame];
+	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 }
 
 #pragma mark - segmentControl
@@ -106,12 +109,13 @@
 	[self updateSegmentFrame];
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
-	self.segmentedControl.backgroundColor = [UIColor blackColor];
+	self.segmentedControl.backgroundColor = [UIColor clearColor];
 	self.segmentedControl.textColor = [UIColor whiteColor];
 	self.segmentedControl.font = [UIFont systemFontOfSize:12];
 	self.segmentedControl.selectedTextColor = [UIColor whiteColor];
 	self.segmentedControl.selectionIndicatorColor = [UIColor selectionColor];
 	self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+	[self.segmentedControl addDarkBlurBackground];
 	[self.view addSubview:self.segmentedControl];
 }
 
