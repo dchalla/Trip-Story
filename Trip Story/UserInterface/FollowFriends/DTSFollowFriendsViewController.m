@@ -34,7 +34,7 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"Find Friends";
-	self.collectionView.contentInset = UIEdgeInsetsMake(self.collectionView.contentInset.top, 0, self.bottomLayoutGuideLength, 0);
+	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 
 #pragma mark -

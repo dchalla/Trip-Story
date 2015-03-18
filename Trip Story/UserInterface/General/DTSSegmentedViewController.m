@@ -1,80 +1,44 @@
 //
-//  DTSRootViewController.m
+//  DTSSegmentedViewController.m
 //  Trip Story
 //
-//  Created by Dinesh Challa on 3/13/15.
+//  Created by Dinesh Challa on 3/18/15.
 //  Copyright (c) 2015 DKC. All rights reserved.
 //
 
-#import "DTSRootViewController.h"
-#import "HMSegmentedControl.h"
-#import "DTSTimelineRootViewController.h"
+#import "DTSSegmentedViewController.h"
 #import "UIColor+Utilities.h"
-#import "DTSTrip.h"
-#import "DTSUserAuthHelper.h"
-#import "DTSFollowFriendsViewController.h"
-#import "DTSUserRootViewController.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
-@interface DTSRootViewController ()
-
-@property (nonatomic, strong) HMSegmentedControl *segmentedControl;
-@property (nonatomic, strong) UIPageViewController *pageVC;
-@property (nonatomic, strong) NSArray *pagedViewControllers;
-@property (nonatomic, strong) DTSTimelineRootViewController *timeLineVC;
-@property (nonatomic, strong) DTSTimelineRootViewController *addTripVC;
-@property (nonatomic, strong) DTSUserRootViewController *userVC;
+@interface DTSSegmentedViewController ()
 
 @end
 
-@implementation DTSRootViewController
+@implementation DTSSegmentedViewController
 
-- (DTSTimelineRootViewController *)timeLineVC
-{
-	if (!_timeLineVC)
-	{
-		_timeLineVC = [[DTSTimelineRootViewController alloc] init];
-	}
-	return _timeLineVC;
-}
-
-- (DTSTimelineRootViewController *)addTripVC
-{
-	if (!_addTripVC)
-	{
-		_addTripVC = [[DTSTimelineRootViewController alloc] init];
-	}
-	return _addTripVC;
-}
-
-- (DTSUserRootViewController *)userVC
-{
-	if (!_userVC)
-	{
-		_userVC = [[DTSUserRootViewController alloc] init];
-	}
-	return _userVC;
-}
+@synthesize topLayoutGuideLength;
+@synthesize bottomLayoutGuideLength;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
+	// Do any additional setup after loading the view.
+	if (self.topLayoutGuideLength == 0)
+	{
+		if (self.navigationController)
+		{
+			self.topLayoutGuideLength = self.navigationController.navigationBar.frame.size.height;
+		}
+	}
 	[self setupPageViewController];
 	[self setupSegmentControl];
-}
-
-- (void)viewDidLayoutSubviews
-{
-	[super viewDidLayoutSubviews];
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	self.navigationController.navigationBarHidden = YES;
 	[self updateSegmentFrame];
-	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 }
 
 #pragma mark - segmentControl
@@ -106,8 +70,7 @@
 
 - (void)setupSegmentControl
 {
-	NSArray *sectionIcons = @[[[UIImage imageNamed:@"explore"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionImages:sectionIcons sectionSelectedImages:sectionIcons];
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:[self segmentNamesList]];
 	[self updateSegmentFrame];
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
@@ -116,20 +79,20 @@
 	self.segmentedControl.font = [UIFont systemFontOfSize:12];
 	self.segmentedControl.selectedTextColor = [UIColor whiteColor];
 	self.segmentedControl.selectionIndicatorColor = [UIColor selectionColor];
-	self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+	self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp;
 	[self.segmentedControl addDarkBlurBackground];
 	[self.view addSubview:self.segmentedControl];
 }
 
 - (void)updateSegmentFrame
 {
-	self.segmentedControl.frame = CGRectMake(0, self.view.frame.size.height - DTS_SEGMENT_HEIGHT, self.view.frame.size.width, DTS_SEGMENT_HEIGHT);
+	self.segmentedControl.frame = CGRectMake(0, self.topLayoutGuideLength, self.view.frame.size.width, DTS_SEGMENT_HEIGHT);
 	[self.view bringSubviewToFront:self.segmentedControl];
 }
 
 - (void)setupPageViewController
 {
-	self.pagedViewControllers = @[[self wrappedNavigationControllerVC:self.timeLineVC],[self wrappedNavigationControllerVC:self.addTripVC],[self wrappedNavigationControllerVC:self.userVC]];
+	self.pagedViewControllers = [self pagedViewControllersList];
 	
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;
@@ -141,23 +104,24 @@
 	[self.view addSubview:self.pageVC.view];
 	[self.pageVC didMoveToParentViewController:self];
 	
-	for (UINavigationController *vc in self.pagedViewControllers)
+	for (UIViewController *vc in self.pagedViewControllers)
 	{
-		if ([vc.topViewController conformsToProtocol:@protocol(DTSViewLayoutProtocol)])
+		if ([vc conformsToProtocol:@protocol(DTSViewLayoutProtocol)])
 		{
-			[vc.topViewController setValue:@(DTS_SEGMENT_HEIGHT) forKey:@"bottomLayoutGuideLength"];
+			[vc setValue:@(self.topLayoutGuideLength+DTS_SEGMENT_HEIGHT) forKey:@"topLayoutGuideLength"];
+			[vc setValue:@(self.bottomLayoutGuideLength) forKey:@"bottomLayoutGuideLength"];
 		}
 	}
-
 }
 
-- (UINavigationController *)wrappedNavigationControllerVC:(UIViewController *)viewController
+- (NSArray *)segmentNamesList
 {
-	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:viewController];
-	navVC.navigationBar.barTintColor = [UIColor blackColor];
-	navVC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-	return navVC;
-	
+	return @[];
+}
+
+- (NSArray *)pagedViewControllersList
+{
+	return @[];
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -223,7 +187,6 @@
 	}
 	return i;
 }
-
 
 
 @end

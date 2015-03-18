@@ -7,12 +7,6 @@
 //
 
 #import "DTSTimelineCollectionViewController.h"
-#import "DTSTrip.h"
-#import "DTSTripDetailsViewController.h"
-#import "DTSUserAuthHelper.h"
-#import "UIColor+Utilities.h"
-#import "DTSTimelineCollectionViewCell.h"
-#import "DTSActivity.h"
 
 #define DTSTimelineCellHeight 250
 #define DTSTimelineCellIpadSpacer 5
@@ -35,7 +29,6 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"Trip Story";
-	self.collectionView.contentInset = UIEdgeInsetsMake(self.collectionView.contentInset.top, 0, self.bottomLayoutGuideLength, 0);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,32 +36,17 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 	[super viewWillAppear:animated];
 }
 
+- (void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
+	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
 #pragma mark - PFQUERY
 
 - (PFQuery *)queryForCollection
 {
-	if (![PFUser currentUser])
-	{
-		return nil;
-	}
-	
-	// Query for the friends the current user is following
-	PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
-	[followingActivitiesQuery whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
-	[followingActivitiesQuery whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
- 
-	// Using the activities from the query above, we find all of the photos taken by
-	// the friends the current user is following
-	PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
-	[photosFromFollowedUsersQuery whereKey:kDTSTripUserKey matchesKey:kDTSActivityToUserKey inQuery:followingActivitiesQuery];
- 
-	// We create a second query for the current user's photos
-	PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
-	[photosFromCurrentUserQuery whereKey:kDTSTripUserKey equalTo:[PFUser currentUser]];
- 
-	// We create a final compound query that will find all of the photos that were
-	// taken by the user's friends or by the user
-	PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects: photosFromFollowedUsersQuery,photosFromCurrentUserQuery, nil]];
+	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
 	
 	[query includeKey:@"originalEventsList"];
 	[query includeKey:@"originalEventsList.location"];
@@ -76,7 +54,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 	[query includeKey:@"user"];
 	[query orderByDescending:@"createdAt"];
 	
-	//[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
 	
 	return query;
 }
