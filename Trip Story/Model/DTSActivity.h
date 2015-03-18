@@ -10,15 +10,21 @@
 #import <Parse/PFSubclassing.h>
 #import "DTSTrip.h"
 
-NSString *const kDTSActivityTypeLike       = @"like";
-NSString *const kDTSActivityTypeFollow     = @"follow";
-NSString *const kDTSActivityTypeComment    = @"comment";
-NSString *const kDTSActivityTypeJoined     = @"joined";
+extern NSString *const kDTSActivityTypeLike;
+extern  NSString *const kDTSActivityTypeFollow;
+extern NSString *const kDTSActivityTypeComment;
+extern NSString *const kDTSActivityTypeJoined;
+
+extern NSString *const kDTSActivityTypeKey;
+extern NSString *const kDTSActivityFromUserKey;
+extern NSString *const kDTSActivityToUserKey;
+extern NSString *const kDTSActivityContentKey;
+extern NSString *const kDTSActivityTripKey;
 
 @interface DTSActivity : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) PFUser *fromUser;
-@property (nonatomic, strong) PFUser *topUser;
+@property (nonatomic, strong) PFUser *toUser;
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) DTSTrip *trip;

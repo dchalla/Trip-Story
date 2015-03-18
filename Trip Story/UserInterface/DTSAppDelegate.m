@@ -10,6 +10,7 @@
 #import "DTSRootViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "DTSUserAuthHelper.h"
 
 @implementation DTSAppDelegate
 
@@ -33,6 +34,8 @@
 	[self.window makeKeyAndVisible];
 	
 	[self setupUIAppearance];
+	
+	[[DTSUserAuthHelper sharedManager] updateFacebookDetailsForTheUser];
 	
     return YES;
 }

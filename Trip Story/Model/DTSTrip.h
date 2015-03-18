@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 #import <Parse/PFSubclassing.h>
 
+extern NSString *const kDTSTripUserKey;
+
 @interface DTSTrip : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *tripName;

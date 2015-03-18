@@ -12,6 +12,8 @@
 #import "NSString+Utilities.h"
 #import <PFObject+Subclass.h>
 
+NSString *const kDTSTripUserKey		= @"user";
+
 @interface DTSTrip() {
 	NSMutableArray *_eventsList;
 }

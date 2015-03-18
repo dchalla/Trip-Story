@@ -12,6 +12,7 @@
 #import "DTSUserAuthHelper.h"
 #import "UIColor+Utilities.h"
 #import "DTSTimelineCollectionViewCell.h"
+#import "DTSActivity.h"
 
 #define DTSTimelineCellHeight 250
 #define DTSTimelineCellIpadSpacer 5
@@ -46,11 +47,28 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 - (PFQuery *)queryForCollection
 {
-	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
-	if ([PFUser currentUser])
+	if (![PFUser currentUser])
 	{
-		[query whereKey:@"user" equalTo:[PFUser currentUser]];
+		return nil;
 	}
+	
+	// Query for the friends the current user is following
+	PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[followingActivitiesQuery whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
+	[followingActivitiesQuery whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
+ 
+	// Using the activities from the query above, we find all of the photos taken by
+	// the friends the current user is following
+	PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+	[photosFromFollowedUsersQuery whereKey:kDTSTripUserKey matchesKey:kDTSActivityToUserKey inQuery:followingActivitiesQuery];
+ 
+	// We create a second query for the current user's photos
+	PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+	[photosFromCurrentUserQuery whereKey:kDTSTripUserKey equalTo:[PFUser currentUser]];
+ 
+	// We create a final compound query that will find all of the photos that were
+	// taken by the user's friends or by the user
+	PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects: photosFromFollowedUsersQuery,photosFromCurrentUserQuery, nil]];
 	
 	[query includeKey:@"originalEventsList"];
 	[query includeKey:@"originalEventsList.location"];
@@ -175,7 +193,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	float bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
-	if (bottomEdge >= scrollView.contentSize.height && scrollView.contentSize.height > 100)
+	if (bottomEdge >= scrollView.contentSize.height && scrollView.contentSize.height > scrollView.frame.size.height)
 	{
 		NSInteger lastCountLoad;
 		@try

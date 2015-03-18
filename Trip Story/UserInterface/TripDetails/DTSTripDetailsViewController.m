@@ -66,7 +66,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self setupBackBarButton];
 	UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEventButtonTapped)];
 	[self.navigationItem setRightBarButtonItem:addBarButton];
 	
@@ -309,17 +308,6 @@
 			NSLog(@"Failed");
 		}
 	}];
-}
-
-#pragma mark - backBarButton
-- (void)setupBackBarButton
-{
-	UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
-								initWithTitle:@""
-								style:UIBarButtonItemStylePlain
-								target:nil
-								action:nil];
-	//[self.navigationItem setBackBarButtonItem:btnBack];
 }
 
 @end

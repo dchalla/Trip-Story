@@ -12,6 +12,7 @@
 #import "UIColor+Utilities.h"
 #import "DTSTrip.h"
 #import "DTSUserAuthHelper.h"
+#import "DTSFollowFriendsViewController.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -22,7 +23,7 @@
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) DTSTimelineCollectionViewController *timeLineVC;
 @property (nonatomic, strong) DTSTimelineCollectionViewController *addTripVC;
-@property (nonatomic, strong) DTSTimelineCollectionViewController *userVC;
+@property (nonatomic, strong) DTSFollowFriendsViewController *userVC;
 
 @end
 
@@ -46,11 +47,11 @@
 	return _addTripVC;
 }
 
-- (DTSTimelineCollectionViewController *)userVC
+- (DTSFollowFriendsViewController *)userVC
 {
 	if (!_userVC)
 	{
-		_userVC = [[DTSTimelineCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSTrip parseClassName]];
+		_userVC = [[DTSFollowFriendsViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [PFUser parseClassName]];
 	}
 	return _userVC;
 }
