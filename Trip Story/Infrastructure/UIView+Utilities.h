@@ -14,5 +14,8 @@
 - (UIImage *)dts_snapshotImage;
 - (UIImage *)dts_lightBlurredSnapshotImage;
 - (UIImage *)dts_darkBlurredSnapshotImage;
+- (void)addTopBorderWithColor:(UIColor *)borderColor borderHeight:(CGFloat)borderHeight;
+- (void)addBottomBorderWithColor:(UIColor *)borderColor borderHeight:(CGFloat)borderHeight;
+
 + (id)dts_viewFromNibWithName:(NSString*)nibName bundle:(NSBundle*)inBundle;
 @end

@@ -14,6 +14,7 @@
 #import "DTSUserAuthHelper.h"
 #import "DTSFollowFriendsViewController.h"
 #import "DTSUserRootViewController.h"
+#import "UIView+Utilities.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -67,13 +68,13 @@
 - (void)viewDidLayoutSubviews
 {
 	[super viewDidLayoutSubviews];
+	[self updateSegmentFrame];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = YES;
-	[self updateSegmentFrame];
 	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 }
 
@@ -119,6 +120,7 @@
 	self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
 	[self.segmentedControl addDarkBlurBackground];
 	[self.view addSubview:self.segmentedControl];
+	[self.segmentedControl addTopBorderWithColor:[UIColor colorWithWhite:1 alpha:0.1] borderHeight:0.4];
 }
 
 - (void)updateSegmentFrame
@@ -154,8 +156,6 @@
 - (UINavigationController *)wrappedNavigationControllerVC:(UIViewController *)viewController
 {
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:viewController];
-	navVC.navigationBar.barTintColor = [UIColor blackColor];
-	navVC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	return navVC;
 	
 }

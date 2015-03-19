@@ -87,12 +87,12 @@
 
 + (UIColor *)primaryColor
 {
-	return [UIColor colorWithRed:23/255.0 green:23/255.0 blue:23/255.0 alpha:1];
+	return [UIColor colorWithRed:15/255.0 green:17/255.0 blue:18/255.0 alpha:1];
 }
 
 + (UIColor *)secondaryColor
 {
-	return [UIColor colorWithRed:5/255.0 green:5/255.0 blue:5/255.0 alpha:1];
+	return [UIColor colorWithRed:3/255.0 green:3/255.0 blue:3/255.0 alpha:1];
 }
 
 + (UIColor *)dtsBlueColor

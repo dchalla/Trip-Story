@@ -27,8 +27,6 @@
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	UIViewController *vc = [[DTSRootViewController alloc] init];
 	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-	nvc.navigationBar.barTintColor = [UIColor blackColor];
-	nvc.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 	nvc.navigationBarHidden = YES;
 	self.window.rootViewController = nvc;
 	[self.window makeKeyAndVisible];
@@ -82,7 +80,10 @@
 {
 	[[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:6/255.0 green:8.0/255.0 blue:11.0/255.0 alpha:1]];
+	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+	[[UINavigationBar appearance] setTranslucent:YES];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
-
 
 @end

@@ -767,6 +767,7 @@
 	UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
 	UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
 	blurView.frame = self.bounds;
+	blurView.backgroundColor = [UIColor colorWithRed:23/255.0 green:26.0/255.0 blue:30/255.0 alpha:1];
 	[self insertSubview:blurView belowSubview:self.scrollView];
 }
 

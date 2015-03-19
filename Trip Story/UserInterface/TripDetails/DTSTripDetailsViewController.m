@@ -158,7 +158,6 @@
 	eventsEntryVC.addEventDelegate = self;
 	eventsEntryVC.isNewEvent = isNew;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
-	[navVC.navigationBar setBarTintColor:[UIColor blackColor]];
 	navVC.transitioningDelegate = eventsEntryVC;
 	eventsEntryVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
 	[self presentViewController:navVC animated:YES completion:^{

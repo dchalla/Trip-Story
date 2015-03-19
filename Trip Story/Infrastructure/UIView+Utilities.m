@@ -44,6 +44,22 @@
 	return [image applyDarkEffect];
 }
 
+- (void)addTopBorderWithColor:(UIColor *)borderColor borderHeight:(CGFloat)borderHeight
+{
+	CALayer *topBorder = [CALayer layer];
+	topBorder.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, borderHeight);
+	topBorder.backgroundColor = borderColor.CGColor;
+	[self.layer addSublayer:topBorder];
+}
+
+- (void)addBottomBorderWithColor:(UIColor *)borderColor borderHeight:(CGFloat)borderHeight
+{
+	CALayer *bottomBorder = [CALayer layer];
+	bottomBorder.frame = CGRectMake(0.0f, self.frame.size.height-borderHeight, self.frame.size.width, borderHeight);
+	bottomBorder.backgroundColor = borderColor.CGColor;
+	[self.layer addSublayer:bottomBorder];
+}
+
 + (id)dts_viewFromNibWithName:(NSString*)nibName owner:(id)owner bundle:(NSBundle*)inBundle
 {
 	UINib* nib = [UINib nibWithNibName:nibName bundle:inBundle];

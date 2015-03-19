@@ -8,6 +8,7 @@
 
 #import "DTSSegmentedViewController.h"
 #import "UIColor+Utilities.h"
+#import "UIView+Utilities.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -82,6 +83,7 @@
 	self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp;
 	[self.segmentedControl addDarkBlurBackground];
 	[self.view addSubview:self.segmentedControl];
+	[self.segmentedControl addBottomBorderWithColor:[UIColor colorWithWhite:1 alpha:0.1] borderHeight:0.4];
 }
 
 - (void)updateSegmentFrame
