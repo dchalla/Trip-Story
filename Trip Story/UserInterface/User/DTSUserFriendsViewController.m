@@ -1,61 +1,69 @@
 //
-//  DTSTimelineCollectionViewController.m
+//  DTSUserFriendsViewController.m
 //  Trip Story
 //
-//  Created by Dinesh Challa on 3/16/15.
+//  Created by Dinesh Challa on 3/19/15.
 //  Copyright (c) 2015 DKC. All rights reserved.
 //
 
-#import "DTSTimelineCollectionViewController.h"
+#import "DTSUserFriendsViewController.h"
+#import "DTSActivity.h"
+#import "DTSCache.h"
+#import "DTSFollowFriendsCollectionViewCell.h"
+#import "UIColor+Utilities.h"
+#import "DTSConstants.h"
+#import "DTSUtilities.h"
+#import "PFUser+DTSAdditions.h"
 
-#define DTSTimelineCellHeight 250
-#define DTSTimelineCellIpadSpacer 5
+#define DTSFollowFriendsCellHeight 60
 
+static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 
-@interface DTSTimelineCollectionViewController ()
+@interface DTSUserFriendsViewController ()
 
 @end
 
-@implementation DTSTimelineCollectionViewController
+@implementation DTSUserFriendsViewController
 @synthesize topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Register cell classes
-	[self.collectionView registerClass:[DTSTimelineCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTimelineCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
+	// Do any additional setup after loading the view.
+	[self.collectionView registerClass:[DTSFollowFriendsCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSFollowFriendsCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
-	self.title = @"Trip Story";
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-}
-
-- (void)viewDidLayoutSubviews
-{
-	[super viewDidLayoutSubviews];
+	self.title = [self navigationTitle];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (NSString *)navigationTitle
+{
+	return [NSString stringWithFormat:@"%@ %@",[self.user dts_displayName],self.forFollowers?@"Followers":@"Following"];
+}
+
+#pragma mark -
+#pragma mark Responding to Events
+
+- (void)objectsWillLoad {
+	[super objectsWillLoad];
+	[self stylePFLoadingViewTheHardWay];
 }
 
 #pragma mark - PFQUERY
 
 - (PFQuery *)queryForCollection
 {
-	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+	PFQuery *queryFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
+	[queryFollowing whereKey:self.forFollowers?kDTSActivityToUserKey:kDTSActivityFromUserKey equalTo:self.user];
+	[queryFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
 	
-	[query includeKey:@"originalEventsList"];
-	[query includeKey:@"originalEventsList.location"];
-	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
-	[query includeKey:@"user"];
-	[query orderByDescending:@"createdAt"];
+	[queryFollowing orderByAscending:DTSUser_Facebook_NAME];
+	[queryFollowing includeKey:self.forFollowers?kDTSActivityFromUserKey:kDTSActivityToUserKey];
 	
-	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
-	
-	return query;
+	return queryFollowing;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -71,17 +79,11 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return [self dtsCellForRowAtIndexPath:indexPath];
-}
-
-- (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
-	
-	DTSTimelineCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
+	DTSFollowFriendsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	[cell updateUIWithUser:self.forFollowers?activity.fromUser:activity.toUser];
 	cell.backgroundColor = [UIColor primaryColor];
-	[trip fillInPlaceholderEvents];
-	[cell updateViewWithTrip:trip];
+	
 	return cell;
 }
 
@@ -89,48 +91,22 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	return [self dtsDefaultItemSize];
-	
-}
-
-- (CGSize)dtsDefaultItemSize
-{
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 	{
-		return CGSizeMake(self.view.frame.size.width, DTSTimelineCellHeight);
+		return CGSizeMake(self.view.frame.size.width, DTSFollowFriendsCellHeight);
 	}
 	else
 	{
-		return CGSizeMake(self.view.frame.size.width/2-DTSTimelineCellIpadSpacer, DTSTimelineCellHeight);
+		return CGSizeMake(self.view.frame.size.width/2-5, DTSFollowFriendsCellHeight);
 	}
+	
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self dtsDidSelectItemAtIndexPath:indexPath];
+	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
+	[DTSUtilities openUserDetailsForUser:self.forFollowers?activity.fromUser:activity.toUser];
 }
-
-- (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
-	
-	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
-	vc.trip = trip;
-	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
-}
-
-#pragma mark -
-#pragma mark Responding to Events
-
-- (void)objectsWillLoad {
-	[super objectsWillLoad];
-	[self stylePFLoadingViewTheHardWay];
-}
-
-- (void)objectsDidLoad:(NSError *)error {
-	[super objectsDidLoad:error];
-}
-
 
 #pragma mark - custom styling
 
@@ -185,6 +161,5 @@
 		}
 	}
 }
-
 
 @end

@@ -9,6 +9,7 @@
 #import "DTSUserRootViewController.h"
 #import "DTSUserTimelineCollectionViewController.h"
 #import "DTSFollowFriendsViewController.h"
+#import "PFUser+DTSAdditions.h"
 
 @interface DTSUserRootViewController ()
 @property (nonatomic, strong) DTSUserTimelineCollectionViewController *userTimelineVC;
@@ -53,22 +54,38 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	self.title = @"Trip Story Feed";
+	self.title = [self.user dts_displayName];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	self.navigationController.navigationBarHidden = NO;
 }
 
 - (NSArray *)segmentNamesList
 {
-	return @[@"Profile", @"Friends"];
+	if ([self.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return @[@"Profile", @"Facebook Friends"];
+	}
+	else
+	{
+		return @[@"Profile"];
+	}
+	
 }
 
 - (NSArray *)pagedViewControllersList
 {
-	return @[self.userTimelineVC,self.friendsVC];
+	if ([self.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return @[self.userTimelineVC,self.friendsVC];
+	}
+	else
+	{
+		return @[self.userTimelineVC];
+	}
 }
 
 

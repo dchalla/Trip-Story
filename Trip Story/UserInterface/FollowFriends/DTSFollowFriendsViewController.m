@@ -12,6 +12,7 @@
 #import "DTSFollowFriendsCollectionViewCell.h"
 #import "UIColor+Utilities.h"
 #import "DTSConstants.h"
+#import "DTSUtilities.h"
 
 #define DTSFollowFriendsCellHeight 60
 
@@ -53,34 +54,29 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	[isFollowingQuery whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[isFollowingQuery whereKey:kDTSActivityToUserKey containedIn:self.objects];
 	[isFollowingQuery setCachePolicy:kPFCachePolicyNetworkOnly];
+	[isFollowingQuery includeKey:kDTSActivityToUserKey];
 	
-	[isFollowingQuery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+	[isFollowingQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error)
 		{
-			if (number == self.objects.count) {
+			for (DTSActivity *activity in objects)
+			{
+				[[DTSCache sharedCache] setFollowStatus:YES user:activity.toUser];
+			}
+			
+			if (objects.count == self.objects.count) {
 				self.followStatus = DTSFindFriendsFollowingAll;
 				//[self configureUnfollowAllButton];
-				for (PFUser *user in self.objects) {
-					[[DTSCache sharedCache] setFollowStatus:YES user:user];
-				}
-			} else if (number == 0) {
+			} else if (objects.count == 0) {
 				self.followStatus = DTSFindFriendsFollowingNone;
 				//[self configureFollowAllButton];
-				for (PFUser *user in self.objects) {
-					[[DTSCache sharedCache] setFollowStatus:NO user:user];
-				}
 			} else {
 				self.followStatus = DTSFindFriendsFollowingSome;
 				//[self configureFollowAllButton];
 			}
 			[self.collectionView reloadData];
 		}
-		
-		if (self.objects.count == 0) {
-			self.navigationItem.rightBarButtonItem = nil;
-		}
 	}];
-	
 	if (self.objects.count == 0) {
 		self.navigationItem.rightBarButtonItem = nil;
 	}
@@ -124,6 +120,7 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	PFUser *user = dynamic_cast_oc(self.objects[indexPath.row], PFUser);
 	DTSFollowFriendsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	cell.showFollowButton = YES;
 	[cell updateUIWithUser:user];
 	cell.backgroundColor = [UIColor primaryColor];
 	
@@ -147,7 +144,8 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+	PFUser *user = dynamic_cast_oc(self.objects[indexPath.row], PFUser);
+	[DTSUtilities openUserDetailsForUser:user];
 }
 
 #pragma mark - custom styling

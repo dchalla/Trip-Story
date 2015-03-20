@@ -44,6 +44,15 @@
 		[self.userImage loadInBackground];
 	}
 	
+	if (self.showFollowButton)
+	{
+		self.followButton.hidden = NO;
+	}
+	else
+	{
+		self.followButton.hidden = YES;
+	}
+	
 }
 - (IBAction)followButtonTapped:(id)sender {
 	if (self.followButton.selected)
@@ -75,6 +84,32 @@
 		self.followButton.selected = NO;
 		[self.followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	}
+}
+
+- (void)updateFollowButtonStatus
+{
+	PFQuery *queryIsFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryIsFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
+	[queryIsFollowing whereKey:kDTSActivityToUserKey equalTo:self.user];
+	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
+	[queryIsFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	BlockWeakSelf wSelf = self;
+	[queryIsFollowing countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+		BlockStrongSelf strongSelf = wSelf;
+		if (!strongSelf)
+		{
+			return ;
+		}
+		if (error && [error code] != kPFErrorCacheMiss) {
+			NSLog(@"Couldn't determine follow relationship: %@", error);
+		} else {
+			if (number == 0) {
+				[self updateFollowButton:NO];
+			} else {
+				[self updateFollowButton:YES];
+			}
+		}
+	}];
 }
 
 @end

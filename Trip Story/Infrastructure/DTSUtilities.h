@@ -16,4 +16,6 @@
 + (void)unfollowUserEventually:(PFUser *)user;
 + (void)processFacebookProfilePictureData:(NSData *)newProfilePictureData;
 + (BOOL)userHasProfilePictures:(PFUser *)user;
++ (void)openUserDetailsForUser:(PFUser *)user;
++ (void)openUserFriendsListForUser:(PFUser *)user forFollowers:(BOOL)forFollowers;
 @end

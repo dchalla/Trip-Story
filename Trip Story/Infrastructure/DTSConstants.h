@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define BlockWeakObject(o) __typeof(o) __weak
+#define BlockWeakSelf BlockWeakObject(self)
+#define BlockStrongSelf __typeof(self)
+
 #pragma mark - User Class
 
 #define DTSUser_Facebook_ID @"DTSUser_Facebook_ID"

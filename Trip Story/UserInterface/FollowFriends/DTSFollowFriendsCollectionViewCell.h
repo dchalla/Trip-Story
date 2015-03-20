@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (nonatomic) BOOL showFollowButton;
 
 @property (nonatomic, strong) PFUser *user;
 

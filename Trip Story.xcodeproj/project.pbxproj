@@ -55,6 +55,9 @@
 		F95815221964850B002207A3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815211964850B002207A3 /* XCTest.framework */; };
 		F95815231964850B002207A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95814FF1964850B002207A3 /* Foundation.framework */; };
 		F95815241964850B002207A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95815031964850B002207A3 /* UIKit.framework */; };
+		F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9615CC71ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib */; };
+		F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */; };
+		F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */; };
 		F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21001AB297FA009CC03E /* DTSActivity.m */; };
 		F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21071AB3564B009CC03E /* DTSRootViewController.m */; };
 		F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210A1AB362AA009CC03E /* 1-selected.png */; };
@@ -225,6 +228,11 @@
 		F958151A1964850B002207A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F95815201964850B002207A3 /* Trip StoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trip StoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95815211964850B002207A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F9615CC71ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSUserProfileCollectionViewCell.xib; path = User/DTSUserProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9615CC91ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserProfileCollectionViewCell.h; path = User/DTSUserProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserProfileCollectionViewCell.m; path = User/DTSUserProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		F9615CCD1ABBDA50004B2ADF /* DTSUserFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserFriendsViewController.h; path = User/DTSUserFriendsViewController.h; sourceTree = "<group>"; };
+		F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserFriendsViewController.m; path = User/DTSUserFriendsViewController.m; sourceTree = "<group>"; };
 		F96B20FF1AB297FA009CC03E /* DTSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSActivity.h; sourceTree = "<group>"; };
 		F96B21001AB297FA009CC03E /* DTSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSActivity.m; sourceTree = "<group>"; };
 		F96B21061AB3564B009CC03E /* DTSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSRootViewController.h; path = RootVC/DTSRootViewController.h; sourceTree = "<group>"; };
@@ -419,6 +427,11 @@
 				F9401DB71AB9EC8A00F271F5 /* DTSUserRootViewController.m */,
 				F9401DB91AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.h */,
 				F9401DBA1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m */,
+				F9615CC71ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib */,
+				F9615CC91ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.h */,
+				F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */,
+				F9615CCD1ABBDA50004B2ADF /* DTSUserFriendsViewController.h */,
+				F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -857,6 +870,7 @@
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
+				F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */,
 				F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */,
 				F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
@@ -992,7 +1006,9 @@
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F9401DAA1AB9473400F271F5 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
+				F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
+				F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */,
 				F9401DA81AB9473400F271F5 /* UIImage+AlphaAdditions.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,

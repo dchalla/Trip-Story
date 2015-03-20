@@ -78,6 +78,12 @@
 	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	self.navigationController.navigationBarHidden = NO;
+}
+
 #pragma mark - segmentControl
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl

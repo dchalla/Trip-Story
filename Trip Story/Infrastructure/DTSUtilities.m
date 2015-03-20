@@ -10,6 +10,8 @@
 #import "DTSCache.h"
 #import "UIImage+ResizeAdditions.h"
 #import "DTSConstants.h"
+#import "DTSUserRootViewController.h"
+#import "DTSUserFriendsViewController.h"
 
 @implementation DTSUtilities
 
@@ -95,6 +97,22 @@
 	PFFile *profilePictureSmall = [user objectForKey:kDTSUserProfilePicSmallKey];
 	
 	return (profilePictureMedium && profilePictureSmall);
+}
+
++ (void)openUserDetailsForUser:(PFUser *)user
+{
+	DTSUserRootViewController *userRootVC = [[DTSUserRootViewController alloc] init];
+	userRootVC.user = user;
+	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:userRootVC animated:YES];
+	
+}
+
++ (void)openUserFriendsListForUser:(PFUser *)user forFollowers:(BOOL)forFollowers
+{
+	DTSUserFriendsViewController *userFriendsVC =[[DTSUserFriendsViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSActivity parseClassName]];
+	userFriendsVC.forFollowers = forFollowers;
+	userFriendsVC.user = user;
+	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:userFriendsVC animated:YES];
 }
 
 @end

@@ -88,7 +88,7 @@
 
 - (void)updateSegmentFrame
 {
-	self.segmentedControl.frame = CGRectMake(0, self.topLayoutGuideLength, self.view.frame.size.width, DTS_SEGMENT_HEIGHT);
+	self.segmentedControl.frame = CGRectMake(0, self.topLayoutGuideLength, self.view.frame.size.width, [self segmentHeight]);
 	[self.view bringSubviewToFront:self.segmentedControl];
 }
 
@@ -110,9 +110,21 @@
 	{
 		if ([vc conformsToProtocol:@protocol(DTSViewLayoutProtocol)])
 		{
-			[vc setValue:@(self.topLayoutGuideLength+DTS_SEGMENT_HEIGHT) forKey:@"topLayoutGuideLength"];
+			[vc setValue:@(self.topLayoutGuideLength+[self segmentHeight]) forKey:@"topLayoutGuideLength"];
 			[vc setValue:@(self.bottomLayoutGuideLength) forKey:@"bottomLayoutGuideLength"];
 		}
+	}
+}
+
+- (NSInteger)segmentHeight
+{
+	if (self.pagedViewControllers.count > 1)
+	{
+		return DTS_SEGMENT_HEIGHT;
+	}
+	else
+	{
+		return 0;
 	}
 }
 

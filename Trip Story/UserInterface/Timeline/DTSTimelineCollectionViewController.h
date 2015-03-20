@@ -15,6 +15,12 @@
 #import "DTSTimelineCollectionViewCell.h"
 #import "DTSActivity.h"
 
+static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
+
 @interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
+
+- (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (CGSize)dtsDefaultItemSize;
 
 @end
