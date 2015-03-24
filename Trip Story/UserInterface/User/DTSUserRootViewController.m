@@ -10,10 +10,12 @@
 #import "DTSUserTimelineCollectionViewController.h"
 #import "DTSFollowFriendsViewController.h"
 #import "PFUser+DTSAdditions.h"
+#import "DTSUserLikedTripsCollectionViewController.h"
 
 @interface DTSUserRootViewController ()
 @property (nonatomic, strong) DTSUserTimelineCollectionViewController *userTimelineVC;
 @property (nonatomic, strong) DTSFollowFriendsViewController *friendsVC;
+@property (nonatomic, strong) DTSUserLikedTripsCollectionViewController *userLikedTripsVC;
 
 @end
 
@@ -51,6 +53,16 @@
 	return _friendsVC;
 }
 
+- (DTSUserLikedTripsCollectionViewController *)userLikedTripsVC
+{
+	if (!_userLikedTripsVC)
+	{
+		_userLikedTripsVC = [[DTSUserLikedTripsCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSActivity parseClassName]];
+		_userLikedTripsVC.user = self.user;
+	}
+	return _userLikedTripsVC;
+}
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -67,11 +79,11 @@
 {
 	if ([self.user.username isEqualToString:[PFUser currentUser].username])
 	{
-		return @[@"Profile", @"Facebook Friends"];
+		return @[@"Profile", @"Liked Trips", @"Facebook Friends"];
 	}
 	else
 	{
-		return @[@"Profile"];
+		return @[@"Profile", @"Liked Trips",];
 	}
 	
 }
@@ -80,11 +92,11 @@
 {
 	if ([self.user.username isEqualToString:[PFUser currentUser].username])
 	{
-		return @[self.userTimelineVC,self.friendsVC];
+		return @[self.userTimelineVC,self.userLikedTripsVC, self.friendsVC];
 	}
 	else
 	{
-		return @[self.userTimelineVC];
+		return @[self.userTimelineVC,self.userLikedTripsVC];
 	}
 }
 

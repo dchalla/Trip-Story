@@ -116,15 +116,20 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (void)fillInPlaceholderEvents
 {
-	[self sortOriginalList];
+	NSArray *localOriginalList = self.originalEventsList;
+	if (!self.user || (self.user && [[PFUser currentUser].objectId isEqualToString:self.user.objectId]))
+	{
+		[self sortOriginalList];
+	}
+	
 	int i = 0;
 	self.eventsList = [NSMutableArray array];
-	for (DTSEvent *event in self.originalEventsList)
+	for (DTSEvent *event in localOriginalList)
 	{
-		if (i != 0 && i < self.originalEventsList.count)
+		if (i != 0 && i < localOriginalList.count)
 		{
 			
-			DTSEvent *previousEvent =self.originalEventsList[i-1];
+			DTSEvent *previousEvent = localOriginalList[i-1];
 			CGFloat hoursDifference = [previousEvent.endDateTime hoursBeforeDate:event.startDateTime];
 			if (hoursDifference > 0.5)
 			{

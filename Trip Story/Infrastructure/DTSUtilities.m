@@ -115,4 +115,143 @@
 	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:userFriendsVC animated:YES];
 }
 
+
++ (void)likeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
+	PFQuery *queryExistingLikes = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryExistingLikes whereKey:kDTSActivityTripKey equalTo:trip];
+	[queryExistingLikes whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
+	[queryExistingLikes whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
+	[queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
+	[queryExistingLikes findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error) {
+		if (!error) {
+			for (PFObject *activity in activities) {
+				[activity delete];
+			}
+		}
+		
+		// proceed to creating new like
+		DTSActivity *likeActivity = [DTSActivity object];
+		likeActivity.type = kDTSActivityTypeLike;
+		likeActivity.fromUser = [PFUser currentUser];
+		likeActivity.toUser = trip.user;
+		likeActivity.trip = trip;
+		
+		PFACL *likeACL = [PFACL ACLWithUser:[PFUser currentUser]];
+		[likeACL setPublicReadAccess:YES];
+		[likeACL setWriteAccess:YES forUser:trip.user];
+		likeActivity.ACL = likeACL;
+		
+		[likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+			if (completionBlock) {
+				completionBlock(succeeded,error);
+			}
+			
+			// refresh cache
+			PFQuery *query = [DTSUtilities queryForActivitiesOnTrip:trip cachePolicy:kPFCachePolicyNetworkOnly];
+			[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+				if (!error) {
+					
+					NSMutableArray *likers = [NSMutableArray array];
+					NSMutableArray *commenters = [NSMutableArray array];
+					
+					BOOL isLikedByCurrentUser = NO;
+					
+					for (DTSActivity *activity in objects) {
+						if ([activity.type isEqualToString:kDTSActivityTypeLike] && activity.fromUser)
+						{
+							[likers addObject:activity.fromUser];
+						}
+						else if ([activity.type isEqualToString:kDTSActivityTypeComment] && activity.fromUser)
+						{
+							[commenters addObject:activity.fromUser];
+						}
+						
+						if ([[activity.fromUser objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+							if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
+								isLikedByCurrentUser = YES;
+							}
+						}
+					}
+					
+					[[DTSCache sharedCache] setAttributesForTrip:trip likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+				}
+			}];
+			
+		}];
+	}];
+	
+}
+
++ (void)unlikeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock {
+	PFQuery *queryExistingLikes = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryExistingLikes whereKey:kDTSActivityTripKey equalTo:trip];
+	[queryExistingLikes whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
+	[queryExistingLikes whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
+	[queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
+	[queryExistingLikes findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error) {
+		if (!error) {
+			for (PFObject *activity in activities) {
+				[activity delete];
+			}
+			
+			if (completionBlock) {
+				completionBlock(YES,nil);
+			}
+			
+			// refresh cache
+			PFQuery *query = [DTSUtilities queryForActivitiesOnTrip:trip cachePolicy:kPFCachePolicyNetworkOnly];
+			[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+				if (!error) {
+					
+					NSMutableArray *likers = [NSMutableArray array];
+					NSMutableArray *commenters = [NSMutableArray array];
+					
+					BOOL isLikedByCurrentUser = NO;
+					
+					for (DTSActivity *activity in objects) {
+						if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
+							[likers addObject:activity.fromUser];
+						} else if ([activity.type isEqualToString:kDTSActivityTypeComment]) {
+							[commenters addObject:activity.fromUser];
+						}
+						
+						if ([[activity.fromUser objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+							if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
+								isLikedByCurrentUser = YES;
+							}
+						}
+					}
+					
+					[[DTSCache sharedCache] setAttributesForTrip:trip likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+				}
+			}];
+			
+		} else {
+			if (completionBlock) {
+				completionBlock(NO,error);
+			}
+		}
+	}];
+}
+
+#pragma mark Activities
+
++ (PFQuery *)queryForActivitiesOnTrip:(DTSTrip *)trip cachePolicy:(PFCachePolicy)cachePolicy {
+	PFQuery *queryLikes = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryLikes whereKey:kDTSActivityTripKey equalTo:trip];
+	[queryLikes whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
+	
+	PFQuery *queryComments = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryComments whereKey:kDTSActivityTripKey equalTo:trip];
+	[queryComments whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeComment];
+	
+	PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:queryLikes,queryComments,nil]];
+	[query setCachePolicy:cachePolicy];
+	[query includeKey:kDTSActivityFromUserKey];
+	[query includeKey:kDTSActivityTripKey];
+	
+	return query;
+}
+
+
 @end

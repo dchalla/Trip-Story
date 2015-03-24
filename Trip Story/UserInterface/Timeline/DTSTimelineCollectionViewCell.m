@@ -9,8 +9,11 @@
 #import "DTSTimelineCollectionViewCell.h"
 #import "NSDate+Utilities.h"
 #import "PFUser+DTSAdditions.h"
+#import "DTSCache.h"
+#import "DTSUtilities.h"
 
 @interface DTSTimelineCollectionViewCell()
+@property (nonatomic) BOOL isLikeSelected;
 
 @end
 
@@ -28,7 +31,8 @@
 	{
 		colorView.layer.cornerRadius = colorView.frame.size.width/2;
 	}
-	
+	self.likeSmileyImageView.tintColor = [UIColor colorWithRed:233/255.0 green:185/255.0 blue:42/255.0 alpha:1];
+	self.likedLabel.textColor = [UIColor colorWithRed:233/255.0 green:185/255.0 blue:42/255.0 alpha:1];
 	
 }
 
@@ -52,7 +56,7 @@
 		self.tripTagsLabel.text = [self.trip tripTagsString];
 		self.byUserLabel.text = [NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]];
 		[self updateColorViews];
-		
+		[self updateLikesAndComment];
 	}
 	
 }
@@ -101,11 +105,55 @@
 		
 	}];
 }
+- (IBAction)likeButtonTapped:(id)sender {
+	if (self.isLikeSelected)
+	{
+		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likedLabel.text = @"Like";
+		self.isLikeSelected = NO;
+		[[DTSCache sharedCache] decrementLikerCountForTrip:self.trip];
+		[[DTSCache sharedCache] setTripIsLikedByCurrentUser:self.trip liked:NO];
+		[DTSUtilities unlikeTripInBackground:self.trip block:^(BOOL succeeded, NSError *error) {
+			if (succeeded)
+			{
+				NSLog(@"success");
+			}
+		}];
 
-- (void)setupSpringboard
-{
-	
+		
+	}
+	else
+	{
+		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likedLabel.text = @"Liked";
+		self.isLikeSelected = YES;
+		[[DTSCache sharedCache] incrementLikerCountForTrip:self.trip];
+		[[DTSCache sharedCache] setTripIsLikedByCurrentUser:self.trip liked:YES];
+		[DTSUtilities likeTripInBackground:self.trip block:^(BOOL succeeded, NSError *error) {
+			if (succeeded)
+			{
+				NSLog(@"success");
+			}
+		}];
+	}
+	[self updateLikeCommentCountWithAttribute:[[DTSCache sharedCache] attributesForTrip:self.trip]];
 }
+
+
+- (void)updateLikeButton
+{
+	if (!self.isLikeSelected)
+	{
+		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likedLabel.text = @"Like";
+	}
+	else
+	{
+		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likedLabel.text = @"Liked";
+	}
+}
+
 
 - (void)prepareForReuse
 {
@@ -128,6 +176,96 @@
 		((UIImageView *)self.colorImageViewsArray[i]).tintColor = [UIColor whiteColor];
 		((UIImageView *)self.colorImageViewsArray[i++]).hidden = YES;
 		
+	}
+	
+	self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	self.likedLabel.text = @"Like";
+	self.isLikeSelected = NO;
+}
+
+- (void)updateLikesAndComment
+{
+	NSDictionary *attributesForTrip = [[DTSCache sharedCache] attributesForTrip:self.trip];
+	
+	if (attributesForTrip)
+	{
+		[self updateLikeCommentCountWithAttribute:attributesForTrip];
+	}
+	else
+	{
+		self.likeSmileyImageView.alpha = 0.0f;
+		self.likedLabel.alpha = 0.0f;
+		self.totalLikeCommentsLabel.alpha = 0.0f;
+		
+		@synchronized(self) {
+			// check if we can update the cache
+			{
+				BlockWeakSelf wSelf = self;
+				PFQuery *query = [DTSUtilities queryForActivitiesOnTrip:self.trip cachePolicy:kPFCachePolicyNetworkOnly];
+				NSString *tripObjectID = [self.trip objectId];
+				[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+					BlockStrongSelf strongSelf = wSelf;
+					if (!strongSelf)
+					{
+						return;
+					}
+					@synchronized(strongSelf) {
+						
+						if (error) {
+							return;
+						}
+						
+						NSMutableArray *likers = [NSMutableArray array];
+						NSMutableArray *commenters = [NSMutableArray array];
+						
+						BOOL isLikedByCurrentUser = NO;
+						
+						for (DTSActivity *activity in objects) {
+							if ([activity.type isEqualToString:kDTSActivityTypeLike] && activity.fromUser)
+							{
+								[likers addObject:activity.fromUser];
+							}
+							else if ([activity.type isEqualToString:kDTSActivityTypeComment] && activity.fromUser)
+							{
+								[commenters addObject:activity.fromUser];
+							}
+							
+							if ([[activity.fromUser objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+								if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
+									isLikedByCurrentUser = YES;
+								}
+							}
+						}
+						
+						[[DTSCache sharedCache] setAttributesForTripObjectID:tripObjectID likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+						if ([[strongSelf.trip objectId] isEqualToString:tripObjectID])
+						{
+							[strongSelf updateLikeCommentCountWithAttribute:[[DTSCache sharedCache] attributesForTrip:strongSelf.trip]];
+						}
+						
+					}
+				}];
+			}
+		}
+	}
+}
+
+- (void)updateLikeCommentCountWithAttribute:(NSDictionary *)attributesForTrip
+{
+	if (!attributesForTrip)
+	{
+		return;
+	}
+	self.isLikeSelected = [[DTSCache sharedCache] isTripLikedByCurrentUser:self.trip];
+	[self updateLikeButton];
+	NSNumber *likersCount = [[DTSCache sharedCache] likeCountForTrip:self.trip];
+	NSNumber *commentCount = [[DTSCache sharedCache] commentCountForTrip:self.trip];
+	self.totalLikeCommentsLabel.text = [NSString stringWithFormat:@"%ld like%@, %ld comment%@",(long)likersCount.integerValue,likersCount.integerValue>1?@"s":@"",(long)commentCount.integerValue,commentCount.integerValue>1?@"s":@""];
+	if (self.likeSmileyImageView.alpha == 0)
+	{
+		self.likeSmileyImageView.alpha = 1.0f;
+		self.likedLabel.alpha = 1.0f;
+		self.totalLikeCommentsLabel.alpha = 1.0f;
 	}
 }
 

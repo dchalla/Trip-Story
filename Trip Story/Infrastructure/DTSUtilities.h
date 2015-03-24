@@ -18,4 +18,9 @@
 + (BOOL)userHasProfilePictures:(PFUser *)user;
 + (void)openUserDetailsForUser:(PFUser *)user;
 + (void)openUserFriendsListForUser:(PFUser *)user forFollowers:(BOOL)forFollowers;
+
++ (void)likeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
++ (void)unlikeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
++ (PFQuery *)queryForActivitiesOnTrip:(DTSTrip *)trip cachePolicy:(PFCachePolicy)cachePolicy;
+
 @end

@@ -34,7 +34,7 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSFollowFriendsCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
-	self.title = @"Find Friends";
+	self.title = @"Facebook Friends";
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -292,7 +292,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, Los Angeles, Disney, Universal, Hollywood" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-S3-qDU">
-                        <rect key="frame" x="14" y="124.5" width="342" height="15.5"/>
+                        <rect key="frame" x="14" y="124" width="342" height="15.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.050980392156862744" green="0.6705882352941176" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -303,12 +303,46 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smileyLikeBlueFull.png" translatesAutoresizingMaskIntoConstraints="NO" id="OAx-eC-Wim">
+                        <rect key="frame" x="14" y="221" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="2yi-vD-Kgd"/>
+                            <constraint firstAttribute="height" constant="20" id="dIY-kU-omv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-Ia-lfs">
+                        <rect key="frame" x="39" y="224" width="29.5" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqd-i8-nud">
+                        <rect key="frame" x="159.5" y="223.5" width="51.5" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksV-K1-YsS">
+                        <rect key="frame" x="14" y="216" width="54.5" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="89b-DB-p3U"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="likeButtonTapped:" destination="AqV-Ct-dhJ" eventType="touchUpInside" id="dU4-qs-K9y"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="OAx-eC-Wim" firstAttribute="leading" secondItem="AqV-Ct-dhJ" secondAttribute="leading" constant="14" id="0Jd-eX-INw"/>
+                <constraint firstItem="ksV-K1-YsS" firstAttribute="centerY" secondItem="OAx-eC-Wim" secondAttribute="centerY" id="3pw-NJ-iIb"/>
                 <constraint firstItem="EZ4-Qi-qTU" firstAttribute="top" secondItem="AqV-Ct-dhJ" secondAttribute="top" constant="5" id="5vU-fu-9Mu"/>
+                <constraint firstAttribute="bottom" secondItem="OAx-eC-Wim" secondAttribute="bottom" constant="19" id="78a-0K-nH0"/>
                 <constraint firstItem="3kW-A3-0Sl" firstAttribute="top" secondItem="mJq-Vx-zkv" secondAttribute="bottom" constant="5" id="D6h-iD-Tqw"/>
                 <constraint firstItem="QVK-fk-pry" firstAttribute="centerY" secondItem="CGm-en-wRW" secondAttribute="centerY" id="EB9-bl-Z92"/>
                 <constraint firstAttribute="trailing" secondItem="dWh-Ar-GOM" secondAttribute="trailing" constant="50" id="GtL-a3-USg"/>
@@ -316,17 +350,23 @@
                 <constraint firstItem="dWh-Ar-GOM" firstAttribute="leading" secondItem="OIs-ce-2JF" secondAttribute="trailing" id="I8A-XK-2NK"/>
                 <constraint firstAttribute="trailing" secondItem="b4Z-D3-FZ6" secondAttribute="trailing" constant="14" id="IOz-Ld-rRe"/>
                 <constraint firstAttribute="bottom" secondItem="QVK-fk-pry" secondAttribute="bottom" constant="60" id="PnY-vx-qXZ"/>
+                <constraint firstItem="ksV-K1-YsS" firstAttribute="leading" secondItem="OAx-eC-Wim" secondAttribute="leading" id="Rwl-aw-Cvf"/>
                 <constraint firstItem="mJq-Vx-zkv" firstAttribute="leading" secondItem="AqV-Ct-dhJ" secondAttribute="leading" constant="14" id="Vlj-2h-ukW"/>
                 <constraint firstItem="QVK-fk-pry" firstAttribute="leading" secondItem="UYR-sk-LdZ" secondAttribute="trailing" constant="5" id="X9O-as-KWG"/>
+                <constraint firstAttribute="centerX" secondItem="fqd-i8-nud" secondAttribute="centerX" id="XyA-8x-HQQ"/>
                 <constraint firstItem="QVK-fk-pry" firstAttribute="centerY" secondItem="OIs-ce-2JF" secondAttribute="centerY" id="YtK-yO-4R5"/>
                 <constraint firstItem="Rde-II-ifj" firstAttribute="leading" secondItem="dWh-Ar-GOM" secondAttribute="trailing" constant="5" id="ZEY-pW-5CN"/>
                 <constraint firstItem="QVK-fk-pry" firstAttribute="centerY" secondItem="UYR-sk-LdZ" secondAttribute="centerY" id="aj9-DU-gb1"/>
+                <constraint firstItem="PtO-Ia-lfs" firstAttribute="centerY" secondItem="OAx-eC-Wim" secondAttribute="centerY" id="b2u-kK-dkA"/>
                 <constraint firstItem="3kW-A3-0Sl" firstAttribute="leading" secondItem="AqV-Ct-dhJ" secondAttribute="leading" constant="14" id="bS6-MJ-q2C"/>
                 <constraint firstItem="ftY-S3-qDU" firstAttribute="leading" secondItem="AqV-Ct-dhJ" secondAttribute="leading" constant="14" id="bft-kg-obg"/>
                 <constraint firstItem="b4Z-D3-FZ6" firstAttribute="leading" secondItem="AqV-Ct-dhJ" secondAttribute="leading" constant="14" id="d8X-cz-6Qq"/>
+                <constraint firstItem="PtO-Ia-lfs" firstAttribute="trailing" secondItem="ksV-K1-YsS" secondAttribute="trailing" id="gov-hg-fD3"/>
                 <constraint firstAttribute="centerX" secondItem="CGm-en-wRW" secondAttribute="centerX" id="hYt-qB-V44"/>
+                <constraint firstItem="PtO-Ia-lfs" firstAttribute="leading" secondItem="OAx-eC-Wim" secondAttribute="trailing" constant="5" id="iUL-d0-26d"/>
                 <constraint firstItem="Rde-II-ifj" firstAttribute="centerY" secondItem="dWh-Ar-GOM" secondAttribute="centerY" id="jNW-aE-RjI"/>
                 <constraint firstAttribute="trailing" secondItem="ftY-S3-qDU" secondAttribute="trailing" constant="14" id="kzi-A5-HDn"/>
+                <constraint firstItem="OAx-eC-Wim" firstAttribute="centerY" secondItem="fqd-i8-nud" secondAttribute="centerY" id="mg2-Nd-Pcp"/>
                 <constraint firstItem="b4Z-D3-FZ6" firstAttribute="top" secondItem="3kW-A3-0Sl" secondAttribute="bottom" constant="10" id="nsF-Mw-r4c"/>
                 <constraint firstItem="OIs-ce-2JF" firstAttribute="leading" secondItem="QVK-fk-pry" secondAttribute="trailing" id="p3O-Ni-9hM"/>
                 <constraint firstItem="mJq-Vx-zkv" firstAttribute="top" secondItem="EZ4-Qi-qTU" secondAttribute="bottom" constant="5" id="rVd-5P-7xJ"/>
@@ -368,13 +408,20 @@
                 <outlet property="endDateTimeLabel" destination="Rde-II-ifj" id="VSf-al-QNA"/>
                 <outlet property="eventsColorView" destination="3kW-A3-0Sl" id="ypM-6R-t1d"/>
                 <outlet property="leftCircleView" destination="QVK-fk-pry" id="68w-e9-pX0"/>
+                <outlet property="likeButton" destination="ksV-K1-YsS" id="AdU-fS-iOa"/>
+                <outlet property="likeSmileyImageView" destination="OAx-eC-Wim" id="9D6-X0-GFJ"/>
+                <outlet property="likedLabel" destination="PtO-Ia-lfs" id="dOU-ek-rhK"/>
                 <outlet property="lineView" destination="OIs-ce-2JF" id="YfU-QD-S8e"/>
                 <outlet property="rightCircleView" destination="dWh-Ar-GOM" id="baN-ZL-fiQ"/>
                 <outlet property="startDateTimeLabel" destination="UYR-sk-LdZ" id="Nde-xQ-P2a"/>
+                <outlet property="totalLikeCommentsLabel" destination="fqd-i8-nud" id="3fC-0Y-Fnn"/>
                 <outlet property="tripTagsLabel" destination="ftY-S3-qDU" id="xHQ-gI-mBD"/>
                 <outlet property="tripTitleLabel" destination="EZ4-Qi-qTU" id="hbT-mY-oJk"/>
             </connections>
-            <point key="canvasLocation" x="478" y="201"/>
+            <point key="canvasLocation" x="358" y="186"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="smileyLikeBlueFull.png" width="20" height="20"/>
+    </resources>
 </document>

@@ -50,6 +50,10 @@
 
 @property (nonatomic, strong) NSArray *colorViewsArray;
 @property (nonatomic, strong) NSArray *colorImageViewsArray;
+@property (weak, nonatomic) IBOutlet UIImageView *likeSmileyImageView;
+@property (weak, nonatomic) IBOutlet UILabel *likedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLikeCommentsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 
 @property (nonatomic,strong) DTSTrip *trip;

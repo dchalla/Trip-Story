@@ -16,6 +16,7 @@
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
 		F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */; };
 		F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91CBD3B1981D7FC00BC3021 /* MapKit.framework */; };
+		F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F926C4361AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m */; };
 		F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401D9A1AB910DA00F271F5 /* DTSCache.m */; };
 		F9401D9E1AB91A3D00F271F5 /* DTSLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401D9D1AB91A3D00F271F5 /* DTSLogInViewController.m */; };
 		F9401DA71AB9473400F271F5 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401DA01AB9473400F271F5 /* UIImage+Alpha.m */; };
@@ -119,6 +120,12 @@
 		F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14A19B3A42100622CC9 /* waterTravel.png */; };
 		F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC091AB7776900B82895 /* DTSConstants.m */; };
 		F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */; };
+		F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */; };
+		F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */; };
+		F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */; };
+		F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */; };
+		F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */; };
+		F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */; };
 		F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EA06571AA57F99007573EC /* LaunchScreen.xib */; };
 		F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */; };
 		F9F012EE19B522CF00176944 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EA19B522CF00176944 /* PieElement.m */; };
@@ -159,6 +166,8 @@
 		F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventLocationEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSLocationEntryViewController.xib; sourceTree = "<group>"; };
 		F91CBD3B1981D7FC00BC3021 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F926C4351AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserLikedTripsCollectionViewController.h; path = User/DTSUserLikedTripsCollectionViewController.h; sourceTree = "<group>"; };
+		F926C4361AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserLikedTripsCollectionViewController.m; path = User/DTSUserLikedTripsCollectionViewController.m; sourceTree = "<group>"; };
 		F9401D991AB910DA00F271F5 /* DTSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCache.h; sourceTree = "<group>"; };
 		F9401D9A1AB910DA00F271F5 /* DTSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSCache.m; sourceTree = "<group>"; };
 		F9401D9C1AB91A3D00F271F5 /* DTSLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSLogInViewController.h; path = UserAuth/DTSLogInViewController.h; sourceTree = "<group>"; };
@@ -321,6 +330,12 @@
 		F9C6BC091AB7776900B82895 /* DTSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSConstants.m; sourceTree = "<group>"; };
 		F9C6BC0B1AB778CB00B82895 /* PFUser+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFUser+DTSAdditions.h"; sourceTree = "<group>"; };
 		F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFUser+DTSAdditions.m"; sourceTree = "<group>"; };
+		F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlue.png; sourceTree = "<group>"; };
+		F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlueFull.png; sourceTree = "<group>"; };
+		F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@2x.png"; sourceTree = "<group>"; };
+		F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@3x.png"; sourceTree = "<group>"; };
+		F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@2x.png"; sourceTree = "<group>"; };
+		F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@3x.png"; sourceTree = "<group>"; };
 		F9EA06571AA57F99007573EC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = LaunchScreen/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9F012E619B522CF00176944 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
 		F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
@@ -381,6 +396,12 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */,
+				F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */,
+				F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */,
+				F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */,
+				F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */,
+				F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */,
 				F96B21091AB362AA009CC03E /* tabbarIcons */,
 				F9BEC14A19B3A42100622CC9 /* waterTravel.png */,
 				F9BEC14819B3A22300622CC9 /* anchor2.png */,
@@ -432,6 +453,8 @@
 				F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */,
 				F9615CCD1ABBDA50004B2ADF /* DTSUserFriendsViewController.h */,
 				F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */,
+				F926C4351AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.h */,
+				F926C4361AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -867,6 +890,7 @@
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
 				F96B21271AB362AA009CC03E /* 4-selected@2x.png in Resources */,
 				F96B21281AB362AA009CC03E /* 4.png in Resources */,
+				F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
@@ -878,6 +902,7 @@
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
 				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
+				F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
 				F96B21421AB389E7009CC03E /* explore@3x.png in Resources */,
 				F96B21401AB389E7009CC03E /* edit@3x.png in Resources */,
@@ -894,6 +919,8 @@
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
+				F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */,
+				F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */,
 				F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */,
 				F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */,
 				F96B21231AB362AA009CC03E /* 3-selected@2x.png in Resources */,
@@ -909,9 +936,11 @@
 				F96B21441AB389E7009CC03E /* users@3x.png in Resources */,
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
 				F96B21211AB362AA009CC03E /* 2@2x.png in Resources */,
+				F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
 				F96B21321AB38524009CC03E /* edit.png in Resources */,
+				F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */,
 				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
@@ -1025,6 +1054,7 @@
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
+				F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */,
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,

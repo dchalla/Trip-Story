@@ -15,6 +15,7 @@
 
 - (void)clear;
 - (void)setAttributesForTrip:(DTSTrip *)trip likers:(NSArray *)likers commenters:(NSArray *)commenters likedByCurrentUser:(BOOL)likedByCurrentUser;
+- (void)setAttributesForTripObjectID:(NSString *)tripObjectID likers:(NSArray *)likers commenters:(NSArray *)commenters likedByCurrentUser:(BOOL)likedByCurrentUser;
 - (NSDictionary *)attributesForTrip:(DTSTrip *)trip;
 - (NSNumber *)likeCountForTrip:(DTSTrip *)trip;
 - (NSNumber *)commentCountForTrip:(DTSTrip *)trip;

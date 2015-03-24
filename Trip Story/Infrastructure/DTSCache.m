@@ -51,6 +51,17 @@
     [self setAttributes:attributes forTrip:trip];
 }
 
+- (void)setAttributesForTripObjectID:(NSString *)tripObjectID likers:(NSArray *)likers commenters:(NSArray *)commenters likedByCurrentUser:(BOOL)likedByCurrentUser {
+	NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+								[NSNumber numberWithBool:likedByCurrentUser],kDTSTripAttributesIsLikedByCurrentUserKey,
+								@([likers count]),kDTSTripAttributesLikeCountKey,
+								likers,kDTSTripAttributesLikersKey,
+								@([commenters count]),kDTSTripAttributesCommentCountKey,
+								commenters,kDTSTripAttributesCommentersKey,
+								nil];
+	[self setAttributes:attributes forTripObjectID:tripObjectID];
+}
+
 - (NSDictionary *)attributesForTrip:(DTSTrip *)trip {
     NSString *key = [self keyForTrip:trip];
     return [self.cache objectForKey:key];
@@ -220,6 +231,11 @@
     [self.cache setObject:attributes forKey:key];
 }
 
+- (void)setAttributes:(NSDictionary *)attributes forTripObjectID:(NSString *)tripObjectID {
+	 NSString *key = [self keyForTripObjectId:tripObjectID];
+	[self.cache setObject:attributes forKey:key];
+}
+
 - (void)setAttributes:(NSDictionary *)attributes forUser:(PFUser *)user {
     NSString *key = [self keyForUser:user];
     [self.cache setObject:attributes forKey:key];    
@@ -227,6 +243,11 @@
 
 - (NSString *)keyForTrip:(DTSTrip *)trip {
     return [NSString stringWithFormat:@"trip_%@", [trip objectId]];
+}
+
+- (NSString *)keyForTripObjectId:(NSString *)tripObjectID
+{
+	return [NSString stringWithFormat:@"trip_%@", tripObjectID];
 }
 
 - (NSString *)keyForUser:(PFUser *)user {
