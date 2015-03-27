@@ -137,6 +137,9 @@
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
+		F9FD5A321AC28181009BDDF2 /* DTSCreateEditTripView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A311AC28181009BDDF2 /* DTSCreateEditTripView.xib */; };
+		F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A351AC504ED009BDDF2 /* DTSCreateEditTripView.m */; };
+		F9FD5A391AC510A8009BDDF2 /* DTSCreateTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A381AC510A8009BDDF2 /* DTSCreateTripViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +359,11 @@
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F9F92577197C3FF800D92941 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
 		F9F92578197C3FF800D92941 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		F9FD5A311AC28181009BDDF2 /* DTSCreateEditTripView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSCreateEditTripView.xib; path = "Create Trip/DTSCreateEditTripView.xib"; sourceTree = "<group>"; };
+		F9FD5A341AC504ED009BDDF2 /* DTSCreateEditTripView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSCreateEditTripView.h; path = "Create Trip/DTSCreateEditTripView.h"; sourceTree = "<group>"; };
+		F9FD5A351AC504ED009BDDF2 /* DTSCreateEditTripView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSCreateEditTripView.m; path = "Create Trip/DTSCreateEditTripView.m"; sourceTree = "<group>"; };
+		F9FD5A371AC510A8009BDDF2 /* DTSCreateTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSCreateTripViewController.h; path = "Create Trip/DTSCreateTripViewController.h"; sourceTree = "<group>"; };
+		F9FD5A381AC510A8009BDDF2 /* DTSCreateTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSCreateTripViewController.m; path = "Create Trip/DTSCreateTripViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +511,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F9FD5A301AC2800E009BDDF2 /* Create Trip */,
 				F9401DB51AB9EC5300F271F5 /* User */,
 				F9401DAE1AB9DD0600F271F5 /* General */,
 				F9AE51911AB8A64300958707 /* FollowFriends */,
@@ -804,6 +813,18 @@
 			path = MagicPieLayer;
 			sourceTree = "<group>";
 		};
+		F9FD5A301AC2800E009BDDF2 /* Create Trip */ = {
+			isa = PBXGroup;
+			children = (
+				F9FD5A311AC28181009BDDF2 /* DTSCreateEditTripView.xib */,
+				F9FD5A341AC504ED009BDDF2 /* DTSCreateEditTripView.h */,
+				F9FD5A351AC504ED009BDDF2 /* DTSCreateEditTripView.m */,
+				F9FD5A371AC510A8009BDDF2 /* DTSCreateTripViewController.h */,
+				F9FD5A381AC510A8009BDDF2 /* DTSCreateTripViewController.m */,
+			);
+			name = "Create Trip";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -939,6 +960,7 @@
 				F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
+				F9FD5A321AC28181009BDDF2 /* DTSCreateEditTripView.xib in Resources */,
 				F96B21321AB38524009CC03E /* edit.png in Resources */,
 				F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */,
 				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
@@ -1017,6 +1039,7 @@
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F9401DA71AB9473400F271F5 /* UIImage+Alpha.m in Sources */,
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
+				F9FD5A391AC510A8009BDDF2 /* DTSCreateTripViewController.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
@@ -1051,6 +1074,7 @@
 				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
+				F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */,
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
@@ -1168,11 +1192,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1183,11 +1210,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -15,6 +15,7 @@
 #import "DTSFollowFriendsViewController.h"
 #import "DTSUserRootViewController.h"
 #import "UIView+Utilities.h"
+#import "DTSCreateTripViewController.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -24,7 +25,7 @@
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) DTSTimelineRootViewController *timeLineVC;
-@property (nonatomic, strong) DTSTimelineRootViewController *addTripVC;
+@property (nonatomic, strong) DTSCreateTripViewController *addTripVC;
 @property (nonatomic, strong) DTSUserRootViewController *userVC;
 
 @end
@@ -40,11 +41,11 @@
 	return _timeLineVC;
 }
 
-- (DTSTimelineRootViewController *)addTripVC
+- (DTSCreateTripViewController *)addTripVC
 {
 	if (!_addTripVC)
 	{
-		_addTripVC = [[DTSTimelineRootViewController alloc] init];
+		_addTripVC = [[DTSCreateTripViewController alloc] init];
 	}
 	return _addTripVC;
 }

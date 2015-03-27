@@ -96,15 +96,6 @@
 		}
 	}
 	
-	if (!self.trip)
-	{
-		//Testing
-		self.trip = [DTSTrip object];
-		[self.trip createDummyEventsList];
-		[self saveTripToParse];
-		//End testing
-	}
-	
 	for (UIViewController *vc in self.pagedViewControllers)
 	{
 		if ([vc conformsToProtocol:@protocol(DTSTripDetailsProtocol)])
@@ -291,13 +282,7 @@
 #pragma mark - saveTrip
 
 - (void)saveTripToParse
-{
-	self.trip.user = [PFUser currentUser];
-	
-	PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
-	[photoACL setPublicReadAccess:YES];
-	self.trip.ACL = photoACL;
-	
+{	
 	[self.trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
 			// The object has been saved.

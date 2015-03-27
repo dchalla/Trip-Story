@@ -51,8 +51,16 @@
 		self.startDateTimeLabel.text = [[self.trip startTimeOfTrip] stringWithFormat:@"dd/MM\nHH:mm"];
 		self.endDateTimeLabel.text = [[self.trip endTimeOfTrip] stringWithFormat:@"dd/MM\nHH:mm"];
 		[self updateDurationLabel];
-		//self.tripTitleLabel.text = self.trip.tripName;
-		//self.descriptionLabel.text = self.trip.tripDescription;
+		self.tripTitleLabel.text = self.trip.tripName;
+		self.descriptionLabel.text = self.trip.tripDescription;
+		
+		//testing
+		if (self.trip.tripName.length == 0)
+		{
+			self.tripTitleLabel.text = @"My Trip";
+			self.descriptionLabel.text = @"My beautifull trip to Hawaii. This is pure heaven. My beautifull trip to Hawaii. This is pure heaven.";
+		}
+		//end testing
 		self.tripTagsLabel.text = [self.trip tripTagsString];
 		self.byUserLabel.text = [NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]];
 		[self updateColorViews];
@@ -164,8 +172,8 @@
 {
 	self.startDateTimeLabel.text = @"";
 	self.endDateTimeLabel.text = @"";
-	//self.descriptionLabel.text = @"";
-	//self.tripTitleLabel.text = @"";
+	self.descriptionLabel.text = @"";
+	self.tripTitleLabel.text = @"";
 	self.byUserLabel.text = @"";
 	self.tripTagsLabel.text = @"";
 	self.durationLabel.text = @"";

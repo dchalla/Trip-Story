@@ -100,6 +100,11 @@
 	return [UIColor colorWithRed:23.0f/255.0f green:120.0f/255.0f blue:171.0f/255.0f alpha:1.0f];
 }
 
++ (UIColor *)dtsGreenColor
+{
+	return [UIColor colorWithRed:23.0f/255.0f green:171.0f/255.0f blue:120.0f/255.0f alpha:1.0f];
+}
+
 
 
 @end

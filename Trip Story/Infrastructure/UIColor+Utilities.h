@@ -16,6 +16,7 @@
 + (UIColor *)primaryColor;
 + (UIColor *)secondaryColor;
 + (UIColor *)dtsBlueColor;
++ (UIColor *)dtsGreenColor;
 
 
 @end
