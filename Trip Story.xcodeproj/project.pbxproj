@@ -173,6 +173,7 @@
 		F9FD5A841AC5C57C009BDDF2 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A681AC5C57C009BDDF2 /* iTunesArtwork.png */; };
 		F9FD5A851AC5C57C009BDDF2 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A691AC5C57C009BDDF2 /* iTunesArtwork@2x.png */; };
 		F9FD5A861AC5C57C009BDDF2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A6A1AC5C57C009BDDF2 /* README.md */; };
+		F9FD5A881AC5C721009BDDF2 /* TripStoryIconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -430,6 +431,7 @@
 		F9FD5A681AC5C57C009BDDF2 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		F9FD5A691AC5C57C009BDDF2 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		F9FD5A6A1AC5C57C009BDDF2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TripStoryIconInApp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +472,7 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */,
 				F9FD5A451AC5C57C009BDDF2 /* icon (2) */,
 				F9FD5A3D1AC5BE64009BDDF2 /* airplane-white.png */,
 				F9FD5A3E1AC5BE64009BDDF2 /* boat-white.png */,
@@ -1114,6 +1117,7 @@
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F9FD5A441AC5BE64009BDDF2 /* waterTravel-white.png in Resources */,
 				F9FD5A781AC5C57C009BDDF2 /* Icon-76.png in Resources */,
+				F9FD5A881AC5C721009BDDF2 /* TripStoryIconInApp.png in Resources */,
 				F96B21241AB362AA009CC03E /* 3.png in Resources */,
 				F9FD5A7A1AC5C57C009BDDF2 /* Icon-Small.png in Resources */,
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
