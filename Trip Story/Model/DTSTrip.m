@@ -30,6 +30,7 @@ NSString *const kDTSTripUserKey		= @"user";
 @dynamic originalEventsList;
 @dynamic numberOfRatings;
 @dynamic user;
+@dynamic privacy;
 
 + (void)load {
 	[self registerSubclass];

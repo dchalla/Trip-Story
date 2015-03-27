@@ -50,6 +50,7 @@
 	[query includeKey:@"originalEventsList.location"];
 	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
 	[query includeKey:@"user"];
+	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];
 	
 	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];

@@ -36,6 +36,10 @@
 	[query includeKey:@"trip.originalEventsList.location"];
 	[query includeKey:@"trip.originalEventsList.location.dtsPlacemark"];
 	[query includeKey:@"trip.user"];
+	if (![self.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		[query whereKey:@"trip.privacy" equalTo:@(DTSPrivacyPublic)];
+	}
 	[query orderByDescending:@"createdAt"];
 	
 	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];

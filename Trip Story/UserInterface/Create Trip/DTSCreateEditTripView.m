@@ -9,6 +9,12 @@
 #import "DTSCreateEditTripView.h"
 #import "UIColor+Utilities.h"
 
+#ifdef DEBUG
+#define EASY_TESTING 1
+#else
+#define EASY_TESTING 0
+#endif
+
 #define DescriptionPlaceholder @"Description"
 #define PickerViewHeight 200
 
@@ -31,6 +37,8 @@
 		_privacyPickerView = [[UIPickerView alloc] init];
 		_privacyPickerView.delegate = self;
 		_privacyPickerView.dataSource = self;
+		_privacyPickerView.backgroundColor = [UIColor primaryColor];
+		_privacyPickerView.alpha =0.95;
 	}
 	return _privacyPickerView;
 }
@@ -76,12 +84,14 @@
 		PFACL *tripACL = [PFACL ACLWithUser:[PFUser currentUser]];
 		[tripACL setPublicReadAccess:YES];
 		self.trip.ACL = tripACL;
+		self.trip.privacy = DTSPrivacyPublic;
 	}
 	else
 	{
 		PFACL *tripACL = [PFACL ACLWithUser:[PFUser currentUser]];
 		[tripACL setPublicReadAccess:NO];
 		self.trip.ACL = tripACL;
+		self.trip.privacy = DTSPrivacyOnlyYou;
 	}
 	if (self.delegate)
 	{
@@ -92,6 +102,7 @@
 	[self.tripNameTextField resignFirstResponder];
 	[self.tripDescriptionTextView resignFirstResponder];
 	[self hidePickerView];
+	[self updateUI];
 }
 
 - (void)updateUI
@@ -121,6 +132,24 @@
 	if (self.trip && self.trip.tripName.length > 0)
 	{
 		self.tripNameTextField.text = self.trip.tripName;
+	}
+	else
+	{
+		if (EASY_TESTING)
+		{
+			NSArray *tripNamesList = @[@"My Awesome Trip To Hawaii",@"Spectacular Trip To India",@"Happy Trip To San Diego",@"Amazing Camping Trip",@"Tiring Hiking trip",@"My Sin City Trip",@"Chicago Trip"];
+			NSArray *tripDescriptionList = @[@"My trip To Hawaii was simply awesome. The breath taking views, sound of waves, driving above the clouds, road to hana, snorkelling is just awesome.",
+											 @"Trip To India was spectacular. Visiting Family, going to north india, delhi taj mahal and just being in India is just spectacular.",
+											 @"Trip To San Diego is so happiness filled trip. Meeting two R's is just great.",
+											 @"Amazing Camping Trip. Camping trip is just raw, out from the world disconnected and it felt great to be just doing nothing and camping.",
+											 @"Tiring Hiking trip. It was so tiring, climbing mountains, walking for miles. But every part of the trip was worth it.",
+											 @"Sin City Trip to vegas is unbelievable. Casino and party all the time.",@"Chicago Trip, one of the very good cities in the world, downtown is just great."];
+			int randomNumber = arc4random_uniform(7);
+			self.tripNameTextField.text = tripNamesList[randomNumber];
+			self.tripDescriptionTextView.text = tripDescriptionList[randomNumber];
+			self.tripName = self.tripNameTextField.text;
+			self.tripDescription = self.tripDescriptionTextView.text;
+		}
 	}
 	
 	if (self.trip && self.trip.tripDescription.length > 0)

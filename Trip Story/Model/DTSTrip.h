@@ -10,6 +10,7 @@
 #import "DTSEvent.h"
 #import <Parse/Parse.h>
 #import <Parse/PFSubclassing.h>
+#import "DTSConstants.h"
 
 extern NSString *const kDTSTripUserKey;
 
@@ -24,6 +25,7 @@ extern NSString *const kDTSTripUserKey;
 @property (nonatomic, strong) NSMutableArray *locationsList;
 @property (nonatomic, strong) NSMutableArray *originalEventsList;
 @property (nonatomic, readonly) NSArray *eventsWithLocationList;
+@property (nonatomic,assign) DTSPrivacy privacy;
 @property (nonatomic, strong) PFUser *user;
 
 - (void)createDummyEventsList;

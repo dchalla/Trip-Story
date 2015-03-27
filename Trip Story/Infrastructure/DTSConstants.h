@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+	DTSPrivacyPublic = 0,
+	DTSPrivacyOnlyYou
+}DTSPrivacy;
+
 #define BlockWeakObject(o) __typeof(o) __weak
 #define BlockWeakSelf BlockWeakObject(self)
 #define BlockStrongSelf __typeof(self)
