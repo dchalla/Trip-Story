@@ -12,6 +12,7 @@
 
 - (void)showNewEventEntry;
 - (void)showEditEventEntryAtIndex:(NSInteger)index;
+- (void)showEditTripView;
 
 
 @end

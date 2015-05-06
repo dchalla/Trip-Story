@@ -50,6 +50,7 @@
 {
 	self.tripTitle.text = self.trip.tripName.length?self.trip.tripName:@"My Trip";
 	self.tripDurationLabel.text = [self.trip tripDurationString];
+	self.descriptionLabel.attributedText = [[NSAttributedString alloc] initWithString:self.trip.tripDescription];
 }
 
 - (void)updatePieView
@@ -93,6 +94,13 @@
 		[self.pieLayer addValues:pieElementsArray animated:YES];
 	}
 	
+}
+
+- (IBAction)editButtonTapped:(id)sender {
+	if (self.delegate)
+	{
+		[self.delegate tripStoryHeaderViewEditButtonTapped];
+	}
 }
 
 @end

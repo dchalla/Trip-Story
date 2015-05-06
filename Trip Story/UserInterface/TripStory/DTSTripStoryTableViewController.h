@@ -12,8 +12,9 @@
 #import "DTSTripDetailsContainerDelegate.h"
 #import "DTSViewLayoutProtocol.h"
 #import "DTSTripDetailsProtocol.h"
+#import "DTSTripStoryHeaderView.h"
 
-@interface DTSTripStoryTableViewController : UITableViewController<DTSTripDetailsViewControllerProtocol, DTSViewLayoutProtocol, DTSTripDetailsProtocol>
+@interface DTSTripStoryTableViewController : UITableViewController<DTSTripDetailsViewControllerProtocol, DTSViewLayoutProtocol, DTSTripDetailsProtocol, DTSTripStoryHeaderViewDelegate>
 
 @property (nonatomic, weak) id<DTSTripDetailsContainerDelegate> containerDelegate;
 - (void)refreshView;

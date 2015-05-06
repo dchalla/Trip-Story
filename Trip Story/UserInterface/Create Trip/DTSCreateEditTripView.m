@@ -97,12 +97,16 @@
 	{
 		[self.delegate updateCreateTripTappedForTrip:self.trip];
 	}
-	self.trip = [DTSTrip object];
-	[self awakeFromNib];
-	[self.tripNameTextField resignFirstResponder];
-	[self.tripDescriptionTextView resignFirstResponder];
-	[self hidePickerView];
-	[self updateUI];
+	if (self.isCreateTripMode)
+	{
+		self.trip = [DTSTrip object];
+		[self awakeFromNib];
+		[self.tripNameTextField resignFirstResponder];
+		[self.tripDescriptionTextView resignFirstResponder];
+		[self hidePickerView];
+		[self updateUI];
+	}
+	
 }
 
 - (void)updateUI
@@ -114,7 +118,7 @@
 	}
 	else
 	{
-		self.titleLabel.text = @"Update Trip";
+		self.titleLabel.text = @"";
 		[self.tripCreateUpdateButton setTitle:@"Update" forState:UIControlStateNormal];
 	}
 	if ([self.tripNameTextField respondsToSelector:@selector(setAttributedPlaceholder:)])

@@ -127,6 +127,9 @@
 		F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */; };
 		F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */; };
 		F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EA06571AA57F99007573EC /* LaunchScreen.xib */; };
+		F9EBD0701AF92756003B8C29 /* editIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9EBD06D1AF92756003B8C29 /* editIcon.png */; };
+		F9EBD0711AF92756003B8C29 /* editIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */; };
+		F9EBD0721AF92756003B8C29 /* editIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9EBD06F1AF92756003B8C29 /* editIcon@3x.png */; };
 		F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */; };
 		F9F012EE19B522CF00176944 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EA19B522CF00176944 /* PieElement.m */; };
 		F9F012EF19B522CF00176944 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F012EC19B522CF00176944 /* PieLayer.m */; };
@@ -374,6 +377,9 @@
 		F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@2x.png"; sourceTree = "<group>"; };
 		F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@3x.png"; sourceTree = "<group>"; };
 		F9EA06571AA57F99007573EC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = LaunchScreen/LaunchScreen.xib; sourceTree = "<group>"; };
+		F9EBD06D1AF92756003B8C29 /* editIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editIcon.png; sourceTree = "<group>"; };
+		F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editIcon@2x.png"; sourceTree = "<group>"; };
+		F9EBD06F1AF92756003B8C29 /* editIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editIcon@3x.png"; sourceTree = "<group>"; };
 		F9F012E619B522CF00176944 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
 		F9F012E719B522CF00176944 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
 		F9F012E819B522CF00176944 /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
@@ -472,6 +478,9 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F9EBD06D1AF92756003B8C29 /* editIcon.png */,
+				F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */,
+				F9EBD06F1AF92756003B8C29 /* editIcon@3x.png */,
 				F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */,
 				F9FD5A451AC5C57C009BDDF2 /* icon (2) */,
 				F9FD5A3D1AC5BE64009BDDF2 /* airplane-white.png */,
@@ -1114,6 +1123,7 @@
 				F9FD5A6C1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */,
 				F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */,
+				F9EBD0721AF92756003B8C29 /* editIcon@3x.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F9FD5A441AC5BE64009BDDF2 /* waterTravel-white.png in Resources */,
 				F9FD5A781AC5C57C009BDDF2 /* Icon-76.png in Resources */,
@@ -1155,6 +1165,8 @@
 				F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */,
 				F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */,
 				F96B21231AB362AA009CC03E /* 3-selected@2x.png in Resources */,
+				F9EBD0701AF92756003B8C29 /* editIcon.png in Resources */,
+				F9EBD0711AF92756003B8C29 /* editIcon@2x.png in Resources */,
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F9FD5A7C1AC5C57C009BDDF2 /* Icon-Small@3x.png in Resources */,
 				F96B21221AB362AA009CC03E /* 3-selected.png in Resources */,

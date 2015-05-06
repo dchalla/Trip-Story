@@ -10,6 +10,7 @@
 #import "UIView+Utilities.h"
 #import "UIColor+Utilities.h"
 #import "DTSTripDetailsViewController.h"
+#import "UIViewController+Utilities.h"
 
 @interface DTSCreateTripViewController ()
 
@@ -22,21 +23,40 @@
 	DTSCreateEditTripView *createTripView = [DTSCreateEditTripView dts_viewFromNibWithName:@"DTSCreateEditTripView" bundle:[NSBundle mainBundle]];
 	createTripView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 	createTripView.delegate = self;
-	createTripView.isCreateTripMode = YES;
-	createTripView.trip = [DTSTrip object];
+	createTripView.isCreateTripMode = self.isCreateTripMode;
+	createTripView.trip = self.isCreateTripMode?[DTSTrip object]:self.trip;
 	self.view.backgroundColor = [UIColor primaryColor];
 	createTripView.backgroundColor = [UIColor primaryColor];
 	[self.view addSubview:createTripView];
-	self.title = @"Create Trip";
+	self.title = self.isCreateTripMode? @"Create Trip" : @"Update Trip";
+	[self configureCancelButton];
+}
+
+- (void)configureCancelButton
+{
+	if (!self.isCreateTripMode)
+	{
+		UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissCreateTripView)];
+		self.navigationItem.leftBarButtonItem = cancelButton;
+	}
 }
 
 - (void)updateCreateTripTappedForTrip:(DTSTrip *)trip
 {
-	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
-	vc.trip = trip;
-	//Testing
-	[trip createDummyEventsList];
-	//End testing
+	if (self.isCreateTripMode)
+	{
+		DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+		vc.trip = trip;
+		//Testing
+		[trip createDummyEventsList];
+		//End testing
+		[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
+	}
+	else
+	{
+		[self dismissCreateTripView];
+	}
+	
 	[trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
 			// The object has been saved.
@@ -46,15 +66,35 @@
 			NSLog(@"Failed");
 		}
 	}];
-	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
+	
 	
 }
 
 - (void)dismissCreateTripView
 {
-	
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark UIViewControllerAnimatedTransitioningDelegate
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+	self.presenting = YES;
+	return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+	self.presenting = NO;
+	return self;
+}
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
+	return [self dts_transitionDuration:transitionContext];
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+{
+	[self dts_animateTransition:transitionContext presenting:self.presenting];
+}
 
 
 @end

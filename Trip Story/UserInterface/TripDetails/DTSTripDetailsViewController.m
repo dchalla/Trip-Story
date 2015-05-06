@@ -123,6 +123,9 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = NO;
+	self.tripStoryVC.trip = self.trip;
+	self.tripEventsVC.trip = self.trip;
+	self.tripMapVC.trip = self.trip;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -136,8 +139,7 @@
 - (void)addEventButtonTapped
 {
 	
-	DTSEvent *event = [self.trip newEvent];
-	[self showUpdateEventWithEvent:event isNew:YES];
+	[self showNewEventEntry];
 	
 }
 
@@ -151,6 +153,17 @@
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
 	navVC.transitioningDelegate = eventsEntryVC;
 	eventsEntryVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
+	[self presentViewController:navVC animated:YES completion:^{
+		
+	}];
+}
+
+- (void)showEditTripView
+{
+	DTSCreateTripViewController *createVC = [[DTSCreateTripViewController alloc] init];
+	createVC.trip = self.trip;
+	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:createVC];
+	navVC.transitioningDelegate = createVC;
 	[self presentViewController:navVC animated:YES completion:^{
 		
 	}];
@@ -180,7 +193,8 @@
 #pragma mark - containerDelegate
 - (void)showNewEventEntry
 {
-	
+	DTSEvent *event = [self.trip newEvent];
+	[self showUpdateEventWithEvent:event isNew:YES];
 }
 
 - (void)showEditEventEntryAtIndex:(NSInteger)index

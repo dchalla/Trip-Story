@@ -14,7 +14,6 @@
 #import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
 #import "DTSTableViewCellParallaxProtocol.h"
-#import "DTSTripStoryHeaderView.h"
 
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
@@ -65,6 +64,7 @@
 	if (!_headerView)
 	{
 		_headerView = [[[NSBundle mainBundle] loadNibNamed:@"DTSTripStoryHeaderView" owner:self options:nil] objectAtIndex:0];
+		_headerView.delegate = self;
 	}
 	return _headerView;
 }
@@ -177,6 +177,15 @@
 			[cell performSelector:@selector(didScrollOnTableView:) withObject:self.tableView];
 		}
     }
+}
+
+#pragma mark - Header View delegate
+- (void)tripStoryHeaderViewEditButtonTapped
+{
+	if (self.containerDelegate)
+	{
+		[self.containerDelegate showEditTripView];
+	}
 }
 
 @end

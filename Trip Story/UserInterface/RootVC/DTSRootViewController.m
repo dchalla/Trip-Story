@@ -46,6 +46,7 @@
 	if (!_addTripVC)
 	{
 		_addTripVC = [[DTSCreateTripViewController alloc] init];
+		_addTripVC.isCreateTripMode = YES;
 	}
 	return _addTripVC;
 }
