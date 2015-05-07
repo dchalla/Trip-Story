@@ -7,7 +7,7 @@
 //
 
 #import "DTSTripEventsViewController.h"
-#import "DTSTripEventsCollectionViewCell.h"
+
 
 #define kEventsCellReuseIdentifier @"kEventsCellReuseIdentifier"
 
@@ -49,6 +49,7 @@
 	
 	DTSTripEventsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kEventsCellReuseIdentifier forIndexPath:indexPath];
 	cell.delegate = self;
+	cell.eventsCollectionViewCellDelegate = self;
 	[cell updateViewWithEvent:self.trip.originalEventsList[indexPath.row]];
 	if ([cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol)])
 	{
@@ -62,6 +63,28 @@
 		}
 	}
 	return cell;
+}
+
+- (void)editButtonTapped:(DTSEvent *)event
+{
+	[self.containerDelegate showEditEventEntry:event];
+}
+
+#pragma mark - opening event details
+- (void)openEvent:(DTSEvent *)inEvent
+{
+	[self.collectionView reloadData];
+	[self collapseCurrentlyExposedItem];
+	int i =0;
+	for (DTSEvent *event in self.trip.originalEventsList)
+	{
+		if ([event.eventID isEqualToString:inEvent.eventID])
+		{
+			[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
+			break;
+		}
+		i++;
+	}
 }
 
 

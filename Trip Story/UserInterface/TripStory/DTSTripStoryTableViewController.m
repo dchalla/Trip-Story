@@ -159,10 +159,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (self.isInEditMode)
+	DTSEvent *event = self.trip.eventsList[indexPath.row];
+	if (event.isPlaceHolderEvent)
 	{
-		[self.containerDelegate showEditEventEntryAtIndex:indexPath.row];
+		if (self.isInEditMode)
+		{
+			[self.containerDelegate showEditEventEntry:event];
+		}
 	}
+	else
+	{
+		[self.containerDelegate openEventDetails:event];
+	}
+	
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

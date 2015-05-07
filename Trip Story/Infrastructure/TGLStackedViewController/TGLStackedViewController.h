@@ -127,4 +127,6 @@
  */
 - (void)moveItemAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath;
 
+- (void)collapseCurrentlyExposedItem;
+
 @end

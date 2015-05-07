@@ -81,4 +81,9 @@
 	return nil;
 }
 
+- (IBAction)editButtonTapped:(id)sender {
+	[self.delegate editButtonTapped:self.event];
+}
+
+
 @end

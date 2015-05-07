@@ -267,8 +267,8 @@
 	self.isLikeSelected = [[DTSCache sharedCache] isTripLikedByCurrentUser:self.trip];
 	[self updateLikeButton];
 	NSNumber *likersCount = [[DTSCache sharedCache] likeCountForTrip:self.trip];
-	NSNumber *commentCount = [[DTSCache sharedCache] commentCountForTrip:self.trip];
-	self.totalLikeCommentsLabel.text = [NSString stringWithFormat:@"%ld like%@, %ld comment%@",(long)likersCount.integerValue,likersCount.integerValue>1?@"s":@"",(long)commentCount.integerValue,commentCount.integerValue>1?@"s":@""];
+	//NSNumber *commentCount = [[DTSCache sharedCache] commentCountForTrip:self.trip];
+	self.totalLikeCommentsLabel.text = [NSString stringWithFormat:@"%ld like%@",(long)likersCount.integerValue,likersCount.integerValue>1?@"s":@""];
 	if (self.likeSmileyImageView.alpha == 0)
 	{
 		self.likeSmileyImageView.alpha = 1.0f;

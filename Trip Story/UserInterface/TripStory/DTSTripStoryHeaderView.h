@@ -22,6 +22,12 @@
 @property (nonatomic, strong) DTSTrip *trip;
 @property (nonatomic, assign) BOOL viewAppeared;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *likeSmileyImageView;
+@property (weak, nonatomic) IBOutlet UILabel *likedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLikeCommentsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
 @property (nonatomic, weak) id<DTSTripStoryHeaderViewDelegate> delegate;
 
 - (void)updateView;

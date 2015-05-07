@@ -78,10 +78,9 @@ NSString *const kDTSTripUserKey		= @"user";
 	int j = DTSEventTypeActivity;
 	for (int i=0; i <= 10; i++)
 	{
-		DTSEvent *event = [DTSEvent object];
+		DTSEvent *event = [DTSEvent newEvent];
 		event.eventName = [NSString stringWithFormat:@"%@%d",@"Dummy Event",i];
 		event.eventDescription = @"Funtime, Lets go Kayaking. It was so much fun to enjoy our trip. Its Truly heaven.";
-		event.eventID = [NSString stringWithFormat:@"%@%d",@"Dummy Event",i];
 		if (i%2 == 0)
 		{
 			event.eventType = j++;
@@ -107,7 +106,7 @@ NSString *const kDTSTripUserKey		= @"user";
 - (DTSEvent *)newEvent
 {
 	DTSEvent *event = [self.originalEventsList lastObject];
-	DTSEvent *newEvent = [DTSEvent object];
+	DTSEvent *newEvent = [DTSEvent newEvent];
 	if (event)
 	{
 		newEvent.startDateTime = event.endDateTime;
@@ -146,10 +145,9 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (DTSEvent *)placeHolderEventWithPreviousEvent:(DTSEvent *)previousEvent nextEvent:(DTSEvent *)nextEvent
 {
-	DTSEvent *placeHolderEvent = [DTSEvent object];
+	DTSEvent *placeHolderEvent = [DTSEvent newEvent];
 	placeHolderEvent.isPlaceHolderEvent = YES;
 	placeHolderEvent.eventName = @"Unknown";
-	placeHolderEvent.eventID = @"placeHolder";
 	placeHolderEvent.startDateTime = previousEvent.endDateTime;
 	placeHolderEvent.endDateTime = nextEvent.startDateTime;
 	

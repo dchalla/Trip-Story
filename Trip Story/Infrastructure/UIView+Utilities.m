@@ -41,7 +41,8 @@
 - (UIImage *)dts_darkBlurredSnapshotImage
 {
 	UIImage *image = [self dts_snapshotImage];
-	return [image applyDarkEffect];
+	 UIColor *tintColor = [UIColor colorWithWhite:0.11 alpha:0.87];
+	return [image applyBlurWithRadius:20 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
 }
 
 - (void)addTopBorderWithColor:(UIColor *)borderColor borderHeight:(CGFloat)borderHeight

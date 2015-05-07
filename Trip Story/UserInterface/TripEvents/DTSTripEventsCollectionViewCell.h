@@ -10,9 +10,18 @@
 #import "DTSEvent.h"
 #import "DTSCollectionCardCellDelegate.h"
 #import "DTSCollectionCardsViewControllerProtocol.h"
-@interface DTSTripEventsCollectionViewCell : UICollectionViewCell < DTSCollectionCardsViewControllerProtocol>
+#import "DTSTripEventDetailsViewController.h"
+
+@protocol DTSTripEventsCollectionViewCellDelegate <NSObject>
+
+- (void)editButtonTapped:(DTSEvent *)event;
+
+@end
+
+@interface DTSTripEventsCollectionViewCell : UICollectionViewCell < DTSCollectionCardsViewControllerProtocol,DTSTripEventDetailsViewControllerDelegate>
 
 @property (nonatomic, weak) id <DTSCollectionCardCellDelegate> delegate;
+@property (nonatomic, weak) id<DTSTripEventsCollectionViewCellDelegate> eventsCollectionViewCellDelegate;
 
 - (void)updateViewWithEvent:(DTSEvent *)event;
 

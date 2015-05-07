@@ -59,6 +59,7 @@
 		_tripEventsVC = [[DTSTripEventsViewController alloc] initWithCollectionViewLayout:[[TGLStackedLayout alloc] init]];
 		_tripEventsVC.stackedLayout.layoutMargin = UIEdgeInsetsZero;
 		_tripEventsVC.exposedLayoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+		_tripEventsVC.containerDelegate = self;
 	}
 	return _tripEventsVC;
 }
@@ -200,6 +201,11 @@
 - (void)showEditEventEntryAtIndex:(NSInteger)index
 {
 	DTSEvent *event = self.trip.eventsList[index];
+	[self showEditEventEntry:event];
+}
+
+- (void)showEditEventEntry:(DTSEvent *)event
+{
 	BOOL isNew = event.isPlaceHolderEvent;
 	[self showUpdateEventWithEvent:event isNew:isNew];
 }
@@ -306,6 +312,13 @@
 			NSLog(@"Failed");
 		}
 	}];
+}
+
+- (void)openEventDetails:(DTSEvent *)event
+{
+	[self.segmentedControl setSelectedSegmentIndex:1];
+	[self segmentedControlChangedValue:self.segmentedControl];
+	[self.tripEventsVC openEvent:event];
 }
 
 @end

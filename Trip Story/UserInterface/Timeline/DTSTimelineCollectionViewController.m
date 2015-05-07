@@ -33,6 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[self.collectionView reloadData];
 }
 
 - (void)viewDidLayoutSubviews

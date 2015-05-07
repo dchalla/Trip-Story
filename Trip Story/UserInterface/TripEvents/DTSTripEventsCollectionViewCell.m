@@ -9,13 +9,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+Utilities.h"
 #import "DTSTripEventsCollectionViewCell.h"
-#import "DTSTripEventDetailsViewController.h"
+
 
 @interface DTSTripEventsCollectionViewCell ()
 @property (nonatomic, strong) DTSTripEventDetailsViewController *eventDetailsVC;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (strong, nonatomic) DTSEvent *event;
 @property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
+@property (nonatomic, assign) BOOL isInEditMode;
 @end
 
 @implementation DTSTripEventsCollectionViewCell
@@ -27,10 +28,12 @@
 	if (isExposed)
 	{
 		self.gestureRecognizer.enabled = YES;
+		[self showEditButton];
 	}
 	else
 	{
 		self.gestureRecognizer.enabled = NO;
+		[self hideEditButton];
 	}
 }
 
@@ -40,6 +43,7 @@
 	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(frame), CGRectGetHeight(frame))];
 	if (self) {
 		self.eventDetailsVC = [[DTSTripEventDetailsViewController alloc] initWithNibName:@"DTSTripEventDetailsViewController" bundle:[NSBundle mainBundle]];
+		self.eventDetailsVC.delegate = self;
 		[((UIViewController *)self.delegate) addChildViewController:self.eventDetailsVC];
 		[self.eventDetailsVC didMoveToParentViewController:((UIViewController *)self.delegate)];
 		self.eventDetailsVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
@@ -57,8 +61,29 @@
 		self.gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panning:)];
 		[self addGestureRecognizer:self.gestureRecognizer];
 		self.gestureRecognizer.enabled = NO;
+		[self hideEditButton];
+		
+		//testing
+		self.isInEditMode = YES;
 	}
 	return self;
+}
+
+- (void)hideEditButton
+{
+	self.eventDetailsVC.editButton.hidden = YES;
+}
+
+- (void)showEditButton
+{
+	if (!self.isInEditMode)
+	{
+		[self hideEditButton];
+	}
+	else
+	{
+		self.eventDetailsVC.editButton.hidden = NO;
+	}
 }
 
 - (void)layoutSubviews
@@ -88,6 +113,11 @@
 			}
 		}
 	}
+}
+
+- (void)editButtonTapped:(DTSEvent *)event
+{
+	[self.eventsCollectionViewCellDelegate editButtonTapped:event];
 }
 
 

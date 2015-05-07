@@ -219,36 +219,44 @@ typedef NS_ENUM(NSInteger, TGLStackedViewControllerScrollDirection) {
 
         // Collapse currently exposed item
         //
-        self.exposedItemIndexPath = nil;
+		
 		UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 		if ([cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol) ])
 		{
 			[cell setValue:@NO forKey:@"isExposed"];
 		}
+		self.exposedItemIndexPath = nil;
         
     } else if (self.unexposedItemsAreSelectable || self.exposedItemIndexPath == nil) {
             
         // Expose new item, possibly collapsing
         // the currently exposed item
         //
-        self.exposedItemIndexPath = indexPath;
+		
 		UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 		if ([cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol) ])
 		{
 			[cell setValue:@YES forKey:@"isExposed"];
 		}
+		self.exposedItemIndexPath = indexPath;
     }
 	else
 	{
 		// Collapse currently exposed item
 		//
-		self.exposedItemIndexPath = nil;
-		UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-		if ([cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol) ])
-		{
-			[cell setValue:@NO forKey:@"isExposed"];
-		}
+		
+		[self collapseCurrentlyExposedItem];
 	}
+}
+
+- (void)collapseCurrentlyExposedItem
+{
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:self.exposedItemIndexPath];
+	if ( cell && [cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol) ])
+	{
+		[cell setValue:@NO forKey:@"isExposed"];
+	}
+	self.exposedItemIndexPath = nil;
 }
 
 #pragma mark - Collection View cell delegate

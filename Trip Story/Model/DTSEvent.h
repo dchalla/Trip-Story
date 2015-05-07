@@ -58,5 +58,6 @@ typedef enum {
 + (UIColor *)bottomColorForEventType:(DTSEventType)eventType;
 
 + (NSString *)parseClassName;
++ (DTSEvent *)newEvent;
 
 @end

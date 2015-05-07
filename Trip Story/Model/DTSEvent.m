@@ -30,9 +30,25 @@
 	return @"DTSEvent";
 }
 
++ (DTSEvent *)newEvent
+{
+	DTSEvent *event = [DTSEvent object];
+	
+	static NSDateFormatter *dateFormatter;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSS"];
+	});
+	
+	event.eventID = [NSString stringWithFormat:@"%@%d",[dateFormatter stringFromDate:[NSDate date]], rand() % 1000000 + 1];
+	event.startDateTime = [NSDate date];
+	return event;
+}
+
 + (DTSEvent *)eventFromEvent:(DTSEvent *)event
 {
-	DTSEvent *newEvent = [DTSEvent object];
+	DTSEvent *newEvent = [DTSEvent newEvent];
 	[newEvent copyFromEvent:event];
 	return newEvent;
 }
@@ -62,8 +78,6 @@
 			self.endDateTime = [self.startDateTime dateByAddingHours:2];
 		}
 	}
-	
-	
 }
 
 - (NSDate *)endDateTime
