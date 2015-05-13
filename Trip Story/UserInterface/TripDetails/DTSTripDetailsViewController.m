@@ -180,8 +180,13 @@
 	{
 		[self.trip fillInPlaceholderEvents];
 	}
-	[self.tripStoryVC refreshView];
+	[self refreshView];
 	[self saveTripToParse];
+}
+
+- (void)refreshView
+{
+	[self.tripStoryVC refreshView];
 }
 
 - (void)dismissViewController

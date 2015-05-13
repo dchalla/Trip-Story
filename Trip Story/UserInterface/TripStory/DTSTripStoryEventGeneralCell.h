@@ -20,5 +20,5 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *parallaxImageViewOriginYConstraint;
 
 
-- (void)updateWithEvent:(DTSEvent *)event;
+- (void)updateWithEvent:(DTSEvent *)event isFirstCell:(BOOL)isFirstCell;
 @end

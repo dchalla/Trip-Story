@@ -131,7 +131,7 @@ NSString *const kDTSTripUserKey		= @"user";
 			
 			DTSEvent *previousEvent = localOriginalList[i-1];
 			CGFloat hoursDifference = [previousEvent.endDateTime hoursBeforeDate:event.startDateTime];
-			if (hoursDifference > 0.5)
+			if (hoursDifference > 0.5 )//&& previousEvent.eventKind != DTSEventKindTravel && event.eventKind != DTSEventKindTravel)
 			{
 				DTSEvent *placeHolderEvent = [self placeHolderEventWithPreviousEvent:previousEvent nextEvent:event];
 				[self.eventsList addObject:placeHolderEvent];

@@ -114,7 +114,7 @@
 		case DTSEventTypeTravelByAir:
 		case DTSEventTypeTravelByRoad:
 		case DTSEventTypeTravelByWater:
-			return DTSEventKindGeneral;
+			return DTSEventKindTravel;
 			
 		default:
 			return DTSEventKindUnknown;
@@ -239,9 +239,13 @@
 
 - (CGFloat)tripStoryCellHeight
 {
+	if (self.isPlaceHolderEvent)
+	{
+		return 40;
+	}
 	CGFloat hours = [self.eventHours floatValue];
-	CGFloat height = hours * (200/8);
-	height = MIN(200,MAX(60, height));
+	CGFloat height = hours * (220/8);
+	height = MIN(220,MAX(100, height));
 	return height;
 }
 

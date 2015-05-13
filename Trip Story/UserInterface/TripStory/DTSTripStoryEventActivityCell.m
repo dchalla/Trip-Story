@@ -42,12 +42,17 @@
 	self.placeLabel.text =@"";
 }
 
-- (void)updateWithEvent:(DTSEvent *)event
+- (void)updateWithEvent:(DTSEvent *)event isFirstCell:(BOOL)isFirstCell
 {
 	self.event = event;
 	self.eventNameLabel.text = event.eventName;
-	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm"];
-	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm"];
+	self.startTimelabel.text = @"";
+	if (isFirstCell)
+	{
+		self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm\nd MMM"];
+	}
+	
+	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm\nd MMM"];
 	if (event.eventDescription.length > 0)
 	{
 		self.descriptionLabel.text = event.eventDescription;

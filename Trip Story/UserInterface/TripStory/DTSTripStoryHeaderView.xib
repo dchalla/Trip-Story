@@ -11,13 +11,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="My Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba4-HF-Wee">
-                    <rect key="frame" x="123" y="10" width="75" height="36"/>
+                    <rect key="frame" x="123" y="10" width="75" height="27"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svT-3C-xiL">
+                    <rect key="frame" x="133" y="31" width="54" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="by User">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="byUserButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EWC-SK-U6R"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrH-w4-2Yf">
-                    <rect key="frame" x="90" y="64" width="140" height="140"/>
+                    <rect key="frame" x="90" y="61" width="140" height="140"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuS-iA-aqf">
                             <rect key="frame" x="25" y="60" width="90" height="19"/>
@@ -38,7 +49,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-hQ-wf7" userLabel="Description">
-                    <rect key="frame" x="14" y="214" width="292" height="46"/>
+                    <rect key="frame" x="14" y="211" width="292" height="46"/>
                     <attributedString key="attributedText">
                         <fragment content="Could not load the &quot;CarNoDoorsIcon.png&quot; image referenced from a nib in the bundle with identifier &quot;com.dkc.Trip-Story&quot;">
                             <attributes>
@@ -51,7 +62,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-aM-HWK">
-                    <rect key="frame" x="201" y="12" width="40" height="40"/>
+                    <rect key="frame" x="201" y="8" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="B1G-s3-eS2"/>
                         <constraint firstAttribute="width" constant="40" id="f9m-cj-hE6"/>
@@ -102,7 +113,8 @@
                 <constraint firstItem="tV7-RL-XMh" firstAttribute="centerY" secondItem="wJ1-qx-eXn" secondAttribute="centerY" id="0Qk-Zh-4ja"/>
                 <constraint firstItem="Ba4-HF-Wee" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="3yl-rZ-ggV"/>
                 <constraint firstItem="Va6-aM-HWK" firstAttribute="centerY" secondItem="Ba4-HF-Wee" secondAttribute="centerY" constant="4" id="7ns-Gw-WzZ"/>
-                <constraint firstAttribute="bottom" secondItem="NOv-hQ-wf7" secondAttribute="bottom" constant="40" id="9gI-7A-Asx"/>
+                <constraint firstItem="svT-3C-xiL" firstAttribute="top" secondItem="Ba4-HF-Wee" secondAttribute="bottom" constant="-6" id="8pV-fx-zF9"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NOv-hQ-wf7" secondAttribute="bottom" constant="40" id="9gI-7A-Asx"/>
                 <constraint firstItem="ekl-uM-J65" firstAttribute="centerY" secondItem="tV7-RL-XMh" secondAttribute="centerY" id="B5J-Gh-bYc"/>
                 <constraint firstItem="Ba4-HF-Wee" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="34" id="BHS-8f-wsw"/>
                 <constraint firstItem="Zto-Lf-Za0" firstAttribute="centerY" secondItem="tV7-RL-XMh" secondAttribute="centerY" id="BmO-EF-Qjd"/>
@@ -113,17 +125,19 @@
                 <constraint firstAttribute="bottom" secondItem="tV7-RL-XMh" secondAttribute="bottom" constant="10" id="Tkp-98-Gfg"/>
                 <constraint firstItem="ekl-uM-J65" firstAttribute="leading" secondItem="tV7-RL-XMh" secondAttribute="trailing" constant="5" id="Vix-Hr-HvB"/>
                 <constraint firstAttribute="centerX" secondItem="wJ1-qx-eXn" secondAttribute="centerX" id="Ywc-Ep-zoc"/>
-                <constraint firstItem="MrH-w4-2Yf" firstAttribute="top" secondItem="Ba4-HF-Wee" secondAttribute="bottom" constant="18" id="Znr-HT-P63"/>
+                <constraint firstItem="MrH-w4-2Yf" firstAttribute="top" secondItem="Ba4-HF-Wee" secondAttribute="bottom" constant="24" id="Znr-HT-P63"/>
                 <constraint firstAttribute="trailing" secondItem="NOv-hQ-wf7" secondAttribute="trailing" constant="14" id="dHk-i9-x2k"/>
                 <constraint firstItem="ekl-uM-J65" firstAttribute="leading" secondItem="tV7-RL-XMh" secondAttribute="trailing" constant="5" id="hpA-uk-ZLD"/>
                 <constraint firstAttribute="centerX" secondItem="MrH-w4-2Yf" secondAttribute="centerX" id="lAs-sV-Edl"/>
                 <constraint firstItem="NOv-hQ-wf7" firstAttribute="top" secondItem="MrH-w4-2Yf" secondAttribute="bottom" constant="10" id="mQr-ea-KoB"/>
+                <constraint firstItem="Ba4-HF-Wee" firstAttribute="centerX" secondItem="svT-3C-xiL" secondAttribute="centerX" id="oGj-Yf-25m"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ba4-HF-Wee" secondAttribute="trailing" constant="34" id="pyj-3G-Ant"/>
                 <constraint firstItem="Zto-Lf-Za0" firstAttribute="leading" secondItem="tV7-RL-XMh" secondAttribute="leading" placeholder="YES" id="xg5-75-zxA"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="byUserButton" destination="svT-3C-xiL" id="2nE-fz-a8e"/>
                 <outlet property="descriptionLabel" destination="NOv-hQ-wf7" id="aO1-JJ-fhs"/>
                 <outlet property="likeButton" destination="Zto-Lf-Za0" id="Rc8-bZ-6Dw"/>
                 <outlet property="likeSmileyImageView" destination="tV7-RL-XMh" id="axm-vu-n7m"/>

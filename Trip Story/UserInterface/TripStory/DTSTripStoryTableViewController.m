@@ -18,6 +18,8 @@
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
 
+#define extraPaddingBottom 20
+
 @interface DTSTripStoryTableViewController ()
 
 @property (nonatomic) BOOL isInEditMode;
@@ -35,13 +37,13 @@
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
 {
 	_topLayoutGuideLength = topLayoutGuideLength;
-	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
 }
 
 - (void)setBottomLayoutGuideLength:(CGFloat)bottomLayoutGuideLength
 {
 	_bottomLayoutGuideLength = bottomLayoutGuideLength;
-	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
 }
 
 - (void)setTrip:(DTSTrip *)trip
@@ -92,7 +94,7 @@
 {
 	[super viewWillAppear:animated];
 	[self scrollViewDidScroll:self.tableView];
-	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
 	[self refreshView];
 }
 
@@ -138,7 +140,7 @@
 		DTSTripStoryEventActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:kDTSTripStoryEventActivityCell forIndexPath:indexPath];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		// Configure the cell...
-		[cell updateWithEvent:event];
+		[cell updateWithEvent:event isFirstCell:indexPath.row == 0?YES:NO];
 		return cell;
 	}
 	else
@@ -146,7 +148,7 @@
 		DTSTripStoryEventGeneralCell *cell = [tableView dequeueReusableCellWithIdentifier:kDTSTripStoryEventGeneralCell forIndexPath:indexPath];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		// Configure the cell...
-		[cell updateWithEvent:event];
+		[cell updateWithEvent:event isFirstCell:indexPath.row == 0?YES:NO];
 		return cell;
 	}
 }

@@ -43,9 +43,10 @@
 
 - (void)updateCreateTripTappedForTrip:(DTSTrip *)trip
 {
+	DTSTripDetailsViewController *vc;
 	if (self.isCreateTripMode)
 	{
-		DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+		vc = [[DTSTripDetailsViewController alloc] init];
 		vc.trip = trip;
 		//Testing
 		[trip createDummyEventsList];
@@ -60,6 +61,10 @@
 	[trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
 			// The object has been saved.
+			if (vc)
+			{
+				[vc refreshView];
+			}
 			NSLog(@"Succeeded");
 		} else {
 			// There was a problem, check error.description

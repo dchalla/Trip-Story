@@ -25,8 +25,8 @@
 - (void)updateViewWithEvent:(DTSEvent *)event
 {
 	self.event = event;
-	self.startDateTimeLabel.text = [self.event.startDateTime stringWithFormat:@"dd/MM HH:mm"];
-	self.endDateTimeLabel.text = [self.event.endDateTime stringWithFormat:@"dd/MM HH:mm"];
+	self.startDateTimeLabel.text = [self.event.startDateTime stringWithFormat:@"d MMM YYYY, h:mm a"];
+	self.endDateTimeLabel.text = [self.event.endDateTime stringWithFormat:@"d MMM YYYY, h:mm a"];
 	self.durationLabel.text = [NSString durationStringForHours:self.event.eventHours];
 	self.addressLabel.text = self.event.location.displayFullAddress;
 	self.descriptionLabel.text = self.event.eventDescription;

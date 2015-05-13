@@ -28,7 +28,7 @@ typedef enum {
 
 typedef enum {
 	DTSEventKindActivity,
-	DTSEventKindGeneral,
+	DTSEventKindTravel,
 	DTSEventKindUnknown
 }DTSEventKind;
 

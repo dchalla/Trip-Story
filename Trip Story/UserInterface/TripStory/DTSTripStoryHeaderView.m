@@ -10,6 +10,7 @@
 #import "MagicPieLayer.h"
 #import "DTSCache.h"
 #import "DTSUtilities.h"
+#import "PFUser+DTSAdditions.h"
 
 #define PieLayerHeight 150
 #define	PierLayerWidth PieLayerHeight
@@ -62,6 +63,7 @@
 	self.tripTitle.text = self.trip.tripName.length?self.trip.tripName:@"My Trip";
 	self.tripDurationLabel.text = [self.trip tripDurationString];
 	self.descriptionLabel.attributedText = [[NSAttributedString alloc] initWithString:self.trip.tripDescription];
+	[self.byUserButton setTitle:[NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]] forState:UIControlStateNormal] ;
 }
 
 - (void)updatePieView
@@ -183,50 +185,53 @@
 			// check if we can update the cache
 			{
 				BlockWeakSelf wSelf = self;
-				PFQuery *query = [DTSUtilities queryForActivitiesOnTrip:self.trip cachePolicy:kPFCachePolicyNetworkOnly];
-				NSString *tripObjectID = [self.trip objectId];
-				[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-					BlockStrongSelf strongSelf = wSelf;
-					if (!strongSelf)
-					{
-						return;
-					}
-					@synchronized(strongSelf) {
-						
-						if (error) {
+				if (self.trip.objectId)
+				{
+					PFQuery *query = [DTSUtilities queryForActivitiesOnTrip:self.trip cachePolicy:kPFCachePolicyNetworkOnly];
+					NSString *tripObjectID = [self.trip objectId];
+					[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+						BlockStrongSelf strongSelf = wSelf;
+						if (!strongSelf)
+						{
 							return;
 						}
-						
-						NSMutableArray *likers = [NSMutableArray array];
-						NSMutableArray *commenters = [NSMutableArray array];
-						
-						BOOL isLikedByCurrentUser = NO;
-						
-						for (DTSActivity *activity in objects) {
-							if ([activity.type isEqualToString:kDTSActivityTypeLike] && activity.fromUser)
-							{
-								[likers addObject:activity.fromUser];
-							}
-							else if ([activity.type isEqualToString:kDTSActivityTypeComment] && activity.fromUser)
-							{
-								[commenters addObject:activity.fromUser];
+						@synchronized(strongSelf) {
+							
+							if (error) {
+								return;
 							}
 							
-							if ([[activity.fromUser objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
-								if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
-									isLikedByCurrentUser = YES;
+							NSMutableArray *likers = [NSMutableArray array];
+							NSMutableArray *commenters = [NSMutableArray array];
+							
+							BOOL isLikedByCurrentUser = NO;
+							
+							for (DTSActivity *activity in objects) {
+								if ([activity.type isEqualToString:kDTSActivityTypeLike] && activity.fromUser)
+								{
+									[likers addObject:activity.fromUser];
+								}
+								else if ([activity.type isEqualToString:kDTSActivityTypeComment] && activity.fromUser)
+								{
+									[commenters addObject:activity.fromUser];
+								}
+								
+								if ([[activity.fromUser objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+									if ([activity.type isEqualToString:kDTSActivityTypeLike]) {
+										isLikedByCurrentUser = YES;
+									}
 								}
 							}
+							
+							[[DTSCache sharedCache] setAttributesForTripObjectID:tripObjectID likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+							if ([[strongSelf.trip objectId] isEqualToString:tripObjectID])
+							{
+								[strongSelf updateLikeCommentCountWithAttribute:[[DTSCache sharedCache] attributesForTrip:strongSelf.trip]];
+							}
+							
 						}
-						
-						[[DTSCache sharedCache] setAttributesForTripObjectID:tripObjectID likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
-						if ([[strongSelf.trip objectId] isEqualToString:tripObjectID])
-						{
-							[strongSelf updateLikeCommentCountWithAttribute:[[DTSCache sharedCache] attributesForTrip:strongSelf.trip]];
-						}
-						
-					}
-				}];
+					}];
+				}
 			}
 		}
 	}
@@ -251,6 +256,9 @@
 	}
 }
 
+- (IBAction)byUserButtonTapped:(id)sender {
+	[DTSUtilities openUserDetailsForUser:self.trip.user];
+}
 
 
 

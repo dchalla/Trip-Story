@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
-- (void)updateWithEvent:(DTSEvent *)event;
+- (void)updateWithEvent:(DTSEvent *)event isFirstCell:(BOOL)isFirstCell;
 
 
 @end

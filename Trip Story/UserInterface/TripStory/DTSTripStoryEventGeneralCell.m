@@ -26,16 +26,21 @@
 	
 }
 
-- (void)updateWithEvent:(DTSEvent *)event
+- (void)updateWithEvent:(DTSEvent *)event isFirstCell:(BOOL)isFirstCell
 {
 	
 	self.event = event;
-	self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm"];
-	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm"];
+	self.startTimelabel.text = @"";
+	if (isFirstCell)
+	{
+		self.startTimelabel.text = [event.startDateTime stringWithFormat:@"HH:mm\nd MMM"];
+	}
+	
+	self.endTimeLabel.text = [event.endDateTime stringWithFormat:@"HH:mm\nd MMM"];
 	
 	if (event.isPlaceHolderEvent)
 	{
-		self.eventLineView.backgroundColor = [UIColor darkGrayColor];
+		self.eventLineView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
 	}
 	else
 	{

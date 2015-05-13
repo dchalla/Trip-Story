@@ -29,6 +29,7 @@
 	{
 		return nil;
 	}
+	
 	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[query whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
 	[query whereKey:kDTSActivityFromUserKey equalTo:self.user];
@@ -38,7 +39,9 @@
 	[query includeKey:@"trip.user"];
 	if (![self.user.username isEqualToString:[PFUser currentUser].username])
 	{
-		[query whereKey:@"trip.privacy" equalTo:@(DTSPrivacyPublic)];
+		PFQuery *innerQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+		[innerQuery whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
+		[query whereKey:@"trip" matchesQuery:innerQuery];
 	}
 	[query orderByDescending:@"createdAt"];
 	

@@ -20,4 +20,6 @@
 
 @property (nonatomic, strong) DTSTrip *trip;
 
+- (void)refreshView;
+
 @end

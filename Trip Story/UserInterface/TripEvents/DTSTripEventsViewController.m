@@ -75,16 +75,19 @@
 {
 	[self.collectionView reloadData];
 	[self collapseCurrentlyExposedItem];
-	int i =0;
-	for (DTSEvent *event in self.trip.originalEventsList)
-	{
-		if ([event.eventID isEqualToString:inEvent.eventID])
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		int i =0;
+		for (DTSEvent *event in self.trip.originalEventsList)
 		{
-			[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
-			break;
+			if ([event.eventID isEqualToString:inEvent.eventID])
+			{
+				[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
+				break;
+			}
+			i++;
 		}
-		i++;
-	}
+	});
+	
 }
 
 

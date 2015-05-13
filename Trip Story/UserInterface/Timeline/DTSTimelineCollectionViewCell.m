@@ -48,8 +48,8 @@
 	if (trip)
 	{
 		self.trip = trip;
-		self.startDateTimeLabel.text = [[self.trip startTimeOfTrip] stringWithFormat:@"dd/MM\nHH:mm"];
-		self.endDateTimeLabel.text = [[self.trip endTimeOfTrip] stringWithFormat:@"dd/MM\nHH:mm"];
+		self.startDateTimeLabel.text = [[self.trip startTimeOfTrip] stringWithFormat:@"d MMM\nHH:mm"];
+		self.endDateTimeLabel.text = [[self.trip endTimeOfTrip] stringWithFormat:@"d MMM\nHH:mm"];
 		[self updateDurationLabel];
 		self.tripTitleLabel.text = self.trip.tripName;
 		self.descriptionLabel.text = self.trip.tripDescription;
