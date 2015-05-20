@@ -22,6 +22,7 @@
 
 @property (nonatomic, weak) id <DTSCollectionCardCellDelegate> delegate;
 @property (nonatomic, weak) id<DTSTripEventsCollectionViewCellDelegate> eventsCollectionViewCellDelegate;
+@property (nonatomic, assign) BOOL isInEditMode;
 
 - (void)updateViewWithEvent:(DTSEvent *)event;
 

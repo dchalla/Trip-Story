@@ -33,6 +33,9 @@ NSString *const kDTSTripAttributesCommentersKey           = @"commenters";
 NSString *const kDTSUserAttributesTripCountKey                 = @"photoCount";
 NSString *const kDTSUserAttributesIsFollowedByCurrentUserKey    = @"isFollowedByCurrentUser";
 
+#pragma mark - misc
+NSString *const kDTSRefreshTrips = @"kDTSRefreshTrips";
+
 @implementation DTSConstants
 
 @end

@@ -19,5 +19,6 @@
 @property (nonatomic, weak) id <DTSTripDetailsContainerDelegate> containerDelegate;
 
 - (void)openEvent:(DTSEvent *)inEvent;
+- (void)refreshView;
 
 @end

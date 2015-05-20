@@ -13,12 +13,23 @@
 
 @interface DTSTripEventsViewController ()
 
+@property (nonatomic, assign) BOOL isInEditMode;
+
 @end
 
 @implementation DTSTripEventsViewController
 @synthesize topLayoutGuideLength = _topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength = _bottomLayoutGuideLength;
 @synthesize trip = _trip;
+
+- (BOOL)isInEditMode
+{
+	if ([self.trip.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return YES;
+	}
+	return NO;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +61,7 @@
 	DTSTripEventsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kEventsCellReuseIdentifier forIndexPath:indexPath];
 	cell.delegate = self;
 	cell.eventsCollectionViewCellDelegate = self;
+	cell.isInEditMode = self.isInEditMode;
 	[cell updateViewWithEvent:self.trip.originalEventsList[indexPath.row]];
 	if ([cell conformsToProtocol:@protocol(DTSCollectionCardsViewControllerProtocol)])
 	{
@@ -68,6 +80,11 @@
 - (void)editButtonTapped:(DTSEvent *)event
 {
 	[self.containerDelegate showEditEventEntry:event];
+}
+
+- (void)refreshView {
+	[self collapseCurrentlyExposedItem];
+	[self.collectionView reloadData];
 }
 
 #pragma mark - opening event details

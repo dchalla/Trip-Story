@@ -16,7 +16,6 @@
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (strong, nonatomic) DTSEvent *event;
 @property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL isInEditMode;
 @end
 
 @implementation DTSTripEventsCollectionViewCell
@@ -63,8 +62,6 @@
 		self.gestureRecognizer.enabled = NO;
 		[self hideEditButton];
 		
-		//testing
-		self.isInEditMode = YES;
 	}
 	return self;
 }

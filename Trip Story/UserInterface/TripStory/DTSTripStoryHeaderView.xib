@@ -139,6 +139,7 @@
             <connections>
                 <outlet property="byUserButton" destination="svT-3C-xiL" id="2nE-fz-a8e"/>
                 <outlet property="descriptionLabel" destination="NOv-hQ-wf7" id="aO1-JJ-fhs"/>
+                <outlet property="editButton" destination="Va6-aM-HWK" id="4xh-Ap-QjY"/>
                 <outlet property="likeButton" destination="Zto-Lf-Za0" id="Rc8-bZ-6Dw"/>
                 <outlet property="likeSmileyImageView" destination="tV7-RL-XMh" id="axm-vu-n7m"/>
                 <outlet property="likedLabel" destination="ekl-uM-J65" id="sc0-9E-kc8"/>

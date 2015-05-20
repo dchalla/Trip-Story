@@ -14,9 +14,10 @@
 #import "DTSTripDetailsProtocol.h"
 #import "DTSTrip.h"
 #import "DTSCreateTripViewController.h"
+#import "DTSEventsEntryTableViewController.h"
 
 
-@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate,DTSCreateTripViewControllerProtocol, DTSEventsEntryTableViewControllerDelegate>
 
 @property (nonatomic, strong) DTSTrip *trip;
 

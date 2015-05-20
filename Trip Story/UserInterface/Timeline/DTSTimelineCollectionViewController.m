@@ -28,6 +28,16 @@
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"Trip Story";
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSRefreshTrips object:nil];
+}
+
+- (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)refreshView
+{
+	[self loadObjects];
 }
 
 - (void)viewWillAppear:(BOOL)animated

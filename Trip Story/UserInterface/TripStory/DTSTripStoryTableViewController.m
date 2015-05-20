@@ -34,6 +34,15 @@
 @synthesize trip = _trip;
 
 
+- (BOOL)isInEditMode
+{
+	if ([self.trip.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return YES;
+	}
+	return NO;
+}
+
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
 {
 	_topLayoutGuideLength = topLayoutGuideLength;

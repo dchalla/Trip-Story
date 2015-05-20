@@ -59,6 +59,8 @@
 		F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9615CC71ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib */; };
 		F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */; };
 		F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */; };
+		F96801C31B0C471E00756EE0 /* DTSEventsEntryDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F96801C21B0C471E00756EE0 /* DTSEventsEntryDeleteView.m */; };
+		F96801C51B0C473800756EE0 /* DTSEventsEntryDeleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96801C41B0C473800756EE0 /* DTSEventsEntryDeleteView.xib */; };
 		F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21001AB297FA009CC03E /* DTSActivity.m */; };
 		F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21071AB3564B009CC03E /* DTSRootViewController.m */; };
 		F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210A1AB362AA009CC03E /* 1-selected.png */; };
@@ -282,6 +284,9 @@
 		F9615CCA1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserProfileCollectionViewCell.m; path = User/DTSUserProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		F9615CCD1ABBDA50004B2ADF /* DTSUserFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserFriendsViewController.h; path = User/DTSUserFriendsViewController.h; sourceTree = "<group>"; };
 		F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserFriendsViewController.m; path = User/DTSUserFriendsViewController.m; sourceTree = "<group>"; };
+		F96801C11B0C471E00756EE0 /* DTSEventsEntryDeleteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryDeleteView.h; sourceTree = "<group>"; };
+		F96801C21B0C471E00756EE0 /* DTSEventsEntryDeleteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryDeleteView.m; sourceTree = "<group>"; };
+		F96801C41B0C473800756EE0 /* DTSEventsEntryDeleteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventsEntryDeleteView.xib; sourceTree = "<group>"; };
 		F96B20FF1AB297FA009CC03E /* DTSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSActivity.h; sourceTree = "<group>"; };
 		F96B21001AB297FA009CC03E /* DTSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSActivity.m; sourceTree = "<group>"; };
 		F96B21061AB3564B009CC03E /* DTSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSRootViewController.h; path = RootVC/DTSRootViewController.h; sourceTree = "<group>"; };
@@ -570,6 +575,9 @@
 				F91CBD341981B82700BC3021 /* DTSEventLocationEntryTableViewCell.h */,
 				F91CBD351981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m */,
 				F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */,
+				F96801C11B0C471E00756EE0 /* DTSEventsEntryDeleteView.h */,
+				F96801C21B0C471E00756EE0 /* DTSEventsEntryDeleteView.m */,
+				F96801C41B0C473800756EE0 /* DTSEventsEntryDeleteView.xib */,
 			);
 			path = TripEventsEntry;
 			sourceTree = "<group>";
@@ -1183,6 +1191,7 @@
 				F96B21441AB389E7009CC03E /* users@3x.png in Resources */,
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
 				F96B21211AB362AA009CC03E /* 2@2x.png in Resources */,
+				F96801C51B0C473800756EE0 /* DTSEventsEntryDeleteView.xib in Resources */,
 				F9FD5A821AC5C57C009BDDF2 /* Icon.png in Resources */,
 				F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */,
 				F9FD5A421AC5BE64009BDDF2 /* boat-white.png in Resources */,
@@ -1278,6 +1287,7 @@
 				F9FD5A391AC510A8009BDDF2 /* DTSCreateTripViewController.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
+				F96801C31B0C471E00756EE0 /* DTSEventsEntryDeleteView.m in Sources */,
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
 				F9401DB81AB9EC8A00F271F5 /* DTSUserRootViewController.m in Sources */,

@@ -66,7 +66,11 @@
 	self.tripNameTextField.text = @"";
 	self.titleLabel.text = @"";
 	self.tripCreateUpdateButton.enabled = NO;
+	self.deleteButton.enabled = YES;
 	self.pickerData = @[@"Public",@"Only You"];
+	self.confirmDeleteLabel.hidden = YES;
+	self.yesDeleteButton.hidden = YES;
+	self.noDeleteButton.hidden = YES;
 }
 
 
@@ -108,16 +112,34 @@
 	}
 	
 }
+- (IBAction)deleteButtonTapped:(id)sender {
+	self.deleteButton.hidden = YES;
+	self.confirmDeleteLabel.hidden = NO;
+	self.yesDeleteButton.hidden = NO;
+	self.noDeleteButton.hidden = NO;
+	
+}
+- (IBAction)yesDeleteButtonTapped:(id)sender {
+	[self.delegate deleteTripTapped:self.trip];
+}
+- (IBAction)noDeleteButtonTapped:(id)sender {
+	self.deleteButton.hidden = NO;
+	self.confirmDeleteLabel.hidden = YES;
+	self.yesDeleteButton.hidden = YES;
+	self.noDeleteButton.hidden = YES;
+}
 
 - (void)updateUI
 {
 	if (self.isCreateTripMode)
 	{
 		self.titleLabel.text = @"";
+		self.deleteBackgroundView.hidden = YES;
 		[self.tripCreateUpdateButton setTitle:@"Create" forState:UIControlStateNormal];
 	}
 	else
 	{
+		self.deleteBackgroundView.hidden = NO;
 		self.titleLabel.text = @"";
 		[self.tripCreateUpdateButton setTitle:@"Update" forState:UIControlStateNormal];
 	}

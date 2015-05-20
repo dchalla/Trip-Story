@@ -75,6 +75,17 @@
 	
 }
 
+- (void)deleteTripTapped:(DTSTrip *)trip
+{
+	[trip deleteEventually];
+	[self dismissViewControllerAnimated:YES completion:^{
+		if (self.delegate)
+		{
+			[self.delegate deletedTrip];
+		}
+	}];	
+}
+
 - (void)dismissCreateTripView
 {
 	[self dismissViewControllerAnimated:YES completion:nil];

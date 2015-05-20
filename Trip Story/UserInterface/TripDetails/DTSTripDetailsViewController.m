@@ -12,7 +12,6 @@
 #import "DTSLocation.h"
 #import "NSDate+Utilities.h"
 #import "DTSTrip.h"
-#import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
 #import "DTSTripDetailsMapViewController.h"
 #import "HMSegmentedControl.h"
@@ -28,10 +27,20 @@
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 @property (nonatomic, strong) DTSTripEventsViewController *tripEventsVC;
+@property (nonatomic) BOOL isInEditMode;
 
 @end
 
 @implementation DTSTripDetailsViewController
+
+- (BOOL)isInEditMode
+{
+	if ([self.trip.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return YES;
+	}
+	return NO;
+}
 
 - (DTSTripStoryTableViewController *)tripStoryVC
 {
@@ -67,8 +76,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEventButtonTapped)];
-	[self.navigationItem setRightBarButtonItem:addBarButton];
+	if (self.isInEditMode)
+	{
+		UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEventButtonTapped)];
+		[self.navigationItem setRightBarButtonItem:addBarButton];
+	}
+	
 	
 	// Do any additional setup after loading the view, typically from a nib.
 	//self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
@@ -150,6 +163,7 @@
 	eventsEntryVC.event = event;
 	eventsEntryVC.dismissDelegate = self;
 	eventsEntryVC.addEventDelegate = self;
+	eventsEntryVC.delegate = self;
 	eventsEntryVC.isNewEvent = isNew;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
 	navVC.transitioningDelegate = eventsEntryVC;
@@ -162,11 +176,28 @@
 - (void)showEditTripView
 {
 	DTSCreateTripViewController *createVC = [[DTSCreateTripViewController alloc] init];
+	createVC.delegate = self;
 	createVC.trip = self.trip;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:createVC];
 	navVC.transitioningDelegate = createVC;
 	[self presentViewController:navVC animated:YES completion:^{
 		
+	}];
+}
+
+- (void)deletedTrip
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:kDTSRefreshTrips object:nil];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)eventDeleteButtonTapped:(DTSEvent *)event {
+	[self.trip.originalEventsList removeObject:event];
+	[event deleteEventually];
+	[self saveTripToParse];
+	[self.trip fillInPlaceholderEvents];
+	[self dismissViewControllerAnimated:YES completion:^{
+		[self refreshView];
 	}];
 }
 
@@ -187,6 +218,7 @@
 - (void)refreshView
 {
 	[self.tripStoryVC refreshView];
+	[self.tripEventsVC refreshView];
 }
 
 - (void)dismissViewController

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -42,13 +42,13 @@
                     <rect key="frame" x="0.0" y="206" width="320" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="667-y6-iKv" userLabel="Privacy">
-                            <rect key="frame" x="14" y="0.0" width="53.5" height="40"/>
+                            <rect key="frame" x="14" y="0.0" width="54" height="40"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwi-jF-rv3">
-                            <rect key="frame" x="77" y="0.0" width="228.5" height="40"/>
+                            <rect key="frame" x="78" y="0.0" width="228" height="40"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Public">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,6 +117,70 @@
                         <constraint firstAttribute="centerY" secondItem="wqi-wj-Xi3" secondAttribute="centerY" id="bnW-zf-DqP"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RY-yD-B8z" userLabel="tripDeleteBackgroundView">
+                    <rect key="frame" x="0.0" y="348" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Delete?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4F-M7-tjm">
+                            <rect key="frame" x="14" y="12" width="102" height="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jP-7Y-XA1">
+                            <rect key="frame" x="136" y="0.0" width="46" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="WdQ-YG-Syr"/>
+                            </constraints>
+                            <state key="normal" title="YES">
+                                <color key="titleColor" red="1" green="0.1188127249" blue="0.1188127249" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="yesDeleteButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="qgA-5U-6sw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNL-eC-X9k">
+                            <rect key="frame" x="14" y="0.0" width="292" height="40"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" red="1" green="0.1188127249" blue="0.1188127249" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ynh-nj-gfg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd4-dN-6m6">
+                            <rect key="frame" x="222" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="K30-YH-BQe"/>
+                                <constraint firstAttribute="height" constant="40" id="cdj-89-djD"/>
+                            </constraints>
+                            <state key="normal" title="NO">
+                                <color key="titleColor" red="0.090196078430000007" green="0.6705882353" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="noDeleteButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Em0-Js-l4K"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="3jP-7Y-XA1" firstAttribute="top" secondItem="1RY-yD-B8z" secondAttribute="top" id="5F4-9e-sVo"/>
+                        <constraint firstAttribute="centerY" secondItem="Y4F-M7-tjm" secondAttribute="centerY" id="7hC-hW-ZcG"/>
+                        <constraint firstAttribute="bottom" secondItem="WNL-eC-X9k" secondAttribute="bottom" id="8ob-Uf-mA0"/>
+                        <constraint firstAttribute="bottom" secondItem="3jP-7Y-XA1" secondAttribute="bottom" id="P63-je-rhC"/>
+                        <constraint firstAttribute="trailing" secondItem="WNL-eC-X9k" secondAttribute="trailing" constant="14" id="TJz-g0-YdU"/>
+                        <constraint firstItem="WNL-eC-X9k" firstAttribute="top" secondItem="1RY-yD-B8z" secondAttribute="top" id="YUh-SH-ZtC"/>
+                        <constraint firstItem="jd4-dN-6m6" firstAttribute="leading" secondItem="3jP-7Y-XA1" secondAttribute="trailing" constant="40" id="fES-Yw-YHz"/>
+                        <constraint firstItem="Y4F-M7-tjm" firstAttribute="leading" secondItem="1RY-yD-B8z" secondAttribute="leading" constant="14" id="nFr-py-wCu"/>
+                        <constraint firstAttribute="bottom" secondItem="jd4-dN-6m6" secondAttribute="bottom" id="nbA-9m-Z2i"/>
+                        <constraint firstItem="3jP-7Y-XA1" firstAttribute="leading" secondItem="Y4F-M7-tjm" secondAttribute="trailing" constant="20" id="qyK-6T-Zsb"/>
+                        <constraint firstAttribute="height" constant="40" id="s9p-bo-oqY"/>
+                        <constraint firstItem="jd4-dN-6m6" firstAttribute="top" secondItem="1RY-yD-B8z" secondAttribute="top" id="uol-9p-Itj"/>
+                        <constraint firstItem="WNL-eC-X9k" firstAttribute="leading" secondItem="1RY-yD-B8z" secondAttribute="leading" constant="14" id="w8m-20-rCx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.058823529411764705" green="0.066666666666666666" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -128,13 +192,16 @@
                 <constraint firstAttribute="trailing" secondItem="rEl-A3-R0k" secondAttribute="trailing" constant="14" id="Fq8-qe-PUp"/>
                 <constraint firstItem="MJX-AQ-BCw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hxn-Bv-Ih3"/>
                 <constraint firstItem="x2T-Vt-KSN" firstAttribute="top" secondItem="rEl-A3-R0k" secondAttribute="top" id="IOg-Li-qoI"/>
+                <constraint firstAttribute="trailing" secondItem="1RY-yD-B8z" secondAttribute="trailing" id="J6v-Aa-Yca"/>
                 <constraint firstItem="Iaf-JM-17t" firstAttribute="top" secondItem="WhV-U4-y7w" secondAttribute="bottom" id="Lqn-1L-yTk"/>
+                <constraint firstItem="1RY-yD-B8z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Rzs-mg-pS6"/>
                 <constraint firstItem="xw8-od-x4i" firstAttribute="top" secondItem="M3L-o5-Sma" secondAttribute="top" id="WdT-zM-e3k"/>
                 <constraint firstItem="rEl-A3-R0k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="XUK-Ep-Rvb"/>
                 <constraint firstItem="m9g-O2-FDN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ZBF-1s-Ahq"/>
                 <constraint firstAttribute="trailing" secondItem="xw8-od-x4i" secondAttribute="trailing" id="Zs6-DJ-5Ot"/>
                 <constraint firstItem="MJX-AQ-BCw" firstAttribute="top" secondItem="M3L-o5-Sma" secondAttribute="bottom" constant="10" id="aan-fk-ElO"/>
                 <constraint firstAttribute="trailing" secondItem="x2T-Vt-KSN" secondAttribute="trailing" id="bUU-y1-aVt"/>
+                <constraint firstItem="1RY-yD-B8z" firstAttribute="top" secondItem="WhV-U4-y7w" secondAttribute="bottom" constant="32" id="bXJ-aC-y2E"/>
                 <constraint firstAttribute="trailing" secondItem="M3L-o5-Sma" secondAttribute="trailing" constant="9" id="dF1-p2-WVY"/>
                 <constraint firstAttribute="trailing" secondItem="MJX-AQ-BCw" secondAttribute="trailing" id="euQ-rh-GwX"/>
                 <constraint firstAttribute="trailing" secondItem="Iaf-JM-17t" secondAttribute="trailing" id="nh9-dq-yN7"/>
@@ -152,11 +219,16 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="confirmDeleteLabel" destination="Y4F-M7-tjm" id="Rk4-QU-NFe"/>
+                <outlet property="deleteBackgroundView" destination="1RY-yD-B8z" id="kSu-zp-dSS"/>
+                <outlet property="deleteButton" destination="WNL-eC-X9k" id="sV8-GU-7rC"/>
+                <outlet property="noDeleteButton" destination="jd4-dN-6m6" id="11M-Tb-fhR"/>
                 <outlet property="titleLabel" destination="m9g-O2-FDN" id="8a0-0K-Prx"/>
                 <outlet property="tripCreateUpdateButton" destination="0xt-Gh-e51" id="hbw-UH-fvc"/>
                 <outlet property="tripDescriptionTextView" destination="M3L-o5-Sma" id="75H-bw-zCR"/>
                 <outlet property="tripNameTextField" destination="rEl-A3-R0k" id="gBg-4V-OC4"/>
                 <outlet property="tripPrivacyButton" destination="Iwi-jF-rv3" id="7V0-Qv-ubo"/>
+                <outlet property="yesDeleteButton" destination="3jP-7Y-XA1" id="QfX-tv-LaO"/>
             </connections>
             <point key="canvasLocation" x="273" y="476"/>
         </view>

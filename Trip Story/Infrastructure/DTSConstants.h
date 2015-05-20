@@ -48,6 +48,9 @@ extern NSString *const kDTSTripAttributesCommentersKey;
 extern NSString *const kDTSUserAttributesTripCountKey;
 extern NSString *const kDTSUserAttributesIsFollowedByCurrentUserKey;
 
+#pragma mark - misc
+extern NSString *const kDTSRefreshTrips;
+
 @interface DTSConstants : NSObject
 
 @end

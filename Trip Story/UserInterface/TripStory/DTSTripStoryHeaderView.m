@@ -19,10 +19,20 @@
 
 @property (nonatomic, strong) PieLayer *pieLayer;
 @property (nonatomic) BOOL isLikeSelected;
+@property (nonatomic) BOOL isInEditMode;
 
 @end
 
 @implementation DTSTripStoryHeaderView
+
+- (BOOL)isInEditMode
+{
+	if ([self.trip.user.username isEqualToString:[PFUser currentUser].username])
+	{
+		return YES;
+	}
+	return NO;
+}
 
 - (void)awakeFromNib
 {
@@ -64,6 +74,14 @@
 	self.tripDurationLabel.text = [self.trip tripDurationString];
 	self.descriptionLabel.attributedText = [[NSAttributedString alloc] initWithString:self.trip.tripDescription];
 	[self.byUserButton setTitle:[NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]] forState:UIControlStateNormal] ;
+	if (self.isInEditMode)
+	{
+		self.editButton.hidden = NO;
+	}
+	else
+	{
+		self.editButton.hidden = YES;
+	}
 }
 
 - (void)updatePieView

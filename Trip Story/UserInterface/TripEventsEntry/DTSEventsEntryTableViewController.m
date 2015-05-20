@@ -14,6 +14,7 @@
 #import "DTSEventLocationEntryTableViewCell.h"
 #import "DTSLocationEntryViewController.h"
 #import "UIView+Utilities.h"
+#import "UIView+Utilities.h"
 
 #define kDTSEventTextEntryTableViewCell @"DTSEventTextEntryTableViewCell"
 #define kDTSEventDateEntryTableViewCell @"DTSEventDateEntryTableViewCell"
@@ -93,7 +94,15 @@ typedef enum {
     [super viewDidLoad];
 	
 	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-	self.title = @"Add Event";
+
+	if (self.isNewEvent)
+	{
+		self.title = @"Add Event";
+	}
+	else
+	{
+		self.title = @"Edit Event";
+	}
 	
 	UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
 	[self.navigationItem setRightBarButtonItem:doneBarButton];
@@ -188,13 +197,17 @@ typedef enum {
 {
 	[super viewWillAppear:animated];
 	[self updateBackgroundImage];
+	if (!self.isNewEvent) {
+		DTSEventsEntryDeleteView *footerView = [DTSEventsEntryDeleteView dts_viewFromNibWithName:@"DTSEventsEntryDeleteView" bundle:[NSBundle mainBundle]];
+		footerView.delegate = self;
+		self.tableView.tableFooterView = footerView;
+	}
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)eventDeleteButtonTapped {
+	[self.delegate eventDeleteButtonTapped:self.event];
 }
+
 
 #pragma mark - Table view data source
 
@@ -489,7 +502,10 @@ typedef enum {
 			break;
 		case DTSEventEntryFieldTypeDescription:
 		{
-			
+			if ([value isKindOfClass:[NSString class]])
+			{
+				self.event.eventDescription = value;
+			}
 		}
 			break;
 		case DTSEventEntryFieldTypeStartDate:

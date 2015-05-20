@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLikeCommentsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *byUserButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @property (nonatomic, weak) id<DTSTripStoryHeaderViewDelegate> delegate;
 

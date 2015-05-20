@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -41,12 +42,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPy-DI-GLk">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPy-DI-GLk">
+                                <rect key="frame" x="0.0" y="17" width="204" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-H9-iTa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIl-H9-iTa">
                                 <rect key="frame" x="0.0" y="17" width="204" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
@@ -77,8 +79,10 @@
                     <constraint firstItem="8QO-Fh-hiH" firstAttribute="leading" secondItem="n1P-N9-A2R" secondAttribute="trailing" constant="16" id="X7d-nI-xRz"/>
                     <constraint firstItem="cdK-Gc-41p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Zu7-5s-aqc"/>
                     <constraint firstItem="n1P-N9-A2R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="fVb-kC-Dc0"/>
+                    <constraint firstItem="8QO-Fh-hiH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="gGo-Dz-6yJ"/>
                     <constraint firstItem="n1P-N9-A2R" firstAttribute="leading" secondItem="cdK-Gc-41p" secondAttribute="trailing" constant="5" id="hUd-cP-QAX"/>
                     <constraint firstAttribute="trailing" secondItem="8QO-Fh-hiH" secondAttribute="trailing" constant="10" id="rXH-zH-kgC"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="8QO-Fh-hiH" secondAttribute="bottom" id="tMN-ck-7bv"/>
                     <constraint firstItem="n1P-N9-A2R" firstAttribute="leading" secondItem="adU-GN-owX" secondAttribute="trailing" constant="5" id="u9Y-5D-tlf"/>
                     <constraint firstItem="cdK-Gc-41p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="yRB-6O-3qc"/>
                 </constraints>

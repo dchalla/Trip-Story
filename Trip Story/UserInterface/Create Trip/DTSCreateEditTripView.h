@@ -12,6 +12,7 @@
 @protocol DTSCreateEditTripViewProtocol <NSObject>
 
 - (void)updateCreateTripTappedForTrip:(DTSTrip *)trip;
+- (void)deleteTripTapped:(DTSTrip *)trip;
 - (void)dismissCreateTripView;
 
 @end
@@ -23,6 +24,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *tripPrivacyButton;
 @property (weak, nonatomic) IBOutlet UIButton *tripCreateUpdateButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *deleteBackgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UILabel *confirmDeleteLabel;
+@property (weak, nonatomic) IBOutlet UIButton *yesDeleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *noDeleteButton;
 
 @property (nonatomic) BOOL isCreateTripMode;
 @property (nonatomic, strong) DTSTrip *trip;
