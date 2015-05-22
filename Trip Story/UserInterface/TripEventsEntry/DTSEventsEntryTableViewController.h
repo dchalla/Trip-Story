@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSEvent.h"
+#import "DTSTrip.h"
 #import "DTSModalDismissProtocol.h"
 #import "DTSEntryTableViewCellDelegate.h"
 #import "DTSAddEventDelegate.h"
@@ -23,6 +24,7 @@
 
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 @property (nonatomic, strong) DTSEvent *event;
+@property (nonatomic, strong) DTSTrip *trip;
 @property (nonatomic, weak) id<DTSModalDismissProtocol> dismissDelegate;
 @property (nonatomic, weak) id<DTSAddEventDelegate> addEventDelegate;
 @property (nonatomic, weak) id<DTSEventsEntryTableViewControllerDelegate>delegate;

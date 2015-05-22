@@ -59,6 +59,14 @@
 	[self hideSearchModal];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	self.tableData = [self.trip tripMkMapItems];
+	[self.tableView reloadData];
+	[self.searchBar becomeFirstResponder];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:YES];

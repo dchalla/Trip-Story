@@ -152,6 +152,19 @@ NSString *const kDTSTripUserKey		= @"user";
 	placeHolderEvent.endDateTime = nextEvent.startDateTime;
 	
 	placeHolderEvent.eventType = [self eventTypeForPlaceHolderEventBetweenPreviousEvent:previousEvent nextEvent:nextEvent];
+	if (placeHolderEvent.eventKind == DTSEventKindTravel)
+	{
+		if (nextEvent.location)
+		{
+			placeHolderEvent.location = nextEvent.location;
+			NSString *locationName = nextEvent.location.locationName.length>0? nextEvent.location.locationName : @"";
+			placeHolderEvent.eventName = [NSString stringWithFormat:@"Travel%@%@",locationName.length>0?@" to ":@"",locationName];
+		}
+		else
+		{
+			placeHolderEvent.eventName = @"Travel";
+		}
+	}
 	
 	return placeHolderEvent;
 }
@@ -518,6 +531,25 @@ NSString *const kDTSTripUserKey		= @"user";
 	}];
 	
 	return [tripEventTypeStringsArray copy];
+}
+
+- (NSArray *)tripMkMapItems
+{
+	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+	NSArray *eventsWithLocation = [self eventsWithLocationList];
+	for (DTSEvent *event in eventsWithLocation)
+	{
+		if (event.location)
+		{
+			MKMapItem *mapItem = event.location.mapItem;
+			if (mapItem && mapItem.name)
+			{
+				dict[mapItem.name] = mapItem;
+			}
+		}
+		
+	}
+	return [dict allValues];
 }
 
 

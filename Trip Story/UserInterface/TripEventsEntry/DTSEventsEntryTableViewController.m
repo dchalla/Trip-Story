@@ -104,7 +104,7 @@ typedef enum {
 		self.title = @"Edit Event";
 	}
 	
-	UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
+	UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(doneButtonTapped)];
 	[self.navigationItem setRightBarButtonItem:doneBarButton];
 	
 	UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
@@ -560,6 +560,7 @@ typedef enum {
 	locationSearchVC.dismissDelegate = self;
 	locationSearchVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
 	locationSearchVC.entryDelegate = self;
+	locationSearchVC.trip = self.trip;
 	[self presentViewController:locationSearchVC animated:YES completion:^{}];
 }
 
@@ -570,7 +571,7 @@ typedef enum {
 
 - (void)updateRightBarButton
 {
-	if (self.isValueChanged || (self.isNewEvent && !self.event.isPlaceHolderEvent))
+	if (self.isValueChanged || (self.isNewEvent))
 	{
 		self.navigationItem.rightBarButtonItem.enabled = YES;
 	}

@@ -239,7 +239,7 @@
 
 - (CGFloat)tripStoryCellHeight
 {
-	if (self.isPlaceHolderEvent)
+	if (self.isPlaceHolderEvent && self.eventKind != DTSEventKindTravel)
 	{
 		return 40;
 	}

@@ -165,6 +165,7 @@
 	eventsEntryVC.addEventDelegate = self;
 	eventsEntryVC.delegate = self;
 	eventsEntryVC.isNewEvent = isNew;
+	eventsEntryVC.trip = self.trip;
 	UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:eventsEntryVC];
 	navVC.transitioningDelegate = eventsEntryVC;
 	eventsEntryVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];

@@ -11,6 +11,7 @@
 
 @interface DTSEventLocationEntryTableViewCell : UITableViewCell
 
+
 @property (nonatomic, strong) DTSLocation *fieldValue;
 @property (nonatomic, strong) NSString *placeHolderValue;
 @property (nonatomic, strong) id identifier;

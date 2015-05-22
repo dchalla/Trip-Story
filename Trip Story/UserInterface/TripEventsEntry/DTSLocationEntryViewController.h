@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DTSModalDismissProtocol.h"
 #import "DTSEntryTableViewCellDelegate.h"
+#import "DTSTrip.h"
+
 
 @interface DTSLocationEntryViewController : UIViewController <UISearchBarDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
@@ -22,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *searchModalView;
 @property (weak, nonatomic) IBOutlet UILabel *searchingLabel;
 @property (weak, nonatomic) id<DTSEntryTableViewCellDelegate> entryDelegate;
+@property (nonatomic, strong) DTSTrip *trip;
 
 @end
