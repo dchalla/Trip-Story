@@ -24,6 +24,7 @@
 
 @property (nonatomic) BOOL isInEditMode;
 @property (nonatomic, strong) DTSTripStoryHeaderView *headerView;
+@property (nonatomic, strong) DTSTripStoryFooterView *footerView;
 
 @end
 
@@ -58,7 +59,7 @@
 - (void)setTrip:(DTSTrip *)trip
 {
 	_trip = trip;
-	[self updateHeaderView];
+	[self refreshView];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -80,10 +81,20 @@
 	return _headerView;
 }
 
+- (DTSTripStoryFooterView *)footerView
+{
+	if (!_footerView) {
+		_footerView = [DTSTripStoryFooterView dts_viewFromNibWithName:@"DTSTripStoryFooterView" bundle:[NSBundle mainBundle]];
+		_footerView.delegate = self;
+	}
+	return _footerView;
+}
+
 - (void)refreshView
 {
 	[self.tableView reloadData];
 	[self updateHeaderView];
+	[self updateFooterView];
 }
 
 - (void)viewDidLoad
@@ -117,15 +128,19 @@
 {
 	if (self.tableView)
 	{
-		if (self.trip.eventsList.count > 0)
-		{
-			self.headerView.trip = self.trip;
-			self.tableView.tableHeaderView = self.headerView;
-		}
-		else
-		{
-			self.tableView.tableHeaderView = nil;
-		}
+		self.headerView.trip = self.trip;
+		self.tableView.tableHeaderView = self.headerView;
+		
+	}
+}
+
+- (void)updateFooterView
+{
+	if (self.tableView)
+	{
+		self.footerView.trip = self.trip;
+		self.tableView.tableFooterView = self.footerView;
+		[self.footerView updateView];
 	}
 }
 
@@ -199,13 +214,61 @@
     }
 }
 
-#pragma mark - Header View delegate
+#pragma mark - Header/Footer View delegate
 - (void)tripStoryHeaderViewEditButtonTapped
 {
 	if (self.containerDelegate)
 	{
 		[self.containerDelegate showEditTripView];
 	}
+}
+
+- (void)tripStoryFooterViewAddEventTapped
+{
+	if (self.containerDelegate)
+	{
+		[self.containerDelegate showNewEventEntry];
+	}
+}
+
+#pragma mark - sharing
+- (void)shareButtonTapped
+{
+	UIImage *screenshotImage = [self screenshotImageForSharing];
+	NSString *tripDescription = self.trip.tripDescription;
+	if (tripDescription.length == 0) {
+		tripDescription = @"";
+	}
+	NSArray *objectsToShare = @[screenshotImage, tripDescription, @"http://www.facebook.com/TripStory"];
+	UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+	[controller setValue:self.trip.tripName forKey:@"subject"];
+	[self presentViewController:controller animated:YES completion:nil];
+}
+
+-(UIImage *)screenshotImageForSharing
+{
+	
+	int height = self.tableView.contentSize.height + 100;
+	CGRect headerViewFrame = self.headerView.frame;
+	CGRect tableViewFrame = self.tableView.frame;
+	CGRect newTableViewFrame = tableViewFrame;
+	newTableViewFrame.size.height = height;
+	self.tableView.frame = newTableViewFrame;
+	[self.tableView reloadData];
+	self.headerView.frame = headerViewFrame;
+	self.footerView.isSharing = YES;
+	[self.footerView updateView];
+	
+	UIGraphicsBeginImageContextWithOptions(self.tableView.bounds.size, YES, 3);
+	[self.tableView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	self.tableView.frame = tableViewFrame;
+	self.headerView.frame = headerViewFrame;
+	self.footerView.isSharing = NO;
+	[self.footerView updateView];
+	
+	return img;
 }
 
 @end

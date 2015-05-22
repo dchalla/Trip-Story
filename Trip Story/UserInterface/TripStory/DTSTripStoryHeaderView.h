@@ -12,6 +12,7 @@
 @protocol DTSTripStoryHeaderViewDelegate <NSObject>
 
 - (void)tripStoryHeaderViewEditButtonTapped;
+- (void)shareButtonTapped;
 
 @end
 
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *byUserButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 
 @property (nonatomic, weak) id<DTSTripStoryHeaderViewDelegate> delegate;
 

@@ -43,6 +43,12 @@
 		[innerQuery whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 		[query whereKey:@"trip" matchesQuery:innerQuery];
 	}
+	else
+	{
+		PFQuery *innerQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
+		[innerQuery whereKeyExists:@"privacy"];
+		[query whereKey:@"trip" matchesQuery:innerQuery];
+	}
 	[query orderByDescending:@"createdAt"];
 	
 	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];

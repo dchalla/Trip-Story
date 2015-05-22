@@ -32,7 +32,7 @@ extern NSString *const kDTSTripUserKey;
 - (void)addEvent:(DTSEvent *)event;
 - (DTSEvent *)newEvent;
 - (void)fillInPlaceholderEvents;
-- (NSArray *)eventsDurationArray;
+- (NSArray *)eventsDurationArray:(BOOL)forPieView;
 - (NSString *)tripDurationString;
 - (NSNumber *)tripDurationHours;
 - (NSArray *)startAndEndTravelEventsArray;

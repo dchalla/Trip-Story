@@ -43,9 +43,9 @@
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
+	[super viewDidAppear:animated];
 	[self.collectionView reloadData];
 }
 
@@ -83,7 +83,11 @@
 }
 
 - (void)refreshView {
-	[self collapseCurrentlyExposedItem];
+	if (self.exposedItemIndexPath)
+	{
+		[self collapseCurrentlyExposedItem];
+	}
+	
 	[self.collectionView reloadData];
 }
 

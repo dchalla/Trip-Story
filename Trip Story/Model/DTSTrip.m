@@ -210,12 +210,28 @@ NSString *const kDTSTripUserKey		= @"user";
 }
 
 
-- (NSArray *)eventsDurationArray
+- (NSArray *)eventsDurationArray:(BOOL)forPieView
 {
 	NSMutableArray *eventsArray = [NSMutableArray array];
-	for (int i = 0; i < 10; i++)
+	BOOL isAllEventsZeroDuration = YES;
+	for (int i = DTSEventTypeActivity; i <= DTSEventTypePlaceholder; i++)
 	{
-		[eventsArray addObject:[self eventTypeDurationInTrip:i]];
+		NSNumber *durationForEventType = [self eventTypeDurationInTrip:i];
+		if (durationForEventType.floatValue > 0 ) {
+			isAllEventsZeroDuration = NO;
+		}
+		
+		if (i == DTSEventTypePlaceholder) {
+			if (isAllEventsZeroDuration && forPieView) {
+				durationForEventType = @(1);
+			}
+			else {
+				durationForEventType = @(0);
+			}
+			
+		}
+		
+		[eventsArray addObject: durationForEventType];
 	}
 	return [eventsArray copy];
 }

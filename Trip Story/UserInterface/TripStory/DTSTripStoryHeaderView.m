@@ -88,16 +88,16 @@
 {
 	if (self.pieLayer)
 	{
-		NSArray *eventsDuration = [self.trip eventsDurationArray];
+		NSArray *eventsDuration = [self.trip eventsDurationArray:YES];
 		int i = 0;
 		for (NSNumber *duration in eventsDuration)
 		{
 			PieElement* pieElem = self.pieLayer.values[i];
 			if (pieElem.val != duration.floatValue)
 			{
-				[PieElement animateChanges:^{
+				//[PieElement animateChanges:^{
 					pieElem.val = duration.floatValue;
-				}];
+				//}];
 
 			}
 			i++;
@@ -110,7 +110,7 @@
 		self.pieLayer.frame = CGRectMake((self.pieView.frame.size.width - PierLayerWidth)/2, (self.pieView.frame.size.height - PieLayerHeight)/2, PierLayerWidth, PieLayerHeight);
 		[self.pieView.layer addSublayer:self.pieLayer];
 		
-		NSArray *eventsDuration = [self.trip eventsDurationArray];
+		NSArray *eventsDuration = [self.trip eventsDurationArray:YES];
 		NSMutableArray *pieElementsArray = [NSMutableArray array];
 		int i = 0;
 		for (NSNumber *duration in eventsDuration)
@@ -121,7 +121,6 @@
 			[pieElementsArray addObject:element];
 			i++;
 		}
-		
 		[self.pieLayer addValues:pieElementsArray animated:YES];
 	}
 	
@@ -276,6 +275,13 @@
 
 - (IBAction)byUserButtonTapped:(id)sender {
 	[DTSUtilities openUserDetailsForUser:self.trip.user];
+}
+
+
+#pragma mark - share
+
+- (IBAction)shareButtonTapped:(id)sender {
+	[self.delegate shareButtonTapped];
 }
 
 

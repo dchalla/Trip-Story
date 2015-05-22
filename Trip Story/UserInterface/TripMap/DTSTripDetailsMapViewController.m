@@ -110,22 +110,33 @@
 			MKDirections *direction = [[MKDirections alloc]initWithRequest:request];
 			
 			[direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+				if (error || response == nil)
+				{
+					NSLog(@"Map Data Error");
+				}
+				else
+				{
+					NSArray *arrRoutes = [response routes];
+					MKRoute *rout = arrRoutes.firstObject;
+					MKPolyline *line = [rout polyline];
+					if (rout && line)
+					{
+						[self.mapView addOverlay:line];
+						NSLog(@"Rout Name : %@",rout.name);
+						NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+						
+						NSArray *steps = [rout steps];
+						
+						NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+						
+						[steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+							NSLog(@"Rout Instruction : %@",[obj instructions]);
+							NSLog(@"Rout Distance : %f",[obj distance]);
+						}];
+					}
+					
+				}
 				
-				NSArray *arrRoutes = [response routes];
-				MKRoute *rout = arrRoutes.firstObject;
-				MKPolyline *line = [rout polyline];
-				[self.mapView addOverlay:line];
-				NSLog(@"Rout Name : %@",rout.name);
-				NSLog(@"Total Distance (in Meters) :%f",rout.distance);
-				
-				NSArray *steps = [rout steps];
-				
-				NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-				
-				[steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-					NSLog(@"Rout Instruction : %@",[obj instructions]);
-					NSLog(@"Rout Distance : %f",[obj distance]);
-				}];
 			}];
 
 		}

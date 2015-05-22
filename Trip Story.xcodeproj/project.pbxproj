@@ -61,6 +61,8 @@
 		F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9615CCE1ABBDA50004B2ADF /* DTSUserFriendsViewController.m */; };
 		F96801C31B0C471E00756EE0 /* DTSEventsEntryDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F96801C21B0C471E00756EE0 /* DTSEventsEntryDeleteView.m */; };
 		F96801C51B0C473800756EE0 /* DTSEventsEntryDeleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96801C41B0C473800756EE0 /* DTSEventsEntryDeleteView.xib */; };
+		F96801C91B0D106500756EE0 /* DTSTripStoryFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F96801C81B0D106500756EE0 /* DTSTripStoryFooterView.m */; };
+		F96801CB1B0D109900756EE0 /* DTSTripStoryFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96801CA1B0D109900756EE0 /* DTSTripStoryFooterView.xib */; };
 		F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21001AB297FA009CC03E /* DTSActivity.m */; };
 		F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96B21071AB3564B009CC03E /* DTSRootViewController.m */; };
 		F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B210A1AB362AA009CC03E /* 1-selected.png */; };
@@ -287,6 +289,9 @@
 		F96801C11B0C471E00756EE0 /* DTSEventsEntryDeleteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryDeleteView.h; sourceTree = "<group>"; };
 		F96801C21B0C471E00756EE0 /* DTSEventsEntryDeleteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryDeleteView.m; sourceTree = "<group>"; };
 		F96801C41B0C473800756EE0 /* DTSEventsEntryDeleteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventsEntryDeleteView.xib; sourceTree = "<group>"; };
+		F96801C71B0D106500756EE0 /* DTSTripStoryFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripStoryFooterView.h; sourceTree = "<group>"; };
+		F96801C81B0D106500756EE0 /* DTSTripStoryFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripStoryFooterView.m; sourceTree = "<group>"; };
+		F96801CA1B0D109900756EE0 /* DTSTripStoryFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSTripStoryFooterView.xib; sourceTree = "<group>"; };
 		F96B20FF1AB297FA009CC03E /* DTSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSActivity.h; sourceTree = "<group>"; };
 		F96B21001AB297FA009CC03E /* DTSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSActivity.m; sourceTree = "<group>"; };
 		F96B21061AB3564B009CC03E /* DTSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSRootViewController.h; path = RootVC/DTSRootViewController.h; sourceTree = "<group>"; };
@@ -645,6 +650,9 @@
 				F9F012F119B524D900176944 /* DTSTripStoryHeaderView.h */,
 				F9F012F219B524D900176944 /* DTSTripStoryHeaderView.m */,
 				F9F012F419B5251A00176944 /* DTSTripStoryHeaderView.xib */,
+				F96801C71B0D106500756EE0 /* DTSTripStoryFooterView.h */,
+				F96801C81B0D106500756EE0 /* DTSTripStoryFooterView.m */,
+				F96801CA1B0D109900756EE0 /* DTSTripStoryFooterView.xib */,
 			);
 			path = TripStory;
 			sourceTree = "<group>";
@@ -1132,6 +1140,7 @@
 				F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */,
 				F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */,
 				F9EBD0721AF92756003B8C29 /* editIcon@3x.png in Resources */,
+				F96801CB1B0D109900756EE0 /* DTSTripStoryFooterView.xib in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F9FD5A441AC5BE64009BDDF2 /* waterTravel-white.png in Resources */,
 				F9FD5A781AC5C57C009BDDF2 /* Icon-76.png in Resources */,
@@ -1307,6 +1316,7 @@
 				F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */,
+				F96801C91B0D106500756EE0 /* DTSTripStoryFooterView.m in Sources */,
 				F9401DA81AB9473400F271F5 /* UIImage+AlphaAdditions.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,

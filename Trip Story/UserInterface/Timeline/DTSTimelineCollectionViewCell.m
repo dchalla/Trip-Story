@@ -72,7 +72,7 @@
 - (void)updateDurationLabel
 {
 	NSString *durationString = [self.trip tripDurationString];
-	if ([durationString componentsSeparatedByString:@"\n"].count < 1)
+	if ([durationString componentsSeparatedByString:@"\n"].count <= 1)
 	{
 		durationString = [NSString stringWithFormat:@"%@\n ",durationString];
 	}

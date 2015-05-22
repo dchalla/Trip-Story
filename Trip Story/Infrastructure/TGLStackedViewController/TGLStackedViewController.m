@@ -165,14 +165,18 @@ typedef NS_ENUM(NSInteger, TGLStackedViewControllerScrollDirection) {
             //        data when layout is locked" but seems
             //       to work nevertheless.
             //
-            [self.collectionView performBatchUpdates:^ {
-                
-                [self.collectionView setContentOffset:self.stackedContentOffset animated:YES];
-                [self.collectionView setCollectionViewLayout:self.stackedLayout animated:YES];
-            
-            } completion:nil];
+			if ([self.collectionView numberOfItemsInSection:0]> 0)
+			{
+				[self.collectionView performBatchUpdates:^ {
+					
+					[self.collectionView setContentOffset:self.stackedContentOffset animated:YES];
+					[self.collectionView setCollectionViewLayout:self.stackedLayout animated:YES];
+					
+				} completion:nil];
+			}
+			
         }
-        
+		
         _exposedItemIndexPath = exposedItemIndexPath;
     }
 }

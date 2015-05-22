@@ -48,9 +48,11 @@
 	{
 		vc = [[DTSTripDetailsViewController alloc] init];
 		vc.trip = trip;
+#ifdef DEBUG
 		//Testing
-		[trip createDummyEventsList];
+		//[trip createDummyEventsList];
 		//End testing
+#endif
 		[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
 	}
 	else
