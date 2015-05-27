@@ -11,6 +11,7 @@
 #import "DTSConstants.h"
 #import "DTSCache.h"
 #import "DTSUtilities.h"
+#import "DTSSignUpViewController.h"
 
 @interface DTSUserAuthHelper()
 {
@@ -56,7 +57,7 @@ static DTSUserAuthHelper *sharedInstance = nil;
 		[logInViewController setDelegate:self]; // Set ourselves as the delegate
 		logInViewController.facebookPermissions = @[@"public_profile", @"user_friends", @"email", @"user_photos"];
 		// Create the sign up view controller
-		PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+		DTSSignUpViewController *signUpViewController = [[DTSSignUpViewController alloc] init];
 		[signUpViewController setDelegate:self]; // Set ourselves as the delegate
 		
 		// Assign our sign up controller to be displayed from the login controller

@@ -126,6 +126,9 @@
 		F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC14A19B3A42100622CC9 /* waterTravel.png */; };
 		F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC091AB7776900B82895 /* DTSConstants.m */; };
 		F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */; };
+		F9CE11CC1B15A11500F3807A /* DTSLoginLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11CB1B15A11500F3807A /* DTSLoginLogoView.m */; };
+		F9CE11CE1B15A12800F3807A /* DTSLoginLogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11CD1B15A12800F3807A /* DTSLoginLogoView.xib */; };
+		F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */; };
 		F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */; };
 		F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */; };
 		F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */; };
@@ -385,6 +388,11 @@
 		F9C6BC091AB7776900B82895 /* DTSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSConstants.m; sourceTree = "<group>"; };
 		F9C6BC0B1AB778CB00B82895 /* PFUser+DTSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFUser+DTSAdditions.h"; sourceTree = "<group>"; };
 		F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFUser+DTSAdditions.m"; sourceTree = "<group>"; };
+		F9CE11CA1B15A11500F3807A /* DTSLoginLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSLoginLogoView.h; path = UserAuth/DTSLoginLogoView.h; sourceTree = "<group>"; };
+		F9CE11CB1B15A11500F3807A /* DTSLoginLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSLoginLogoView.m; path = UserAuth/DTSLoginLogoView.m; sourceTree = "<group>"; };
+		F9CE11CD1B15A12800F3807A /* DTSLoginLogoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSLoginLogoView.xib; path = UserAuth/DTSLoginLogoView.xib; sourceTree = "<group>"; };
+		F9CE11CF1B15A87500F3807A /* DTSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSignUpViewController.h; path = UserAuth/DTSSignUpViewController.h; sourceTree = "<group>"; };
+		F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSignUpViewController.m; path = UserAuth/DTSSignUpViewController.m; sourceTree = "<group>"; };
 		F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlue.png; sourceTree = "<group>"; };
 		F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlueFull.png; sourceTree = "<group>"; };
 		F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@2x.png"; sourceTree = "<group>"; };
@@ -895,6 +903,11 @@
 				F9391DC71B0FE98A002DA264 /* DTSRequiresLoginView.h */,
 				F9391DC81B0FE98A002DA264 /* DTSRequiresLoginView.m */,
 				F9391DCA1B0FE99D002DA264 /* DTSRequiresLoginView.xib */,
+				F9CE11CA1B15A11500F3807A /* DTSLoginLogoView.h */,
+				F9CE11CB1B15A11500F3807A /* DTSLoginLogoView.m */,
+				F9CE11CD1B15A12800F3807A /* DTSLoginLogoView.xib */,
+				F9CE11CF1B15A87500F3807A /* DTSSignUpViewController.h */,
+				F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */,
 			);
 			name = UserAuth;
 			sourceTree = "<group>";
@@ -1153,6 +1166,7 @@
 				F9FD5A441AC5BE64009BDDF2 /* waterTravel-white.png in Resources */,
 				F9FD5A781AC5C57C009BDDF2 /* Icon-76.png in Resources */,
 				F9FD5A881AC5C721009BDDF2 /* TripStoryIconInApp.png in Resources */,
+				F9CE11CE1B15A12800F3807A /* DTSLoginLogoView.xib in Resources */,
 				F96B21241AB362AA009CC03E /* 3.png in Resources */,
 				F9FD5A7A1AC5C57C009BDDF2 /* Icon-Small.png in Resources */,
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
@@ -1335,6 +1349,7 @@
 				F958150C1964850B002207A3 /* main.m in Sources */,
 				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
 				F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */,
+				F9CE11CC1B15A11500F3807A /* DTSLoginLogoView.m in Sources */,
 				F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
@@ -1345,6 +1360,7 @@
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
 				F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */,
+				F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */,
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,

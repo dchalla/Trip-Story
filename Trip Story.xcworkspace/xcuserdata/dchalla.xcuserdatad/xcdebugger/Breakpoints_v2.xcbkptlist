@@ -531,29 +531,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Trip Story/UserInterface/TripStory/DTSTripStoryTableViewController.m"
-            timestampString = "454400736.230498"
+            filePath = "Trip Story/UserAuth/DTSUserAuthHelper.m"
+            timestampString = "454404358.99223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-refreshView"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-logInViewController:didLogInUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Trip Story/UserAuth/DTSUserAuthHelper.m"
-            timestampString = "454400901.033534"
+            filePath = "Trip Story/UserAuth/DTSLogInViewController.m"
+            timestampString = "454403104.988358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-logInViewController:didLogInUser:"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

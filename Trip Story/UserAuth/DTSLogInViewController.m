@@ -7,6 +7,10 @@
 //
 
 #import "DTSLogInViewController.h"
+#import "UIColor+Utilities.h"
+#import "UIView+Utilities.h"
+#import "DTSLoginLogoView.h"
+#import "PFTextField.h"
 
 @interface DTSLogInViewController ()
 
@@ -17,6 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	self.view.backgroundColor = [UIColor primaryColor];
+	DTSLoginLogoView *logoView = [DTSLoginLogoView dts_viewFromNibWithName:@"DTSLoginLogoView" bundle:[NSBundle mainBundle]];
+	[self.logInView setLogo:logoView];
+	[self.logInView.usernameField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
+	[self.logInView.passwordField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
+	self.logInView.usernameField.separatorColor = [UIColor primaryColor];
+	self.logInView.passwordField.separatorColor = [UIColor primaryColor];
+	[self.logInView.logInButton setBackgroundImage:nil forState:UIControlStateNormal];
+	[self.logInView.logInButton setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.1]];
+	
 }
 
 

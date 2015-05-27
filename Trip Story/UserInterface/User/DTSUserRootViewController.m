@@ -85,6 +85,10 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
 	self.title = [self.user dts_displayName];
+	if (self.title.length == 0)
+	{
+		self.title = @"User";
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated
