@@ -11,6 +11,9 @@
 #import "DTSFollowFriendsViewController.h"
 #import "PFUser+DTSAdditions.h"
 #import "DTSUserLikedTripsCollectionViewController.h"
+#import "MBProgressHUD.h"
+#import "DTSRequiresLoginView.h"
+#import "UIView+Utilities.h"
 
 @interface DTSUserRootViewController ()
 @property (nonatomic, strong) DTSUserTimelineCollectionViewController *userTimelineVC;
@@ -20,6 +23,21 @@
 @end
 
 @implementation DTSUserRootViewController
+
+- (id)init
+{
+	self = [super init];
+	if (self) {
+		
+	}
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserAuthenticated object:nil];
+	return self;
+	
+}
+
+- (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (PFUser *)user
 {
@@ -73,6 +91,38 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = NO;
+	[self updateLoginHUD];
+}
+
+- (void)refreshView
+{
+	if (self.user)
+	{
+		self.userTimelineVC.user = self.user;
+		[self.userTimelineVC refreshView];
+		self.userLikedTripsVC.user = self.user;
+		[self.userLikedTripsVC refreshView];
+		self.title = [self.user dts_displayName];
+	}
+}
+
+- (void)updateLoginHUD
+{
+	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	if ([PFUser currentUser] == nil)
+	{
+		MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		hud.mode = MBProgressHUDModeCustomView;
+		hud.labelText = @"";
+		hud.detailsLabelText = @"";
+		hud.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
+		hud.dimBackground = YES;
+		hud.margin = 0.0;
+		hud.backgroundColor = [UIColor primaryColor];
+		hud.color = [UIColor clearColor];
+		return;
+	}
+	
 }
 
 - (NSArray *)segmentNamesList

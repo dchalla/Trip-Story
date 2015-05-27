@@ -85,6 +85,7 @@ shouldBeginLogInWithUsername:(NSString *)username
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
 	[[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
 	[self updateFacebookDetailsForTheUser];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserAuthenticated object:nil];
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController

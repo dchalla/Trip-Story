@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fBh-hh-Ja6" customClass="DTSRequiresLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Log in/Register to view content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEm-aG-Wdj">
+                    <rect key="frame" x="21" y="25" width="258" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-O0-xqU">
+                    <rect key="frame" x="100" y="51" width="100" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ICF-yi-3OJ"/>
+                        <constraint firstAttribute="width" constant="100" id="ejL-Kl-qgF"/>
+                    </constraints>
+                    <state key="normal" title="Login/Register">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="fBh-hh-Ja6" eventType="touchUpInside" id="IQ2-fj-iYO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Cuy-O0-xqU" firstAttribute="top" secondItem="bEm-aG-Wdj" secondAttribute="bottom" constant="8" id="Bya-8n-L7h"/>
+                <constraint firstAttribute="centerX" secondItem="Cuy-O0-xqU" secondAttribute="centerX" id="EYf-zs-Sa3"/>
+                <constraint firstItem="bEm-aG-Wdj" firstAttribute="top" secondItem="fBh-hh-Ja6" secondAttribute="top" constant="25" id="WO4-e7-HRW"/>
+                <constraint firstAttribute="centerX" secondItem="bEm-aG-Wdj" secondAttribute="centerX" id="idV-Ag-8df"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="loginButton" destination="Cuy-O0-xqU" id="xqW-rb-mfx"/>
+                <outlet property="loginLabel" destination="bEm-aG-Wdj" id="xUY-18-Ikt"/>
+            </connections>
+            <point key="canvasLocation" x="476" y="307"/>
+        </view>
+    </objects>
+</document>

@@ -35,6 +35,7 @@ NSString *const kDTSUserAttributesIsFollowedByCurrentUserKey    = @"isFollowedBy
 
 #pragma mark - misc
 NSString *const kDTSRefreshTrips = @"kDTSRefreshTrips";
+NSString *const kDTSUserAuthenticated = @"kDTSUserAuthenticated";
 
 @implementation DTSConstants
 

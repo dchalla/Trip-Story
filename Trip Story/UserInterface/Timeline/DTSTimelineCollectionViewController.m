@@ -7,6 +7,9 @@
 //
 
 #import "DTSTimelineCollectionViewController.h"
+#import "MBProgressHUD.h"
+#import "DTSRequiresLoginView.h"
+#import "UIView+Utilities.h"
 
 #define DTSTimelineCellHeight 250
 #define DTSTimelineCellIpadSpacer 5
@@ -43,6 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[self updateLoginHUD];
 	[self.collectionView reloadData];
 }
 
@@ -51,6 +55,30 @@
 	[super viewDidLayoutSubviews];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
+
+- (void)updateLoginHUD
+{
+	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	if (self.requiresLogin)
+	{
+		if ([PFUser currentUser] == nil)
+		{
+			MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+			hud.mode = MBProgressHUDModeCustomView;
+			hud.labelText = @"";
+			hud.detailsLabelText = @"";
+			hud.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
+			hud.dimBackground = YES;
+			hud.backgroundColor = [UIColor primaryColor];
+			hud.margin = 0.0;
+			hud.color = [UIColor clearColor];
+			return;
+			
+		}
+	}
+	
+}
+
 
 #pragma mark - PFQUERY
 

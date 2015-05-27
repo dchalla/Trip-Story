@@ -77,7 +77,6 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = YES;
-	[[DTSUserAuthHelper sharedManager] presentLoginModalIfNotLoggedIn];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

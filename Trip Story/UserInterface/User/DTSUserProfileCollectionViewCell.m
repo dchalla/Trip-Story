@@ -32,13 +32,17 @@
 	self.followButton.layer.borderWidth = 2;
 	self.followButton.layer.borderColor = [UIColor dtsBlueColor].CGColor;
 	self.followButton.backgroundColor = [UIColor dtsBlueColor];
+	self.followersLabel.text = @"";
+	self.followingLabel.text = @"";
+	self.tripsLabel.text = @"";
+	
 }
 
 - (void)updateUIWithUser:(PFUser *)user
 {
 	self.user = user;
 	self.userNameLabel.text = [self.user dts_displayName];
-	if (!self.updatedContent)
+	if (self.user && !self.updatedContent)
 	{
 		[self updateUserProfileImage];
 		[self updateFollowerCount];
@@ -80,6 +84,10 @@
 
 - (void)updateFollowerCount
 {
+	if (!self.user)
+	{
+		return;
+	}
 	PFQuery *queryFollowerCount = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryFollowerCount whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryFollowerCount whereKey:kDTSActivityToUserKey equalTo:self.user];
@@ -99,6 +107,10 @@
 
 - (void)updateFollowingCount
 {
+	if (!self.user)
+	{
+		return;
+	}
 	PFQuery *queryFollowingCount = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryFollowingCount whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryFollowingCount whereKey:kDTSActivityFromUserKey equalTo:self.user];
@@ -118,6 +130,10 @@
 
 - (void)updateTripsCount
 {
+	if (!self.user)
+	{
+		return;
+	}
 	PFQuery *queryTripsCount = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
 	[queryTripsCount whereKey:kDTSTripUserKey equalTo:self.user];
 	[queryTripsCount setCachePolicy:kPFCachePolicyCacheThenNetwork];
@@ -137,6 +153,10 @@
 
 - (void)updateFollowButtonStatus
 {
+	if (!self.user)
+	{
+		return;
+	}
 	PFQuery *queryIsFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryIsFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryIsFollowing whereKey:kDTSActivityToUserKey equalTo:self.user];

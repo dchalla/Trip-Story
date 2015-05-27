@@ -19,8 +19,11 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 @interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
 
+@property (nonatomic, assign) BOOL requiresLogin;
+
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 - (CGSize)dtsDefaultItemSize;
+- (void)refreshView;
 
 @end

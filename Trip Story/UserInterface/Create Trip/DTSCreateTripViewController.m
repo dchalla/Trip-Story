@@ -11,6 +11,8 @@
 #import "UIColor+Utilities.h"
 #import "DTSTripDetailsViewController.h"
 #import "UIViewController+Utilities.h"
+#import "MBProgressHUD.h"
+#import "DTSRequiresLoginView.h"
 
 @interface DTSCreateTripViewController ()
 
@@ -30,6 +32,31 @@
 	[self.view addSubview:createTripView];
 	self.title = self.isCreateTripMode? @"Create Trip" : @"Update Trip";
 	[self configureCancelButton];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self updateLoginHUD];
+}
+
+- (void)updateLoginHUD
+{
+	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	if ([PFUser currentUser] == nil)
+	{
+		MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		hud.mode = MBProgressHUDModeCustomView;
+		hud.labelText = @"";
+		hud.detailsLabelText = @"";
+		hud.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
+		hud.dimBackground = YES;
+		hud.color = [UIColor clearColor];
+		hud.backgroundColor = [UIColor primaryColor];
+		hud.margin = 0.0;
+		return;
+	}
+	
 }
 
 - (void)configureCancelButton
