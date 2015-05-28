@@ -16,9 +16,12 @@
 #import "DTSUserRootViewController.h"
 #import "UIView+Utilities.h"
 #import "DTSCreateTripViewController.h"
+#import "TripStoryIconView.h"
 
 #define DTS_SEGMENT_HEIGHT 44
-
+#ifdef DEBUG
+#define IconCreation 0
+#endif
 @interface DTSRootViewController ()
 
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
@@ -77,6 +80,14 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+#if IconCreation
+	[self showTripStoryIconViewForIconCreation];
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -230,6 +241,21 @@
 	}
 	return i;
 }
+#if IconCreation
+-(void)showTripStoryIconViewForIconCreation
+{
+	TripStoryIconView *iconView = [TripStoryIconView dts_viewFromNibWithName:@"TripStoryIconView" bundle:[NSBundle mainBundle]];
+	iconView.frame = CGRectMake(0, 0, 1200, 1200);
+	[self.navigationController.view addSubview:iconView];
+	
+	UIGraphicsBeginImageContextWithOptions(iconView.bounds.size, YES, 3);
+	[iconView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+}
+#endif
+
 
 
 

@@ -129,6 +129,9 @@
 		F9CE11CC1B15A11500F3807A /* DTSLoginLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11CB1B15A11500F3807A /* DTSLoginLogoView.m */; };
 		F9CE11CE1B15A12800F3807A /* DTSLoginLogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11CD1B15A12800F3807A /* DTSLoginLogoView.xib */; };
 		F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */; };
+		F9CE11D71B168C1F00F3807A /* TripStoryIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11D61B168C1F00F3807A /* TripStoryIconView.m */; };
+		F9CE11DA1B16AD7800F3807A /* cycling.png in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11D81B16AD7800F3807A /* cycling.png */; };
+		F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11D91B16AD7800F3807A /* TentIcon.png */; };
 		F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */; };
 		F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */; };
 		F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */; };
@@ -393,6 +396,10 @@
 		F9CE11CD1B15A12800F3807A /* DTSLoginLogoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSLoginLogoView.xib; path = UserAuth/DTSLoginLogoView.xib; sourceTree = "<group>"; };
 		F9CE11CF1B15A87500F3807A /* DTSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSignUpViewController.h; path = UserAuth/DTSSignUpViewController.h; sourceTree = "<group>"; };
 		F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSignUpViewController.m; path = UserAuth/DTSSignUpViewController.m; sourceTree = "<group>"; };
+		F9CE11D51B168C1F00F3807A /* TripStoryIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripStoryIconView.h; path = TripStoryIconView/TripStoryIconView.h; sourceTree = "<group>"; };
+		F9CE11D61B168C1F00F3807A /* TripStoryIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripStoryIconView.m; path = TripStoryIconView/TripStoryIconView.m; sourceTree = "<group>"; };
+		F9CE11D81B16AD7800F3807A /* cycling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycling.png; sourceTree = "<group>"; };
+		F9CE11D91B16AD7800F3807A /* TentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TentIcon.png; sourceTree = "<group>"; };
 		F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlue.png; sourceTree = "<group>"; };
 		F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlueFull.png; sourceTree = "<group>"; };
 		F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@2x.png"; sourceTree = "<group>"; };
@@ -501,6 +508,8 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F9CE11D81B16AD7800F3807A /* cycling.png */,
+				F9CE11D91B16AD7800F3807A /* TentIcon.png */,
 				F9EBD06D1AF92756003B8C29 /* editIcon.png */,
 				F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */,
 				F9EBD06F1AF92756003B8C29 /* editIcon@3x.png */,
@@ -950,6 +959,8 @@
 			isa = PBXGroup;
 			children = (
 				F9FD5A3B1AC5B794009BDDF2 /* TripStoryIconView.xib */,
+				F9CE11D51B168C1F00F3807A /* TripStoryIconView.h */,
+				F9CE11D61B168C1F00F3807A /* TripStoryIconView.m */,
 			);
 			name = TripStoryIconView;
 			sourceTree = "<group>";
@@ -1188,12 +1199,14 @@
 				F96B211E1AB362AA009CC03E /* 2-selected.png in Resources */,
 				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
+				F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */,
 				F96B21291AB362AA009CC03E /* 4@2x.png in Resources */,
 				F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */,
 				F96B21411AB389E7009CC03E /* explore@2x.png in Resources */,
 				F9FD5A721AC5C57C009BDDF2 /* Contents.json in Resources */,
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
 				F9FD5A851AC5C57C009BDDF2 /* iTunesArtwork@2x.png in Resources */,
+				F9CE11DA1B16AD7800F3807A /* cycling.png in Resources */,
 				F9FD5A761AC5C57C009BDDF2 /* Icon-60@2x.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
 				F9FD5A7B1AC5C57C009BDDF2 /* Icon-Small@2x.png in Resources */,
@@ -1328,6 +1341,7 @@
 				F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F9401DAD1AB9D93E00F271F5 /* DTSTimelineRootViewController.m in Sources */,
+				F9CE11D71B168C1F00F3807A /* TripStoryIconView.m in Sources */,
 				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
 				F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */,
