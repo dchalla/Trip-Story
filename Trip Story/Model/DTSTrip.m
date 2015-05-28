@@ -171,7 +171,7 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (DTSEventType)eventTypeForPlaceHolderEventBetweenPreviousEvent:(DTSEvent *)prevEvent nextEvent:(DTSEvent *)nextEvent
 {
-	if (prevEvent.location.mapItem && nextEvent.location.mapItem)
+	if (prevEvent.location.mapItem && nextEvent.location.mapItem && ![prevEvent.location.locationName isEqualToString:nextEvent.location.locationName])
 	{
 		CLLocationDistance distance = [prevEvent.location.mapItem.placemark.location distanceFromLocation:nextEvent.location.mapItem.placemark.location];
 		double disanceMiles =  distance * 0.00062137;
