@@ -19,6 +19,7 @@ extern NSString *const kDTSTripUserKey;
 @property (nonatomic, strong) NSString *tripName;
 @property (nonatomic, strong) NSString *tripDescription;
 @property (nonatomic, strong) NSNumber *tripRating;
+@property (nonatomic, strong) NSString *tripTagsForSearch;
 @property (nonatomic, strong) NSNumber *numberOfRatings;
 @property (nonatomic, strong) NSString *tripRatingListID;
 @property (nonatomic, strong) NSMutableArray *eventsList;

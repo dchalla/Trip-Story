@@ -96,6 +96,12 @@
 		F96B21421AB389E7009CC03E /* explore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213A1AB389E7009CC03E /* explore@3x.png */; };
 		F96B21431AB389E7009CC03E /* users@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213B1AB389E7009CC03E /* users@2x.png */; };
 		F96B21441AB389E7009CC03E /* users@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F96B213C1AB389E7009CC03E /* users@3x.png */; };
+		F99376161B201CCD005D58FE /* searchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F99376131B201CCD005D58FE /* searchIcon.png */; };
+		F99376171B201CCD005D58FE /* searchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99376141B201CCD005D58FE /* searchIcon@2x.png */; };
+		F99376181B201CCD005D58FE /* searchIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99376151B201CCD005D58FE /* searchIcon@3x.png */; };
+		F993761C1B202627005D58FE /* timelineIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F99376191B202627005D58FE /* timelineIcon.png */; };
+		F993761D1B202627005D58FE /* timelineIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F993761A1B202627005D58FE /* timelineIcon@2x.png */; };
+		F993761E1B202627005D58FE /* timelineIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F993761B1B202627005D58FE /* timelineIcon@3x.png */; };
 		F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F99712661971D07E00F2F8FA /* DTSTrip.m */; };
 		F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99EBA061A1DBC3700290D8A /* DTSTripEventDetailsViewController.m */; };
 		F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */; };
@@ -115,6 +121,7 @@
 		F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9319F3929D00321E2C /* DTSTripEventsViewController.m */; };
 		F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F9719F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m */; };
 		F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BBF9561AA774850076CD78 /* DTSUserAuthHelper.m */; };
+		F9BE0D5E1B1E0EA3001F41AE /* DTSSearchRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BE0D5D1B1E0EA3001F41AE /* DTSSearchRootViewController.m */; };
 		F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13A19B398A800622CC9 /* airplane21.png */; };
 		F9BEC13E19B398A800622CC9 /* boat17.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13B19B398A800622CC9 /* boat17.png */; };
 		F9BEC13F19B398A800622CC9 /* car88.png in Resources */ = {isa = PBXBuildFile; fileRef = F9BEC13C19B398A800622CC9 /* car88.png */; };
@@ -189,6 +196,8 @@
 		F9FD5A851AC5C57C009BDDF2 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A691AC5C57C009BDDF2 /* iTunesArtwork@2x.png */; };
 		F9FD5A861AC5C57C009BDDF2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A6A1AC5C57C009BDDF2 /* README.md */; };
 		F9FD5A881AC5C721009BDDF2 /* TripStoryIconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */; };
+		F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FEB4781B1E7AC000346750 /* DTSSearchTripCollectionViewController.m */; };
+		F9FEB47C1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FEB47B1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +347,12 @@
 		F96B213B1AB389E7009CC03E /* users@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users@2x.png"; sourceTree = "<group>"; };
 		F96B213C1AB389E7009CC03E /* users@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users@3x.png"; sourceTree = "<group>"; };
 		F96BB05C19854389009C0A1F /* DTSTripDetailsContainerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsContainerDelegate.h; sourceTree = "<group>"; };
+		F99376131B201CCD005D58FE /* searchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon.png; sourceTree = "<group>"; };
+		F99376141B201CCD005D58FE /* searchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchIcon@2x.png"; sourceTree = "<group>"; };
+		F99376151B201CCD005D58FE /* searchIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchIcon@3x.png"; sourceTree = "<group>"; };
+		F99376191B202627005D58FE /* timelineIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timelineIcon.png; sourceTree = "<group>"; };
+		F993761A1B202627005D58FE /* timelineIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timelineIcon@2x.png"; sourceTree = "<group>"; };
+		F993761B1B202627005D58FE /* timelineIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timelineIcon@3x.png"; sourceTree = "<group>"; };
 		F99712651971D07E00F2F8FA /* DTSTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTrip.h; sourceTree = "<group>"; };
 		F99712661971D07E00F2F8FA /* DTSTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTrip.m; sourceTree = "<group>"; };
 		F99EBA051A1DBC3700290D8A /* DTSTripEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripEventDetailsViewController.h; path = TripEvents/DTSTripEventDetailsViewController.h; sourceTree = "<group>"; };
@@ -378,6 +393,8 @@
 		F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSCollectionCardsViewControllerProtocol.h; sourceTree = "<group>"; };
 		F9BBF9551AA774850076CD78 /* DTSUserAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserAuthHelper.h; path = UserAuth/DTSUserAuthHelper.h; sourceTree = "<group>"; };
 		F9BBF9561AA774850076CD78 /* DTSUserAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserAuthHelper.m; path = UserAuth/DTSUserAuthHelper.m; sourceTree = "<group>"; };
+		F9BE0D5C1B1E0EA3001F41AE /* DTSSearchRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSearchRootViewController.h; path = Search/DTSSearchRootViewController.h; sourceTree = "<group>"; };
+		F9BE0D5D1B1E0EA3001F41AE /* DTSSearchRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSearchRootViewController.m; path = Search/DTSSearchRootViewController.m; sourceTree = "<group>"; };
 		F9BEC13A19B398A800622CC9 /* airplane21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane21.png; sourceTree = "<group>"; };
 		F9BEC13B19B398A800622CC9 /* boat17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boat17.png; sourceTree = "<group>"; };
 		F9BEC13C19B398A800622CC9 /* car88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car88.png; sourceTree = "<group>"; };
@@ -468,6 +485,11 @@
 		F9FD5A691AC5C57C009BDDF2 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		F9FD5A6A1AC5C57C009BDDF2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F9FD5A871AC5C721009BDDF2 /* TripStoryIconInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TripStoryIconInApp.png; sourceTree = "<group>"; };
+		F9FEB4761B1E78E500346750 /* DTSSearchRootViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSSearchRootViewControllerProtocol.h; sourceTree = "<group>"; };
+		F9FEB4771B1E7AC000346750 /* DTSSearchTripCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSearchTripCollectionViewController.h; path = Search/DTSSearchTripCollectionViewController.h; sourceTree = "<group>"; };
+		F9FEB4781B1E7AC000346750 /* DTSSearchTripCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSearchTripCollectionViewController.m; path = Search/DTSSearchTripCollectionViewController.m; sourceTree = "<group>"; };
+		F9FEB47A1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSSearchPeopleCollectionViewController.h; path = Search/DTSSearchPeopleCollectionViewController.h; sourceTree = "<group>"; };
+		F9FEB47B1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSSearchPeopleCollectionViewController.m; path = Search/DTSSearchPeopleCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +644,7 @@
 				F9B44F9519F397D900321E2C /* DTSTripDetailsProtocol.h */,
 				F9B44F9919F474B200321E2C /* DTSCollectionCardCellDelegate.h */,
 				F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */,
+				F9FEB4761B1E78E500346750 /* DTSSearchRootViewControllerProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -629,6 +652,7 @@
 		F954E7561964CA5A003A0B72 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				F9BE0D5B1B1E0E6C001F41AE /* Search */,
 				F9FD5A3A1AC5B74F009BDDF2 /* TripStoryIconView */,
 				F9FD5A301AC2800E009BDDF2 /* Create Trip */,
 				F9401DB51AB9EC5300F271F5 /* User */,
@@ -816,6 +840,12 @@
 		F96B21091AB362AA009CC03E /* tabbarIcons */ = {
 			isa = PBXGroup;
 			children = (
+				F99376191B202627005D58FE /* timelineIcon.png */,
+				F993761A1B202627005D58FE /* timelineIcon@2x.png */,
+				F993761B1B202627005D58FE /* timelineIcon@3x.png */,
+				F99376131B201CCD005D58FE /* searchIcon.png */,
+				F99376141B201CCD005D58FE /* searchIcon@2x.png */,
+				F99376151B201CCD005D58FE /* searchIcon@3x.png */,
 				F96B21351AB389E7009CC03E /* addTrip@2x.png */,
 				F96B21361AB389E7009CC03E /* addTrip@3x.png */,
 				F96B21371AB389E7009CC03E /* edit@2x.png */,
@@ -919,6 +949,19 @@
 				F9CE11D01B15A87500F3807A /* DTSSignUpViewController.m */,
 			);
 			name = UserAuth;
+			sourceTree = "<group>";
+		};
+		F9BE0D5B1B1E0E6C001F41AE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F9BE0D5C1B1E0EA3001F41AE /* DTSSearchRootViewController.h */,
+				F9BE0D5D1B1E0EA3001F41AE /* DTSSearchRootViewController.m */,
+				F9FEB4771B1E7AC000346750 /* DTSSearchTripCollectionViewController.h */,
+				F9FEB4781B1E7AC000346750 /* DTSSearchTripCollectionViewController.m */,
+				F9FEB47A1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.h */,
+				F9FEB47B1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		F9EA06561AA57F6E007573EC /* LaunchScreen */ = {
@@ -1164,6 +1207,7 @@
 				F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
+				F993761E1B202627005D58FE /* timelineIcon@3x.png in Resources */,
 				F9FD5A791AC5C57C009BDDF2 /* Icon-76@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
 				F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */,
@@ -1183,6 +1227,7 @@
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
 				F9FD5A411AC5BE64009BDDF2 /* airplane-white.png in Resources */,
+				F993761C1B202627005D58FE /* timelineIcon.png in Resources */,
 				F9FD5A6E1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
@@ -1201,6 +1246,7 @@
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
 				F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */,
 				F96B21291AB362AA009CC03E /* 4@2x.png in Resources */,
+				F993761D1B202627005D58FE /* timelineIcon@2x.png in Resources */,
 				F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */,
 				F96B21411AB389E7009CC03E /* explore@2x.png in Resources */,
 				F9FD5A721AC5C57C009BDDF2 /* Contents.json in Resources */,
@@ -1226,9 +1272,11 @@
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
 				F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */,
 				F9391DCB1B0FE99D002DA264 /* DTSRequiresLoginView.xib in Resources */,
+				F99376161B201CCD005D58FE /* searchIcon.png in Resources */,
 				F9AE51961AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib in Resources */,
 				F9FD5A751AC5C57C009BDDF2 /* Icon-40@3x.png in Resources */,
 				F9BEC14519B39FB500622CC9 /* sailing8.png in Resources */,
+				F99376181B201CCD005D58FE /* searchIcon@3x.png in Resources */,
 				F9FD5A811AC5C57C009BDDF2 /* Icon-Small-50@2x.png in Resources */,
 				F96B21331AB38524009CC03E /* explore.png in Resources */,
 				F96B211C1AB362AA009CC03E /* 1.png in Resources */,
@@ -1240,6 +1288,7 @@
 				F9FD5A821AC5C57C009BDDF2 /* Icon.png in Resources */,
 				F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */,
 				F9FD5A421AC5BE64009BDDF2 /* boat-white.png in Resources */,
+				F99376171B201CCD005D58FE /* searchIcon@2x.png in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
 				F9FD5A321AC28181009BDDF2 /* DTSCreateEditTripView.xib in Resources */,
@@ -1308,6 +1357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B44F9019F3922200321E2C /* TGLStackedViewController.m in Sources */,
+				F9FEB47C1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m in Sources */,
 				F954E76B1965AC0A003A0B72 /* DTSLocation.m in Sources */,
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
@@ -1351,6 +1401,7 @@
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F9401DAA1AB9473400F271F5 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
+				F9BE0D5E1B1E0EA3001F41AE /* DTSSearchRootViewController.m in Sources */,
 				F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */,
@@ -1378,6 +1429,7 @@
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
+				F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

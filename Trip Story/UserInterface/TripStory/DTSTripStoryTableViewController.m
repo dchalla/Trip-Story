@@ -47,12 +47,17 @@
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
 {
 	_topLayoutGuideLength = topLayoutGuideLength;
-	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
+	[self setupTableViewInsets];
 }
 
 - (void)setBottomLayoutGuideLength:(CGFloat)bottomLayoutGuideLength
 {
 	_bottomLayoutGuideLength = bottomLayoutGuideLength;
+	[self setupTableViewInsets];
+}
+
+- (void)setupTableViewInsets
+{
 	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
 }
 
@@ -114,7 +119,7 @@
 {
 	[super viewWillAppear:animated];
 	[self scrollViewDidScroll:self.tableView];
-	self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength+extraPaddingBottom, 0);
+	[self setupTableViewInsets];
 	[self refreshView];
 }
 

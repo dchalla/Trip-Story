@@ -14,7 +14,12 @@
 - (NSString *)dts_displayName
 {
 	NSString *facebookName = [self objectForKey:DTSUser_Facebook_NAME];
-	if (facebookName.length > 0)
+	NSString *displayName = [self objectForKey:DTSUser_Display_Name];
+	if (displayName.length > 0)
+	{
+		return displayName;
+	}
+	else if (facebookName.length > 0)
 	{
 		return facebookName;
 	}
@@ -24,5 +29,6 @@
 	}
 	
 }
+
 
 @end

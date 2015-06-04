@@ -66,8 +66,17 @@
 	if (!_tripEventsVC)
 	{
 		_tripEventsVC = [[DTSTripEventsViewController alloc] initWithCollectionViewLayout:[[TGLStackedLayout alloc] init]];
-		_tripEventsVC.stackedLayout.layoutMargin = UIEdgeInsetsZero;
-		_tripEventsVC.exposedLayoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+		{
+			_tripEventsVC.stackedLayout.layoutMargin = UIEdgeInsetsZero;
+			_tripEventsVC.exposedLayoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+		}
+		else
+		{
+			_tripEventsVC.stackedLayout.layoutMargin = UIEdgeInsetsMake(0, 200.0, 0.0, 200.0);
+			_tripEventsVC.exposedLayoutMargin = UIEdgeInsetsMake(0, 200.0, 0.0, 200.0);
+		}
+		
 		_tripEventsVC.containerDelegate = self;
 	}
 	return _tripEventsVC;

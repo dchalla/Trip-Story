@@ -9,6 +9,7 @@
 #import "DTSSegmentedViewController.h"
 #import "UIColor+Utilities.h"
 #import "UIView+Utilities.h"
+#import "DTSConstants.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 
@@ -64,9 +65,12 @@
 	{
 		return;
 	}
+	BlockWeakSelf wSelf = self;
 	
+	[self.pageVC setViewControllers:@[self.pagedViewControllers[segmentedControl.selectedSegmentIndex]] direction:direction animated:YES completion:^(BOOL finished){
+	[wSelf pageViewControllerCurrentVCChanged];
+	}];
 	
-	[self.pageVC setViewControllers:@[self.pagedViewControllers[segmentedControl.selectedSegmentIndex]] direction:direction animated:YES completion:^(BOOL finished){}];
 }
 
 - (void)setupSegmentControl
@@ -185,7 +189,13 @@
 	if (completed)
 	{
 		[self.segmentedControl setSelectedSegmentIndex:[self currentPageVCIndex] animated:YES];
+		[self pageViewControllerCurrentVCChanged];
 	}
+}
+
+- (void)pageViewControllerCurrentVCChanged
+{
+	
 }
 
 - (NSInteger)currentPageVCIndex
@@ -200,6 +210,16 @@
 		i++;
 	}
 	return i;
+}
+
+- (id)currentPageVC
+{
+	NSInteger currentIndex = [self currentPageVCIndex];
+	if (self.pagedViewControllers.count > currentIndex)
+	{
+		return self.pagedViewControllers[currentIndex];
+	}
+	return nil;
 }
 
 

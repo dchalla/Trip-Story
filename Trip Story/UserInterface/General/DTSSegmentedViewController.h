@@ -21,4 +21,7 @@
 //override this to return segment names for view controllers
 - (NSArray *)segmentNamesList;
 
+- (id)currentPageVC;
+- (void)pageViewControllerCurrentVCChanged;
+
 @end

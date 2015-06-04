@@ -22,6 +22,8 @@ typedef enum {
 #define DTSUser_Facebook_ID @"DTSUser_Facebook_ID"
 #define DTSUser_Facebook_NAME @"DTSUser_Facebook_NAME"
 #define DTSUser_Facebook_Profile_URL @"DTSUser_Facebook_Profile_URL"
+#define DTSUser_Display_Name @"DTSUser_DISPLAY_NAME"
+#define DTSUser_Search_Name @"DTSUser_SEARCH_NAME"
 
 extern NSString *const kDTSUserFacebookFriendsKey;
 extern NSString *const kDTSUserAlreadyAutoFollowedFacebookFriendsKey;

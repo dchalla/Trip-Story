@@ -17,6 +17,7 @@
 #import "UIView+Utilities.h"
 #import "DTSCreateTripViewController.h"
 #import "TripStoryIconView.h"
+#import "DTSSearchRootViewController.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
@@ -30,6 +31,7 @@
 @property (nonatomic, strong) DTSTimelineRootViewController *timeLineVC;
 @property (nonatomic, strong) DTSCreateTripViewController *addTripVC;
 @property (nonatomic, strong) DTSUserRootViewController *userVC;
+@property (nonatomic, strong) DTSSearchRootViewController *searchVC;
 
 @end
 
@@ -61,6 +63,15 @@
 		_userVC = [[DTSUserRootViewController alloc] init];
 	}
 	return _userVC;
+}
+
+- (DTSSearchRootViewController *)searchVC
+{
+	if (!_searchVC)
+	{
+		_searchVC = [[DTSSearchRootViewController alloc] init];
+	}
+	return _searchVC;
 }
 
 - (void)viewDidLoad {
@@ -125,7 +136,7 @@
 
 - (void)setupSegmentControl
 {
-	NSArray *sectionIcons = @[[[UIImage imageNamed:@"explore"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+	NSArray *sectionIcons = @[[[UIImage imageNamed:@"timelineIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"searchIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
 	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionImages:sectionIcons sectionSelectedImages:sectionIcons];
 	[self updateSegmentFrame];
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
@@ -149,7 +160,7 @@
 
 - (void)setupPageViewController
 {
-	self.pagedViewControllers = @[[self wrappedNavigationControllerVC:self.timeLineVC],[self wrappedNavigationControllerVC:self.addTripVC],[self wrappedNavigationControllerVC:self.userVC]];
+	self.pagedViewControllers = @[[self wrappedNavigationControllerVC:self.timeLineVC],[self wrappedNavigationControllerVC:self.searchVC],[self wrappedNavigationControllerVC:self.addTripVC],[self wrappedNavigationControllerVC:self.userVC]];
 	
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;

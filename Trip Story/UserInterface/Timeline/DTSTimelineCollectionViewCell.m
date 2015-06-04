@@ -114,6 +114,10 @@
 	}];
 }
 - (IBAction)likeButtonTapped:(id)sender {
+	if ([PFUser currentUser] == nil)
+	{
+		return;
+	}
 	if (self.isLikeSelected)
 	{
 		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -150,6 +154,17 @@
 
 - (void)updateLikeButton
 {
+	if ([PFUser currentUser] == nil)
+	{
+		self.likeSmileyImageView.hidden = YES;
+		self.likedLabel.hidden = YES;
+	}
+	else
+	{
+		self.likeSmileyImageView.hidden = NO;
+		self.likedLabel.hidden = NO;
+	}
+	
 	if (!self.isLikeSelected)
 	{
 		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

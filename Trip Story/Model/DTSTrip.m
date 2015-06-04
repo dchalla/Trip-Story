@@ -31,6 +31,7 @@ NSString *const kDTSTripUserKey		= @"user";
 @dynamic numberOfRatings;
 @dynamic user;
 @dynamic privacy;
+@dynamic tripTagsForSearch;
 
 + (void)load {
 	[self registerSubclass];
@@ -116,6 +117,7 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (void)fillInPlaceholderEvents
 {
+	[self createTagsForSearch];
 	NSArray *localOriginalList = self.originalEventsList;
 	if (!self.user || (self.user && [[PFUser currentUser].objectId isEqualToString:self.user.objectId]))
 	{
@@ -141,6 +143,23 @@ NSString *const kDTSTripUserKey		= @"user";
 		i++;
 	}
 	[self sortEventsList];
+}
+
+- (void)createTagsForSearch
+{
+	NSString *tags = [self tripTagsString];
+	if (tags.length == 0)
+	{
+		tags = @"";
+	}
+	if (self.tripName.length > 0)
+	{
+		tags = [NSString stringWithFormat:@"%@, %@",tags,self.tripName];
+	}
+	if (tags)
+	{
+		self.tripTagsForSearch = [tags lowercaseString];
+	}
 }
 
 - (DTSEvent *)placeHolderEventWithPreviousEvent:(DTSEvent *)previousEvent nextEvent:(DTSEvent *)nextEvent

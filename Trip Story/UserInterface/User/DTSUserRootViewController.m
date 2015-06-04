@@ -113,7 +113,7 @@
 - (void)updateLoginHUD
 {
 	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-	if ([PFUser currentUser] == nil)
+	if (self.user == nil)
 	{
 		MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 		hud.mode = MBProgressHUDModeCustomView;

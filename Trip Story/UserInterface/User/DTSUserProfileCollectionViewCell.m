@@ -51,7 +51,7 @@
 		[self updateFollowButtonStatus];
 		self.updatedContent = YES;
 	}
-	if ([self.user.username isEqualToString:[PFUser currentUser].username])
+	if ([self.user.username isEqualToString:[PFUser currentUser].username] || [PFUser currentUser] == nil)
 	{
 		self.followButton.hidden = YES;
 	}
@@ -160,7 +160,7 @@
 	PFQuery *queryIsFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryIsFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryIsFollowing whereKey:kDTSActivityToUserKey equalTo:self.user];
-	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
+	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:self.user];
 	[queryIsFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
 	BlockWeakSelf wSelf = self;
 	[queryIsFollowing countObjectsInBackgroundWithBlock:^(int number, NSError *error) {

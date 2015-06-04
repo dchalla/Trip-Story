@@ -69,7 +69,7 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 {
 	if (indexPath.item == 0 && indexPath.section == 0)
 	{
-		if ([self.user.username isEqualToString:[PFUser currentUser].username])
+		if ([self.user.username isEqualToString:[PFUser currentUser].username] || [PFUser currentUser] == nil)
 		{
 			return CGSizeMake(self.view.frame.size.width, DTSProfileHeightCurrentUser);
 		}

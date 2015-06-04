@@ -12,6 +12,7 @@
 #import "DTSCache.h"
 #import "DTSUtilities.h"
 #import "DTSSignUpViewController.h"
+#import "PFUser+DTSAdditions.h"
 
 @interface DTSUserAuthHelper()
 {
@@ -84,6 +85,8 @@ shouldBeginLogInWithUsername:(NSString *)username
 
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+	[[PFUser currentUser] setObject:[[PFUser currentUser] dts_displayName] forKey:DTSUser_Display_Name];
+	[[PFUser currentUser] setObject:[[[PFUser currentUser] dts_displayName] lowercaseString] forKey:DTSUser_Search_Name];
 	[[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
 	[self updateFacebookDetailsForTheUser];
 	[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserAuthenticated object:nil];
@@ -146,6 +149,9 @@ shouldBeginLogInWithUsername:(NSString *)username
 				
 				[[PFUser currentUser] setObject:me.objectID forKey:DTSUser_Facebook_ID];
 				[[PFUser currentUser] setObject:me.name forKey:DTSUser_Facebook_NAME];
+				[[PFUser currentUser] setObject:me.name forKey:DTSUser_Display_Name];
+				[[PFUser currentUser] setObject:[me.name lowercaseString] forKey:DTSUser_Search_Name];
+				
 				[self processFacebookData];
 			}
 		}];

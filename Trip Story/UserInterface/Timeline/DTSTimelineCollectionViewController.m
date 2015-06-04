@@ -17,6 +17,8 @@
 
 @interface DTSTimelineCollectionViewController ()
 
+@property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+
 @end
 
 @implementation DTSTimelineCollectionViewController
@@ -166,12 +168,19 @@
 - (void)objectsWillLoad {
 	[super objectsWillLoad];
 	[self stylePFLoadingViewTheHardWay];
+	[self.noResultsHUD hide:YES];
 }
 
 - (void)objectsDidLoad:(NSError *)error {
 	[super objectsDidLoad:error];
+	[self.noResultsHUD hide:YES];
+	if (!self.objects || self.objects.count ==0)
+	{
+		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.noResultsHUD.mode = MBProgressHUDModeText;
+		self.noResultsHUD.labelText = @"No Results";
+	}
 }
-
 
 #pragma mark - custom styling
 
