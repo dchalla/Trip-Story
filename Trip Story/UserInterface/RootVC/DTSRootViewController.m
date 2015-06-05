@@ -18,6 +18,8 @@
 #import "DTSCreateTripViewController.h"
 #import "TripStoryIconView.h"
 #import "DTSSearchRootViewController.h"
+#import "DTSActivityFeedViewController.h"
+#import "DTSActivity.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
@@ -32,6 +34,7 @@
 @property (nonatomic, strong) DTSCreateTripViewController *addTripVC;
 @property (nonatomic, strong) DTSUserRootViewController *userVC;
 @property (nonatomic, strong) DTSSearchRootViewController *searchVC;
+@property (nonatomic, strong) DTSActivityFeedViewController *activityVC;
 
 @end
 
@@ -72,6 +75,15 @@
 		_searchVC = [[DTSSearchRootViewController alloc] init];
 	}
 	return _searchVC;
+}
+
+- (DTSActivityFeedViewController *)activityVC
+{
+	if (!_activityVC)
+	{
+		_activityVC =[[DTSActivityFeedViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSActivity parseClassName]];
+	}
+	return _activityVC;
 }
 
 - (void)viewDidLoad {
@@ -136,8 +148,9 @@
 
 - (void)setupSegmentControl
 {
-	NSArray *sectionIcons = @[[[UIImage imageNamed:@"timelineIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"searchIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionImages:sectionIcons sectionSelectedImages:sectionIcons];
+	NSArray *selectedSectionIcons = @[[[UIImage imageNamed:@"timelineIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"searchIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"activityIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+	NSArray *sectionIcons = @[[[UIImage imageNamed:@"timelineIcon-lightGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"searchIcon-lightGray"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate], [[UIImage imageNamed:@"addTrip-lightGray"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"users-lightGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate],[[UIImage imageNamed:@"activityIcon-lightGray"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionImages:sectionIcons sectionSelectedImages:selectedSectionIcons];
 	[self updateSegmentFrame];
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
@@ -160,7 +173,7 @@
 
 - (void)setupPageViewController
 {
-	self.pagedViewControllers = @[[self wrappedNavigationControllerVC:self.timeLineVC],[self wrappedNavigationControllerVC:self.searchVC],[self wrappedNavigationControllerVC:self.addTripVC],[self wrappedNavigationControllerVC:self.userVC]];
+	self.pagedViewControllers = @[[self wrappedNavigationControllerVC:self.timeLineVC],[self wrappedNavigationControllerVC:self.searchVC],[self wrappedNavigationControllerVC:self.addTripVC],[self wrappedNavigationControllerVC:self.userVC],[self wrappedNavigationControllerVC:self.activityVC]];
 	
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;
