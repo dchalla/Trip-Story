@@ -15,14 +15,18 @@
 #import "DTSUtilities.h"
 #import "PFUser+DTSAdditions.h"
 #import "MBProgressHUD.h"
+#import "DTSTripDetailsViewController.h"
+#import "DTSRequiresLoginView.h"
+#import "UIView+Utilities.h"
 
 
-#define CellHeight 60
+#define CellHeight 70
 
 static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectionViewCell";
 
 @interface DTSActivityFeedViewController ()
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+@property (nonatomic, strong) MBProgressHUD *loginHud;
 @end
 
 @implementation DTSActivityFeedViewController
@@ -39,6 +43,44 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 	self.title = @"Activity";
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserAuthenticated object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self updateLoginHUD];
+}
+
+- (void)refreshView
+{
+	if ([PFUser currentUser])
+	{
+		[self loadObjects];
+	}
+}
+
+- (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)updateLoginHUD
+{
+	[self.loginHud hide:YES];
+	if ([PFUser currentUser] == nil)
+	{
+		self.loginHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.loginHud.mode = MBProgressHUDModeCustomView;
+		self.loginHud.labelText = @"";
+		self.loginHud.detailsLabelText = @"";
+		self.loginHud.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
+		self.loginHud.dimBackground = YES;
+		self.loginHud.margin = 0.0;
+		self.loginHud.backgroundColor = [UIColor primaryColor];
+		self.loginHud.color = [UIColor clearColor];
+		return;
+	}
+	
 }
 
 
@@ -84,7 +126,9 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 	
 	[query orderByDescending:@"createdAt"];
 	
-	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
+		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+	}
 	
 	return query;
 }
@@ -127,6 +171,11 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
+	
+	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	vc.trip = activity.trip;
+	[vc.trip fillInPlaceholderEvents];
+	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
 }
 
 #pragma mark - custom styling

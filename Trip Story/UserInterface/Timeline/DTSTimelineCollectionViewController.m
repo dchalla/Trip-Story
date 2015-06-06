@@ -32,7 +32,7 @@
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTimelineCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
-	self.title = @"Trip Story";
+	self.title = @"theTripStory";
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSRefreshTrips object:nil];
 }
 
@@ -96,7 +96,13 @@
 	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];
 	
-	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
+		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+	}
+	else
+	{
+		query.cachePolicy = kPFCachePolicyNetworkOnly;
+	}
 	
 	return query;
 }

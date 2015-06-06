@@ -139,9 +139,10 @@
 		PFACL *likeACL = [PFACL ACLWithUser:[PFUser currentUser]];
 		[likeACL setPublicReadAccess:YES];
 		[likeACL setWriteAccess:YES forUser:trip.user];
+		[likeACL setWriteAccess:YES forUser:[PFUser currentUser]];
 		likeActivity.ACL = likeACL;
 		
-		[likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+		[likeActivity saveEventually:^(BOOL succeeded, NSError *error) {
 			if (completionBlock) {
 				completionBlock(succeeded,error);
 			}

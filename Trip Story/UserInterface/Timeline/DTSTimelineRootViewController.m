@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	self.title = @"Trip Story Feed";
+	self.title = @"theTripStory Feed";
 }
 
 - (void)viewWillAppear:(BOOL)animated

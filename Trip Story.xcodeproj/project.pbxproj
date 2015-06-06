@@ -1193,9 +1193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F95814FB1964850B002207A3 /* Trip Story */ = {
+		F95814FB1964850B002207A3 /* theTripStory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F95815311964850B002207A3 /* Build configuration list for PBXNativeTarget "Trip Story" */;
+			buildConfigurationList = F95815311964850B002207A3 /* Build configuration list for PBXNativeTarget "theTripStory" */;
 			buildPhases = (
 				90A71373D154E4B8836AA27D /* Check Pods Manifest.lock */,
 				F95814F81964850B002207A3 /* Sources */,
@@ -1207,7 +1207,7 @@
 			);
 			dependencies = (
 			);
-			name = "Trip Story";
+			name = theTripStory;
 			productName = "Trip Story";
 			productReference = F95814FC1964850B002207A3 /* Trip Story.app */;
 			productType = "com.apple.product-type.application";
@@ -1261,7 +1261,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F95814FB1964850B002207A3 /* Trip Story */,
+				F95814FB1964850B002207A3 /* theTripStory */,
 				F958151F1964850B002207A3 /* Trip StoryTests */,
 			);
 		};
@@ -1541,7 +1541,7 @@
 /* Begin PBXTargetDependency section */
 		F95815261964850B002207A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F95814FB1964850B002207A3 /* Trip Story */;
+			target = F95814FB1964850B002207A3 /* theTripStory */;
 			targetProxy = F95815251964850B002207A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1592,6 +1592,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = theTripStory;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1624,6 +1625,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = theTripStory;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1718,7 +1720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F95815311964850B002207A3 /* Build configuration list for PBXNativeTarget "Trip Story" */ = {
+		F95815311964850B002207A3 /* Build configuration list for PBXNativeTarget "theTripStory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F95815321964850B002207A3 /* Debug */,

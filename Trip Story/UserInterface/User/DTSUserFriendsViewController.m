@@ -58,7 +58,9 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	PFQuery *queryFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryFollowing whereKey:self.forFollowers?kDTSActivityToUserKey:kDTSActivityFromUserKey equalTo:self.user];
-	[queryFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
+		queryFollowing.cachePolicy = kPFCachePolicyCacheThenNetwork;
+	}
 	
 	[queryFollowing orderByAscending:DTSUser_Facebook_NAME];
 	[queryFollowing includeKey:self.forFollowers?kDTSActivityFromUserKey:kDTSActivityToUserKey];

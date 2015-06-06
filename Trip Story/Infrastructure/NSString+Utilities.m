@@ -36,8 +36,19 @@
 
 + (NSString *)durationStringForHours:(NSNumber *)totalhours
 {
+	return [NSString durationStringForHours:totalhours withNewLine:YES onlyOneElement:NO];
+}
+
++ (NSString *)durationStringForHours:(NSNumber *)totalhours withNewLine:(BOOL)newLine onlyOneElement:(BOOL)onlyOneElement
+{
 	NSInteger days = totalhours.floatValue/24;
 	NSInteger hours = totalhours.integerValue%24;
+	NSInteger minutes = 0;
+	if (totalhours.floatValue < 1)
+	{
+		minutes = totalhours.floatValue*60;
+	}
+	
 	NSString *durationString = @"";
 	if ([NSDateComponentsFormatter class])
 	{
@@ -47,9 +58,17 @@
 		NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 		dateComponents.day = days;
 		dateComponents.hour = hours;
+		dateComponents.minute = minutes;
 		
 		durationString = [dateComponentsFromatter stringFromDateComponents:dateComponents];
-		durationString = [durationString stringByReplacingOccurrencesOfString:@", " withString:@"\n"];
+		if (onlyOneElement)
+		{
+			durationString = [durationString componentsSeparatedByString:@","].firstObject;
+		}
+		else if (newLine)
+		{
+			durationString = [durationString stringByReplacingOccurrencesOfString:@", " withString:@"\n"];
+		}
 	}
 	else
 	{
@@ -76,7 +95,15 @@
 		{
 			if (hoursString.length > 0)
 			{
-				durationString = [NSString stringWithFormat:@"%@\n%@",daysString,hoursString];
+				if (onlyOneElement)
+				{
+					durationString = [NSString stringWithFormat:@"%@",daysString];
+				}
+				else
+				{
+					durationString = [NSString stringWithFormat:@"%@%@%@",daysString,newLine?@"\n":@", ", hoursString];
+				}
+				
 			}
 			else
 			{

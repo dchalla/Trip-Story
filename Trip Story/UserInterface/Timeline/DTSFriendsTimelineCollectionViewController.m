@@ -54,7 +54,9 @@
 	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];
 	
-	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
+		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+	}
 	
 	return query;
 }

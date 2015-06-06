@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F95814FB1964850B002207A3"
-               BuildableName = "Trip Story.app"
-               BlueprintName = "Trip Story"
+               BuildableName = "theTripStory.app"
+               BlueprintName = "theTripStory"
                ReferencedContainer = "container:Trip Story.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F95814FB1964850B002207A3"
-            BuildableName = "Trip Story.app"
-            BlueprintName = "Trip Story"
+            BuildableName = "theTripStory.app"
+            BlueprintName = "theTripStory"
             ReferencedContainer = "container:Trip Story.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -58,12 +58,13 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F95814FB1964850B002207A3"
-            BuildableName = "Trip Story.app"
-            BlueprintName = "Trip Story"
+            BuildableName = "theTripStory.app"
+            BlueprintName = "theTripStory"
             ReferencedContainer = "container:Trip Story.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,12 +77,13 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F95814FB1964850B002207A3"
-            BuildableName = "Trip Story.app"
-            BlueprintName = "Trip Story"
+            BuildableName = "theTripStory.app"
+            BlueprintName = "theTripStory"
             ReferencedContainer = "container:Trip Story.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

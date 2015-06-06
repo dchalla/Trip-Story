@@ -12,6 +12,7 @@
 @interface DTSActivityFeedLikeCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (nonatomic,strong) DTSActivity *activity;
+@property (weak, nonatomic) IBOutlet UILabel *hoursAgoLabel;
 
 - (void)updateUIWithActivity:(DTSActivity *)activity;
 

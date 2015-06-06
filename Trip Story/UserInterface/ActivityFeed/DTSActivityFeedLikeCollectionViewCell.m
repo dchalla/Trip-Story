@@ -9,6 +9,9 @@
 #import "DTSActivityFeedLikeCollectionViewCell.h"
 #import "PFUser+DTSAdditions.h"
 #import "UIColor+Utilities.h"
+#import "NSDate+Utilities.h"
+#import "NSString+Utilities.h"
+#import "DTSUtilities.h"
 
 @implementation DTSActivityFeedLikeCollectionViewCell
 
@@ -23,7 +26,18 @@
 		[attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor dtsGreenColor] range:NSMakeRange(attributedString.length-activity.trip.tripName.length, activity.trip.tripName.length)];
 	}
 	
+	if (activity.createdAt) {
+		CGFloat hours = [[NSDate date] hoursAfterDate:activity.createdAt];
+		NSString *hoursString = [NSString durationStringForHours:@(hours) withNewLine:NO onlyOneElement:YES];
+		self.hoursAgoLabel.text = [NSString stringWithFormat:@"%@ ago",hoursString];
+	}
+	
 	self.contentLabel.attributedText = [attributedString copy];
+}
+
+- (IBAction)userNameTapped:(id)sender {
+	PFUser *user = dynamic_cast_oc(self.activity.fromUser, PFUser);
+	[DTSUtilities openUserDetailsForUser:user];
 }
 
 @end

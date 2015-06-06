@@ -21,11 +21,11 @@
 		self.tripStoryLogoLabel.hidden = NO;
 		
 		if (self.isSharing) {
-			self.tripStoryLogoLabel.text = @"Trip Story\nAvailable on Apple App Store";
+			self.tripStoryLogoLabel.text = @"theTripStory\nAvailable on Apple App Store";
 		}
 		else
 		{
-			self.tripStoryLogoLabel.text = @"Trip Story";
+			self.tripStoryLogoLabel.text = @"theTripStory";
 		}
 	}
 	else

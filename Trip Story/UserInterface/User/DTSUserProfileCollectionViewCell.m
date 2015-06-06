@@ -153,14 +153,14 @@
 
 - (void)updateFollowButtonStatus
 {
-	if (!self.user)
+	if (!self.user || ![PFUser currentUser])
 	{
 		return;
 	}
 	PFQuery *queryIsFollowing = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryIsFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryIsFollowing whereKey:kDTSActivityToUserKey equalTo:self.user];
-	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:self.user];
+	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
 	[queryIsFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
 	BlockWeakSelf wSelf = self;
 	[queryIsFollowing countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
