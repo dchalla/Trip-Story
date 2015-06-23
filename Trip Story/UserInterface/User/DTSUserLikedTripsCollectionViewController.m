@@ -61,10 +61,18 @@
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
-	
-	DTSTimelineCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-	cell.backgroundColor = [UIColor primaryColor];
 	[activity.trip fillInPlaceholderEvents];
+	NSArray *eventsWithLocation = activity.trip.eventsWithLocationList;
+	DTSTimelineCollectionViewCell *cell = nil;
+	if (eventsWithLocation.count > 0)
+	{
+		cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifierWithMap forIndexPath:indexPath];
+	}
+	else
+	{
+		cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	}
+	cell.backgroundColor = [UIColor primaryColor];
 	[cell updateViewWithTrip:activity.trip];
 	return cell;
 }

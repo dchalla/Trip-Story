@@ -223,6 +223,17 @@
     return friends;
 }
 
+#pragma  mark - cache images
+- (void)cacheImage:(UIImage *)image forKey:(NSString *)key
+{
+	[self.cache setObject:image forKey:key];
+}
+
+- (UIImage *)cachedImageForKey:(NSString *)key
+{
+	return [self.cache objectForKey:key];
+}
+
 
 #pragma mark - ()
 

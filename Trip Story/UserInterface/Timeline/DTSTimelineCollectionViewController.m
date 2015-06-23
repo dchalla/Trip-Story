@@ -11,9 +11,6 @@
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
 
-#define DTSTimelineCellHeight 250
-#define DTSTimelineCellIpadSpacer 5
-
 
 @interface DTSTimelineCollectionViewController ()
 
@@ -30,6 +27,10 @@
 	// Register cell classes
 	[self.collectionView registerClass:[DTSTimelineCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTimelineCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
+	
+	[self.collectionView registerClass:[DTSTimelineCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifierWithMap];
+	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTimelineCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifierWithMap];
+	
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"theTripStory";
@@ -126,10 +127,19 @@
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
-	
-	DTSTimelineCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-	cell.backgroundColor = [UIColor primaryColor];
 	[trip fillInPlaceholderEvents];
+	NSArray *eventsWithLocation = trip.eventsWithLocationList;
+	DTSTimelineCollectionViewCell *cell = nil;
+	if (eventsWithLocation.count > 0)
+	{
+		cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifierWithMap forIndexPath:indexPath];
+	}
+	else
+	{
+		cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	}
+	
+	cell.backgroundColor = [UIColor primaryColor];
 	[cell updateViewWithTrip:trip];
 	return cell;
 }
@@ -138,19 +148,27 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	return [self dtsDefaultItemSize];
+	DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
+	[trip fillInPlaceholderEvents];
+	NSArray *eventsWithLocation = trip.eventsWithLocationList;
+	CGFloat height = DTSTimelineCellHeight;
+	if (eventsWithLocation.count > 0)
+	{
+		height = DTSTimelineCellWithMapHeight;
+	}
+	return [self dtsDefaultItemSizeWithHeight:height];
 	
 }
 
-- (CGSize)dtsDefaultItemSize
+- (CGSize)dtsDefaultItemSizeWithHeight:(CGFloat)height
 {
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 	{
-		return CGSizeMake(self.view.frame.size.width, DTSTimelineCellHeight);
+		return CGSizeMake(self.view.frame.size.width, height);
 	}
 	else
 	{
-		return CGSizeMake(self.view.frame.size.width/2-DTSTimelineCellIpadSpacer, DTSTimelineCellHeight);
+		return CGSizeMake(self.view.frame.size.width/2-DTSTimelineCellIpadSpacer, height);
 	}
 }
 

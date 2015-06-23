@@ -36,4 +36,7 @@
 
 - (void)setFacebookFriends:(NSArray *)friends;
 - (NSArray *)facebookFriends;
+
+- (void)cacheImage:(UIImage *)image forKey:(NSString *)key;
+- (UIImage *)cachedImageForKey:(NSString *)key;
 @end

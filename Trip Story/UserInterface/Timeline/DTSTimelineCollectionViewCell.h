@@ -54,6 +54,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *likedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLikeCommentsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIImageView *mapViewImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapViewImageHeightConstraint;
 
 
 @property (nonatomic,strong) DTSTrip *trip;

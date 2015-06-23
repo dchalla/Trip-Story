@@ -12,6 +12,8 @@
 #import "DTSCache.h"
 #import "DTSUtilities.h"
 
+#define METERS_PER_MILE 1609.344
+
 @interface DTSTimelineCollectionViewCell()
 @property (nonatomic) BOOL isLikeSelected;
 
@@ -54,17 +56,95 @@
 		self.tripTitleLabel.text = self.trip.tripName;
 		self.descriptionLabel.text = self.trip.tripDescription;
 		
-		//testing
-		if (self.trip.tripName.length == 0)
-		{
-			self.tripTitleLabel.text = @"My Trip";
-			self.descriptionLabel.text = @"My beautifull trip to Hawaii. This is pure heaven. My beautifull trip to Hawaii. This is pure heaven.";
-		}
-		//end testing
+	
 		self.tripTagsLabel.text = [self.trip tripTagsString];
 		self.byUserLabel.text = [NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]];
 		[self updateColorViews];
 		[self updateLikesAndComment];
+		
+		NSArray *eventsWithLocation = self.trip.eventsWithLocationList;
+		if (eventsWithLocation.count > 0)
+		{
+			MKMapRect r = MKMapRectNull;
+			for (NSUInteger i=0; i < eventsWithLocation.count; ++i) {
+				MKMapPoint p = MKMapPointForCoordinate(dynamic_cast_oc(eventsWithLocation[i], DTSEvent).location.mapItem.placemark.coordinate);
+				r = MKMapRectUnion(r, MKMapRectMake(p.x, p.y, 0, 0));
+			}
+			MKCoordinateRegion viewRegion = MKCoordinateRegionForMapRect(r);
+			viewRegion.span.latitudeDelta *=3;
+	
+			NSString *cacheKey = [NSString stringWithFormat:@"%f:%f:%f:%f",viewRegion.center.latitude, viewRegion.center.longitude,viewRegion.span.latitudeDelta, viewRegion.span.longitudeDelta];
+			UIImage *image = [[DTSCache sharedCache] cachedImageForKey:cacheKey];
+			if (image != nil)
+			{
+				self.mapViewImage.alpha = 1;
+				self.mapViewImage.image = image;
+			}
+			else
+			{
+				MKMapSnapshotOptions *options = [[MKMapSnapshotOptions alloc] init];
+				
+				options.region = viewRegion;
+				options.size = self.mapViewImage.frame.size;
+				options.scale = [[UIScreen mainScreen] scale];
+				
+				
+				NSString *tripName = self.trip.tripName;
+				BlockWeakSelf wSelf = self;
+				MKMapSnapshotter *snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
+				[snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
+					if (error) {
+						NSLog(@"[Error] %@", error);
+						return;
+					}
+					
+					
+					MKAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
+					UIImage *compositeImage = nil;
+					UIImage *image = snapshot.image;
+					UIGraphicsBeginImageContextWithOptions(image.size, YES, image.scale);
+					{
+						[image drawAtPoint:CGPointMake(0.0f, 0.0f)];
+						
+						CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+						for (id <MKAnnotation> annotation in eventsWithLocation) {
+							CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
+							if (CGRectContainsPoint(rect, point)) {
+								point.x = point.x + pin.centerOffset.x -
+								(pin.bounds.size.width / 2.0f);
+								point.y = point.y + pin.centerOffset.y -
+								(pin.bounds.size.height / 2.0f);
+								[pin.image drawAtPoint:point];
+							}
+						}
+						
+						compositeImage = UIGraphicsGetImageFromCurrentImageContext();
+						
+					}
+					UIGraphicsEndImageContext();
+					
+					
+					[[DTSCache sharedCache] cacheImage:compositeImage forKey:cacheKey];
+					if ([wSelf.trip.tripName isEqualToString:tripName])
+					{
+						[UIView animateWithDuration:0.4 animations:^{
+							wSelf.mapViewImage.image = compositeImage;
+							wSelf.mapViewImage.alpha = 1;
+						}];
+						
+					}
+					
+					
+				}];
+
+			}
+			
+		}
+		else
+		{
+			self.mapViewImageHeightConstraint.constant = -5;
+		}
+		
 	}
 	
 }
@@ -185,6 +265,7 @@
 
 - (void)clearOutData
 {
+	self.mapViewImage.alpha = 0;
 	self.startDateTimeLabel.text = @"";
 	self.endDateTimeLabel.text = @"";
 	self.descriptionLabel.text = @"";
@@ -204,6 +285,7 @@
 	self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 	self.likedLabel.text = @"Like";
 	self.isLikeSelected = NO;
+	self.mapViewImage.image = nil;
 }
 
 - (void)updateLikesAndComment

@@ -15,7 +15,12 @@
 #import "DTSTimelineCollectionViewCell.h"
 #import "DTSActivity.h"
 
+#define DTSTimelineCellHeight 250
+#define DTSTimelineCellWithMapHeight 389
+#define DTSTimelineCellIpadSpacer 5
+
 static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
+static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWithMap";
 
 @interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
 
@@ -23,7 +28,7 @@ static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-- (CGSize)dtsDefaultItemSize;
+- (CGSize)dtsDefaultItemSizeWithHeight:(CGFloat)height;
 - (void)refreshView;
 
 @end

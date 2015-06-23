@@ -83,7 +83,15 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	}
 	else
 	{
-		return [self dtsDefaultItemSize];
+		DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row-1], DTSTrip);
+		[trip fillInPlaceholderEvents];
+		NSArray *eventsWithLocation = trip.eventsWithLocationList;
+		CGFloat height = DTSTimelineCellHeight;
+		if (eventsWithLocation.count > 0)
+		{
+			height = DTSTimelineCellWithMapHeight;
+		}
+		return [self dtsDefaultItemSizeWithHeight:height];
 	}
 	
 	
@@ -102,10 +110,20 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	else
 	{
 		DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row-1], DTSTrip);
-		
-		DTSTimelineCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-		cell.backgroundColor = [UIColor primaryColor];
 		[trip fillInPlaceholderEvents];
+		NSArray *eventsWithLocation = trip.eventsWithLocationList;
+		DTSTimelineCollectionViewCell *cell = nil;
+		if (eventsWithLocation.count > 0)
+		{
+			cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifierWithMap forIndexPath:indexPath];
+		}
+		else
+		{
+			cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+		}
+		
+		cell.backgroundColor = [UIColor primaryColor];
+		
 		[cell updateViewWithTrip:trip];
 		return cell;
 	}
