@@ -166,6 +166,7 @@
 		F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */; };
 		F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */; };
 		F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */; };
+		F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */; };
 		F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EA06571AA57F99007573EC /* LaunchScreen.xib */; };
 		F9EBD0701AF92756003B8C29 /* editIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9EBD06D1AF92756003B8C29 /* editIcon.png */; };
 		F9EBD0711AF92756003B8C29 /* editIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */; };
@@ -311,7 +312,7 @@
 		F954E77F19664777003A0B72 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		F954E78119664967003A0B72 /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
 		F954E78219664967003A0B72 /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
-		F95814FC1964850B002207A3 /* Trip Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Trip Story.app"; path = theTripStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95814FC1964850B002207A3 /* theTripStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theTripStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95814FF1964850B002207A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F95815011964850B002207A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F95815031964850B002207A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -467,6 +468,8 @@
 		F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@3x.png"; sourceTree = "<group>"; };
 		F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@2x.png"; sourceTree = "<group>"; };
 		F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@3x.png"; sourceTree = "<group>"; };
+		F9E563B41B39329F00748908 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLSpringFlowLayout.h; path = General/TLSpringFlowLayout.h; sourceTree = "<group>"; };
+		F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLSpringFlowLayout.m; path = General/TLSpringFlowLayout.m; sourceTree = "<group>"; };
 		F9EA06571AA57F99007573EC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = LaunchScreen/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9EBD06D1AF92756003B8C29 /* editIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editIcon.png; sourceTree = "<group>"; };
 		F9EBD06E1AF92756003B8C29 /* editIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editIcon@2x.png"; sourceTree = "<group>"; };
@@ -624,6 +627,8 @@
 		F9401DAE1AB9DD0600F271F5 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				F9E563B41B39329F00748908 /* TLSpringFlowLayout.h */,
+				F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */,
 				F9401DAF1AB9DD8000F271F5 /* DTSSegmentedViewController.h */,
 				F9401DB01AB9DD8000F271F5 /* DTSSegmentedViewController.m */,
 			);
@@ -827,7 +832,7 @@
 		F95814FD1964850B002207A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F95814FC1964850B002207A3 /* Trip Story.app */,
+				F95814FC1964850B002207A3 /* theTripStory.app */,
 				F95815201964850B002207A3 /* Trip StoryTests.xctest */,
 			);
 			name = Products;
@@ -1209,7 +1214,7 @@
 			);
 			name = theTripStory;
 			productName = "Trip Story";
-			productReference = F95814FC1964850B002207A3 /* Trip Story.app */;
+			productReference = F95814FC1964850B002207A3 /* theTripStory.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F958151F1964850B002207A3 /* Trip StoryTests */ = {
@@ -1516,6 +1521,7 @@
 				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
+				F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */,
 				F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */,
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,

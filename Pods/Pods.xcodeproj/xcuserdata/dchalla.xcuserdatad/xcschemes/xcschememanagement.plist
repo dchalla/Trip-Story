@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CRToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>24F30DF49E064BBAB4DC42B8</key>
+		<key>13D563FEC10625E837A06658</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>282FF38982B4275A4CF02A16</key>
+		<key>1B904EF10582261A6A25DFB4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>427C80D72D2262CB4C2158CC</key>
+		<key>26FD0407114E66D12C538038</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>795B7620154317F35FE57C87</key>
+		<key>4595B3D89B4A588F79CFE799</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0C23FBBDC877F2CBDB38F5B</key>
+		<key>754B47D6C90FBB280F7F9FBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C991DDA0E2C6DFD688E3676B</key>
+		<key>89E6FDDE6603ACD373E461D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5C495565E7BC9C91B0F1789</key>
+		<key>C9C8C9C3D47AD9F15A8D7390</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD58023694C8D24E9C9FC6BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

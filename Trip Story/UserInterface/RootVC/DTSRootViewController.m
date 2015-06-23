@@ -20,6 +20,7 @@
 #import "DTSSearchRootViewController.h"
 #import "DTSActivityFeedViewController.h"
 #import "DTSActivity.h"
+#import "TLSpringFlowLayout.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
@@ -81,7 +82,7 @@
 {
 	if (!_activityVC)
 	{
-		_activityVC =[[DTSActivityFeedViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSActivity parseClassName]];
+		_activityVC =[[DTSActivityFeedViewController alloc] initWithCollectionViewLayout:[[TLSpringFlowLayout alloc] init] className: [DTSActivity parseClassName]];
 	}
 	return _activityVC;
 }

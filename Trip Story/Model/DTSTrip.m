@@ -139,6 +139,11 @@ NSString *const kDTSTripUserKey		= @"user";
 				[self.eventsList addObject:placeHolderEvent];
 			}
 		}
+		else if (i == 0 && localOriginalList.count >= 1 && event.eventKind == DTSEventKindTravel)
+		{
+			DTSEvent *placeHolderEvent = [self startPlaceholderEventWithEvent:event];
+			[self.eventsList addObject:placeHolderEvent];
+		}
 		[self.eventsList addObject:event];
 		i++;
 	}
@@ -185,6 +190,18 @@ NSString *const kDTSTripUserKey		= @"user";
 		}
 	}
 	
+	return placeHolderEvent;
+}
+
+- (DTSEvent *)startPlaceholderEventWithEvent:(DTSEvent *)event
+{
+	DTSEvent *placeHolderEvent = [DTSEvent newEvent];
+	placeHolderEvent.isPlaceHolderEvent = YES;
+	placeHolderEvent.eventName = @"Start";
+	placeHolderEvent.eventType = DTSEventKindActivity;
+	placeHolderEvent.isPlaceHolderEvent = YES;
+	placeHolderEvent.endDateTime = event.startDateTime;
+	placeHolderEvent.startDateTime = [event.startDateTime dateBySubtractingMinutes:10];
 	return placeHolderEvent;
 }
 
@@ -472,7 +489,7 @@ NSString *const kDTSTripUserKey		= @"user";
 - (NSDictionary *)tripEventTypeColorDict
 {
 	NSMutableDictionary *eventsTypeDict = [NSMutableDictionary dictionary];
-	for (DTSEvent *event in self.originalEventsList)
+	for (DTSEvent *event in self.eventsList)
 	{
 		[eventsTypeDict setObject:[DTSEvent topColorForEventType:event.eventType] forKey:@(event.eventType)];
 	}
