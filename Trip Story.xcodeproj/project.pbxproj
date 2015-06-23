@@ -111,8 +111,8 @@
 		F99EBA091A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA071A1DBC3700290D8A /* DTSTripEventDetailsViewController.xib */; };
 		F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99EBA0B1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m */; };
 		F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */; };
-		F99FC4351B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC4331B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.m */; };
-		F99FC4361B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4341B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.xib */; };
+		F99FC4351B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC4331B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m */; };
+		F99FC4361B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4341B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib */; };
 		F99FC43A1B22072C000CDCB3 /* activityIcon-lightGray.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4371B22072C000CDCB3 /* activityIcon-lightGray.png */; };
 		F99FC43B1B22072C000CDCB3 /* activityIcon-lightGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4381B22072C000CDCB3 /* activityIcon-lightGray@2x.png */; };
 		F99FC43C1B22072C000CDCB3 /* activityIcon-lightGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4391B22072C000CDCB3 /* activityIcon-lightGray@3x.png */; };
@@ -311,7 +311,7 @@
 		F954E77F19664777003A0B72 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		F954E78119664967003A0B72 /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
 		F954E78219664967003A0B72 /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
-		F95814FC1964850B002207A3 /* Trip Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95814FC1964850B002207A3 /* Trip Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Trip Story.app"; path = theTripStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95814FF1964850B002207A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F95815011964850B002207A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F95815031964850B002207A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -387,9 +387,9 @@
 		F99EBA0A1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSEventDetailsInfoTableViewCell.h; path = TripEvents/DTSEventDetailsInfoTableViewCell.h; sourceTree = "<group>"; };
 		F99EBA0B1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSEventDetailsInfoTableViewCell.m; path = TripEvents/DTSEventDetailsInfoTableViewCell.m; sourceTree = "<group>"; };
 		F99EBA0C1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSEventDetailsInfoTableViewCell.xib; path = TripEvents/DTSEventDetailsInfoTableViewCell.xib; sourceTree = "<group>"; };
-		F99FC4321B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSActivityFeedLikeCollectionViewCell.h; path = ActivityFeed/DTSActivityFeedLikeCollectionViewCell.h; sourceTree = "<group>"; };
-		F99FC4331B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSActivityFeedLikeCollectionViewCell.m; path = ActivityFeed/DTSActivityFeedLikeCollectionViewCell.m; sourceTree = "<group>"; };
-		F99FC4341B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSActivityFeedLikeCollectionViewCell.xib; path = ActivityFeed/DTSActivityFeedLikeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F99FC4321B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSActivityFeedCollectionViewCell.h; path = ActivityFeed/DTSActivityFeedCollectionViewCell.h; sourceTree = "<group>"; };
+		F99FC4331B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSActivityFeedCollectionViewCell.m; path = ActivityFeed/DTSActivityFeedCollectionViewCell.m; sourceTree = "<group>"; };
+		F99FC4341B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSActivityFeedCollectionViewCell.xib; path = ActivityFeed/DTSActivityFeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		F99FC4371B22072C000CDCB3 /* activityIcon-lightGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activityIcon-lightGray.png"; sourceTree = "<group>"; };
 		F99FC4381B22072C000CDCB3 /* activityIcon-lightGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activityIcon-lightGray@2x.png"; sourceTree = "<group>"; };
 		F99FC4391B22072C000CDCB3 /* activityIcon-lightGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activityIcon-lightGray@3x.png"; sourceTree = "<group>"; };
@@ -946,9 +946,9 @@
 			children = (
 				F99376261B20B5FA005D58FE /* DTSActivityFeedViewController.h */,
 				F99376271B20B5FA005D58FE /* DTSActivityFeedViewController.m */,
-				F99FC4321B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.h */,
-				F99FC4331B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.m */,
-				F99FC4341B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.xib */,
+				F99FC4321B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.h */,
+				F99FC4331B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m */,
+				F99FC4341B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib */,
 			);
 			name = ActivityFeed;
 			sourceTree = "<group>";
@@ -1310,7 +1310,7 @@
 				F9FD5A6E1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F99FC43B1B22072C000CDCB3 /* activityIcon-lightGray@2x.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
-				F99FC4361B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.xib in Resources */,
+				F99FC4361B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib in Resources */,
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
 				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
 				F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */,
@@ -1468,7 +1468,7 @@
 				F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
 				F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */,
-				F99FC4351B21729F000CDCB3 /* DTSActivityFeedLikeCollectionViewCell.m in Sources */,
+				F99FC4351B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m in Sources */,
 				F9401D9E1AB91A3D00F271F5 /* DTSLogInViewController.m in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F9FD5A861AC5C57C009BDDF2 /* README.md in Sources */,

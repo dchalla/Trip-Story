@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DTSActivity.h"
 
-@interface DTSActivityFeedLikeCollectionViewCell : UICollectionViewCell
+@interface DTSActivityFeedCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (nonatomic,strong) DTSActivity *activity;
 @property (weak, nonatomic) IBOutlet UILabel *hoursAgoLabel;

@@ -9,7 +9,7 @@
 #import "DTSActivityFeedViewController.h"
 #import "PFUser.h"
 #import "DTSCache.h"
-#import "DTSActivityFeedLikeCollectionViewCell.h"
+#import "DTSActivityFeedCollectionViewCell.h"
 #import "UIColor+Utilities.h"
 #import "DTSConstants.h"
 #import "DTSUtilities.h"
@@ -22,7 +22,7 @@
 
 #define CellHeight 70
 
-static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectionViewCell";
+static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCell";
 
 @interface DTSActivityFeedViewController ()
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
@@ -37,8 +37,8 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	[self.collectionView registerClass:[DTSActivityFeedLikeCollectionViewCell class] forCellWithReuseIdentifier:likeCellReuseIdentifier];
-	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSActivityFeedLikeCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:likeCellReuseIdentifier];
+	[self.collectionView registerClass:[DTSActivityFeedCollectionViewCell class] forCellWithReuseIdentifier:cellReuseIdentifier];
+	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSActivityFeedCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellReuseIdentifier];
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
@@ -114,16 +114,22 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 		return nil;
 	}
 	
-	PFQuery *query = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
-	[query whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
-	[query whereKey:kDTSActivityToUserKey equalTo:[PFUser currentUser]];
-	[query whereKey:kDTSActivityFromUserKey notEqualTo:[PFUser currentUser]];
+	PFQuery *queryLike = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryLike whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeLike];
+	[queryLike whereKey:kDTSActivityToUserKey equalTo:[PFUser currentUser]];
+	[queryLike whereKey:kDTSActivityFromUserKey notEqualTo:[PFUser currentUser]];
+	
+	PFQuery *queryFollow = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
+	[queryFollow whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
+	[queryFollow whereKey:kDTSActivityToUserKey equalTo:[PFUser currentUser]];
+	
+	PFQuery *query = [PFQuery orQueryWithSubqueries:@[queryLike,queryFollow]];
+	
 	[query includeKey:@"trip.originalEventsList"];
 	[query includeKey:@"trip.originalEventsList.location"];
 	[query includeKey:@"trip.originalEventsList.location.dtsPlacemark"];
 	[query includeKey:@"trip.user"];
 	[query includeKey:kDTSActivityFromUserKey];
-	
 	[query orderByDescending:@"createdAt"];
 	
 	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
@@ -146,7 +152,7 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
-	DTSActivityFeedLikeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:likeCellReuseIdentifier forIndexPath:indexPath];
+	DTSActivityFeedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellReuseIdentifier forIndexPath:indexPath];
 	[cell updateUIWithActivity:activity];
 	cell.backgroundColor = [UIColor primaryColor];
 	
@@ -172,10 +178,18 @@ static NSString * const likeCellReuseIdentifier = @"DTSActivityFeedLikeCollectio
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
 	
-	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
-	vc.trip = activity.trip;
-	[vc.trip fillInPlaceholderEvents];
-	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
+	if ([activity.type isEqualToString:kDTSActivityTypeLike])
+	{
+		DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+		vc.trip = activity.trip;
+		[vc.trip fillInPlaceholderEvents];
+		[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
+	}
+	else if([activity.type isEqualToString:kDTSActivityTypeFollow])
+	{
+		PFUser *user = dynamic_cast_oc(activity.fromUser, PFUser);
+		[DTSUtilities openUserDetailsForUser:user];
+	}
 }
 
 #pragma mark - custom styling
