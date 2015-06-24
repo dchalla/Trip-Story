@@ -75,12 +75,13 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	return query;
 }
 
-- (void)loadObjects
+- (BFTask *)loadObjects
 {
 	if (self.searchString.length > 0)
 	{
-		[super loadObjects];
+		return [super loadObjects];
 	}
+	return nil;
 }
 
 #pragma mark <UICollectionViewDataSource>

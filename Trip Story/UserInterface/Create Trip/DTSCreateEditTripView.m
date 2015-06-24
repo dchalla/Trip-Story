@@ -10,7 +10,7 @@
 #import "UIColor+Utilities.h"
 
 #ifdef DEBUG
-#define EASY_TESTING 1
+#define EASY_TESTING 0
 #else
 #define EASY_TESTING 0
 #endif

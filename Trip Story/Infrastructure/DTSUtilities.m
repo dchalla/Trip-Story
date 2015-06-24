@@ -254,5 +254,49 @@
 	return query;
 }
 
+#pragma mark Toast
++ (void)showToastWithMessage:(NSString *)message backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)color tapHandler:(voidBlock)tapHandler dimissOnSwipeUp:(BOOL)dismissOnSwipeUp {
+	
+	NSMutableDictionary *options = [@{kCRToastNotificationTypeKey               : @(CRToastTypeNavigationBar),
+									  kCRToastNotificationPresentationTypeKey   :  @(CRToastPresentationTypePush),
+									  kCRToastUnderStatusBarKey                 : @(NO),
+									  kCRToastTextKey                           : message,
+									  kCRToastTimeIntervalKey                   : @(CGFLOAT_MAX),
+									  kCRToastTextAlignmentKey                  : @(NSTextAlignmentCenter),
+									  kCRToastAnimationInTypeKey                : @(CRToastAnimationTypeSpring),
+									  kCRToastAnimationOutTypeKey               : @(CRToastAnimationTypeSpring),
+									  kCRToastAnimationInDirectionKey           : @(CRToastAnimationDirectionTop),
+									  kCRToastAnimationOutDirectionKey          : @(CRToastAnimationDirectionTop)} mutableCopy];
+	
+	
+	
+	
+	options[kCRToastInteractionRespondersKey] = @[[CRToastInteractionResponder interactionResponderWithInteractionType:CRToastInteractionTypeTap|CRToastInteractionTypeSwipeUp
+																								  automaticallyDismiss:YES
+																												 block:^(CRToastInteractionType interactionType){
+																													 if (interactionType & CRToastInteractionTypeTap) {
+																														 if (tapHandler) {
+																															 tapHandler();
+																														 }
+																													 }
+																													 if (interactionType & CRToastInteractionTypeSwipeUp && dismissOnSwipeUp) {
+																														 [CRToastManager dismissNotification:YES];
+																														 
+																													 }
+																												 }]];
+	
+	[CRToastManager showNotificationWithOptions:options
+								completionBlock:^(void) {
+									
+								}];
+	
+}
+
++ (void)dismissToast
+{
+	[CRToastManager dismissNotification:YES];
+}
+
+
 
 @end

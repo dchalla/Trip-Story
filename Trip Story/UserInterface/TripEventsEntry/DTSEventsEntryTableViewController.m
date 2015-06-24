@@ -14,7 +14,8 @@
 #import "DTSEventLocationEntryTableViewCell.h"
 #import "DTSLocationEntryViewController.h"
 #import "UIView+Utilities.h"
-#import "UIView+Utilities.h"
+#import "DTSUtilities.h"
+#import "NSDate+Utilities.h"
 
 #define kDTSEventTextEntryTableViewCell @"DTSEventTextEntryTableViewCell"
 #define kDTSEventDateEntryTableViewCell @"DTSEventDateEntryTableViewCell"
@@ -37,12 +38,16 @@ typedef enum {
 }DTSEventEntryFieldType;
 
 
+
 @interface DTSEventsEntryTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *tableData;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 @property (nonatomic, strong) DTSEvent *originalEvent;
 @property (nonatomic) BOOL isValueChanged;
+@property (nonatomic, strong) NSDate *startDateTime;
+@property (nonatomic, strong) NSDate *endDateTime;
+@property (nonatomic) BOOL showingToastForStartDateEndDateReversed;
 
 @end
 
@@ -72,6 +77,8 @@ typedef enum {
 - (void)setEvent:(DTSEvent *)event{
 	_event = event;
 	self.originalEvent = [DTSEvent eventFromEvent:event];
+	self.startDateTime = event.startDateTime;
+	self.endDateTime = event.endDateTime;
 }
 
 - (void)updateBackgroundImage
@@ -345,7 +352,7 @@ typedef enum {
 	NSDictionary *dict = self.tableData[indexPath.row];
     cell.identifier = dict[kIdentifier];
 	cell.placeHolderValue = dict[kPlaceHolderValue];
-	cell.dateValue = self.event.startDateTime;
+	cell.dateValue = self.startDateTime;
 	
     return cell;
 }
@@ -357,7 +364,7 @@ typedef enum {
 	NSDictionary *dict = self.tableData[indexPath.row];
     cell.identifier = dict[kIdentifier];
 	cell.placeHolderValue = dict[kPlaceHolderValue];
-	cell.dateValue = self.event.endDateTime;
+	cell.dateValue = self.endDateTime;
 	
     return cell;
 }
@@ -512,7 +519,20 @@ typedef enum {
 		{
 			if ([value isKindOfClass:[NSDate class]])
 			{
-				self.event.startDateTime = value;
+				self.startDateTime = value;
+				if ([self.startDateTime isEarlierThanDate:self.endDateTime])
+				{
+					self.event.startDateTime = self.startDateTime;
+					self.event.endDateTime = self.endDateTime;
+					[DTSUtilities dismissToast];
+					self.showingToastForStartDateEndDateReversed = NO;
+				}
+				else if(!self.showingToastForStartDateEndDateReversed)
+				{
+					[DTSUtilities showToastWithMessage:@"Start date is after end date" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] tapHandler:nil dimissOnSwipeUp:NO];
+					self.showingToastForStartDateEndDateReversed = YES;
+				}
+				
 				[self.tableView reloadData];
 			}
 		}
@@ -521,7 +541,20 @@ typedef enum {
 		{
 			if ([value isKindOfClass:[NSDate class]])
 			{
-				self.event.endDateTime = value;
+				self.endDateTime = value;
+				if ([self.startDateTime isEarlierThanDate:self.endDateTime])
+				{
+					self.event.startDateTime = self.startDateTime;
+					self.event.endDateTime = self.endDateTime;
+					[DTSUtilities dismissToast];
+					self.showingToastForStartDateEndDateReversed = NO;
+				}
+				else if(!self.showingToastForStartDateEndDateReversed)
+				{
+					[DTSUtilities showToastWithMessage:@"Start date is after end date" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] tapHandler:nil dimissOnSwipeUp:NO];
+					self.showingToastForStartDateEndDateReversed = YES;
+				}
+
 				[self.tableView reloadData];
 			}
 		}

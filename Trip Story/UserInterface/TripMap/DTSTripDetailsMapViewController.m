@@ -152,6 +152,7 @@
 	annotationView.enabled = YES;
 	annotationView.canShowCallout = YES;
 	annotationView.tintColor = event.eventTopColor;
+	annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	return annotationView;
 }
 
@@ -177,6 +178,13 @@
 		return aView;
 	}
 	return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+	DTSEvent *event = (DTSEvent*)view.annotation;
+ 
+	NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+	[event.location.mapItem openInMapsWithLaunchOptions:launchOptions];
 }
 
 @end

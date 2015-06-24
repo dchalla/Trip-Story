@@ -10,6 +10,9 @@
 #import <Parse/PFUser.h>
 #import <Parse/Parse.h>
 #import "DTSActivity.h"
+#import "CRToast.h"
+
+typedef void (^voidBlock)(void);
 
 @interface DTSUtilities : NSObject
 + (void)followUserEventually:(PFUser *)user block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
@@ -22,5 +25,8 @@
 + (void)likeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
 + (void)unlikeTripInBackground:(DTSTrip *)trip block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
 + (PFQuery *)queryForActivitiesOnTrip:(DTSTrip *)trip cachePolicy:(PFCachePolicy)cachePolicy;
+
++ (void)showToastWithMessage:(NSString *)message backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)color tapHandler:(voidBlock)tapHandler dimissOnSwipeUp:(BOOL)dismissOnSwipeUp;
++ (void)dismissToast;
 
 @end

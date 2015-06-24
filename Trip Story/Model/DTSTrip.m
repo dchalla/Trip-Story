@@ -118,12 +118,11 @@ NSString *const kDTSTripUserKey		= @"user";
 - (void)fillInPlaceholderEvents
 {
 	[self createTagsForSearch];
-	NSArray *localOriginalList = self.originalEventsList;
 	if (!self.user || (self.user && [[PFUser currentUser].objectId isEqualToString:self.user.objectId]))
 	{
 		[self sortOriginalList];
 	}
-	
+	NSArray *localOriginalList = self.originalEventsList;
 	int i = 0;
 	self.eventsList = [NSMutableArray array];
 	for (DTSEvent *event in localOriginalList)

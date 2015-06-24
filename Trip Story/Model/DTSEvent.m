@@ -281,7 +281,7 @@
 }
 
 - (NSString *)subtitle {
-	return self.location.mapItem.placemark.name;
+	return self.location.locationName;
 }
 
 - (CLLocationCoordinate2D)coordinate {
