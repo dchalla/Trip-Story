@@ -14,8 +14,10 @@
 #import "DTSTripDetailsProtocol.h"
 #import "DTSTripStoryHeaderView.h"
 #import "DTSTripStoryFooterView.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
-@interface DTSTripStoryTableViewController : UITableViewController<DTSTripDetailsViewControllerProtocol, DTSViewLayoutProtocol, DTSTripDetailsProtocol, DTSTripStoryHeaderViewDelegate,DTSTripStoryFooterViewDelegate>
+@interface DTSTripStoryTableViewController : UITableViewController<DTSTripDetailsViewControllerProtocol, DTSViewLayoutProtocol, DTSTripDetailsProtocol, DTSTripStoryHeaderViewDelegate,DTSTripStoryFooterViewDelegate, DTSAnalyticsProtocol>
 
 @property (nonatomic, weak) id<DTSTripDetailsContainerDelegate> containerDelegate;
 - (void)refreshView;

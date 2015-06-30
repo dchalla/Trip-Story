@@ -149,6 +149,22 @@
 	self.tripStoryVC.trip = self.trip;
 	self.tripEventsVC.trip = self.trip;
 	self.tripMapVC.trip = self.trip;
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -366,6 +382,13 @@
 	[self.segmentedControl setSelectedSegmentIndex:1];
 	[self segmentedControlChangedValue:self.segmentedControl];
 	[self.tripEventsVC openEvent:event];
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Details Home";
 }
 
 @end

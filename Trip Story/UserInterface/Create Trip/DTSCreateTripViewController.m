@@ -101,6 +101,26 @@
 		}
 	}];
 	
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	if (self.isCreateTripMode)
+	{
+		[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+															  action:@"createTrip_button_press"  // Event action (required)
+															   label:@"createTrip"          // Event label
+															   value:nil] build]];    // Event value
+	}
+	else
+	{
+		[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+															  action:@"updateTrip_button_press"  // Event action (required)
+															   label:@"updateTrip"          // Event label
+															   value:nil] build]];    // Event value
+	}
+	
+	
 	
 }
 
@@ -139,6 +159,13 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
 	[self dts_animateTransition:transitionContext presenting:self.presenting];
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return self.isCreateTripMode? @"Create Trip" : @"Update Trip";
 }
 
 

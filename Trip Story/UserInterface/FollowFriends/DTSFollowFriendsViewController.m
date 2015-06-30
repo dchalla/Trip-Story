@@ -13,6 +13,7 @@
 #import "UIColor+Utilities.h"
 #import "DTSConstants.h"
 #import "DTSUtilities.h"
+#import <Google/Analytics.h>
 
 #define DTSFollowFriendsCellHeight 60
 
@@ -36,6 +37,27 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"Facebook Friends";
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 #pragma mark -
@@ -200,6 +222,13 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 			[self loadNextPage];
 		}
 	}
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Follow Friends";
 }
 
 

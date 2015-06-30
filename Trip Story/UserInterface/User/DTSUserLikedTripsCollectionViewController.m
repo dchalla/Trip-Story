@@ -58,6 +58,20 @@
 	return query;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
+	[activity.trip fillInPlaceholderEvents];
+	NSArray *eventsWithLocation = activity.trip.eventsWithLocationList;
+	CGFloat height = DTSTimelineCellHeight;
+	if (eventsWithLocation.count > 0)
+	{
+		height = DTSTimelineCellWithMapHeight;
+	}
+	return [self dtsDefaultItemSizeWithHeight:height];
+	
+}
+
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
@@ -85,6 +99,13 @@
 	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
 	vc.trip = activity.trip;
 	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"User Liked Trips";
 }
 
 @end

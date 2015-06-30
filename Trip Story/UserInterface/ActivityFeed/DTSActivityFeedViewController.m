@@ -246,4 +246,11 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 	}
 }
 
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"ActivityFeed";
+}
+
 @end

@@ -53,6 +53,22 @@
 		
 		[self.mapView setRegion:viewRegion animated:YES];
 	}
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 - (void)removeAnnotations
@@ -185,6 +201,13 @@
  
 	NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
 	[event.location.mapItem openInMapsWithLaunchOptions:launchOptions];
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Map View";
 }
 
 @end

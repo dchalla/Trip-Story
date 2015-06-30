@@ -12,9 +12,10 @@
 #import "DTSTripDetailsProtocol.h"
 #import "DTSTripEventsCollectionViewCell.h"
 #import "DTSTripDetailsContainerDelegate.h"
+#import "DTSAnalyticsProtocol.h"
 
 
-@interface DTSTripEventsViewController : TGLStackedViewController <DTSViewLayoutProtocol, DTSTripDetailsProtocol,DTSTripEventsCollectionViewCellDelegate>
+@interface DTSTripEventsViewController : TGLStackedViewController <DTSViewLayoutProtocol, DTSTripDetailsProtocol,DTSTripEventsCollectionViewCellDelegate, DTSAnalyticsProtocol>
 
 @property (nonatomic, weak) id <DTSTripDetailsContainerDelegate> containerDelegate;
 

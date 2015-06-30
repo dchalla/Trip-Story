@@ -13,6 +13,8 @@
 #import "DTSEntryTableViewCellDelegate.h"
 #import "DTSAddEventDelegate.h"
 #import "DTSEventsEntryDeleteView.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
 @protocol DTSEventsEntryTableViewControllerDelegate <NSObject>
 
@@ -20,7 +22,7 @@
 
 @end
 
-@interface DTSEventsEntryTableViewController : UITableViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSEntryTableViewCellDelegate,DTSModalDismissProtocol,DTSEventsEntryDeleteViewProtocol>
+@interface DTSEventsEntryTableViewController : UITableViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSEntryTableViewCellDelegate,DTSModalDismissProtocol,DTSEventsEntryDeleteViewProtocol, DTSAnalyticsProtocol>
 
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 @property (nonatomic, strong) DTSEvent *event;

@@ -8,7 +8,8 @@
 
 #import "DTSTimelineCollectionViewController.h"
 #import "DTSSearchRootViewControllerProtocol.h"
+#import "DTSAnalyticsProtocol.h"
 
-@interface DTSSearchTripCollectionViewController : DTSTimelineCollectionViewController<DTSSearchRootViewControllerProtocol>
+@interface DTSSearchTripCollectionViewController : DTSTimelineCollectionViewController<DTSSearchRootViewControllerProtocol, DTSAnalyticsProtocol>
 
 @end

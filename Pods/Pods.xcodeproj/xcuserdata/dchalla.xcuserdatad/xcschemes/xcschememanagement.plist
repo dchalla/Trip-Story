@@ -19,6 +19,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Google.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoogleAnalytics.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoogleNetworkingUtilities.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoogleSymbolUtilities.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GoogleUtilities.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13D563FEC10625E837A06658</key>
+		<key>0701CAE14EC173CE8AC383F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B904EF10582261A6A25DFB4</key>
+		<key>1824D35302AB15077AF7A24B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>26FD0407114E66D12C538038</key>
+		<key>30628B6CA1722BFA2AA41410</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4595B3D89B4A588F79CFE799</key>
+		<key>477066DB87E43785EEE02596</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>754B47D6C90FBB280F7F9FBC</key>
+		<key>510F244CD3924A0D0CA7DAED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89E6FDDE6603ACD373E461D2</key>
+		<key>7B37D981EB88F916D6D7FF74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9C8C9C3D47AD9F15A8D7390</key>
+		<key>926CED11981C211AE0CA9CB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD58023694C8D24E9C9FC6BB</key>
+		<key>9A60595366E2CC9A261CEF91</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5D1C7305903B3CAB250A719</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C256D18AA2FE1296E66EF880</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEDB1FBF94F760CA86CF7731</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E38027A5538900F0D1C4892A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA372BAFB6305F70977AFC47</key>
 		<dict>
 			<key>primary</key>
 			<true/>

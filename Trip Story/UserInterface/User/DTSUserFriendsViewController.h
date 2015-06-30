@@ -9,8 +9,9 @@
 #import "PFQueryCollectionViewController.h"
 #import "DTSViewLayoutProtocol.h"
 #import <Parse/Parse.h>
+#import "DTSAnalyticsProtocol.h"
 
-@interface DTSUserFriendsViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
+@interface DTSUserFriendsViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol, DTSAnalyticsProtocol>
 @property (nonatomic, strong) PFUser *user;
 @property (nonatomic) BOOL forFollowers;
 - (NSString *)navigationTitle;

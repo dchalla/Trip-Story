@@ -209,6 +209,22 @@ typedef enum {
 		footerView.delegate = self;
 		self.tableView.tableFooterView = footerView;
 	}
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 - (void)eventDeleteButtonTapped {
@@ -612,6 +628,13 @@ typedef enum {
 	{
 		self.navigationItem.rightBarButtonItem.enabled = NO;
 	}
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Events Entry";
 }
 
 

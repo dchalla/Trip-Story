@@ -9,7 +9,8 @@
 #import "PFQueryCollectionViewController.h"
 #import "DTSViewLayoutProtocol.h"
 #import <Parse/Parse.h>
+#import "DTSAnalyticsProtocol.h"
 
-@interface DTSActivityFeedViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
+@interface DTSActivityFeedViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol,DTSAnalyticsProtocol>
 
 @end

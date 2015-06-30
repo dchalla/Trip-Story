@@ -7,6 +7,7 @@
 //
 
 #import "DTSTripEventsViewController.h"
+#import <Google/Analytics.h>
 
 
 #define kEventsCellReuseIdentifier @"kEventsCellReuseIdentifier"
@@ -41,6 +42,27 @@
 	
 	[self.collectionView registerClass:[DTSTripEventsCollectionViewCell class] forCellWithReuseIdentifier:kEventsCellReuseIdentifier];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -109,6 +131,13 @@
 		}
 	});
 	
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Events List View";
 }
 
 

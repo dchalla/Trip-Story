@@ -11,6 +11,8 @@
 #import <MapKit/MapKit.h>
 #import "DTSViewLayoutProtocol.h"
 #import "DTSTripDetailsProtocol.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
-@interface DTSTripDetailsMapViewController : UIViewController<MKMapViewDelegate, DTSViewLayoutProtocol, DTSTripDetailsProtocol>
+@interface DTSTripDetailsMapViewController : UIViewController<MKMapViewDelegate, DTSViewLayoutProtocol, DTSTripDetailsProtocol, DTSAnalyticsProtocol>
 @end

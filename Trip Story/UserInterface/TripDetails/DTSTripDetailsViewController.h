@@ -15,9 +15,11 @@
 #import "DTSTrip.h"
 #import "DTSCreateTripViewController.h"
 #import "DTSEventsEntryTableViewController.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
 
-@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate,DTSCreateTripViewControllerProtocol, DTSEventsEntryTableViewControllerDelegate>
+@interface DTSTripDetailsViewController : UIViewController<DTSModalDismissProtocol, DTSAddEventDelegate,DTSTripDetailsContainerDelegate,UIPageViewControllerDataSource,UIPageViewControllerDelegate,DTSCreateTripViewControllerProtocol, DTSEventsEntryTableViewControllerDelegate, DTSAnalyticsProtocol>
 
 @property (nonatomic, strong) DTSTrip *trip;
 

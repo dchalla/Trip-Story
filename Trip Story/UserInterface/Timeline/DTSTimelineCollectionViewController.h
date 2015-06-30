@@ -14,6 +14,8 @@
 #import "UIColor+Utilities.h"
 #import "DTSTimelineCollectionViewCell.h"
 #import "DTSActivity.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
 #define DTSTimelineCellHeight 250
 #define DTSTimelineCellWithMapHeight 389
@@ -22,7 +24,7 @@
 static NSString * const reuseIdentifier = @"DTSTripCollectionViewCell";
 static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWithMap";
 
-@interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
+@interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol, DTSAnalyticsProtocol>
 
 @property (nonatomic, assign) BOOL requiresLogin;
 

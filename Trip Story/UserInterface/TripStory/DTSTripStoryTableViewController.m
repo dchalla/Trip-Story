@@ -121,6 +121,22 @@
 	[self scrollViewDidScroll:self.tableView];
 	[self setupTableViewInsets];
 	[self refreshView];
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -274,6 +290,13 @@
 	[self.footerView updateView];
 	
 	return img;
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Story View";
 }
 
 @end

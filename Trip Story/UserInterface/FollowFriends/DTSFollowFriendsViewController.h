@@ -8,6 +8,7 @@
 
 #import "PFQueryCollectionViewController.h"
 #import "DTSViewLayoutProtocol.h"
+#import "DTSAnalyticsProtocol.h"
 
 typedef enum {
 	DTSFindFriendsFollowingNone = 0,    // User isn't following anybody in Friends list
@@ -15,6 +16,6 @@ typedef enum {
 	DTSFindFriendsFollowingSome         // User is following some of their Friends
 } DTSFindFriendsFollowStatus;
 
-@interface DTSFollowFriendsViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol>
+@interface DTSFollowFriendsViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol, DTSAnalyticsProtocol>
 @property (nonatomic, assign) DTSFindFriendsFollowStatus followStatus;
 @end

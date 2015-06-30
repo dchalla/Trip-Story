@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSCreateEditTripView.h"
+#import "DTSAnalyticsProtocol.h"
 
 @protocol DTSCreateTripViewControllerProtocol <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface DTSCreateTripViewController : UIViewController<UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSCreateEditTripViewProtocol>
+@interface DTSCreateTripViewController : UIViewController<UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning,DTSCreateEditTripViewProtocol, DTSAnalyticsProtocol>
 
 @property (nonatomic) BOOL isCreateTripMode;
 @property (nonatomic, strong) DTSTrip *trip;

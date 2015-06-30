@@ -164,4 +164,11 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	}
 }
 
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"User Friends";
+}
+
 @end

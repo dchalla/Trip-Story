@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0D68BA0E9CDAD5460ED53F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3D228BB7DE78C1AEC24A25 /* libPods.a */; };
+		F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */; };
 		F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */; };
 		F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */; };
 		F910158C1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F910158B1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m */; };
@@ -236,6 +237,8 @@
 		5E3D228BB7DE78C1AEC24A25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75582DF559755091FEAA98D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F90B6EA71B430EB800D87D11 /* DTSAnalyticsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAnalyticsProtocol.h; sourceTree = "<group>"; };
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
 		F91015801AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTimelineCollectionViewCell.h; path = Timeline/DTSTimelineCollectionViewCell.h; sourceTree = "<group>"; };
 		F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTimelineCollectionViewCell.m; path = Timeline/DTSTimelineCollectionViewCell.m; sourceTree = "<group>"; };
@@ -694,6 +697,7 @@
 				F9B44F9919F474B200321E2C /* DTSCollectionCardCellDelegate.h */,
 				F9B44F9A19F476A100321E2C /* DTSCollectionCardsViewControllerProtocol.h */,
 				F9FEB4761B1E78E500346750 /* DTSSearchRootViewControllerProtocol.h */,
+				F90B6EA71B430EB800D87D11 /* DTSAnalyticsProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -870,6 +874,7 @@
 		F95815061964850B002207A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */,
 				F95815071964850B002207A3 /* Trip Story-Info.plist */,
 				F95815081964850B002207A3 /* InfoPlist.strings */,
 				F958150B1964850B002207A3 /* main.m */,
@@ -1330,6 +1335,7 @@
 				F96B21341AB38524009CC03E /* users.png in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
 				F96B211E1AB362AA009CC03E /* 2-selected.png in Resources */,
+				F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */,
 				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
 				F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */,

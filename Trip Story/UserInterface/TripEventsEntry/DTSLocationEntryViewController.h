@@ -10,9 +10,11 @@
 #import "DTSModalDismissProtocol.h"
 #import "DTSEntryTableViewCellDelegate.h"
 #import "DTSTrip.h"
+#import "DTSAnalyticsProtocol.h"
+#import <Google/Analytics.h>
 
 
-@interface DTSLocationEntryViewController : UIViewController <UISearchBarDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UITableViewDelegate, UITableViewDataSource>
+@interface DTSLocationEntryViewController : UIViewController <UISearchBarDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UITableViewDelegate, UITableViewDataSource, DTSAnalyticsProtocol>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

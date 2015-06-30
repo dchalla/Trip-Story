@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "DTSUserAuthHelper.h"
+#import <Google/Analytics.h>
 
 @implementation DTSAppDelegate
 
@@ -23,6 +24,19 @@
 	[PFFacebookUtils initializeFacebook];
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+	
+	// Configure tracker from GoogleService-Info.plist.
+	NSError *configureError;
+	[[GGLContext sharedInstance] configureWithError:&configureError];
+	NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+	
+	// Optional: configure GAI options.
+	GAI *gai = [GAI sharedInstance];
+	gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+#ifdef DEBUG
+	gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+#endif
+	
 	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	UIViewController *vc = [[DTSRootViewController alloc] init];

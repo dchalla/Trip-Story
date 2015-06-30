@@ -65,6 +65,13 @@
 	return nil;
 }
 
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Search Trips";
+}
+
 
 
 @end

@@ -67,6 +67,28 @@
 	[self.searchBar becomeFirstResponder];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self trackScreenView];
+}
+
+- (void)trackScreenView
+{
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	NSString *name = NSStringFromClass([self class]);
+	if ([self conformsToProtocol:@protocol(DTSAnalyticsProtocol)])
+	{
+		name = [self dts_analyticsScreenName];
+	}
+	if (name.length > 0)
+	{
+		[tracker set:kGAIScreenName value:name];
+		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+	}
+}
+
+
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:YES];
@@ -203,6 +225,13 @@
 	location.mapItem = mapItem;
 	[self.entryDelegate placeEntryCompletedWithValue:location];
 	[self.dismissDelegate dismissViewController];
+}
+
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Trip Location Entry View";
 }
 
 

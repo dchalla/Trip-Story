@@ -61,4 +61,11 @@
 	return query;
 }
 
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"Friends Timeline";
+}
+
 @end

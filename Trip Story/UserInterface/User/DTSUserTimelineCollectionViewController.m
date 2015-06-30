@@ -145,5 +145,13 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	}
 }
 
+#pragma mark - analytics
+
+- (NSString *)dts_analyticsScreenName
+{
+	return @"User Home";
+}
+
+
 
 @end
