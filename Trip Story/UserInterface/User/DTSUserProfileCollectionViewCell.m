@@ -42,9 +42,12 @@
 {
 	self.user = user;
 	self.userNameLabel.text = [self.user dts_displayName];
-	if (self.user && !self.updatedContent)
+	if (self.user && self.profileImageView.image == nil)
 	{
 		[self updateUserProfileImage];
+	}
+	if (self.user && !self.updatedContent)
+	{
 		[self updateFollowerCount];
 		[self updateFollowingCount];
 		[self updateTripsCount];

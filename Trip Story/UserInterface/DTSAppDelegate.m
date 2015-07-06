@@ -19,8 +19,8 @@
 {
     // Override point for customization after application launch.
 	
-	[Parse setApplicationId:@"vD1gL4YcvheVfDOdl7gk4ZPIUQ8rPkOZuHUUT6h5"
-				  clientKey:@"Nb8PDaKSm9UcKxyvFNbk2hTII6Q5SOUhCFIxZ0Fy"];
+	[Parse setApplicationId:@"ciwtl1abDpXzKAvRXaBFaJdrR1nvOd3SWJnu5trn"
+				  clientKey:@"znMgPXhb8Fwi3Z0Cpfm41t89aIP8ZBvycsrhgfIE"];
 	[PFFacebookUtils initializeFacebook];
 	
 	[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

@@ -24,10 +24,7 @@
 
 - (PFQuery *)queryForCollection
 {
-	if (![PFUser currentUser])
-	{
-		return nil;
-	}
+	
 	
 	// Query for the friends the current user is following
 	PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
@@ -60,6 +57,16 @@
 	
 	return query;
 }
+
+- (BFTask *)loadObjects
+{
+	if (![PFUser currentUser])
+	{
+		return nil;
+	}
+	return [super loadObjects];
+}
+
 
 #pragma mark - analytics
 

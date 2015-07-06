@@ -214,6 +214,11 @@
 - (void)objectsDidLoad:(NSError *)error {
 	[super objectsDidLoad:error];
 	[self.noResultsHUD hide:YES];
+	[self showNoResultsHUD];
+}
+
+- (void)showNoResultsHUD
+{
 	if (!self.objects || self.objects.count ==0)
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

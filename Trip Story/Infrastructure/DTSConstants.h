@@ -53,6 +53,7 @@ extern NSString *const kDTSUserAttributesIsFollowedByCurrentUserKey;
 #pragma mark - misc
 extern NSString *const kDTSRefreshTrips;
 extern NSString *const kDTSUserAuthenticated;
+extern NSString *const kDTSUserDataRefreshed;
 
 @interface DTSConstants : NSObject
 

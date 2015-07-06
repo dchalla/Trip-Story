@@ -111,6 +111,7 @@ NSString *const kDTSTripUserKey		= @"user";
 	if (event)
 	{
 		newEvent.startDateTime = event.endDateTime;
+		newEvent.endDateTime = [newEvent.startDateTime dateByAddingHours:2];
 	}
 	return newEvent;
 }

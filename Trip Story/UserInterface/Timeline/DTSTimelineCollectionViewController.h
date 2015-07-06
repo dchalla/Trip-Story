@@ -32,5 +32,6 @@ static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWith
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 - (CGSize)dtsDefaultItemSizeWithHeight:(CGFloat)height;
 - (void)refreshView;
+- (void)showNoResultsHUD;
 
 @end

@@ -145,6 +145,12 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	}
 }
 
+#pragma mark - overrides
+- (void)showNoResultsHUD
+{
+	//dont do anything for user timeLine.
+}
+
 #pragma mark - analytics
 
 - (NSString *)dts_analyticsScreenName

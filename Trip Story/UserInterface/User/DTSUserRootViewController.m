@@ -31,6 +31,7 @@
 		
 	}
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserAuthenticated object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserDataRefreshed object:nil];
 	return self;
 	
 }

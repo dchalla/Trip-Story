@@ -76,6 +76,7 @@
 			if (!error) {
 				[[PFUser currentUser] setObject:fileMediumImage forKey:kDTSUserProfilePicMediumKey];
 				[[PFUser currentUser] saveInBackground];
+				[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
 			}
 		}];
 	}
@@ -86,6 +87,7 @@
 			if (!error) {
 				[[PFUser currentUser] setObject:fileSmallRoundedImage forKey:kDTSUserProfilePicSmallKey];
 				[[PFUser currentUser] saveInBackground];
+				[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
 			}
 		}];
 	}

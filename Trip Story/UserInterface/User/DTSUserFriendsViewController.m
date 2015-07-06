@@ -14,13 +14,14 @@
 #import "DTSConstants.h"
 #import "DTSUtilities.h"
 #import "PFUser+DTSAdditions.h"
+#import "MBProgressHUD.h"
 
 #define DTSFollowFriendsCellHeight 60
 
 static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 
 @interface DTSUserFriendsViewController ()
-
+@property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 @end
 
 @implementation DTSUserFriendsViewController
@@ -49,6 +50,23 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 - (void)objectsWillLoad {
 	[super objectsWillLoad];
 	[self stylePFLoadingViewTheHardWay];
+	[self.noResultsHUD hide:YES];
+}
+
+- (void)objectsDidLoad:(NSError *)error {
+	[super objectsDidLoad:error];
+	[self.noResultsHUD hide:YES];
+	[self showNoResultsHUD];
+}
+
+- (void)showNoResultsHUD
+{
+	if (!self.objects || self.objects.count ==0)
+	{
+		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.noResultsHUD.mode = MBProgressHUDModeText;
+		self.noResultsHUD.labelText = self.forFollowers?@"No Followers":@"You Are Not Following Anyone";
+	}
 }
 
 #pragma mark - PFQUERY

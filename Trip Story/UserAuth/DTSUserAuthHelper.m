@@ -220,6 +220,7 @@ shouldBeginLogInWithUsername:(NSString *)username
 		}
 	}
 	_facebookResponseCount = 0;
+	[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
 	[[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
 		if (!error) {
