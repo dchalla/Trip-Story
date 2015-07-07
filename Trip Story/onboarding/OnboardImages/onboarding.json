@@ -86,7 +86,7 @@
                   "key": "screen1Element",
                   "views" : ["screen1"],
                   "superview": "iPhoneBase",
-                  "startScale": 1.0,
+                  "startScale": 0,
                   "appearScale": 1.0,
                   "endScale": 1.0,
                   "endPosition": [-150.0, 0.0],

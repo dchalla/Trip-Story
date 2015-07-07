@@ -31,9 +31,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"onboarding" withExtension:@"json"]];
-    self.conductor = [[SFOnboardingConductor alloc] initWithContainer:self.view jsonSpec:data delegate:self];
-    self.conductor.mainScrollView.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
+	
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"onboarding" withExtension:@"json"]];
+	self.conductor = [[SFOnboardingConductor alloc] initWithContainer:self.view jsonSpec:data delegate:self];
+	self.conductor.mainScrollView.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
