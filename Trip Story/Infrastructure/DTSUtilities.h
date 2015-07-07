@@ -28,5 +28,7 @@ typedef void (^voidBlock)(void);
 
 + (void)showToastWithMessage:(NSString *)message backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)color tapHandler:(voidBlock)tapHandler dimissOnSwipeUp:(BOOL)dismissOnSwipeUp;
 + (void)dismissToast;
++ (void)recordOnboardingShownToUser;
++ (BOOL)isOnboardingShownToUser;
 
 @end

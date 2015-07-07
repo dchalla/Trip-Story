@@ -1,0 +1,222 @@
+{
+	"baseImageURL" : "",
+	"pages": 6,
+    "parallaxBackground": ["cloud"],
+    "floatingImages": ["cloud"],
+    "motionEnabled": 1,
+    "motionImages": [],
+    "showSkip": 1,
+    "showPageControl": 1,
+    "scrollScale": 0.45,
+	
+    "pageTexts": {
+        "0": "Explore and experience trips of your friends and from around the world",
+        "1": "Create a trip for planning, sharing and your sweet memories",
+        "2": "Plan and experience the trip by visualizing the trip as a beautiful story",
+        "3": "Get more details of each event in a trip",
+        "4": "Visualize the trip on a map",
+		"5": "Share with others, follow people and your friends, save trips that you like"
+    },
+    
+	"images" : [
+                {
+                "key": "cloud",
+                "imageName": "cloud.png",
+                "anchorPoint": [0.0, 0.5],
+                "relativePosition": [0.0, 1.0]
+                },
+                {
+                "key" : "iPhoneBase",
+                "imageName": "phone_base.png",
+                "anchorPoint": [0.5,0.5],
+                "relativePosition": [0.5, 0.5],
+                "addImmediately": 1
+                },
+                {
+                "key" : "screen1",
+                "imageName": "screen_01.png",
+                "anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+                },
+				{
+				"key" : "screen2",
+				"imageName": "screen_02.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+				},
+                {
+                "key" : "screen3",
+                "imageName": "screen_03.png",
+                "anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+                },
+				{
+                "key" : "screen4",
+                "imageName": "screen_04.png",
+                "anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+                },
+                {
+                "key" : "screen5",
+                "imageName": "screen_05.png",
+                "anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+                },
+				{
+				"key" : "screen6",
+				"imageName": "screen_03.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+				},
+				{
+				"key" : "screen6a",
+				"imageName": "phone_base_timeline.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5,0.5]
+				},
+				{
+				"key" : "screen6b",
+				"imageName": "phone_base_user.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.75,0.535]
+				},
+                ],
+	"elements" : [
+                  {
+                  "key": "screen1Element",
+                  "views" : ["screen1"],
+                  "superview": "iPhoneBase",
+                  "startScale": 1.0,
+                  "appearScale": 1.0,
+                  "endScale": 1.0,
+                  "endPosition": [-150.0, 0.0],
+                  "item": [0],
+                  "appear": [0],
+                  "disappear": [1],
+                  "dragDisappear": [],
+                  "remove": 1
+                  },
+				  {
+				  "key": "screen2Element",
+				  "views" : ["screen2"],
+				  "superview": "iPhoneBase",
+				  "startPosition": [150.0, 0.0],
+				  "appearPosition": [0.0, 0.0],
+				  "endPosition": [-150, 0.0],
+				  "appear": [1],
+				  "disappear": [2],
+				  "remove": 1
+				  },
+                  {
+                  "key": "screen3Element",
+                  "views" : ["screen3"],
+                  "superview": "iPhoneBase",
+                  "startPosition": [0.0, 230.0],
+				  "endPosition": [-150.0, 0.0],
+                  "appearPosition": [0.0, 0.0],
+                  "appear": [2],
+                  "disappear": [3],
+                  "remove": 1
+                  },
+                  {
+                  "key": "screen4Element",
+                  "views" : ["screen4"],
+                  "superview": "iPhoneBase",
+				  "startPosition": [150.0, 0.0],
+                  "endPosition": [-150.0, 0.0],
+                  "appearanceDelay": 0.5,
+                  "appear": [3], 
+                  "disappear": [4], 
+                  "dragDisappear": [],
+                  "remove": 1
+                  },
+				  {
+				  "key": "screen5Element",
+				  "views" : ["screen5"],
+				  "superview": "iPhoneBase",
+				  "startPosition": [150.0, 0.0],
+				  "appear": [4],
+				  "disappear": [5],
+				  "dragDisappear": [],
+				  "remove": 1
+				  },
+                  {
+                  "key": "screen6Element",
+                  "views" : ["screen6"],
+                  "superview": "iPhoneBase",
+                  "startScale": 0.0,
+                  "appearScale": 1.0,
+                  "endScale": 1.0,
+                  "customAppearAnimation": "alpha",
+                  "appear": [5],
+                  "disappear": [6],
+                  "dragDisappear": [],
+                  "remove": 1
+                  },
+                  {
+                  "key": "iPhoneEnd",
+                  "views" : ["iPhoneBase"],
+                  "appearScale": 0.7,
+                  "endScale": 0.2,
+                  "startPosition": [0.0, 0.0],
+                  "appearPosition": [-120.0, 30.0],
+                  "endPosition": [0.0, 0.0],
+                  "appear": [5],
+                  "disappear": [6],
+                  "dragDisappear": []
+                  },
+				  {
+				  "key": "screen6AEnd",
+				  "views" : ["screen6a"],
+				  "startScale": 1.2,
+				  "appearScale": 0.7,
+				  "endScale": 0.2,
+				  "startPosition": [250.0, 0.0],
+				  "appearPosition": [0.0, 0.0],
+				  "endPosition": [0.0, 0.0],
+				  "appearanceDelay": 0.5,
+				  "appear": [5],
+				  "disappear": [6],
+				  "dragDisappear": [],
+				  "insertIndex": 3,
+				  "remove": 1
+				  },
+				  {
+				  "key": "screen6BEnd",
+				  "views" : ["screen6b"],
+				  "startScale": 1.2,
+				  "appearScale": 0.7,
+				  "endScale": 0.2,
+				  "startPosition": [210.0, 0.0],
+				  "appearPosition": [0.0, 0.0],
+				  "endPosition": [0.0, 0.0],
+				  "appearanceDelay": 0.5,
+				  "appear": [5],
+				  "disappear": [6],
+				  "dragDisappear": [],
+				  "insertIndex": 4,
+				  "remove": 1
+				  },
+				  {
+                  "key": "skipElement",
+                  "views" : ["skip"],
+                  "startPosition": [0.0, 0.0],
+                  "appearPosition": [0.0, 60.0],
+                  "endPosition": [0.0, 0.0],
+                  "duration": 0.0,
+                  "delay": 0.0,
+                  "appear": [5]
+                  },
+                  {
+                  "key": "cloudMove",
+                  "views" : ["cloud"],
+                  "startPosition": [-352.0, 0.0],
+                  "appearPosition": [-496.0, -150.0],
+                  "endPosition": [-640.0, -150.0],
+                  "duration": 0.0,
+                  "delay": 0.0,
+                  "appear": [5],
+                  "disappear": [6]
+                  }
+                  ]
+}

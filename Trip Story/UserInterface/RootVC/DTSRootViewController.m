@@ -21,10 +21,13 @@
 #import "DTSActivityFeedViewController.h"
 #import "DTSActivity.h"
 #import "TLSpringFlowLayout.h"
+#import "SFCarouselOnboardingViewController.h"
+#import "DTSUtilities.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
 #define IconCreation 0
+#define TestOnboarding 1
 #endif
 @interface DTSRootViewController ()
 
@@ -92,6 +95,9 @@
     // Do any additional setup after loading the view.
 	[self setupPageViewController];
 	[self setupSegmentControl];
+#if TestOnboarding
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"OnboardingDidShowToUser"];
+#endif
 }
 
 - (void)viewDidLayoutSubviews
@@ -112,6 +118,7 @@
 #if IconCreation
 	[self showTripStoryIconViewForIconCreation];
 #endif
+	[self performSelector:@selector(showOnboarding) withObject:nil afterDelay:0.2];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -281,7 +288,14 @@
 }
 #endif
 
-
+- (void)showOnboarding
+{
+	if (![DTSUtilities isOnboardingShownToUser]) {
+		SFCarouselOnboardingViewController *carousel = [[SFCarouselOnboardingViewController alloc] init];
+		[self presentViewController:carousel animated:YES completion:nil];
+	}
+	
+}
 
 
 @end

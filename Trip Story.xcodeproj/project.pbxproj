@@ -129,6 +129,36 @@
 		F99FC4521B220C0A000CDCB3 /* users-lightGray.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4461B220C0A000CDCB3 /* users-lightGray.png */; };
 		F99FC4531B220C0A000CDCB3 /* users-lightGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4471B220C0A000CDCB3 /* users-lightGray@2x.png */; };
 		F99FC4541B220C0A000CDCB3 /* users-lightGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F99FC4481B220C0A000CDCB3 /* users-lightGray@3x.png */; };
+		F9A829861B4BA38800D8E7B5 /* bubble_01a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829641B4BA38800D8E7B5 /* bubble_01a@2x.png */; };
+		F9A829871B4BA38800D8E7B5 /* bubble_01b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829651B4BA38800D8E7B5 /* bubble_01b@2x.png */; };
+		F9A829881B4BA38800D8E7B5 /* bubble_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829661B4BA38800D8E7B5 /* bubble_02@2x.png */; };
+		F9A829891B4BA38800D8E7B5 /* bubble_02a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829671B4BA38800D8E7B5 /* bubble_02a@2x.png */; };
+		F9A8298A1B4BA38800D8E7B5 /* bubble_02b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829681B4BA38800D8E7B5 /* bubble_02b@2x.png */; };
+		F9A8298B1B4BA38800D8E7B5 /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829691B4BA38800D8E7B5 /* cloud@2x.png */; };
+		F9A8298C1B4BA38800D8E7B5 /* icon_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296A1B4BA38800D8E7B5 /* icon_email@2x.png */; };
+		F9A8298D1B4BA38800D8E7B5 /* icon_mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296B1B4BA38800D8E7B5 /* icon_mag@2x.png */; };
+		F9A8298E1B4BA38800D8E7B5 /* icon_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296C1B4BA38800D8E7B5 /* icon_map@2x.png */; };
+		F9A8298F1B4BA38800D8E7B5 /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296D1B4BA38800D8E7B5 /* icon_phone@2x.png */; };
+		F9A829901B4BA38800D8E7B5 /* iphone_base_Story@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296E1B4BA38800D8E7B5 /* iphone_base_Story@2x.png */; };
+		F9A829911B4BA38800D8E7B5 /* onboarding.json in Resources */ = {isa = PBXBuildFile; fileRef = F9A8296F1B4BA38800D8E7B5 /* onboarding.json */; };
+		F9A829921B4BA38800D8E7B5 /* phone_base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829701B4BA38800D8E7B5 /* phone_base@2x.png */; };
+		F9A829931B4BA38800D8E7B5 /* phone_base_timeline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829711B4BA38800D8E7B5 /* phone_base_timeline@2x.png */; };
+		F9A829941B4BA38800D8E7B5 /* phone_base_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829721B4BA38800D8E7B5 /* phone_base_user@2x.png */; };
+		F9A829951B4BA38800D8E7B5 /* screen_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829731B4BA38800D8E7B5 /* screen_01@2x.png */; };
+		F9A829961B4BA38800D8E7B5 /* screen_01a_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829741B4BA38800D8E7B5 /* screen_01a_element@2x.png */; };
+		F9A829971B4BA38800D8E7B5 /* screen_01b_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829751B4BA38800D8E7B5 /* screen_01b_element@2x.png */; };
+		F9A829981B4BA38800D8E7B5 /* screen_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829761B4BA38800D8E7B5 /* screen_02@2x.png */; };
+		F9A829991B4BA38800D8E7B5 /* screen_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829771B4BA38800D8E7B5 /* screen_03@2x.png */; };
+		F9A8299A1B4BA38800D8E7B5 /* screen_03_element-rays@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829781B4BA38800D8E7B5 /* screen_03_element-rays@2x.png */; };
+		F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A829791B4BA38800D8E7B5 /* screen_03_element@2x.png */; };
+		F9A8299C1B4BA38800D8E7B5 /* screen_04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8297A1B4BA38800D8E7B5 /* screen_04@2x.png */; };
+		F9A8299D1B4BA38800D8E7B5 /* screen_05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8297B1B4BA38800D8E7B5 /* screen_05@2x.png */; };
+		F9A8299E1B4BA38800D8E7B5 /* screen_05a_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8297C1B4BA38800D8E7B5 /* screen_05a_element@2x.png */; };
+		F9A8299F1B4BA38800D8E7B5 /* screen_05b_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8297D1B4BA38800D8E7B5 /* screen_05b_element@2x.png */; };
+		F9A829A01B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A8297F1B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m */; };
+		F9A829A11B4BA38800D8E7B5 /* SFOnboardingConductor.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A829811B4BA38800D8E7B5 /* SFOnboardingConductor.m */; };
+		F9A829A21B4BA38800D8E7B5 /* SFOnboardingElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A829831B4BA38800D8E7B5 /* SFOnboardingElement.m */; };
+		F9A829A31B4BA38800D8E7B5 /* SFOnboardingTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A829851B4BA38800D8E7B5 /* SFOnboardingTransition.m */; };
 		F9AE51941AB8A6CE00958707 /* DTSFollowFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AE51931AB8A6CE00958707 /* DTSFollowFriendsViewController.m */; };
 		F9AE51961AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AE51951AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib */; };
 		F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AE51981AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m */; };
@@ -411,6 +441,40 @@
 		F99FC4481B220C0A000CDCB3 /* users-lightGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users-lightGray@3x.png"; sourceTree = "<group>"; };
 		F9A6EF081984556300562957 /* DTSAddEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAddEventDelegate.h; sourceTree = "<group>"; };
 		F9A6EF091984596300562957 /* DTSTripDetailsViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripDetailsViewControllerProtocol.h; sourceTree = "<group>"; };
+		F9A829641B4BA38800D8E7B5 /* bubble_01a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_01a@2x.png"; sourceTree = "<group>"; };
+		F9A829651B4BA38800D8E7B5 /* bubble_01b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_01b@2x.png"; sourceTree = "<group>"; };
+		F9A829661B4BA38800D8E7B5 /* bubble_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_02@2x.png"; sourceTree = "<group>"; };
+		F9A829671B4BA38800D8E7B5 /* bubble_02a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_02a@2x.png"; sourceTree = "<group>"; };
+		F9A829681B4BA38800D8E7B5 /* bubble_02b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_02b@2x.png"; sourceTree = "<group>"; };
+		F9A829691B4BA38800D8E7B5 /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@2x.png"; sourceTree = "<group>"; };
+		F9A8296A1B4BA38800D8E7B5 /* icon_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_email@2x.png"; sourceTree = "<group>"; };
+		F9A8296B1B4BA38800D8E7B5 /* icon_mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_mag@2x.png"; sourceTree = "<group>"; };
+		F9A8296C1B4BA38800D8E7B5 /* icon_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_map@2x.png"; sourceTree = "<group>"; };
+		F9A8296D1B4BA38800D8E7B5 /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
+		F9A8296E1B4BA38800D8E7B5 /* iphone_base_Story@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_base_Story@2x.png"; sourceTree = "<group>"; };
+		F9A8296F1B4BA38800D8E7B5 /* onboarding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onboarding.json; sourceTree = "<group>"; };
+		F9A829701B4BA38800D8E7B5 /* phone_base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_base@2x.png"; sourceTree = "<group>"; };
+		F9A829711B4BA38800D8E7B5 /* phone_base_timeline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_base_timeline@2x.png"; sourceTree = "<group>"; };
+		F9A829721B4BA38800D8E7B5 /* phone_base_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_base_user@2x.png"; sourceTree = "<group>"; };
+		F9A829731B4BA38800D8E7B5 /* screen_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_01@2x.png"; sourceTree = "<group>"; };
+		F9A829741B4BA38800D8E7B5 /* screen_01a_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_01a_element@2x.png"; sourceTree = "<group>"; };
+		F9A829751B4BA38800D8E7B5 /* screen_01b_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_01b_element@2x.png"; sourceTree = "<group>"; };
+		F9A829761B4BA38800D8E7B5 /* screen_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_02@2x.png"; sourceTree = "<group>"; };
+		F9A829771B4BA38800D8E7B5 /* screen_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_03@2x.png"; sourceTree = "<group>"; };
+		F9A829781B4BA38800D8E7B5 /* screen_03_element-rays@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_03_element-rays@2x.png"; sourceTree = "<group>"; };
+		F9A829791B4BA38800D8E7B5 /* screen_03_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_03_element@2x.png"; sourceTree = "<group>"; };
+		F9A8297A1B4BA38800D8E7B5 /* screen_04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_04@2x.png"; sourceTree = "<group>"; };
+		F9A8297B1B4BA38800D8E7B5 /* screen_05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_05@2x.png"; sourceTree = "<group>"; };
+		F9A8297C1B4BA38800D8E7B5 /* screen_05a_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_05a_element@2x.png"; sourceTree = "<group>"; };
+		F9A8297D1B4BA38800D8E7B5 /* screen_05b_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen_05b_element@2x.png"; sourceTree = "<group>"; };
+		F9A8297E1B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCarouselOnboardingViewController.h; sourceTree = "<group>"; };
+		F9A8297F1B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCarouselOnboardingViewController.m; sourceTree = "<group>"; };
+		F9A829801B4BA38800D8E7B5 /* SFOnboardingConductor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOnboardingConductor.h; sourceTree = "<group>"; };
+		F9A829811B4BA38800D8E7B5 /* SFOnboardingConductor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFOnboardingConductor.m; sourceTree = "<group>"; };
+		F9A829821B4BA38800D8E7B5 /* SFOnboardingElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOnboardingElement.h; sourceTree = "<group>"; };
+		F9A829831B4BA38800D8E7B5 /* SFOnboardingElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFOnboardingElement.m; sourceTree = "<group>"; };
+		F9A829841B4BA38800D8E7B5 /* SFOnboardingTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOnboardingTransition.h; sourceTree = "<group>"; };
+		F9A829851B4BA38800D8E7B5 /* SFOnboardingTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFOnboardingTransition.m; sourceTree = "<group>"; };
 		F9AE51921AB8A6CE00958707 /* DTSFollowFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSFollowFriendsViewController.h; path = FollowFriends/DTSFollowFriendsViewController.h; sourceTree = "<group>"; };
 		F9AE51931AB8A6CE00958707 /* DTSFollowFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSFollowFriendsViewController.m; path = FollowFriends/DTSFollowFriendsViewController.m; sourceTree = "<group>"; };
 		F9AE51951AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSFollowFriendsCollectionViewCell.xib; path = FollowFriends/DTSFollowFriendsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -858,6 +922,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F9A829621B4BA38800D8E7B5 /* onboarding */,
 				F9BBF9541AA774130076CD78 /* UserAuth */,
 				F9EA06561AA57F6E007573EC /* LaunchScreen */,
 				F90CEE7B19932F9F002E9CE9 /* Images */,
@@ -961,6 +1026,55 @@
 				F99FC4341B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib */,
 			);
 			name = ActivityFeed;
+			sourceTree = "<group>";
+		};
+		F9A829621B4BA38800D8E7B5 /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F9A829631B4BA38800D8E7B5 /* OnboardImages */,
+				F9A8297E1B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.h */,
+				F9A8297F1B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m */,
+				F9A829801B4BA38800D8E7B5 /* SFOnboardingConductor.h */,
+				F9A829811B4BA38800D8E7B5 /* SFOnboardingConductor.m */,
+				F9A829821B4BA38800D8E7B5 /* SFOnboardingElement.h */,
+				F9A829831B4BA38800D8E7B5 /* SFOnboardingElement.m */,
+				F9A829841B4BA38800D8E7B5 /* SFOnboardingTransition.h */,
+				F9A829851B4BA38800D8E7B5 /* SFOnboardingTransition.m */,
+			);
+			path = onboarding;
+			sourceTree = "<group>";
+		};
+		F9A829631B4BA38800D8E7B5 /* OnboardImages */ = {
+			isa = PBXGroup;
+			children = (
+				F9A829641B4BA38800D8E7B5 /* bubble_01a@2x.png */,
+				F9A829651B4BA38800D8E7B5 /* bubble_01b@2x.png */,
+				F9A829661B4BA38800D8E7B5 /* bubble_02@2x.png */,
+				F9A829671B4BA38800D8E7B5 /* bubble_02a@2x.png */,
+				F9A829681B4BA38800D8E7B5 /* bubble_02b@2x.png */,
+				F9A829691B4BA38800D8E7B5 /* cloud@2x.png */,
+				F9A8296A1B4BA38800D8E7B5 /* icon_email@2x.png */,
+				F9A8296B1B4BA38800D8E7B5 /* icon_mag@2x.png */,
+				F9A8296C1B4BA38800D8E7B5 /* icon_map@2x.png */,
+				F9A8296D1B4BA38800D8E7B5 /* icon_phone@2x.png */,
+				F9A8296E1B4BA38800D8E7B5 /* iphone_base_Story@2x.png */,
+				F9A8296F1B4BA38800D8E7B5 /* onboarding.json */,
+				F9A829701B4BA38800D8E7B5 /* phone_base@2x.png */,
+				F9A829711B4BA38800D8E7B5 /* phone_base_timeline@2x.png */,
+				F9A829721B4BA38800D8E7B5 /* phone_base_user@2x.png */,
+				F9A829731B4BA38800D8E7B5 /* screen_01@2x.png */,
+				F9A829741B4BA38800D8E7B5 /* screen_01a_element@2x.png */,
+				F9A829751B4BA38800D8E7B5 /* screen_01b_element@2x.png */,
+				F9A829761B4BA38800D8E7B5 /* screen_02@2x.png */,
+				F9A829771B4BA38800D8E7B5 /* screen_03@2x.png */,
+				F9A829781B4BA38800D8E7B5 /* screen_03_element-rays@2x.png */,
+				F9A829791B4BA38800D8E7B5 /* screen_03_element@2x.png */,
+				F9A8297A1B4BA38800D8E7B5 /* screen_04@2x.png */,
+				F9A8297B1B4BA38800D8E7B5 /* screen_05@2x.png */,
+				F9A8297C1B4BA38800D8E7B5 /* screen_05a_element@2x.png */,
+				F9A8297D1B4BA38800D8E7B5 /* screen_05b_element@2x.png */,
+			);
+			path = OnboardImages;
 			sourceTree = "<group>";
 		};
 		F9AE51911AB8A64300958707 /* FollowFriends */ = {
@@ -1286,6 +1400,7 @@
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
 				F96B21271AB362AA009CC03E /* 4-selected@2x.png in Resources */,
 				F9FD5A431AC5BE64009BDDF2 /* car-white.png in Resources */,
+				F9A829971B4BA38800D8E7B5 /* screen_01b_element@2x.png in Resources */,
 				F9FD5A6F1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F96B21281AB362AA009CC03E /* 4.png in Resources */,
 				F9FD5A6B1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
@@ -1298,34 +1413,46 @@
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
 				F99376221B20B0C4005D58FE /* activityIcon.png in Resources */,
 				F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */,
+				F9A829991B4BA38800D8E7B5 /* screen_03@2x.png in Resources */,
 				F9FD5A801AC5C57C009BDDF2 /* Icon-Small-50.png in Resources */,
 				F9FD5A6C1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F99FC4521B220C0A000CDCB3 /* users-lightGray.png in Resources */,
 				F96B211B1AB362AA009CC03E /* 1-selected@2x.png in Resources */,
 				F96B213E1AB389E7009CC03E /* addTrip@3x.png in Resources */,
+				F9A829941B4BA38800D8E7B5 /* phone_base_user@2x.png in Resources */,
+				F9A8298A1B4BA38800D8E7B5 /* bubble_02b@2x.png in Resources */,
 				F99FC4511B220C0A000CDCB3 /* timelineIcon-lightGray@3x.png in Resources */,
 				F9EBD0721AF92756003B8C29 /* editIcon@3x.png in Resources */,
 				F96801CB1B0D109900756EE0 /* DTSTripStoryFooterView.xib in Resources */,
+				F9A829931B4BA38800D8E7B5 /* phone_base_timeline@2x.png in Resources */,
 				F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */,
 				F9FD5A441AC5BE64009BDDF2 /* waterTravel-white.png in Resources */,
 				F9FD5A781AC5C57C009BDDF2 /* Icon-76.png in Resources */,
+				F9A8299C1B4BA38800D8E7B5 /* screen_04@2x.png in Resources */,
 				F9FD5A881AC5C721009BDDF2 /* TripStoryIconInApp.png in Resources */,
+				F9A8298B1B4BA38800D8E7B5 /* cloud@2x.png in Resources */,
 				F9CE11CE1B15A12800F3807A /* DTSLoginLogoView.xib in Resources */,
+				F9A829871B4BA38800D8E7B5 /* bubble_01b@2x.png in Resources */,
 				F96B21241AB362AA009CC03E /* 3.png in Resources */,
 				F9FD5A7A1AC5C57C009BDDF2 /* Icon-Small.png in Resources */,
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
+				F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */,
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
+				F9A829861B4BA38800D8E7B5 /* bubble_01a@2x.png in Resources */,
 				F9FD5A411AC5BE64009BDDF2 /* airplane-white.png in Resources */,
 				F993761C1B202627005D58FE /* timelineIcon.png in Resources */,
 				F9FD5A6E1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F99FC43B1B22072C000CDCB3 /* activityIcon-lightGray@2x.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
 				F99FC4361B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib in Resources */,
+				F9A8299A1B4BA38800D8E7B5 /* screen_03_element-rays@2x.png in Resources */,
+				F9A8299F1B4BA38800D8E7B5 /* screen_05b_element@2x.png in Resources */,
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
 				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
 				F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
 				F96B21421AB389E7009CC03E /* explore@3x.png in Resources */,
+				F9A829881B4BA38800D8E7B5 /* bubble_02@2x.png in Resources */,
 				F99FC44E1B220C0A000CDCB3 /* searchIcon-lightGray@3x.png in Resources */,
 				F99376241B20B0C4005D58FE /* activityIcon@3x.png in Resources */,
 				F96B21401AB389E7009CC03E /* edit@3x.png in Resources */,
@@ -1343,6 +1470,7 @@
 				F993761D1B202627005D58FE /* timelineIcon@2x.png in Resources */,
 				F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */,
 				F96B21411AB389E7009CC03E /* explore@2x.png in Resources */,
+				F9A829951B4BA38800D8E7B5 /* screen_01@2x.png in Resources */,
 				F99FC4531B220C0A000CDCB3 /* users-lightGray@2x.png in Resources */,
 				F9FD5A721AC5C57C009BDDF2 /* Contents.json in Resources */,
 				F9BEC14319B39EFC00622CC9 /* sailing7.png in Resources */,
@@ -1350,6 +1478,8 @@
 				F9CE11DA1B16AD7800F3807A /* cycling.png in Resources */,
 				F9FD5A761AC5C57C009BDDF2 /* Icon-60@2x.png in Resources */,
 				F948C7F21979EC95000A2A3B /* DTSEventDateEntryTableViewCell.xib in Resources */,
+				F9A8298D1B4BA38800D8E7B5 /* icon_mag@2x.png in Resources */,
+				F9A829901B4BA38800D8E7B5 /* iphone_base_Story@2x.png in Resources */,
 				F9FD5A7B1AC5C57C009BDDF2 /* Icon-Small@2x.png in Resources */,
 				F948C7EB19789643000A2A3B /* DTSEventTextEntryTableViewCell.xib in Resources */,
 				F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */,
@@ -1363,6 +1493,7 @@
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F9FD5A7C1AC5C57C009BDDF2 /* Icon-Small@3x.png in Resources */,
 				F96B21221AB362AA009CC03E /* 3-selected.png in Resources */,
+				F9A829921B4BA38800D8E7B5 /* phone_base@2x.png in Resources */,
 				F96B21311AB38524009CC03E /* addTrip.png in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
 				F9BEC14919B3A22300622CC9 /* anchor2.png in Resources */,
@@ -1376,8 +1507,10 @@
 				F9FD5A811AC5C57C009BDDF2 /* Icon-Small-50@2x.png in Resources */,
 				F99FC44A1B220C0A000CDCB3 /* addTrip-lightGray@2x.png in Resources */,
 				F99FC43C1B22072C000CDCB3 /* activityIcon-lightGray@3x.png in Resources */,
+				F9A8298E1B4BA38800D8E7B5 /* icon_map@2x.png in Resources */,
 				F96B21331AB38524009CC03E /* explore.png in Resources */,
 				F96B211C1AB362AA009CC03E /* 1.png in Resources */,
+				F9A829961B4BA38800D8E7B5 /* screen_01a_element@2x.png in Resources */,
 				F9FD5A701AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F96B21441AB389E7009CC03E /* users@3x.png in Resources */,
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
@@ -1396,20 +1529,27 @@
 				F9FD5A841AC5C57C009BDDF2 /* iTunesArtwork.png in Resources */,
 				F99FC4491B220C0A000CDCB3 /* addTrip-lightGray.png in Resources */,
 				F99FC44D1B220C0A000CDCB3 /* searchIcon-lightGray@2x.png in Resources */,
+				F9A8299D1B4BA38800D8E7B5 /* screen_05@2x.png in Resources */,
 				F9FD5A6D1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9FD5A831AC5C57C009BDDF2 /* Icon@2x.png in Resources */,
 				F96B21321AB38524009CC03E /* edit.png in Resources */,
+				F9A8299E1B4BA38800D8E7B5 /* screen_05a_element@2x.png in Resources */,
 				F9FD5A7F1AC5C57C009BDDF2 /* Icon-72@2x.png in Resources */,
 				F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */,
 				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
+				F9A829981B4BA38800D8E7B5 /* screen_02@2x.png in Resources */,
 				F9FD5A771AC5C57C009BDDF2 /* Icon-60@3x.png in Resources */,
+				F9A8298C1B4BA38800D8E7B5 /* icon_email@2x.png in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
 				F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */,
 				F99376231B20B0C4005D58FE /* activityIcon@2x.png in Resources */,
+				F9A829891B4BA38800D8E7B5 /* bubble_02a@2x.png in Resources */,
+				F9A829911B4BA38800D8E7B5 /* onboarding.json in Resources */,
 				F9FD5A741AC5C57C009BDDF2 /* Icon-40@2x.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
 				F99FC4541B220C0A000CDCB3 /* users-lightGray@3x.png in Resources */,
+				F9A8298F1B4BA38800D8E7B5 /* icon_phone@2x.png in Resources */,
 				F9FD5A731AC5C57C009BDDF2 /* Icon-40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1467,6 +1607,7 @@
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
 				F9391DC91B0FE98A002DA264 /* DTSRequiresLoginView.m in Sources */,
+				F9A829A21B4BA38800D8E7B5 /* SFOnboardingElement.m in Sources */,
 				F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */,
 				F9401DB11AB9DD8000F271F5 /* DTSSegmentedViewController.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
@@ -1507,12 +1648,14 @@
 				F9401DBB1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m in Sources */,
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F9401DAA1AB9473400F271F5 /* UIImage+RoundedCornerAdditions.m in Sources */,
+				F9A829A11B4BA38800D8E7B5 /* SFOnboardingConductor.m in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F9BE0D5E1B1E0EA3001F41AE /* DTSSearchRootViewController.m in Sources */,
 				F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */,
 				F99712671971D07E00F2F8FA /* DTSTrip.m in Sources */,
 				F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */,
 				F96801C91B0D106500756EE0 /* DTSTripStoryFooterView.m in Sources */,
+				F9A829A01B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m in Sources */,
 				F9401DA81AB9473400F271F5 /* UIImage+AlphaAdditions.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,
@@ -1538,6 +1681,7 @@
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
 				F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */,
+				F9A829A31B4BA38800D8E7B5 /* SFOnboardingTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

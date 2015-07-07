@@ -300,5 +300,16 @@
 }
 
 
++ (void)recordOnboardingShownToUser
+{
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"OnboardingDidShowToUser"];
+}
+
++ (BOOL)isOnboardingShownToUser
+{
+	BOOL didShow = [[NSUserDefaults standardUserDefaults] boolForKey:@"OnboardingDidShowToUser"];
+	return didShow;
+}
+
 
 @end
