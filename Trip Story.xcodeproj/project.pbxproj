@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C0D68BA0E9CDAD5460ED53F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3D228BB7DE78C1AEC24A25 /* libPods.a */; };
+		F904DB2C1B4E230B0054E496 /* DKCRateFeedbackPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = F904DB2B1B4E230B0054E496 /* DKCRateFeedbackPrompt.m */; };
+		F904DB2E1B4E23330054E496 /* DKCRateFeedbackPrompt.xib in Resources */ = {isa = PBXBuildFile; fileRef = F904DB2D1B4E23330054E496 /* DKCRateFeedbackPrompt.xib */; };
+		F904DB321B4E311F0054E496 /* Thumbs_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB301B4E311F0054E496 /* Thumbs_down.png */; };
+		F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB311B4E311F0054E496 /* Thumbs_up.png */; };
+		F904DB351B4E3C790054E496 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F904DB341B4E3C790054E496 /* StoreKit.framework */; };
 		F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */; };
 		F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */; };
 		F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */; };
@@ -267,6 +272,12 @@
 		5E3D228BB7DE78C1AEC24A25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75582DF559755091FEAA98D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A633479BEFA6D59961C6DFCB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F904DB2A1B4E230B0054E496 /* DKCRateFeedbackPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCRateFeedbackPrompt.h; path = DKCRatePromptView/DKCRateFeedbackPrompt.h; sourceTree = "<group>"; };
+		F904DB2B1B4E230B0054E496 /* DKCRateFeedbackPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCRateFeedbackPrompt.m; path = DKCRatePromptView/DKCRateFeedbackPrompt.m; sourceTree = "<group>"; };
+		F904DB2D1B4E23330054E496 /* DKCRateFeedbackPrompt.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DKCRateFeedbackPrompt.xib; path = DKCRatePromptView/DKCRateFeedbackPrompt.xib; sourceTree = "<group>"; };
+		F904DB301B4E311F0054E496 /* Thumbs_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Thumbs_down.png; path = DKCRatePromptView/Thumbs_down.png; sourceTree = "<group>"; };
+		F904DB311B4E311F0054E496 /* Thumbs_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Thumbs_up.png; path = DKCRatePromptView/Thumbs_up.png; sourceTree = "<group>"; };
+		F904DB341B4E3C790054E496 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F90B6EA71B430EB800D87D11 /* DTSAnalyticsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAnalyticsProtocol.h; sourceTree = "<group>"; };
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
@@ -611,6 +622,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F904DB351B4E3C790054E496 /* StoreKit.framework in Frameworks */,
 				F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */,
 				F95815021964850B002207A3 /* CoreGraphics.framework in Frameworks */,
 				F95815041964850B002207A3 /* UIKit.framework in Frameworks */,
@@ -639,6 +651,18 @@
 				75582DF559755091FEAA98D5 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F904DB291B4E22D90054E496 /* DKCRatePrompt */ = {
+			isa = PBXGroup;
+			children = (
+				F904DB301B4E311F0054E496 /* Thumbs_down.png */,
+				F904DB311B4E311F0054E496 /* Thumbs_up.png */,
+				F904DB2A1B4E230B0054E496 /* DKCRateFeedbackPrompt.h */,
+				F904DB2B1B4E230B0054E496 /* DKCRateFeedbackPrompt.m */,
+				F904DB2D1B4E23330054E496 /* DKCRateFeedbackPrompt.xib */,
+			);
+			name = DKCRatePrompt;
 			sourceTree = "<group>";
 		};
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
@@ -824,6 +848,7 @@
 		F954E7631964CB61003A0B72 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F904DB291B4E22D90054E496 /* DKCRatePrompt */,
 				F9401D9F1AB9473400F271F5 /* UIImage+Alpha.h */,
 				F9401DA01AB9473400F271F5 /* UIImage+Alpha.m */,
 				F9401DA11AB9473400F271F5 /* UIImage+AlphaAdditions.h */,
@@ -909,6 +934,7 @@
 		F95814FE1964850B002207A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F904DB341B4E3C790054E496 /* StoreKit.framework */,
 				F91CBD3B1981D7FC00BC3021 /* MapKit.framework */,
 				F95814FF1964850B002207A3 /* Foundation.framework */,
 				F95815011964850B002207A3 /* CoreGraphics.framework */,
@@ -1403,6 +1429,7 @@
 				F9A829971B4BA38800D8E7B5 /* screen_01b_element@2x.png in Resources */,
 				F9FD5A6F1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F96B21281AB362AA009CC03E /* 4.png in Resources */,
+				F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */,
 				F9FD5A6B1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
@@ -1509,12 +1536,14 @@
 				F99FC43C1B22072C000CDCB3 /* activityIcon-lightGray@3x.png in Resources */,
 				F9A8298E1B4BA38800D8E7B5 /* icon_map@2x.png in Resources */,
 				F96B21331AB38524009CC03E /* explore.png in Resources */,
+				F904DB2E1B4E23330054E496 /* DKCRateFeedbackPrompt.xib in Resources */,
 				F96B211C1AB362AA009CC03E /* 1.png in Resources */,
 				F9A829961B4BA38800D8E7B5 /* screen_01a_element@2x.png in Resources */,
 				F9FD5A701AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F96B21441AB389E7009CC03E /* users@3x.png in Resources */,
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
 				F96B21211AB362AA009CC03E /* 2@2x.png in Resources */,
+				F904DB321B4E311F0054E496 /* Thumbs_down.png in Resources */,
 				F96801C51B0C473800756EE0 /* DTSEventsEntryDeleteView.xib in Resources */,
 				F9FD5A821AC5C57C009BDDF2 /* Icon.png in Resources */,
 				F99FC4501B220C0A000CDCB3 /* timelineIcon-lightGray@2x.png in Resources */,
@@ -1612,6 +1641,7 @@
 				F9401DB11AB9DD8000F271F5 /* DTSSegmentedViewController.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F9401DA91AB9473400F271F5 /* UIImage+ResizeAdditions.m in Sources */,
+				F904DB2C1B4E230B0054E496 /* DKCRateFeedbackPrompt.m in Sources */,
 				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
 				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
 				F99376281B20B5FA005D58FE /* DTSActivityFeedViewController.m in Sources */,

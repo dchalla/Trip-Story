@@ -23,6 +23,7 @@
 #import "TLSpringFlowLayout.h"
 #import "SFCarouselOnboardingViewController.h"
 #import "DTSUtilities.h"
+#import <Google/Analytics.h>
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
@@ -119,6 +120,8 @@
 	[self showTripStoryIconViewForIconCreation];
 #endif
 	[self performSelector:@selector(showOnboarding) withObject:nil afterDelay:0.2];
+	
+	[DKCRateFeedbackPrompt showPromptWithAppId:@"h986986896" showFeedbackPrompt:NO delegate:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -295,6 +298,97 @@
 		[self presentViewController:carousel animated:YES completion:nil];
 	}
 	
+}
+
+#define mark - dkcRatePromptDelegate
+
+- (void)dkcRateFeedbackPrompt_didShow {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+															  action:@"dkcRateFeedbackPrompt_didShow"  // Event action (required)
+															   label:@"dkcRateFeedbackPrompt_didShow"          // Event label
+															   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapPositiveReview {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapPositiveReview"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapPositiveReview"          // Event label
+														   value:nil] build]];    // Event value
+	
+}
+
+- (void)dkcRateFeedbackPrompt_didTapNegativeReview {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapPositiveReview"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapPositiveReview"          // Event label
+														   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapAppStoreReviewNotNow {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapNegativeReview"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapNegativeReview"          // Event label
+														   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapAppStoreReviewRateApp {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapAppStoreReviewRateApp"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapAppStoreReviewRateApp"          // Event label
+														   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapAppStoreReviewNoThanks {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapAppStoreReviewNoThanks"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapAppStoreReviewNoThanks"          // Event label
+														   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapFeedbackPromptFeedback {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapFeedbackPromptFeedback"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapFeedbackPromptFeedback"          // Event label
+														   value:nil] build]];    // Event value
+}
+
+- (void)dkcRateFeedbackPrompt_didTapFeedbackPromptNotNow {
+	// May return nil if a tracker has not already been initialized with a property
+	// ID.
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+														  action:@"dkcRateFeedbackPrompt_didTapFeedbackPromptNotNow"  // Event action (required)
+														   label:@"dkcRateFeedbackPrompt_didTapFeedbackPromptNotNow"          // Event label
+														   value:nil] build]];    // Event value
 }
 
 

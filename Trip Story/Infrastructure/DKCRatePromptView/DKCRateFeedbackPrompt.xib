@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DKCRateFeedbackPrompt">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoying the app so far?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r6-pR-VkT">
+                    <rect key="frame" x="14" y="13.5" width="163" height="17.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsh-fy-f3x" userLabel="thumbsDown">
+                    <rect key="frame" x="229" y="-1" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="k4q-3y-eaB"/>
+                        <constraint firstAttribute="height" constant="46" id="rQe-dH-U0d"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="10" minY="14" maxX="10" maxY="6"/>
+                    <state key="normal" image="Thumbs_down.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="negativeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2N2-zU-Y66"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuD-yB-x1F" userLabel="thumbsUp">
+                    <rect key="frame" x="183" y="-1" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="XnJ-aX-bpD"/>
+                        <constraint firstAttribute="width" constant="46" id="hbY-VL-6R5"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="10" minY="6" maxX="10" maxY="14"/>
+                    <state key="normal" image="Thumbs_up.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="positiveButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="YZh-M8-RYS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.83999999999999997" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lsh-fy-f3x" secondAttribute="trailing" constant="5" id="FuA-eC-5uO"/>
+                <constraint firstAttribute="centerY" secondItem="lsh-fy-f3x" secondAttribute="centerY" id="GpT-E3-WYU"/>
+                <constraint firstItem="8r6-pR-VkT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="IRQ-bx-2Gl"/>
+                <constraint firstItem="JuD-yB-x1F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8r6-pR-VkT" secondAttribute="trailing" id="oeR-fz-cnX"/>
+                <constraint firstItem="lsh-fy-f3x" firstAttribute="leading" secondItem="JuD-yB-x1F" secondAttribute="trailing" id="qMc-ap-fUu"/>
+                <constraint firstAttribute="centerY" secondItem="JuD-yB-x1F" secondAttribute="centerY" id="wBT-4H-IjH"/>
+                <constraint firstAttribute="centerY" secondItem="8r6-pR-VkT" secondAttribute="centerY" id="wo0-PR-20e"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="negativeButton" destination="lsh-fy-f3x" id="F4w-RC-u9F"/>
+                <outlet property="positiveButton" destination="JuD-yB-x1F" id="AC4-rh-vVi"/>
+                <outlet property="textLabel" destination="8r6-pR-VkT" id="7Ln-4u-tsh"/>
+            </connections>
+            <point key="canvasLocation" x="403" y="309"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Thumbs_down.png" width="128" height="128"/>
+        <image name="Thumbs_up.png" width="128" height="128"/>
+    </resources>
+</document>

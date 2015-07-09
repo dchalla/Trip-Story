@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
-
+#import "DKCRateFeedbackPrompt.h"
 
 @interface DTSTimelineCollectionViewController ()
 

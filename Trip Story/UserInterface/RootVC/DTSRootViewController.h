@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DTSViewLayoutProtocol.h"
+#import "DKCRateFeedbackPrompt.h"
 
-@interface DTSRootViewController : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface DTSRootViewController : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate,DKCRateFeedbackPromptProtocol>
 
 @end
