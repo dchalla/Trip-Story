@@ -9,6 +9,6 @@
 #import "DTSSegmentedViewController.h"
 #import <Parse/Parse.h>
 
-@interface DTSUserRootViewController : DTSSegmentedViewController
+@interface DTSUserRootViewController : DTSSegmentedViewController<UIActionSheetDelegate>
 @property (nonatomic, strong) PFUser *user;
 @end

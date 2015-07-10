@@ -54,12 +54,12 @@ static DKCRateFeedbackPrompt *promptView;
 + (void)load
 {
 	[[NSUserDefaults standardUserDefaults] setObject:@(2) forKey:kDKCRatePromptViewSettingNumberOfDaysBeforePrompting];
-	[[NSUserDefaults standardUserDefaults] setObject:@(10) forKey:kDKCRatePromptViewSettingNumberOfTimesBeforePrompting];
-	[[NSUserDefaults standardUserDefaults] setObject:@(20) forKey:kDKCRatePromptViewSettingNumberOfSecondsBeforeDisappearing];
+	[[NSUserDefaults standardUserDefaults] setObject:@(5) forKey:kDKCRatePromptViewSettingNumberOfTimesBeforePrompting];
+	[[NSUserDefaults standardUserDefaults] setObject:@(100) forKey:kDKCRatePromptViewSettingNumberOfSecondsBeforeDisappearing];
 	
 #ifdef DEBUG
 //testing
-	[[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:kDKCRatePromptViewSettingNumberOfTimesBeforePrompting];
+	//[[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:kDKCRatePromptViewSettingNumberOfTimesBeforePrompting];
 #endif
 	
 	NSDate *dateLastTracked = [[NSUserDefaults standardUserDefaults] objectForKey:kDKCRatePromptViewDateLastTracked];

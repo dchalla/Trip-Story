@@ -14,6 +14,7 @@
 #import "MBProgressHUD.h"
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
+#import "DTSWebViewController.h"
 
 @interface DTSUserRootViewController ()
 @property (nonatomic, strong) DTSUserTimelineCollectionViewController *userTimelineVC;
@@ -90,6 +91,13 @@
 	{
 		self.title = @"User";
 	}
+	
+	if (self.user == [PFUser currentUser]) {
+		UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(userSettingsButtonTapped)];
+		self.navigationItem.rightBarButtonItem = barButtonItem;
+	}
+	
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -153,6 +161,51 @@
 	{
 		return @[self.userTimelineVC,self.userLikedTripsVC];
 	}
+}
+
+#pragma mark - user settings
+- (void)userSettingsButtonTapped {
+	
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+	
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+		
+	}];
+	[alertController addAction:cancelAction];
+	
+	if ([PFUser currentUser])
+	{
+		UIAlertAction *logOutAction = [UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+			[PFUser logOut];
+			[self updateLoginHUD];
+			self.title = @"User";
+		}];
+		[alertController addAction:logOutAction];
+	}
+	
+	UIAlertAction *termsOfServiceAction = [UIAlertAction actionWithTitle:@"Terms of Service" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+		DTSWebViewController *webViewController = [[DTSWebViewController alloc] initWithNibName:@"DTSWebViewController" bundle:[NSBundle mainBundle]];
+		webViewController.htmlFileName = @"theTripStoryTermsOfService";
+		webViewController.didPresentViewController = YES;
+		webViewController.title = @"theTripStory Terms Of Service";
+		UINavigationController *navvc = [[UINavigationController alloc] initWithRootViewController:webViewController];
+		[self presentViewController:navvc animated:YES completion:nil];
+	}];
+	[alertController addAction:termsOfServiceAction];
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		UIPopoverPresentationController *popPresenter = [alertController
+														 popoverPresentationController];
+		popPresenter.barButtonItem = self.navigationItem.rightBarButtonItem;
+		[self presentViewController:alertController animated:YES completion:nil];
+	}
+	else
+	{
+		[self presentViewController:alertController animated:YES completion:nil];
+	}
+	
+	
 }
 
 

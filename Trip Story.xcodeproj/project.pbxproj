@@ -13,6 +13,9 @@
 		F904DB321B4E311F0054E496 /* Thumbs_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB301B4E311F0054E496 /* Thumbs_down.png */; };
 		F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB311B4E311F0054E496 /* Thumbs_up.png */; };
 		F904DB351B4E3C790054E496 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F904DB341B4E3C790054E496 /* StoreKit.framework */; };
+		F904DB371B4EDF240054E496 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB361B4EDF240054E496 /* settings@3x.png */; };
+		F904DB3A1B4EE00A0054E496 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB381B4EE00A0054E496 /* settings.png */; };
+		F904DB3B1B4EE00A0054E496 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F904DB391B4EE00A0054E496 /* settings@2x.png */; };
 		F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */; };
 		F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91015811AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m */; };
 		F91015841AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91015831AB4E2AE006A6FC6 /* DTSTimelineCollectionViewCell.xib */; };
@@ -217,6 +220,9 @@
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
+		F9FD080D1B4F6ECB00B57EA2 /* DTSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD080B1B4F6ECB00B57EA2 /* DTSWebViewController.m */; };
+		F9FD080E1B4F6ECB00B57EA2 /* DTSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FD080C1B4F6ECB00B57EA2 /* DTSWebViewController.xib */; };
+		F9FD08121B4F783000B57EA2 /* theTripStoryTermsOfService.html in Resources */ = {isa = PBXBuildFile; fileRef = F9FD08111B4F783000B57EA2 /* theTripStoryTermsOfService.html */; };
 		F9FD5A321AC28181009BDDF2 /* DTSCreateEditTripView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FD5A311AC28181009BDDF2 /* DTSCreateEditTripView.xib */; };
 		F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A351AC504ED009BDDF2 /* DTSCreateEditTripView.m */; };
 		F9FD5A391AC510A8009BDDF2 /* DTSCreateTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD5A381AC510A8009BDDF2 /* DTSCreateTripViewController.m */; };
@@ -278,6 +284,9 @@
 		F904DB301B4E311F0054E496 /* Thumbs_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Thumbs_down.png; path = DKCRatePromptView/Thumbs_down.png; sourceTree = "<group>"; };
 		F904DB311B4E311F0054E496 /* Thumbs_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Thumbs_up.png; path = DKCRatePromptView/Thumbs_up.png; sourceTree = "<group>"; };
 		F904DB341B4E3C790054E496 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F904DB361B4EDF240054E496 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
+		F904DB381B4EE00A0054E496 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		F904DB391B4EE00A0054E496 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		F90B6EA51B430B9200D87D11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F90B6EA71B430EB800D87D11 /* DTSAnalyticsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSAnalyticsProtocol.h; sourceTree = "<group>"; };
 		F90CEE7A19931BB2002E9CE9 /* DTSTableViewCellParallaxProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTSTableViewCellParallaxProtocol.h; sourceTree = "<group>"; };
@@ -571,6 +580,10 @@
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F9F92577197C3FF800D92941 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
 		F9F92578197C3FF800D92941 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		F9FD080A1B4F6ECB00B57EA2 /* DTSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSWebViewController.h; sourceTree = "<group>"; };
+		F9FD080B1B4F6ECB00B57EA2 /* DTSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSWebViewController.m; sourceTree = "<group>"; };
+		F9FD080C1B4F6ECB00B57EA2 /* DTSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSWebViewController.xib; sourceTree = "<group>"; };
+		F9FD08111B4F783000B57EA2 /* theTripStoryTermsOfService.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = theTripStoryTermsOfService.html; sourceTree = "<group>"; };
 		F9FD5A311AC28181009BDDF2 /* DTSCreateEditTripView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSCreateEditTripView.xib; path = "Create Trip/DTSCreateEditTripView.xib"; sourceTree = "<group>"; };
 		F9FD5A341AC504ED009BDDF2 /* DTSCreateEditTripView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSCreateEditTripView.h; path = "Create Trip/DTSCreateEditTripView.h"; sourceTree = "<group>"; };
 		F9FD5A351AC504ED009BDDF2 /* DTSCreateEditTripView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSCreateEditTripView.m; path = "Create Trip/DTSCreateEditTripView.m"; sourceTree = "<group>"; };
@@ -668,6 +681,9 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F904DB381B4EE00A0054E496 /* settings.png */,
+				F904DB391B4EE00A0054E496 /* settings@2x.png */,
+				F904DB361B4EDF240054E496 /* settings@3x.png */,
 				F9CE11D81B16AD7800F3807A /* cycling.png */,
 				F9CE11D91B16AD7800F3807A /* TentIcon.png */,
 				F9EBD06D1AF92756003B8C29 /* editIcon.png */,
@@ -884,6 +900,9 @@
 				F9C6BC0C1AB778CB00B82895 /* PFUser+DTSAdditions.m */,
 				F9AE519A1AB8B84F00958707 /* DTSUtilities.h */,
 				F9AE519B1AB8B84F00958707 /* DTSUtilities.m */,
+				F9FD080A1B4F6ECB00B57EA2 /* DTSWebViewController.h */,
+				F9FD080B1B4F6ECB00B57EA2 /* DTSWebViewController.m */,
+				F9FD080C1B4F6ECB00B57EA2 /* DTSWebViewController.xib */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -948,6 +967,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F9FD080F1B4F783000B57EA2 /* Resources */,
 				F9A829621B4BA38800D8E7B5 /* onboarding */,
 				F9BBF9541AA774130076CD78 /* UserAuth */,
 				F9EA06561AA57F6E007573EC /* LaunchScreen */,
@@ -1211,6 +1231,22 @@
 			path = MagicPieLayer;
 			sourceTree = "<group>";
 		};
+		F9FD080F1B4F783000B57EA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9FD08101B4F783000B57EA2 /* Terms & Privacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F9FD08101B4F783000B57EA2 /* Terms & Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				F9FD08111B4F783000B57EA2 /* theTripStoryTermsOfService.html */,
+			);
+			path = "Terms & Privacy";
+			sourceTree = "<group>";
+		};
 		F9FD5A301AC2800E009BDDF2 /* Create Trip */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,6 +1460,7 @@
 			files = (
 				F96B21251AB362AA009CC03E /* 3@2x.png in Resources */,
 				F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */,
+				F904DB3B1B4EE00A0054E496 /* settings@2x.png in Resources */,
 				F96B21271AB362AA009CC03E /* 4-selected@2x.png in Resources */,
 				F9FD5A431AC5BE64009BDDF2 /* car-white.png in Resources */,
 				F9A829971B4BA38800D8E7B5 /* screen_01b_element@2x.png in Resources */,
@@ -1438,6 +1475,7 @@
 				F993761E1B202627005D58FE /* timelineIcon@3x.png in Resources */,
 				F9FD5A791AC5C57C009BDDF2 /* Icon-76@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
+				F904DB3A1B4EE00A0054E496 /* settings.png in Resources */,
 				F99376221B20B0C4005D58FE /* activityIcon.png in Resources */,
 				F9615CC81ABB9AB2004B2ADF /* DTSUserProfileCollectionViewCell.xib in Resources */,
 				F9A829991B4BA38800D8E7B5 /* screen_03@2x.png in Resources */,
@@ -1492,6 +1530,7 @@
 				F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */,
 				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
+				F9FD08121B4F783000B57EA2 /* theTripStoryTermsOfService.html in Resources */,
 				F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */,
 				F96B21291AB362AA009CC03E /* 4@2x.png in Resources */,
 				F993761D1B202627005D58FE /* timelineIcon@2x.png in Resources */,
@@ -1520,6 +1559,7 @@
 				F958151B1964850B002207A3 /* Images.xcassets in Resources */,
 				F9FD5A7C1AC5C57C009BDDF2 /* Icon-Small@3x.png in Resources */,
 				F96B21221AB362AA009CC03E /* 3-selected.png in Resources */,
+				F9FD080E1B4F6ECB00B57EA2 /* DTSWebViewController.xib in Resources */,
 				F9A829921B4BA38800D8E7B5 /* phone_base@2x.png in Resources */,
 				F96B21311AB38524009CC03E /* addTrip.png in Resources */,
 				F954E77819660CE0003A0B72 /* DTSTripStoryEventActivityCell.xib in Resources */,
@@ -1578,6 +1618,7 @@
 				F9FD5A741AC5C57C009BDDF2 /* Icon-40@2x.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
 				F99FC4541B220C0A000CDCB3 /* users-lightGray@3x.png in Resources */,
+				F904DB371B4EDF240054E496 /* settings@3x.png in Resources */,
 				F9A8298F1B4BA38800D8E7B5 /* icon_phone@2x.png in Resources */,
 				F9FD5A731AC5C57C009BDDF2 /* Icon-40.png in Resources */,
 			);
@@ -1704,6 +1745,7 @@
 				F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */,
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
 				F91CBD371981B82700BC3021 /* DTSEventLocationEntryTableViewCell.m in Sources */,
+				F9FD080D1B4F6ECB00B57EA2 /* DTSWebViewController.m in Sources */,
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
 				F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */,
 				F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */,

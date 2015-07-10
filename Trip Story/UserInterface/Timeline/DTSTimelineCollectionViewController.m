@@ -19,8 +19,8 @@
 @end
 
 @implementation DTSTimelineCollectionViewController
-@synthesize topLayoutGuideLength;
-@synthesize bottomLayoutGuideLength;
+@synthesize topLayoutGuideLength =  _topLayoutGuideLength;
+@synthesize bottomLayoutGuideLength = _bottomLayoutGuideLength;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +35,18 @@
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"theTripStory";
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSRefreshTrips object:nil];
+}
+
+- (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
+{
+	_topLayoutGuideLength = topLayoutGuideLength;
+	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void)setBottomLayoutGuideLength:(CGFloat)bottomLayoutGuideLength
+{
+	_bottomLayoutGuideLength = bottomLayoutGuideLength;
+	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 
 - (void) dealloc {
@@ -67,12 +79,6 @@
 		[tracker set:kGAIScreenName value:name];
 		[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 	}
-}
-
-- (void)viewDidLayoutSubviews
-{
-	[super viewDidLayoutSubviews];
-	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
 }
 
 - (void)updateLoginHUD

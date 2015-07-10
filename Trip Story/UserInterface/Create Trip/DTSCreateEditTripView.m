@@ -8,6 +8,7 @@
 
 #import "DTSCreateEditTripView.h"
 #import "UIColor+Utilities.h"
+#import "DTSWebViewController.h"
 
 #ifdef DEBUG
 #define EASY_TESTING 0
@@ -321,6 +322,14 @@
 		[self.privacyPickerView removeFromSuperview];
 	}];
 	
+}
+- (IBAction)termsOfServiceTapped:(id)sender {
+	DTSWebViewController *webViewController = [[DTSWebViewController alloc] initWithNibName:@"DTSWebViewController" bundle:[NSBundle mainBundle]];
+	webViewController.htmlFileName = @"theTripStoryTermsOfService";
+	webViewController.didPresentViewController = YES;
+	webViewController.title = @"theTripStory Terms Of Service";
+	UINavigationController *navvc = [[UINavigationController alloc] initWithRootViewController:webViewController];
+	[(UIViewController *)self.delegate presentViewController:navvc animated:YES completion:nil];
 }
 
 @end
