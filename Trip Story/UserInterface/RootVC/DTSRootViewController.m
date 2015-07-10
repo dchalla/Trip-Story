@@ -121,7 +121,7 @@
 #endif
 	[self performSelector:@selector(showOnboarding) withObject:nil afterDelay:0.2];
 	
-	[DKCRateFeedbackPrompt showPromptWithAppId:@"h986986896" showFeedbackPrompt:NO delegate:self];
+	[DKCRateFeedbackPrompt showPromptWithAppId:@"1018140958" showFeedbackPrompt:NO delegate:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
