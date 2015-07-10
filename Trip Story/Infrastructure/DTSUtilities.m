@@ -32,9 +32,15 @@
 	followActivity.ACL = followACL;
 	
 	// Save the activity and set the block passed as the completion block
-	[followActivity saveEventually:completionBlock];
+	[followActivity saveEventually:^(BOOL succeeded, NSError *error) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
+		if (completionBlock) {
+			completionBlock(succeeded,error);
+		}
+	}];
 	
 	[[DTSCache sharedCache] setFollowStatus:YES user:user];
+	
 }
 
 + (void)unfollowUserEventually:(PFUser *)user {
@@ -47,7 +53,10 @@
 		
 		if (!error) {
 			for (PFObject *followActivity in followActivities) {
-				[followActivity deleteEventually];
+				[followActivity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+					[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
+				
+					}];
 			}
 		}
 	}];

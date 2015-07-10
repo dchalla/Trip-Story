@@ -35,7 +35,14 @@
 	self.followersLabel.text = @"";
 	self.followingLabel.text = @"";
 	self.tripsLabel.text = @"";
-	
+	[[NSNotificationCenter defaultCenter] addObserverForName:kDTSUserDataRefreshed object:nil queue:nil usingBlock:^(NSNotification *note) {
+		self.updatedContent = NO;
+		[self updateUIWithUser:self.user];
+	}];
+}
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)updateUIWithUser:(PFUser *)user
@@ -94,7 +101,7 @@
 	PFQuery *queryFollowerCount = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryFollowerCount whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryFollowerCount whereKey:kDTSActivityToUserKey equalTo:self.user];
-	[queryFollowerCount setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	[queryFollowerCount setCachePolicy:kPFCachePolicyNetworkOnly];
 	BlockWeakSelf wSelf = self;
 	[queryFollowerCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
 		BlockStrongSelf strongSelf = wSelf;
@@ -117,7 +124,7 @@
 	PFQuery *queryFollowingCount = [PFQuery queryWithClassName:NSStringFromClass([DTSActivity class])];
 	[queryFollowingCount whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryFollowingCount whereKey:kDTSActivityFromUserKey equalTo:self.user];
-	[queryFollowingCount setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	[queryFollowingCount setCachePolicy:kPFCachePolicyNetworkOnly];
 	BlockWeakSelf wSelf = self;
 	[queryFollowingCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
 		BlockStrongSelf strongSelf = wSelf;
@@ -139,7 +146,7 @@
 	}
 	PFQuery *queryTripsCount = [PFQuery queryWithClassName:NSStringFromClass([DTSTrip class])];
 	[queryTripsCount whereKey:kDTSTripUserKey equalTo:self.user];
-	[queryTripsCount setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	[queryTripsCount setCachePolicy:kPFCachePolicyNetworkOnly];
 	BlockWeakSelf wSelf = self;
 	[queryTripsCount countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
 		BlockStrongSelf strongSelf = wSelf;
@@ -164,7 +171,7 @@
 	[queryIsFollowing whereKey:kDTSActivityTypeKey equalTo:kDTSActivityTypeFollow];
 	[queryIsFollowing whereKey:kDTSActivityToUserKey equalTo:self.user];
 	[queryIsFollowing whereKey:kDTSActivityFromUserKey equalTo:[PFUser currentUser]];
-	[queryIsFollowing setCachePolicy:kPFCachePolicyCacheThenNetwork];
+	[queryIsFollowing setCachePolicy:kPFCachePolicyNetworkOnly];
 	BlockWeakSelf wSelf = self;
 	[queryIsFollowing countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
 		BlockStrongSelf strongSelf = wSelf;
