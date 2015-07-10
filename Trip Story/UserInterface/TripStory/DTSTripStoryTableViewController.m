@@ -14,6 +14,7 @@
 #import "DTSEventsEntryTableViewController.h"
 #import "UIView+Utilities.h"
 #import "DTSTableViewCellParallaxProtocol.h"
+#import "DTSCache.h"
 
 #define kDTSTripStoryEventActivityCell @"DTSTripStoryEventActivityCell"
 #define kDTSTripStoryEventGeneralCell @"DTSTripStoryEventGeneralCell"
@@ -260,7 +261,14 @@
 	if (tripDescription.length == 0) {
 		tripDescription = @"";
 	}
-	NSArray *objectsToShare = @[screenshotImage, tripDescription, @"http://www.facebook.com/TripStory"];
+	
+	UIImage *tripMapImage = [self tripMapScreenshot];
+	
+	NSArray *objectsToShare = @[screenshotImage, tripDescription, @"http://the-TripStory.com"];
+	if (tripMapImage)
+	{
+		objectsToShare = @[screenshotImage,tripMapImage, tripDescription, @"http://the-TripStory.com"];
+	}
 	UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
 	[controller setValue:self.trip.tripName forKey:@"subject"];
 	[self presentViewController:controller animated:YES completion:nil];
@@ -291,6 +299,78 @@
 	
 	return img;
 }
+
+
+
+
+- (UIImage *)tripMapScreenshot {
+	NSArray *eventsWithLocation = self.trip.eventsWithLocationList;
+	if (eventsWithLocation.count > 0)
+	{
+		MKMapRect r = MKMapRectNull;
+		for (NSUInteger i=0; i < eventsWithLocation.count; ++i) {
+			MKMapPoint p = MKMapPointForCoordinate(dynamic_cast_oc(eventsWithLocation[i], DTSEvent).location.mapItem.placemark.coordinate);
+			r = MKMapRectUnion(r, MKMapRectMake(p.x, p.y, 0, 0));
+		}
+		MKCoordinateRegion viewRegion = MKCoordinateRegionForMapRect(r);
+		viewRegion.span.latitudeDelta *=3;
+		
+		NSString *cacheKey = [NSString stringWithFormat:@"%f:%f:%f:%f",viewRegion.center.latitude, viewRegion.center.longitude,viewRegion.span.latitudeDelta, viewRegion.span.longitudeDelta];
+		UIImage *image = [[DTSCache sharedCache] cachedImageForKey:cacheKey];
+		if (image != nil)
+		{
+			return image;
+		}
+		else
+		{
+			MKMapSnapshotOptions *options = [[MKMapSnapshotOptions alloc] init];
+			
+			options.region = viewRegion;
+			options.size = CGSizeMake(self.view.frame.size.width, 136);
+			options.scale = [[UIScreen mainScreen] scale];
+			
+			MKMapSnapshotter *snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
+			[snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error) {
+				if (error) {
+					NSLog(@"[Error] %@", error);
+					return;
+				}
+				
+				
+				MKAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
+				UIImage *compositeImage = nil;
+				UIImage *image = snapshot.image;
+				UIGraphicsBeginImageContextWithOptions(image.size, YES, image.scale);
+				{
+					[image drawAtPoint:CGPointMake(0.0f, 0.0f)];
+					
+					CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+					for (id <MKAnnotation> annotation in eventsWithLocation) {
+						CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
+						if (CGRectContainsPoint(rect, point)) {
+							point.x = point.x + pin.centerOffset.x -
+							(pin.bounds.size.width / 2.0f);
+							point.y = point.y + pin.centerOffset.y -
+							(pin.bounds.size.height / 2.0f);
+							[pin.image drawAtPoint:point];
+						}
+					}
+					
+					compositeImage = UIGraphicsGetImageFromCurrentImageContext();
+					
+				}
+				UIGraphicsEndImageContext();
+				[[DTSCache sharedCache] cacheImage:compositeImage forKey:cacheKey];
+			}];
+			
+		}
+		
+	}
+
+	return nil;
+	
+}
+
 
 #pragma mark - analytics
 

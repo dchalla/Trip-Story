@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/UserInterface/TripStory/DTSTripStoryTableViewController.m"
-            timestampString = "454476009.283705"
+            timestampString = "458205211.981821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-footerView"
             landmarkType = "5">
          </BreakpointContent>
