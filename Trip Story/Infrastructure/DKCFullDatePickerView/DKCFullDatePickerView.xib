@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DKCFullDatePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="j6k-S4-heI">
+                    <rect key="frame" x="101" y="-17.5" width="320" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="458278097.77938497">
+                        <!--2015-07-11 03:28:17 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="Ghe-Rj-Saw"/>
+                    </connections>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7il-96-Ap9">
+                    <rect key="frame" x="-65" y="-17.5" width="320" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="458278097.77938497">
+                        <!--2015-07-11 03:28:17 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="timePickerValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="duU-gQ-9Jc"/>
+                    </connections>
+                </datePicker>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWE-v4-kHY">
+                    <rect key="frame" x="160" y="63" width="1" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="7t4-u7-Da8"/>
+                        <constraint firstAttribute="width" constant="1" id="WNS-kN-eKV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7il-96-Ap9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="A3O-wV-L4f"/>
+                <constraint firstAttribute="bottom" secondItem="j6k-S4-heI" secondAttribute="bottom" id="Eze-0i-Z3k"/>
+                <constraint firstItem="j6k-S4-heI" firstAttribute="leading" secondItem="pWE-v4-kHY" secondAttribute="trailing" constant="-60" id="T3m-Uc-19B"/>
+                <constraint firstAttribute="centerY" secondItem="pWE-v4-kHY" secondAttribute="centerY" id="U52-tG-5j6"/>
+                <constraint firstItem="pWE-v4-kHY" firstAttribute="leading" secondItem="7il-96-Ap9" secondAttribute="trailing" constant="-95" id="bbm-Sa-EB6"/>
+                <constraint firstItem="j6k-S4-heI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hav-Nj-OrO"/>
+                <constraint firstAttribute="centerX" secondItem="pWE-v4-kHY" secondAttribute="centerX" id="lcZ-cP-zcD"/>
+                <constraint firstAttribute="bottom" secondItem="7il-96-Ap9" secondAttribute="bottom" id="o7w-MW-oxk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="datePicker" destination="7il-96-Ap9" id="eWG-nF-7dy"/>
+                <outlet property="datePickerHorizontalConstraint" destination="bbm-Sa-EB6" id="HXp-8C-xfp"/>
+                <outlet property="timePicker" destination="j6k-S4-heI" id="8Er-RA-qaM"/>
+                <outlet property="timePickerHorizontalConstraint" destination="T3m-Uc-19B" id="6e5-7K-zdN"/>
+            </connections>
+            <point key="canvasLocation" x="299.5" y="116.5"/>
+        </view>
+    </objects>
+</document>

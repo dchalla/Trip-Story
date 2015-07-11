@@ -11,7 +11,6 @@
 
 @interface DTSEventDateEntryTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *pickerView;
 
 @property (nonatomic, strong) NSDate *dateValue;
 @property (nonatomic, strong) NSString *placeHolderValue;

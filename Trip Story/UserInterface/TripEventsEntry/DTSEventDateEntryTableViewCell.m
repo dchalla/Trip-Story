@@ -9,6 +9,13 @@
 #import "DTSEventDateEntryTableViewCell.h"
 #import "NSDate+Utilities.h"
 #import "NSString+Utilities.h"
+#import "DKCFullDatePickerView.h"
+
+@interface DTSEventDateEntryTableViewCell()<DKCFullDatePickerViewProtocol>
+@property (nonatomic, strong) DKCFullDatePickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UIView *bottomBackgroundView;
+
+@end
 
 @implementation DTSEventDateEntryTableViewCell
 
@@ -16,14 +23,16 @@
 {
     // Initialization code
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
+	self.pickerView = [[DKCFullDatePickerView alloc] init];
+	self.pickerView.frame = self.bottomBackgroundView.bounds;
+	[self.bottomBackgroundView addSubview:self.pickerView];
+	
 	if (self.dateValue)
 	{
 		[self.pickerView setDate:self.dateValue];
 		[self updateLabel];
 	}
-	[self.pickerView addTarget:self
-			   action:@selector(datePickerValueChanged:)
-	 forControlEvents:UIControlEventValueChanged];
+	self.pickerView.delegate = self;
 }
 
 - (void)setDateValue:(NSDate *)dateValue
@@ -31,7 +40,7 @@
 	_dateValue = dateValue;
 	if (self.pickerView && dateValue)
 	{
-		[self.pickerView setDate:dateValue];
+		//[self.pickerView setDate:dateValue];
 	}
 	if (self.topLabel)
 	{
@@ -39,9 +48,9 @@
 	}
 }
 
-- (void)datePickerValueChanged:(UIDatePicker *)datePicker
+- (void)dkcFullDatePickerValueChanged:(NSDate *)date
 {
-	_dateValue = datePicker.date;
+	_dateValue = date;
 	[self updateLabel];
 	[self.delegate entryCompleteForIdentifier:self.identifier withValue:self.dateValue];
 }
@@ -51,7 +60,7 @@
 	NSString *dateString = @"";
 	if (self.dateValue)
 	{
-		dateString = [NSString stringWithFormat:@" %@",[self.dateValue stringWithFormat:@"M/d HH:mm"]];
+		dateString = [NSString stringWithFormat:@" %@",[self.dateValue stringWithFormat:@"d MMM YYYY, h:mm a"]];
 	}
 	self.topLabel.attributedText = [NSString defaultColorAndFontAttributedString:self.placeHolderValue tailString:dateString];
 }
