@@ -588,6 +588,23 @@ NSString *const kDTSTripUserKey		= @"user";
 	return [dict allValues];
 }
 
+- (NSString *)tripYearsString {
+	NSDate *startDate = dynamic_cast_oc(self.originalEventsList.firstObject, DTSEvent).startDateTime;
+	NSDate *endDate = dynamic_cast_oc(self.originalEventsList.lastObject, DTSEvent).startDateTime;
+	if (startDate && endDate) {
+		NSInteger startYear = startDate.year;
+		NSInteger endYear = endDate.year;
+		if (startYear == endYear) {
+			return [NSString stringWithFormat:@"%ld",startYear];
+		}
+		else
+		{
+			return [NSString stringWithFormat:@"%ld - %ld",startYear,endYear];
+		}
+	}
+	return @"";
+}
+
 
 
 @end

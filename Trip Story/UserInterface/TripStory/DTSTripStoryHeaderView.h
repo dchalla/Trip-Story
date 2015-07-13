@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *byUserButton;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 
 @property (nonatomic, weak) id<DTSTripStoryHeaderViewDelegate> delegate;
 

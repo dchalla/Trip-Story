@@ -39,6 +39,7 @@
 	[super awakeFromNib];
 	self.likeSmileyImageView.tintColor = [UIColor colorWithRed:233/255.0 green:185/255.0 blue:42/255.0 alpha:1];
 	self.likedLabel.textColor = [UIColor colorWithRed:233/255.0 green:185/255.0 blue:42/255.0 alpha:1];
+	self.yearLabel.text = @"";
 }
 
 - (void)setTrip:(DTSTrip *)trip
@@ -74,6 +75,7 @@
 	self.tripDurationLabel.text = [self.trip tripDurationString];
 	self.descriptionLabel.attributedText = [[NSAttributedString alloc] initWithString:self.trip.tripDescription];
 	[self.byUserButton setTitle:[NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]] forState:UIControlStateNormal] ;
+	self.yearLabel.text = [self.trip tripYearsString];
 	if (self.isInEditMode)
 	{
 		self.editButton.hidden = NO;

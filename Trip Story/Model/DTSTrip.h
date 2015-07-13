@@ -48,6 +48,7 @@ extern NSString *const kDTSTripUserKey;
 - (NSArray *)tripCityStateArray;
 - (NSArray *)tripEventTypeStringsArray;
 - (NSArray *)tripMkMapItems;
+- (NSString *)tripYearsString;
 
 + (NSString *)parseClassName;
 
