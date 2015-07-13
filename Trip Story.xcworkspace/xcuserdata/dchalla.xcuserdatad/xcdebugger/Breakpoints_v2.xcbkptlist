@@ -676,7 +676,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/Infrastructure/DTSUtilities.m"
-            timestampString = "458209092.57787"
+            timestampString = "458450275.217761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -692,7 +692,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/Infrastructure/DTSUtilities.m"
-            timestampString = "458209092.57787"
+            timestampString = "458450275.217761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -970,22 +970,6 @@
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "-updateUIWithUser:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Trip Story/Infrastructure/DTSUtilities.m"
-            timestampString = "458206940.109371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "+followUserEventually:block:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -93,6 +93,7 @@
 			if (vc)
 			{
 				[vc refreshView];
+				[[NSNotificationCenter defaultCenter] postNotificationName:kDTSRefreshTrips object:nil];
 			}
 			NSLog(@"Succeeded");
 		} else {
