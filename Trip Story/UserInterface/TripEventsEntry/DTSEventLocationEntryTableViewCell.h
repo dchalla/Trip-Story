@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *placeHolderValue;
 @property (nonatomic, strong) id identifier;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIView *suggestionMarkerView;
 
 @end

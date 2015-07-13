@@ -8,6 +8,7 @@
 
 #import "DTSEventPickerEntryTableViewCell.h"
 #import "NSString+Utilities.h"
+#import "UIColor+Utilities.h"
 
 @implementation DTSEventPickerEntryTableViewCell
 
@@ -27,6 +28,8 @@
 	}
 	[self updateLabel];
     [self.pickerView reloadAllComponents];
+	self.suggestionMarkerView.backgroundColor = [UIColor dtsYellowColor];
+	self.suggestionMarkerView.hidden = NO;
 }
 
 - (void)setPickerValue:(NSNumber *)pickerValue
@@ -51,6 +54,7 @@
 - (void)updateLabel
 {
 	NSString *valueString = @"";
+	self.suggestionMarkerView.hidden = NO;
 	if (self.pickerValue && self.pickerData)
 	{
 		if ([self.pickerValue integerValue] >= self.pickerData.count)
@@ -61,6 +65,9 @@
 		if (valueString.length <= 0)
 		{
 			valueString = @"";
+		}
+		if (_pickerValue.integerValue != 0 && valueString.length > 0) {
+			self.suggestionMarkerView.hidden = YES;
 		}
 	}
 	self.topLabel.attributedText = [NSString defaultColorAndFontAttributedString:self.placeHolderValue tailString:valueString];

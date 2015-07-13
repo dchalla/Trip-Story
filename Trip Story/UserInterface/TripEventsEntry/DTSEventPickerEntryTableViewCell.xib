@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,28 +16,37 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia7-O9-WLJ" userLabel="top background View">
                         <rect key="frame" x="0.0" y="5" width="320" height="40"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-Zd-Yzf">
-                                <rect key="frame" x="10" y="0.0" width="300" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qny-Vh-HuM">
+                                <rect key="frame" x="0.0" y="2" width="1" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="WfK-UR-YFl"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-Zd-Yzf">
+                                <rect key="frame" x="14" y="0.0" width="0.0" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qny-Vh-HuM" firstAttribute="leading" secondItem="ia7-O9-WLJ" secondAttribute="leading" id="2EL-ty-u5Q"/>
                             <constraint firstAttribute="bottom" secondItem="ikf-Zd-Yzf" secondAttribute="bottom" id="6Tc-KY-Hqj"/>
                             <constraint firstAttribute="height" constant="40" id="7C5-8c-Wex"/>
-                            <constraint firstItem="ikf-Zd-Yzf" firstAttribute="leading" secondItem="ia7-O9-WLJ" secondAttribute="leading" constant="10" id="Dya-WT-Nr4"/>
+                            <constraint firstItem="ikf-Zd-Yzf" firstAttribute="leading" secondItem="ia7-O9-WLJ" secondAttribute="leading" constant="14" id="Dya-WT-Nr4"/>
+                            <constraint firstAttribute="bottom" secondItem="Qny-Vh-HuM" secondAttribute="bottom" constant="2" id="LJl-xI-GbU"/>
+                            <constraint firstItem="Qny-Vh-HuM" firstAttribute="top" secondItem="ia7-O9-WLJ" secondAttribute="top" constant="2" id="OhD-KF-pBm"/>
                             <constraint firstItem="ikf-Zd-Yzf" firstAttribute="top" secondItem="ia7-O9-WLJ" secondAttribute="top" id="iyg-SO-bu6"/>
-                            <constraint firstAttribute="trailing" secondItem="ikf-Zd-Yzf" secondAttribute="trailing" constant="10" id="w1b-Ca-ADN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ikf-Zd-Yzf" secondAttribute="trailing" constant="10" id="w1b-Ca-ADN"/>
                         </constraints>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5U-Ia-aX9" userLabel="Bottom Background View">
                         <rect key="frame" x="0.0" y="50" width="320" height="130"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPz-d1-LRj">
-                                <rect key="frame" x="-80" y="-16" width="480" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPz-d1-LRj">
+                                <rect key="frame" x="0.0" y="-16" width="320" height="162"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </pickerView>
                         </subviews>
@@ -62,6 +71,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="pickerView" destination="WPz-d1-LRj" id="MGy-ur-scY"/>
+                <outlet property="suggestionMarkerView" destination="Qny-Vh-HuM" id="JZk-2F-b13"/>
                 <outlet property="topLabel" destination="ikf-Zd-Yzf" id="P8A-tF-n8R"/>
             </connections>
         </tableViewCell>

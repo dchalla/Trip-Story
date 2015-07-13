@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,15 +15,26 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOf-Iz-czr" userLabel="BackgroundView">
                         <rect key="frame" x="0.0" y="5" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-ei-fYI">
+                                <rect key="frame" x="0.0" y="2" width="1" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="OhQ-X4-VSu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1Zr-ei-fYI" secondAttribute="bottom" constant="2" id="RDD-ke-mJL"/>
+                            <constraint firstItem="1Zr-ei-fYI" firstAttribute="leading" secondItem="eOf-Iz-czr" secondAttribute="leading" id="ixJ-gE-d5W"/>
+                            <constraint firstItem="1Zr-ei-fYI" firstAttribute="top" secondItem="eOf-Iz-czr" secondAttribute="top" constant="2" id="k9o-BI-GJc"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-XM-3xl">
-                        <rect key="frame" x="10" y="10" width="300" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-XM-3xl">
+                        <rect key="frame" x="14" y="10" width="0.0" height="39"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <attributedString key="attributedText"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -34,15 +45,21 @@
                     <constraint firstItem="eOf-Iz-czr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="8YH-7W-dCS"/>
                     <constraint firstItem="eOf-Iz-czr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NLr-CI-vZa"/>
                     <constraint firstAttribute="bottom" secondItem="hoA-XM-3xl" secondAttribute="bottom" constant="10" id="Q40-Xw-k1B"/>
-                    <constraint firstAttribute="trailing" secondItem="hoA-XM-3xl" secondAttribute="trailing" constant="10" id="eOp-MA-PQ9"/>
-                    <constraint firstItem="hoA-XM-3xl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="geV-U9-V6A"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hoA-XM-3xl" secondAttribute="trailing" constant="10" id="eOp-MA-PQ9"/>
+                    <constraint firstItem="hoA-XM-3xl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="geV-U9-V6A"/>
                     <constraint firstAttribute="bottom" secondItem="eOf-Iz-czr" secondAttribute="bottom" constant="5" id="ig5-R1-GuL"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="label" destination="hoA-XM-3xl" id="6DF-GF-0p0"/>
+                <outlet property="suggestionMarkerView" destination="1Zr-ei-fYI" id="7D6-Vu-smq"/>
             </connections>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

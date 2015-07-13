@@ -7,6 +7,7 @@
 //
 
 #import "DTSEventTextEntryTableViewCell.h"
+#import "UIColor+Utilities.h"
 
 @implementation DTSEventTextEntryTableViewCell
 
@@ -27,6 +28,7 @@
 	[self.textField addTarget:self
 				  action:@selector(textFieldDidChange:)
 		forControlEvents:UIControlEventEditingChanged];
+	self.suggestionMarkerView.backgroundColor = [UIColor dtsRedColor];
 }
 
 - (void)setPlaceHolderValue:(NSString *)placeHolderValue
@@ -36,12 +38,22 @@
 	{
 		self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeHolderValue attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
 	}
+	if ([placeHolderValue.lowercaseString isEqualToString:@"event description"]) {
+		self.suggestionMarkerView.backgroundColor = [UIColor dtsYellowColor];
+	}
 }
 
 - (void)setFieldValue:(NSString *)fieldValue
 {
 	_fieldValue = fieldValue;
 	self.textField.text = self.fieldValue;
+	if (self.fieldValue.length == 0) {
+		self.suggestionMarkerView.hidden = NO;
+	}
+	else
+	{
+		self.suggestionMarkerView.hidden = YES;
+	}
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -55,6 +67,13 @@
 	if (self.delegate)
 	{
 		[self.delegate entryCompleteForIdentifier:self.identifier withValue:self.fieldValue];
+	}
+	if (self.fieldValue.length == 0) {
+		self.suggestionMarkerView.hidden = NO;
+	}
+	else
+	{
+		self.suggestionMarkerView.hidden = YES;
 	}
 
 }
@@ -71,6 +90,7 @@
 	self.textField.text = @"";
 	_fieldValue = nil;
 }
+
 
 
 @end

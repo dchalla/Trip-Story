@@ -8,6 +8,7 @@
 
 #import "DTSEventLocationEntryTableViewCell.h"
 #import "NSString+Utilities.h"
+#import "UIColor+Utilities.h"
 
 @implementation DTSEventLocationEntryTableViewCell
 
@@ -16,6 +17,8 @@
     // Initialization code
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	[self updateLabel];
+	self.suggestionMarkerView.backgroundColor = [UIColor dtsYellowColor];
+	self.suggestionMarkerView.hidden = NO;
 }
 
 - (void)setPlaceHolderValue:(NSString *)placeHolderValue
@@ -33,12 +36,14 @@
 
 - (void)updateLabel
 {
+	self.suggestionMarkerView.hidden = NO;
 	if (self.placeHolderValue.length > 0)
 	{
 		NSString *value = @"";
 		if (self.fieldValue)
 		{
 			value = [NSString stringWithFormat:@" %@",self.fieldValue.locationName];
+			self.suggestionMarkerView.hidden = YES;
 		}
 		self.label.attributedText = [NSString defaultColorAndFontAttributedString:self.placeHolderValue tailString:value];
 	}

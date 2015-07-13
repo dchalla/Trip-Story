@@ -106,5 +106,13 @@
 }
 
 
++ (UIColor *)dtsYellowColor {
+	return [UIColor colorWithHexString:@"F5D76E"];
+}
+
++ (UIColor *)dtsRedColor {
+	return [UIColor colorWithHexString:@"D24D57"];
+}
+
 
 @end

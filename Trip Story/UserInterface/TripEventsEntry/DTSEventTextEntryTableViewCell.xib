@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -17,21 +17,31 @@
                         <rect key="frame" x="0.0" y="5" width="320" height="59"/>
                         <color key="backgroundColor" white="1" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="center" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-yD-WZT">
-                        <rect key="frame" x="10" y="10" width="300" height="49"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-yD-WZT">
+                        <rect key="frame" x="14" y="10" width="296" height="49"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-rT-kOs">
+                        <rect key="frame" x="0.0" y="7" width="1" height="55.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="H9L-Rp-78g"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="DUy-iV-F2g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4ka-nZ-f2R"/>
+                    <constraint firstItem="fCD-rT-kOs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="7Yz-hP-h59"/>
                     <constraint firstAttribute="bottom" secondItem="t0e-yD-WZT" secondAttribute="bottom" constant="10" id="CNb-Es-dXn"/>
                     <constraint firstAttribute="bottom" secondItem="DUy-iV-F2g" secondAttribute="bottom" constant="5" id="EmV-IU-VaS"/>
+                    <constraint firstItem="fCD-rT-kOs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SPP-bO-3C0"/>
+                    <constraint firstAttribute="bottom" secondItem="fCD-rT-kOs" secondAttribute="bottom" constant="7" id="Z82-m6-GGu"/>
                     <constraint firstAttribute="trailing" secondItem="DUy-iV-F2g" secondAttribute="trailing" id="aOr-rO-TMz"/>
-                    <constraint firstItem="t0e-yD-WZT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cih-Ou-XTi"/>
+                    <constraint firstItem="t0e-yD-WZT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="cih-Ou-XTi"/>
                     <constraint firstItem="DUy-iV-F2g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eAo-mY-vU1"/>
                     <constraint firstItem="t0e-yD-WZT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="luf-OQ-ZrT"/>
                     <constraint firstAttribute="trailing" secondItem="t0e-yD-WZT" secondAttribute="trailing" constant="10" id="ug1-3R-3LN"/>
@@ -39,6 +49,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="suggestionMarkerView" destination="fCD-rT-kOs" id="gkm-JE-EVG"/>
                 <outlet property="textField" destination="t0e-yD-WZT" id="sx3-Db-YRM"/>
             </connections>
         </tableViewCell>
