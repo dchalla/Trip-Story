@@ -15,6 +15,7 @@
 #import "DTSTimelineCollectionViewCell.h"
 #import "DTSActivity.h"
 #import "DTSAnalyticsProtocol.h"
+#import "MBProgressHUD.h"
 #import <Google/Analytics.h>
 
 #define DTSTimelineCellHeight 250
@@ -27,11 +28,14 @@ static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWith
 @interface DTSTimelineCollectionViewController : PFQueryCollectionViewController<UICollectionViewDelegateFlowLayout,DTSViewLayoutProtocol, DTSAnalyticsProtocol>
 
 @property (nonatomic, assign) BOOL requiresLogin;
+@property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 - (CGSize)dtsDefaultItemSizeWithHeight:(CGFloat)height;
 - (void)refreshView;
 - (void)showNoResultsHUD;
+- (NSString *)noResultsHUDString;
+
 
 @end

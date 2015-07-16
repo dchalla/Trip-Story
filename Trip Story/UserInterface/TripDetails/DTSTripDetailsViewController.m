@@ -17,6 +17,8 @@
 #import "HMSegmentedControl.h"
 #import "DTSTripEventsViewController.h"
 #import "UIColor+Utilities.h"
+#import "DTSUtilities.h"
+#import "SFCarouselOnboardingViewController.h"
 
 
 @interface DTSTripDetailsViewController ()
@@ -171,6 +173,7 @@
 {
 	[super viewDidAppear:animated];
 	self.tripStoryVC.view.frame = self.view.frame;
+	[self showOnboarding];
 }
 
 #pragma mark - add event
@@ -382,6 +385,17 @@
 	[self.segmentedControl setSelectedSegmentIndex:1];
 	[self segmentedControlChangedValue:self.segmentedControl];
 	[self.tripEventsVC openEvent:event];
+}
+
+#pragma mark - onboarding
+- (void)showOnboarding
+{
+	if (![DTSUtilities isCreateTripOnboardingShownToUser] && self.trip.user == [PFUser currentUser]) {
+		SFCarouselOnboardingViewController *carousel = [[SFCarouselOnboardingViewController alloc] init];
+		carousel.onboardingJSONName = @"createTripOnboarding";
+		[self presentViewController:carousel animated:YES completion:nil];
+	}
+	
 }
 
 #pragma mark - analytics

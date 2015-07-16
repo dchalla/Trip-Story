@@ -30,5 +30,7 @@ typedef void (^voidBlock)(void);
 + (void)dismissToast;
 + (void)recordOnboardingShownToUser;
 + (BOOL)isOnboardingShownToUser;
++ (void)recordCreateTripOnboardingShownToUser;
++ (BOOL)isCreateTripOnboardingShownToUser;
 
 @end

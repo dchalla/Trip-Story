@@ -28,16 +28,21 @@
 
 @implementation SFCarouselOnboardingViewController
 
+- (NSString *)onboardingJSONName {
+	if (!_onboardingJSONName) {
+		_onboardingJSONName = @"onboarding";
+	}
+	return _onboardingJSONName;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-	
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"onboarding" withExtension:@"json"]];
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:self.onboardingJSONName withExtension:@"json"]];
 	self.conductor = [[SFOnboardingConductor alloc] initWithContainer:self.view jsonSpec:data delegate:self];
 	self.conductor.mainScrollView.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
 	
@@ -179,7 +184,13 @@
 }
 
 - (void)didCloseOnPage:(NSInteger)page conductor:(SFOnboardingConductor *)conductor {
-	[DTSUtilities recordOnboardingShownToUser];
+	if ([self.onboardingJSONName isEqualToString:@"onboarding"]) {
+		[DTSUtilities recordOnboardingShownToUser];
+	}
+	else {
+		[DTSUtilities recordCreateTripOnboardingShownToUser];
+	}
+	
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

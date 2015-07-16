@@ -320,5 +320,16 @@
 	return didShow;
 }
 
++ (void)recordCreateTripOnboardingShownToUser
+{
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"CreateTripOnboardingDidShowToUser"];
+}
+
++ (BOOL)isCreateTripOnboardingShownToUser
+{
+	BOOL didShow = [[NSUserDefaults standardUserDefaults] boolForKey:@"CreateTripOnboardingDidShowToUser"];
+	return didShow;
+}
+
 
 @end

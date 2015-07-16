@@ -28,7 +28,7 @@
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG
 #define IconCreation 0
-#define TestOnboarding 1
+#define TestOnboarding 0
 #endif
 @interface DTSRootViewController ()
 

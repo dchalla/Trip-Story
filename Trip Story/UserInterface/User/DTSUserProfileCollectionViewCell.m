@@ -90,6 +90,10 @@
 		}];
 		
 	}
+	else {
+		self.profileImageView.image = [UIImage imageNamed:@"user_icon"];
+		self.backgroundImageView.image = [[UIImage imageNamed:@"yosemite.jpeg"] applyDarkEffect];
+	}
 }
 
 - (void)updateFollowerCount

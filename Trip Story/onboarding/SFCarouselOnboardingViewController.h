@@ -20,4 +20,6 @@
 
 @interface SFCarouselOnboardingViewController : UIViewController
 
+@property (nonatomic, strong) NSString *onboardingJSONName;
+
 @end

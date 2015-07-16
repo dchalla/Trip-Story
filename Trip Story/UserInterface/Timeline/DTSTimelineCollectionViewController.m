@@ -7,14 +7,14 @@
 //
 
 #import "DTSTimelineCollectionViewController.h"
-#import "MBProgressHUD.h"
+
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
 #import "DKCRateFeedbackPrompt.h"
 
 @interface DTSTimelineCollectionViewController ()
 
-@property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+
 
 @end
 
@@ -229,8 +229,12 @@
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 		self.noResultsHUD.mode = MBProgressHUDModeText;
-		self.noResultsHUD.labelText = @"No Results";
+		self.noResultsHUD.labelText = [self noResultsHUDString];
 	}
+}
+
+- (NSString *)noResultsHUDString {
+	return @"No Results";
 }
 
 #pragma mark - custom styling

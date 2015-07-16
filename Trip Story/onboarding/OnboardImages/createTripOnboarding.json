@@ -1,0 +1,167 @@
+{
+	"baseImageURL" : "",
+	"pages": 2,
+    "parallaxBackground": ["cloud"],
+    "floatingImages": ["cloud"],
+    "motionEnabled": 1,
+    "motionImages": [],
+    "showSkip": 0,
+    "showPageControl": 1,
+    "scrollScale": 0.45,
+	
+    "pageTexts": {
+        "0": "theTripStory is smart, lets you create a trip with as little input as possible",
+        "1": "Just create your important events and theTripStory will fill in the blanks",
+    },
+    
+	"images" : [
+                {
+                "key": "cloud",
+                "imageName": "cloud.png",
+                "anchorPoint": [0.0, 0.5],
+                "relativePosition": [0.0, 1.0]
+                },
+                {
+                "key" : "iPhoneBase",
+                "imageName": "phone_base.png",
+                "anchorPoint": [0.5,0.5],
+                "relativePosition": [0.5, 0.5],
+                "addImmediately": 1
+                },
+                {
+                "key" : "screen1",
+                "imageName": "createScreen_1.png",
+                "anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+                },
+				{
+				"key" : "screen2",
+				"imageName": "createScreen_2.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+				},
+				{
+				"key" : "screen2a",
+				"imageName": "createScreen_2a.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5, 0.5],
+				"relativeKey": "screen2"
+				},
+				{
+				"key" : "screen2b",
+				"imageName": "bubble_01a.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5,0.49],
+				"relativeKey": "screen2"
+				},
+				{
+				"key" : "screen2c",
+				"imageName": "bubble_01a.png",
+				"anchorPoint": [0.5,0.5],
+				"relativePosition" : [0.5,0.49],
+				"relativeKey": "screen2"
+				},
+				],
+	"elements" : [
+                  {
+                  "key": "screen1Element",
+                  "views" : ["screen1"],
+                  "superview": "iPhoneBase",
+                  "startScale": 1.0,
+                  "appearScale": 1.0,
+                  "endScale": 1.0,
+                  "item": [0],
+                  "appear": [0],
+                  "disappear": [1],
+                  "dragDisappear": [],
+                  "remove": 1
+                  },
+				  {
+				  "key": "screen2Element",
+				  "views" : ["screen2"],
+				  "superview": "iPhoneBase",
+				  "startPosition": [400.0, 0.0],
+				  "appearPosition": [0.0, 0.0],
+				  "appear": [1],
+				  "remove": 1
+				  },
+				  {
+				  "key": "screen2Elementa",
+				  "views" : ["screen2a"],
+				  "startScale": 0.0,
+				  "appearScale": 1.0,
+				  "endScale": 0.0,
+				  "startPosition": [0.0, 0.0],
+				  "appearPosition": [0.0, 0.0],
+				  "endPosition": [0.0, 0.0],
+				  "duration": 0.6,
+				  "delay": 0.4,
+				  "springVelocity" : 20.0,
+				  "springDamping" : 1.5,
+				  "item": [1],
+				  "appear": [],
+				  "disappear": [2],
+				  "dragDisappear": [1],
+				  "remove": 1
+				  },
+				  {
+				  "key": "screen2Elementb",
+				  "views" : ["screen2b"],
+				  "startScale": 0.0,
+				  "appearScale": 0.4,
+				  "endScale": 0.0,
+				  "startPosition": [0.0, 0.0],
+				  "appearPosition": [-118.0, -80.0],
+				  "endPosition": [0.0, 0.0],
+				  "duration": 0.6,
+				  "delay": 1.1,
+				  "springVelocity" : 20.0,
+				  "springDamping" : 1.5,
+				  "item": [1],
+				  "appear": [],
+				  "disappear": [2],
+				  "dragDisappear": [1],
+				  "remove": 1
+				  },
+				  {
+				  "key": "screen2Elementc",
+				  "views" : ["screen2c"],
+				  "startScale": 0.0,
+				  "appearScale": 0.25,
+				  "endScale": 0.0,
+				  "startPosition": [0.0, 0.0],
+				  "appearPosition": [-180.0, 230.0],
+				  "endPosition": [0.0, 0.0],
+				  "duration": 0.6,
+				  "delay": 1.1,
+				  "springVelocity" : 20.0,
+				  "springDamping" : 1.5,
+				  "item": [1],
+				  "appear": [],
+				  "disappear": [2],
+				  "dragDisappear": [1],
+				  "remove": 1
+				  },
+				  {
+                  "key": "skipElement",
+                  "views" : ["skip"],
+                  "startPosition": [0.0, 0.0],
+                  "appearPosition": [0.0, 60.0],
+                  "endPosition": [0.0, 0.0],
+                  "duration": 0.0,
+                  "delay": 0.0,
+                  "appear": [1]
+                  },
+                  {
+                  "key": "cloudMove",
+                  "views" : ["cloud"],
+                  "startPosition": [-352.0, 0.0],
+                  "appearPosition": [-496.0, -150.0],
+                  "endPosition": [-640.0, -150.0],
+                  "duration": 0.0,
+                  "delay": 0.0,
+                  "appear": [1],
+				  "disappear":[2]
+                  }
+                  ]
+}
