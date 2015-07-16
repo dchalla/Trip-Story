@@ -16,6 +16,7 @@
 @interface DTSTimelineCollectionViewController ()
 
 @property (nonatomic) BOOL pullRefreshSetupDone;
+@property (nonatomic, strong) PullToMakeFlight *pullToRefresh;
 
 
 @end
@@ -62,6 +63,7 @@
 }
 
 - (void) dealloc {
+	[self.pullToRefresh removeScrollViewObserving];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -87,10 +89,10 @@
 - (void)setupPullToRefreshView {
 	if (!self.pullRefreshSetupDone)
 	{
-		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		self.pullToRefresh = [[PullToMakeFlight alloc] init];
 		BlockWeakSelf wSelf = self;
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+			[self.collectionView addPullToRefresh:self.pullToRefresh action:^{
 				[wSelf loadObjects];
 			}];
 		});

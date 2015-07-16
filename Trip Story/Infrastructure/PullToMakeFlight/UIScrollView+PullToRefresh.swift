@@ -1,9 +1,9 @@
 //
 //  UIScrollView+PullToRefresh.swift
-//  CookingPullToRefresh
+//  Trip Story
 //
-//  Created by Anastasiya Gorban on 4/14/15.
-//  Copyright (c) 2015 Yalantis. All rights reserved.
+//  Created by Dinesh Challa on 3/18/15.
+//  Copyright (c) 2015 DKC. All rights reserved.
 //
 
 import Foundation

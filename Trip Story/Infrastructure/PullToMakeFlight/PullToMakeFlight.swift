@@ -1,9 +1,9 @@
 //
 //  PullToMakeFlight.swift
-//  PullToMakeFlightDemo
+//  Trip Story
 //
-//  Created by Anastasiya Gorban on 5/27/15.
-//  Copyright (c) 2015 Yalantis. All rights reserved.
+//  Created by Dinesh Challa on 3/18/15.
+//  Copyright (c) 2015 DKC. All rights reserved.
 //
 
 import Foundation

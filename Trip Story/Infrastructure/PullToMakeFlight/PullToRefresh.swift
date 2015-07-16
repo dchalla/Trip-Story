@@ -1,9 +1,9 @@
 //
 //  PullToRefresh.swift
-//  CookingPullToRefresh
+//  Trip Story
 //
-//  Created by Anastasiya Gorban on 4/14/15.
-//  Copyright (c) 2015 Yalantis. All rights reserved.
+//  Created by Dinesh Challa on 3/18/15.
+//  Copyright (c) 2015 DKC. All rights reserved.
 //
 
 import UIKit
@@ -18,6 +18,7 @@ public protocol RefreshViewAnimator {
 public class PullToRefresh: NSObject {
 	let refreshView: UIView
 	var action: (() -> ())?
+	var didAddScrollViewObservers:Bool
 	
 	private let animator: RefreshViewAnimator
 	
@@ -35,11 +36,17 @@ public class PullToRefresh: NSObject {
 	}
 	
 	private func addScrollViewObserving() {
-		scrollView?.addObserver(self, forKeyPath: contentOffsetKeyPath, options: .Initial, context: &KVOContext)
+		if(!didAddScrollViewObservers) {
+			scrollView?.addObserver(self, forKeyPath: contentOffsetKeyPath, options: .Initial, context: &KVOContext)
+			didAddScrollViewObservers = true
+		}
 	}
 	
-	private func removeScrollViewObserving() {
-		scrollView?.removeObserver(self, forKeyPath: contentOffsetKeyPath, context: &KVOContext)
+	public func removeScrollViewObserving() {
+		if(didAddScrollViewObservers) {
+			scrollView?.removeObserver(self, forKeyPath: contentOffsetKeyPath, context: &KVOContext)
+			didAddScrollViewObservers = false
+		}
 	}
 	
 	// MARK: - State
@@ -82,6 +89,7 @@ public class PullToRefresh: NSObject {
 	public init(refreshView: UIView, animator: RefreshViewAnimator) {
 		self.refreshView = refreshView
 		self.animator = animator
+		self.didAddScrollViewObservers = false
 	}
 	
 	public override convenience init() {

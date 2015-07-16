@@ -29,6 +29,7 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 @property (nonatomic, strong) MBProgressHUD *loginHud;
 @property (nonatomic) BOOL pullRefreshSetupDone;
+@property (nonatomic, strong) PullToMakeFlight *pullToRefresh;
 @end
 
 @implementation DTSActivityFeedViewController
@@ -71,10 +72,10 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 - (void)setupPullToRefreshView {
 	if (!self.pullRefreshSetupDone)
 	{
-		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		self.pullToRefresh = [[PullToMakeFlight alloc] init];
 		BlockWeakSelf wSelf = self;
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+			[self.collectionView addPullToRefresh:self.pullToRefresh action:^{
 				[wSelf loadObjects];
 			}];
 		});
@@ -93,6 +94,7 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 
 - (void) dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[self.pullToRefresh removeScrollViewObserving];
 }
 
 - (void)updateLoginHUD
