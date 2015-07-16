@@ -15,6 +15,7 @@
 #import "DTSUtilities.h"
 #import "PFUser+DTSAdditions.h"
 #import "MBProgressHUD.h"
+#import "theTripStory-Swift.h"
 
 #define DTSFollowFriendsCellHeight 60
 
@@ -22,11 +23,20 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 
 @interface DTSUserFriendsViewController ()
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+@property (nonatomic) BOOL pullRefreshSetupDone;
 @end
 
 @implementation DTSUserFriendsViewController
 @synthesize topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength;
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout * __nonnull)layout className:(nullable NSString *)className {
+	self = [super initWithCollectionViewLayout:layout className:className];
+	if (self) {
+		self.pullToRefreshEnabled = NO;
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +54,26 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	return [NSString stringWithFormat:@"%@ %@",[self.user dts_displayName],self.forFollowers?@"Followers":@"Following"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self setupPullToRefreshView];
+}
+
+- (void)setupPullToRefreshView {
+	if (!self.pullRefreshSetupDone)
+	{
+		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		BlockWeakSelf wSelf = self;
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+				[wSelf loadObjects];
+			}];
+		});
+		self.pullRefreshSetupDone = YES;
+	}
+}
+
 #pragma mark -
 #pragma mark Responding to Events
 
@@ -57,6 +87,9 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	[super objectsDidLoad:error];
 	[self.noResultsHUD hide:YES];
 	[self showNoResultsHUD];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.collectionView endRefresing];
+	});
 }
 
 - (void)showNoResultsHUD

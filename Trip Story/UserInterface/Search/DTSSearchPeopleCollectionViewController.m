@@ -15,6 +15,7 @@
 #import "DTSUtilities.h"
 #import "PFUser+DTSAdditions.h"
 #import "MBProgressHUD.h"
+#import "theTripStory-Swift.h"
 
 #define DTSFollowFriendsCellHeight 60
 
@@ -23,12 +24,21 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 @interface DTSSearchPeopleCollectionViewController ()
 @property (nonatomic, strong) NSString *searchString;
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+@property (nonatomic) BOOL pullRefreshSetupDone;
 @end
 
 @implementation DTSSearchPeopleCollectionViewController
 
 @synthesize topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength;
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout * __nonnull)layout className:(nullable NSString *)className {
+	self = [super initWithCollectionViewLayout:layout className:className];
+	if (self) {
+		self.pullToRefreshEnabled = NO;
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -38,6 +48,26 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	self.view.backgroundColor = [UIColor secondaryColor];
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self setupPullToRefreshView];
+}
+
+- (void)setupPullToRefreshView {
+	if (!self.pullRefreshSetupDone)
+	{
+		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		BlockWeakSelf wSelf = self;
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+				[wSelf loadObjects];
+			}];
+		});
+		self.pullRefreshSetupDone = YES;
+	}
 }
 
 - (void)searchWithString:(NSString *)searchString
@@ -64,6 +94,9 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 		self.noResultsHUD.mode = MBProgressHUDModeText;
 		self.noResultsHUD.labelText = @"No Results";
 	}
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.collectionView endRefresing];
+	});
 }
 
 #pragma mark - PFQUERY

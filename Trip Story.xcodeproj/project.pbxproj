@@ -207,6 +207,13 @@
 		F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */; };
 		F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */; };
 		F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */; };
+		F9E515F51B5765C6008F757D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E515F41B5765C6008F757D /* QuartzCore.framework */; };
+		F9E515F71B57665F008F757D /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515F61B57665F008F757D /* PullToRefresh.swift */; };
+		F9E515F91B5766FA008F757D /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515F81B5766FA008F757D /* UIScrollView+PullToRefresh.swift */; };
+		F9E515FB1B57674E008F757D /* FlightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E515FA1B57674E008F757D /* FlightView.xib */; };
+		F9E515FD1B57677F008F757D /* PullToMakeFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515FC1B57677F008F757D /* PullToMakeFlight.swift */; };
+		F9E515FF1B576850008F757D /* CAKeyframeAnimation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515FE1B576850008F757D /* CAKeyframeAnimation+Extensions.swift */; };
+		F9E516011B5768FB008F757D /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E516001B5768FB008F757D /* Image.xcassets */; };
 		F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */; };
 		F9E9D9041B55E1B10076F173 /* createTripOnboarding.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D9031B55E1B10076F173 /* createTripOnboarding.json */; };
 		F9E9D90E1B55E3CE0076F173 /* createScreen_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D90B1B55E3CE0076F173 /* createScreen_1@2x.png */; };
@@ -566,6 +573,14 @@
 		F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@3x.png"; sourceTree = "<group>"; };
 		F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@2x.png"; sourceTree = "<group>"; };
 		F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@3x.png"; sourceTree = "<group>"; };
+		F9E515C21B576392008F757D /* theTripStory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theTripStory-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9E515F41B5765C6008F757D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F9E515F61B57665F008F757D /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		F9E515F81B5766FA008F757D /* UIScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
+		F9E515FA1B57674E008F757D /* FlightView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightView.xib; sourceTree = "<group>"; };
+		F9E515FC1B57677F008F757D /* PullToMakeFlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToMakeFlight.swift; sourceTree = "<group>"; };
+		F9E515FE1B576850008F757D /* CAKeyframeAnimation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAKeyframeAnimation+Extensions.swift"; sourceTree = "<group>"; };
+		F9E516001B5768FB008F757D /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		F9E563B41B39329F00748908 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLSpringFlowLayout.h; path = General/TLSpringFlowLayout.h; sourceTree = "<group>"; };
 		F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLSpringFlowLayout.m; path = General/TLSpringFlowLayout.m; sourceTree = "<group>"; };
 		F9E9D9031B55E1B10076F173 /* createTripOnboarding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createTripOnboarding.json; sourceTree = "<group>"; };
@@ -652,6 +667,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E515F51B5765C6008F757D /* QuartzCore.framework in Frameworks */,
 				F904DB351B4E3C790054E496 /* StoreKit.framework in Frameworks */,
 				F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */,
 				F95815021964850B002207A3 /* CoreGraphics.framework in Frameworks */,
@@ -883,6 +899,7 @@
 		F954E7631964CB61003A0B72 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F9E515E71B576599008F757D /* PullToMakeFlight */,
 				F960AD921B50C44F00AB679F /* DKCFullDatePickerView */,
 				F904DB291B4E22D90054E496 /* DKCRatePrompt */,
 				F9401D9F1AB9473400F271F5 /* UIImage+Alpha.h */,
@@ -923,6 +940,7 @@
 				F9FD080A1B4F6ECB00B57EA2 /* DTSWebViewController.h */,
 				F9FD080B1B4F6ECB00B57EA2 /* DTSWebViewController.m */,
 				F9FD080C1B4F6ECB00B57EA2 /* DTSWebViewController.xib */,
+				F9E515C21B576392008F757D /* theTripStory-Bridging-Header.h */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -973,6 +991,7 @@
 		F95814FE1964850B002207A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9E515F41B5765C6008F757D /* QuartzCore.framework */,
 				F904DB341B4E3C790054E496 /* StoreKit.framework */,
 				F91CBD3B1981D7FC00BC3021 /* MapKit.framework */,
 				F95814FF1964850B002207A3 /* Foundation.framework */,
@@ -1241,6 +1260,19 @@
 				F9FEB47B1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		F9E515E71B576599008F757D /* PullToMakeFlight */ = {
+			isa = PBXGroup;
+			children = (
+				F9E516001B5768FB008F757D /* Image.xcassets */,
+				F9E515FA1B57674E008F757D /* FlightView.xib */,
+				F9E515F61B57665F008F757D /* PullToRefresh.swift */,
+				F9E515F81B5766FA008F757D /* UIScrollView+PullToRefresh.swift */,
+				F9E515FC1B57677F008F757D /* PullToMakeFlight.swift */,
+				F9E515FE1B576850008F757D /* CAKeyframeAnimation+Extensions.swift */,
+			);
+			path = PullToMakeFlight;
 			sourceTree = "<group>";
 		};
 		F9EA06561AA57F6E007573EC /* LaunchScreen */ = {
@@ -1565,6 +1597,7 @@
 				F96B21341AB38524009CC03E /* users.png in Resources */,
 				F954E77D1966410F003A0B72 /* DTSTripStoryEventGeneralCell.xib in Resources */,
 				F96B211E1AB362AA009CC03E /* 2-selected.png in Resources */,
+				F9E515FB1B57674E008F757D /* FlightView.xib in Resources */,
 				F90B6EA61B430B9200D87D11 /* GoogleService-Info.plist in Resources */,
 				F96B21431AB389E7009CC03E /* users@2x.png in Resources */,
 				F96B21261AB362AA009CC03E /* 4-selected.png in Resources */,
@@ -1632,6 +1665,7 @@
 				F9E9D9041B55E1B10076F173 /* createTripOnboarding.json in Resources */,
 				F9FD5A421AC5BE64009BDDF2 /* boat-white.png in Resources */,
 				F99376171B201CCD005D58FE /* searchIcon@2x.png in Resources */,
+				F9E516011B5768FB008F757D /* Image.xcassets in Resources */,
 				F9BEC14B19B3A42100622CC9 /* waterTravel.png in Resources */,
 				F9BEC14119B39E9500622CC9 /* sailboat.png in Resources */,
 				F9FD5A321AC28181009BDDF2 /* DTSCreateEditTripView.xib in Resources */,
@@ -1724,6 +1758,7 @@
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F9401DA91AB9473400F271F5 /* UIImage+ResizeAdditions.m in Sources */,
 				F904DB2C1B4E230B0054E496 /* DKCRateFeedbackPrompt.m in Sources */,
+				F9E515FF1B576850008F757D /* CAKeyframeAnimation+Extensions.swift in Sources */,
 				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
 				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
 				F99376281B20B5FA005D58FE /* DTSActivityFeedViewController.m in Sources */,
@@ -1757,6 +1792,7 @@
 				F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
+				F9E515FD1B57677F008F757D /* PullToMakeFlight.swift in Sources */,
 				F9401DBB1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m in Sources */,
 				F960AD951B50C47600AB679F /* DKCFullDatePickerView.m in Sources */,
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
@@ -1781,6 +1817,7 @@
 				F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
+				F9E515F71B57665F008F757D /* PullToRefresh.swift in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
 				F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */,
@@ -1791,6 +1828,7 @@
 				F9B44F8E19F3922200321E2C /* TGLExposedLayout.m in Sources */,
 				F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */,
 				F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */,
+				F9E515F91B5766FA008F757D /* UIScrollView+PullToRefresh.swift in Sources */,
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
@@ -1908,14 +1946,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trip Story/Infrastructure/theTripStory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1926,14 +1969,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trip Story/Infrastructure/theTripStory-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

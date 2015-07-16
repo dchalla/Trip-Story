@@ -11,9 +11,11 @@
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
 #import "DKCRateFeedbackPrompt.h"
+#import "theTripStory-Swift.h"
 
 @interface DTSTimelineCollectionViewController ()
 
+@property (nonatomic) BOOL pullRefreshSetupDone;
 
 
 @end
@@ -22,8 +24,18 @@
 @synthesize topLayoutGuideLength =  _topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength = _bottomLayoutGuideLength;
 
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
+								   className:(PFUI_NULLABLE NSString *)className {
+	self = [super initWithCollectionViewLayout:layout className:className];
+	if (self) {
+		self.pullToRefreshEnabled = NO;
+	}
+	return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
 	// Register cell classes
 	[self.collectionView registerClass:[DTSTimelineCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"DTSTimelineCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
@@ -64,6 +76,26 @@
 	[self updateLoginHUD];
 	[self.collectionView reloadData];
 	[self trackScreenView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self setupPullToRefreshView];
+}
+
+- (void)setupPullToRefreshView {
+	if (!self.pullRefreshSetupDone)
+	{
+		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		BlockWeakSelf wSelf = self;
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+				[wSelf loadObjects];
+			}];
+		});
+		self.pullRefreshSetupDone = YES;
+	}
 }
 
 - (void)trackScreenView
@@ -221,6 +253,10 @@
 	[super objectsDidLoad:error];
 	[self.noResultsHUD hide:YES];
 	[self showNoResultsHUD];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.collectionView endRefresing];
+	});
+	
 }
 
 - (void)showNoResultsHUD

@@ -18,6 +18,7 @@
 #import "DTSTripDetailsViewController.h"
 #import "DTSRequiresLoginView.h"
 #import "UIView+Utilities.h"
+#import "theTripStory-Swift.h"
 
 
 #define CellHeight 70
@@ -27,12 +28,21 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 @interface DTSActivityFeedViewController ()
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 @property (nonatomic, strong) MBProgressHUD *loginHud;
+@property (nonatomic) BOOL pullRefreshSetupDone;
 @end
 
 @implementation DTSActivityFeedViewController
 
 @synthesize topLayoutGuideLength;
 @synthesize bottomLayoutGuideLength;
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout * __nonnull)layout className:(nullable NSString *)className {
+	self = [super initWithCollectionViewLayout:layout className:className];
+	if (self) {
+		self.pullToRefreshEnabled = NO;
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -52,6 +62,26 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 	[self updateLoginHUD];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self setupPullToRefreshView];
+}
+
+- (void)setupPullToRefreshView {
+	if (!self.pullRefreshSetupDone)
+	{
+		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		BlockWeakSelf wSelf = self;
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+				[wSelf loadObjects];
+			}];
+		});
+		self.pullRefreshSetupDone = YES;
+	}
+}
+
 - (void)refreshView
 {
 	if ([PFUser currentUser])
@@ -59,6 +89,7 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 		[self loadObjects];
 	}
 }
+
 
 - (void) dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -102,6 +133,9 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 		self.noResultsHUD.mode = MBProgressHUDModeText;
 		self.noResultsHUD.labelText = @"No Activity";
 	}
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.collectionView endRefresing];
+	});
 }
 
 #pragma mark - PFQUERY
