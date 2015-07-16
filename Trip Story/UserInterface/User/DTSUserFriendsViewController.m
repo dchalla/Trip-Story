@@ -61,6 +61,7 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 }
 
 - (void)setupPullToRefreshView {
+	self.collectionView.alwaysBounceVertical = YES;
 	if (!self.pullRefreshSetupDone)
 	{
 		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];

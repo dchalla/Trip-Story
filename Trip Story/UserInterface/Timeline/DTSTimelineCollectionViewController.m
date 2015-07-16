@@ -87,6 +87,7 @@
 }
 
 - (void)setupPullToRefreshView {
+	self.collectionView.alwaysBounceVertical = YES;
 	if (!self.pullRefreshSetupDone)
 	{
 		self.pullToRefresh = [[PullToMakeFlight alloc] init];
