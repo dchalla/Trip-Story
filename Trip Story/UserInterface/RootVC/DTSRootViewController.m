@@ -295,6 +295,7 @@
 {
 	if (![DTSUtilities isOnboardingShownToUser]) {
 		SFCarouselOnboardingViewController *carousel = [[SFCarouselOnboardingViewController alloc] init];
+		carousel.modalPresentationStyle = UIModalPresentationFormSheet;
 		[self presentViewController:carousel animated:YES completion:nil];
 	}
 	

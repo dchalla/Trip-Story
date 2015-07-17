@@ -26,7 +26,10 @@
 	[self.signUpView setLogo:logoView];
 	[self.signUpView.usernameField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
 	[self.signUpView.passwordField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
+	[self.signUpView.usernameField setTextColor:[UIColor colorWithWhite:1 alpha:1]];
+	[self.signUpView.passwordField setTextColor:[UIColor colorWithWhite:1 alpha:1]];
 	[self.signUpView.emailField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
+	[self.signUpView.emailField setTextColor:[UIColor colorWithWhite:1 alpha:1]];
 	self.signUpView.usernameField.separatorColor = [UIColor primaryColor];
 	self.signUpView.passwordField.separatorColor = [UIColor primaryColor];
 	self.signUpView.emailField.separatorColor = [UIColor primaryColor];

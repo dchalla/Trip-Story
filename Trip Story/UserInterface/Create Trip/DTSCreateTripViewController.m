@@ -32,6 +32,13 @@
 	[self.view addSubview:createTripView];
 	self.title = self.isCreateTripMode? @"Create Trip" : @"Update Trip";
 	[self configureCancelButton];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLoginHUD) name:kDTSUserAuthenticated object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLoginHUD) name:kDTSUserDataRefreshed object:nil];
+}
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated

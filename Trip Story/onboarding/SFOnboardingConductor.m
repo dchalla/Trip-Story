@@ -150,7 +150,11 @@ static const CGRect  kCloseButtonFrame = { {0, 0}, {264, 35} };
     } else {
         self.scrollScale = kScrollScale;
     }
-    
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		self.scrollScale = self.scrollScale/2;
+	}
+	
     //Create all the image views for the "images" array
     [self processViews:onboardingDictionary];
     

@@ -42,16 +42,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:self.onboardingJSONName withExtension:@"json"]];
-	self.conductor = [[SFOnboardingConductor alloc] initWithContainer:self.view jsonSpec:data delegate:self];
-	self.conductor.mainScrollView.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		[self setupConductor];
+	}
+	self.view.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
 	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self.conductor scrollViewDidScroll:self.conductor.mainScrollView];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self setupConductor];
+	}
+	[self.conductor scrollViewDidScroll:self.conductor.mainScrollView];
+}
+
+- (void)setupConductor {
+	NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:self.onboardingJSONName withExtension:@"json"]];
+	self.conductor = [[SFOnboardingConductor alloc] initWithContainer:self.view jsonSpec:data delegate:self];
+	self.conductor.mainScrollView.backgroundColor = [UIColor colorWithRed:23/255.0	green:23/255.0 blue:26/255.0 alpha:1.0];
 }
 
 #pragma mark - SFOnboardingConductorDelegate

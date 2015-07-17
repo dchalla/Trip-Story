@@ -29,6 +29,7 @@ static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWith
 
 @property (nonatomic, assign) BOOL requiresLogin;
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
+@property (nonatomic, strong) MBProgressHUD *loginHUD;
 
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -36,6 +37,7 @@ static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWith
 - (void)refreshView;
 - (void)showNoResultsHUD;
 - (NSString *)noResultsHUDString;
+- (NSString *)noResultsHUDDetailsString;
 
 
 @end

@@ -109,6 +109,7 @@
 
 - (void)refreshView
 {
+	[self updateLoginHUD];
 	if (self.user)
 	{
 		self.userTimelineVC.user = self.user;

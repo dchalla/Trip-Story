@@ -393,6 +393,7 @@
 	if (![DTSUtilities isCreateTripOnboardingShownToUser] && self.trip.user == [PFUser currentUser]) {
 		SFCarouselOnboardingViewController *carousel = [[SFCarouselOnboardingViewController alloc] init];
 		carousel.onboardingJSONName = @"createTripOnboarding";
+		carousel.modalPresentationStyle = UIModalPresentationFormSheet;
 		[self presentViewController:carousel animated:YES completion:nil];
 	}
 	

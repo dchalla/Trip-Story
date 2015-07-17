@@ -86,6 +86,7 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 
 - (void)refreshView
 {
+	[self updateLoginHUD];
 	if ([PFUser currentUser])
 	{
 		[self loadObjects];
@@ -133,6 +134,7 @@ static NSString * const cellReuseIdentifier = @"DTSActivityFeedCollectionViewCel
 	if (!self.objects || self.objects.count ==0)
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.noResultsHUD.userInteractionEnabled = NO;
 		self.noResultsHUD.mode = MBProgressHUDModeText;
 		self.noResultsHUD.labelText = @"No Activity";
 	}

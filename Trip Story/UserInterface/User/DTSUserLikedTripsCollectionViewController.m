@@ -21,6 +21,14 @@
     // Do any additional setup after loading the view.
 }
 
+- (NSString *)noResultsHUDString {
+	return @"No Liked Trips";
+}
+
+- (NSString *)noResultsHUDDetailsString {
+	return @"Like the trips to save";
+}
+
 #pragma mark - PFQUERY
 
 - (PFQuery *)queryForCollection

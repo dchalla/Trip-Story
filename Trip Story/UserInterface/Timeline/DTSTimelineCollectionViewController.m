@@ -48,6 +48,7 @@
 	self.collectionView.backgroundColor = [UIColor clearColor];
 	self.title = @"theTripStory";
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSRefreshTrips object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserAuthenticated object:nil];
 }
 
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
@@ -69,6 +70,7 @@
 
 - (void)refreshView
 {
+	[self updateLoginHUD];
 	[self loadObjects];
 }
 
@@ -118,20 +120,20 @@
 
 - (void)updateLoginHUD
 {
-	[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+	[self.loginHUD hide:YES];
 	if (self.requiresLogin)
 	{
 		if ([PFUser currentUser] == nil)
 		{
-			MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-			hud.mode = MBProgressHUDModeCustomView;
-			hud.labelText = @"";
-			hud.detailsLabelText = @"";
-			hud.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
-			hud.dimBackground = YES;
-			hud.backgroundColor = [UIColor primaryColor];
-			hud.margin = 0.0;
-			hud.color = [UIColor clearColor];
+			self.loginHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+			self.loginHUD.mode = MBProgressHUDModeCustomView;
+			self.loginHUD.labelText = @"";
+			self.loginHUD.detailsLabelText = @"";
+			self.loginHUD.customView = [DTSRequiresLoginView dts_viewFromNibWithName:@"DTSRequiresLoginView" bundle:[NSBundle mainBundle]];
+			self.loginHUD.dimBackground = YES;
+			self.loginHUD.backgroundColor = [UIColor primaryColor];
+			self.loginHUD.margin = 0.0;
+			self.loginHUD.color = [UIColor clearColor];
 			return;
 			
 		}
@@ -267,13 +269,19 @@
 	if (!self.objects || self.objects.count ==0)
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.noResultsHUD.userInteractionEnabled = NO;
 		self.noResultsHUD.mode = MBProgressHUDModeText;
 		self.noResultsHUD.labelText = [self noResultsHUDString];
+		self.noResultsHUD.detailsLabelText = [self noResultsHUDDetailsString];
 	}
 }
 
 - (NSString *)noResultsHUDString {
 	return @"No Results";
+}
+
+- (NSString *)noResultsHUDDetailsString {
+	return @"";
 }
 
 #pragma mark - custom styling

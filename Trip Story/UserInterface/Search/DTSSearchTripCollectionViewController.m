@@ -71,6 +71,7 @@
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 		self.noResultsHUD.mode = MBProgressHUDModeText;
+		self.noResultsHUD.userInteractionEnabled = NO;
 		self.noResultsHUD.labelText = [self noResultsHUDString];
 		self.noResultsHUD.detailsLabelText = @"New trips are being added by users every minute";
 	}

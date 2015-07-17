@@ -47,6 +47,10 @@
 
 - (void)updateUIWithUser:(PFUser *)user
 {
+	if (self.user != user ) {
+		self.updatedContent = NO;
+		self.profileImageView.image = nil;
+	}
 	self.user = user;
 	self.userNameLabel.text = [self.user dts_displayName];
 	if (self.user && self.profileImageView.image == nil)

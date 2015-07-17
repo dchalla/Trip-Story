@@ -98,8 +98,9 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	if (!self.objects || self.objects.count ==0)
 	{
 		self.noResultsHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+		self.noResultsHUD.userInteractionEnabled = NO;
 		self.noResultsHUD.mode = MBProgressHUDModeText;
-		self.noResultsHUD.labelText = self.forFollowers?@"No Followers":@"You Are Not Following Anyone";
+		self.noResultsHUD.labelText = self.forFollowers?@"No Followers":@"Not Following Anyone";
 	}
 }
 

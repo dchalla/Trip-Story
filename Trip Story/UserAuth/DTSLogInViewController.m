@@ -26,6 +26,8 @@
 	[self.logInView setLogo:logoView];
 	[self.logInView.usernameField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
 	[self.logInView.passwordField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.05]];
+	[self.logInView.usernameField setTextColor:[UIColor colorWithWhite:1 alpha:1]];
+	[self.logInView.passwordField setTextColor:[UIColor colorWithWhite:1 alpha:1]];
 	self.logInView.usernameField.separatorColor = [UIColor primaryColor];
 	self.logInView.passwordField.separatorColor = [UIColor primaryColor];
 	[self.logInView.logInButton setBackgroundImage:nil forState:UIControlStateNormal];
