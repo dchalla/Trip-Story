@@ -24,6 +24,8 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 @interface DTSUserFriendsViewController ()
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 @property (nonatomic) BOOL pullRefreshSetupDone;
+@property (nonatomic, strong) PullToMakeFlight *pullToRefresh;
+
 @end
 
 @implementation DTSUserFriendsViewController
@@ -60,14 +62,19 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	[self setupPullToRefreshView];
 }
 
+- (void) dealloc {
+	[self.pullToRefresh removeScrollViewObserving];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setupPullToRefreshView {
 	self.collectionView.alwaysBounceVertical = YES;
 	if (!self.pullRefreshSetupDone)
 	{
-		PullToMakeFlight *pullToRefresh = [[PullToMakeFlight alloc] init];
+		self.pullToRefresh = [[PullToMakeFlight alloc] init];
 		BlockWeakSelf wSelf = self;
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-			[self.collectionView addPullToRefresh:pullToRefresh action:^{
+			[self.collectionView addPullToRefresh:self.pullToRefresh action:^{
 				[wSelf loadObjects];
 			}];
 		});

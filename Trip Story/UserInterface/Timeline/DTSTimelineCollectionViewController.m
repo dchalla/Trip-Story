@@ -18,7 +18,6 @@
 @property (nonatomic) BOOL pullRefreshSetupDone;
 @property (nonatomic, strong) PullToMakeFlight *pullToRefresh;
 
-
 @end
 
 @implementation DTSTimelineCollectionViewController
