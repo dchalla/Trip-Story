@@ -155,6 +155,10 @@
 	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];
 	
+	if (self.filterEmptyTrips) {
+		[query whereKeyExists:@"originalEventsList" ];
+	}
+	
 	if ([self.objects count] == 0 && ![Parse isLocalDatastoreEnabled]) {
 		query.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	}

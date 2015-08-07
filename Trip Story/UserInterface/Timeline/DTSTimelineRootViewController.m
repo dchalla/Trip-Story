@@ -25,6 +25,7 @@
 	if (!_exploreTimelineVC)
 	{
 		_exploreTimelineVC = [[DTSTimelineCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init] className: [DTSTrip parseClassName]];
+		_exploreTimelineVC.filterEmptyTrips = YES;
 	}
 	return _exploreTimelineVC;
 }

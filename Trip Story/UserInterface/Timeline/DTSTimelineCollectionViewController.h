@@ -30,6 +30,7 @@ static NSString * const reuseIdentifierWithMap = @"DTSTripCollectionViewCellWith
 @property (nonatomic, assign) BOOL requiresLogin;
 @property (nonatomic, strong) MBProgressHUD *noResultsHUD;
 @property (nonatomic, strong) MBProgressHUD *loginHUD;
+@property (nonatomic) BOOL filterEmptyTrips;
 
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dtsDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;

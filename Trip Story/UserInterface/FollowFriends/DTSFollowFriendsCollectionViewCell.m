@@ -24,7 +24,7 @@
 
 - (void)prepareForReuse
 {
-	self.userImage = nil;
+	self.userImage.image = nil;
 	self.followButton.backgroundColor = [UIColor clearColor];
 	[self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
 	self.followButton.selected = NO;
@@ -39,7 +39,7 @@
 	bool followingUser = [[DTSCache sharedCache] followStatusForUser:user];
 	[self updateFollowButton:followingUser];
 	
-	if ([DTSUtilities userHasProfilePictures:self.user]) {
+	if ([DTSUtilities userHasProfilePictures:self.user] && !self.userImage.image) {
 		self.userImage.file = [self.user objectForKey:kDTSUserProfilePicSmallKey];
 		[self.userImage loadInBackground];
 	}
