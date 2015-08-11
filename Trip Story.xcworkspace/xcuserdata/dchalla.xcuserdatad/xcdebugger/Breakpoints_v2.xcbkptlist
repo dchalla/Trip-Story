@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/Infrastructure/PullToMakeFlight/PullToMakeFlight.swift"
-            timestampString = "458719977.380407"
+            timestampString = "460961565.869609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "animateState(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -96,7 +96,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/UserInterface/Timeline/DTSTimelineCollectionViewController.m"
@@ -128,7 +128,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/UserInterface/Timeline/DTSTimelineCollectionViewController.m"
@@ -154,6 +154,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "-prepareForReuse"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trip Story/Infrastructure/PullToMakeFlight/PullToMakeFlight.swift"
+            timestampString = "461006938.919045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "initalLayout()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
