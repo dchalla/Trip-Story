@@ -24,6 +24,7 @@
 #import "SFCarouselOnboardingViewController.h"
 #import "DTSUtilities.h"
 #import <Google/Analytics.h>
+#import "theTripStory-Swift.h"
 
 #define DTS_SEGMENT_HEIGHT 44
 #ifdef DEBUG

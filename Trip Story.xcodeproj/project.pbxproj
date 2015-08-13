@@ -233,6 +233,35 @@
 		F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92573197B148400D92941 /* DTSEventPickerEntryTableViewCell.m */; };
 		F9F92576197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */; };
 		F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F92578197C3FF800D92941 /* NSString+Utilities.m */; };
+		F9FBF9381B7D5670008E1686 /* Albums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9121B7D5670008E1686 /* Albums.storyboard */; };
+		F9FBF9391B7D5670008E1686 /* AlbumTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9131B7D5670008E1686 /* AlbumTitleView.xib */; };
+		F9FBF93A1B7D5670008E1686 /* arrow_down@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9141B7D5670008E1686 /* arrow_down@1x.png */; };
+		F9FBF93B1B7D5670008E1686 /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9151B7D5670008E1686 /* arrow_down@2x.png */; };
+		F9FBF93C1B7D5670008E1686 /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9161B7D5670008E1686 /* arrow_down@3x.png */; };
+		F9FBF93D1B7D5670008E1686 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FBF9171B7D5670008E1686 /* PhotoCell.xib */; };
+		F9FBF93F1B7D5670008E1686 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF91B1B7D5670008E1686 /* AlbumsViewController.swift */; };
+		F9FBF9401B7D5670008E1686 /* BSImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF91C1B7D5670008E1686 /* BSImagePickerViewController.swift */; };
+		F9FBF9411B7D5670008E1686 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF91D1B7D5670008E1686 /* PhotosViewController.swift */; };
+		F9FBF9421B7D5670008E1686 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF91E1B7D5670008E1686 /* PreviewViewController.swift */; };
+		F9FBF9431B7D5670008E1686 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF91F1B7D5670008E1686 /* ZoomAnimator.swift */; };
+		F9FBF9441B7D5670008E1686 /* UIButton+NoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9211B7D5670008E1686 /* UIButton+NoAnimation.swift */; };
+		F9FBF9451B7D5670008E1686 /* UIViewController+BSImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9221B7D5670008E1686 /* UIViewController+BSImagePicker.swift */; };
+		F9FBF9461B7D5670008E1686 /* AlbumCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9241B7D5670008E1686 /* AlbumCellFactory.swift */; };
+		F9FBF9471B7D5670008E1686 /* PhotoCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9251B7D5670008E1686 /* PhotoCellFactory.swift */; };
+		F9FBF9481B7D5670008E1686 /* AssetCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9271B7D5670008E1686 /* AssetCollectionDataSource.swift */; };
+		F9FBF9491B7D5670008E1686 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9281B7D5670008E1686 /* CollectionViewDataSource.swift */; };
+		F9FBF94A1B7D5670008E1686 /* FetchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9291B7D5670008E1686 /* FetchResultsDataSource.swift */; };
+		F9FBF94B1B7D5670008E1686 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF92A1B7D5670008E1686 /* Settings.swift */; };
+		F9FBF94C1B7D5670008E1686 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF92B1B7D5670008E1686 /* TableViewDataSource.swift */; };
+		F9FBF94D1B7D5670008E1686 /* BSImagePickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF92D1B7D5670008E1686 /* BSImagePickerSettings.swift */; };
+		F9FBF94E1B7D5670008E1686 /* CollectionViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF92E1B7D5670008E1686 /* CollectionViewCellFactory.swift */; };
+		F9FBF94F1B7D5670008E1686 /* SelectableDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF92F1B7D5670008E1686 /* SelectableDataDelegate.swift */; };
+		F9FBF9501B7D5670008E1686 /* SelectableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9301B7D5670008E1686 /* SelectableDataSource.swift */; };
+		F9FBF9511B7D5670008E1686 /* TableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9311B7D5670008E1686 /* TableViewCellFactory.swift */; };
+		F9FBF9521B7D5670008E1686 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9331B7D5670008E1686 /* AlbumCell.swift */; };
+		F9FBF9531B7D5670008E1686 /* AlbumTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9341B7D5670008E1686 /* AlbumTitleView.swift */; };
+		F9FBF9541B7D5670008E1686 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9351B7D5670008E1686 /* PhotoCell.swift */; };
+		F9FBF9551B7D5670008E1686 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FBF9361B7D5670008E1686 /* SelectionView.swift */; };
 		F9FC768E1B54C5C900287D3E /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FC768D1B54C5C900287D3E /* user_icon.png */; };
 		F9FC76901B54D0CC00287D3E /* yosemite.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F9FC768F1B54D0CC00287D3E /* yosemite.jpeg */; };
 		F9FD080D1B4F6ECB00B57EA2 /* DTSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FD080B1B4F6ECB00B57EA2 /* DTSWebViewController.m */; };
@@ -610,6 +639,35 @@
 		F9F92574197B148400D92941 /* DTSEventPickerEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTSEventPickerEntryTableViewCell.xib; sourceTree = "<group>"; };
 		F9F92577197C3FF800D92941 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
 		F9F92578197C3FF800D92941 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		F9FBF9121B7D5670008E1686 /* Albums.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Albums.storyboard; sourceTree = "<group>"; };
+		F9FBF9131B7D5670008E1686 /* AlbumTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumTitleView.xib; sourceTree = "<group>"; };
+		F9FBF9141B7D5670008E1686 /* arrow_down@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@1x.png"; sourceTree = "<group>"; };
+		F9FBF9151B7D5670008E1686 /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
+		F9FBF9161B7D5670008E1686 /* arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
+		F9FBF9171B7D5670008E1686 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		F9FBF91B1B7D5670008E1686 /* AlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		F9FBF91C1B7D5670008E1686 /* BSImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSImagePickerViewController.swift; sourceTree = "<group>"; };
+		F9FBF91D1B7D5670008E1686 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		F9FBF91E1B7D5670008E1686 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		F9FBF91F1B7D5670008E1686 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
+		F9FBF9211B7D5670008E1686 /* UIButton+NoAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+NoAnimation.swift"; sourceTree = "<group>"; };
+		F9FBF9221B7D5670008E1686 /* UIViewController+BSImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BSImagePicker.swift"; sourceTree = "<group>"; };
+		F9FBF9241B7D5670008E1686 /* AlbumCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCellFactory.swift; sourceTree = "<group>"; };
+		F9FBF9251B7D5670008E1686 /* PhotoCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellFactory.swift; sourceTree = "<group>"; };
+		F9FBF9271B7D5670008E1686 /* AssetCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionDataSource.swift; sourceTree = "<group>"; };
+		F9FBF9281B7D5670008E1686 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		F9FBF9291B7D5670008E1686 /* FetchResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultsDataSource.swift; sourceTree = "<group>"; };
+		F9FBF92A1B7D5670008E1686 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F9FBF92B1B7D5670008E1686 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		F9FBF92D1B7D5670008E1686 /* BSImagePickerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSImagePickerSettings.swift; sourceTree = "<group>"; };
+		F9FBF92E1B7D5670008E1686 /* CollectionViewCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellFactory.swift; sourceTree = "<group>"; };
+		F9FBF92F1B7D5670008E1686 /* SelectableDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableDataDelegate.swift; sourceTree = "<group>"; };
+		F9FBF9301B7D5670008E1686 /* SelectableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableDataSource.swift; sourceTree = "<group>"; };
+		F9FBF9311B7D5670008E1686 /* TableViewCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellFactory.swift; sourceTree = "<group>"; };
+		F9FBF9331B7D5670008E1686 /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		F9FBF9341B7D5670008E1686 /* AlbumTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTitleView.swift; sourceTree = "<group>"; };
+		F9FBF9351B7D5670008E1686 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		F9FBF9361B7D5670008E1686 /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		F9FC768D1B54C5C900287D3E /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		F9FC768F1B54D0CC00287D3E /* yosemite.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yosemite.jpeg; sourceTree = "<group>"; };
 		F9FD080A1B4F6ECB00B57EA2 /* DTSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSWebViewController.h; sourceTree = "<group>"; };
@@ -1006,6 +1064,7 @@
 		F95815051964850B002207A3 /* Trip Story */ = {
 			isa = PBXGroup;
 			children = (
+				F9FBF90F1B7D5670008E1686 /* BSImagePicker */,
 				F9FD080F1B4F783000B57EA2 /* Resources */,
 				F9A829621B4BA38800D8E7B5 /* onboarding */,
 				F9BBF9541AA774130076CD78 /* UserAuth */,
@@ -1297,6 +1356,106 @@
 			path = MagicPieLayer;
 			sourceTree = "<group>";
 		};
+		F9FBF90F1B7D5670008E1686 /* BSImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9101B7D5670008E1686 /* Assets */,
+				F9FBF9181B7D5670008E1686 /* Classes */,
+			);
+			path = BSImagePicker;
+			sourceTree = "<group>";
+		};
+		F9FBF9101B7D5670008E1686 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9121B7D5670008E1686 /* Albums.storyboard */,
+				F9FBF9131B7D5670008E1686 /* AlbumTitleView.xib */,
+				F9FBF9141B7D5670008E1686 /* arrow_down@1x.png */,
+				F9FBF9151B7D5670008E1686 /* arrow_down@2x.png */,
+				F9FBF9161B7D5670008E1686 /* arrow_down@3x.png */,
+				F9FBF9171B7D5670008E1686 /* PhotoCell.xib */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F9FBF9181B7D5670008E1686 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF91A1B7D5670008E1686 /* Controller */,
+				F9FBF9201B7D5670008E1686 /* Extension */,
+				F9FBF9231B7D5670008E1686 /* Factory */,
+				F9FBF9261B7D5670008E1686 /* Model */,
+				F9FBF92C1B7D5670008E1686 /* Protocol */,
+				F9FBF9321B7D5670008E1686 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F9FBF91A1B7D5670008E1686 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF91B1B7D5670008E1686 /* AlbumsViewController.swift */,
+				F9FBF91C1B7D5670008E1686 /* BSImagePickerViewController.swift */,
+				F9FBF91D1B7D5670008E1686 /* PhotosViewController.swift */,
+				F9FBF91E1B7D5670008E1686 /* PreviewViewController.swift */,
+				F9FBF91F1B7D5670008E1686 /* ZoomAnimator.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9FBF9201B7D5670008E1686 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9211B7D5670008E1686 /* UIButton+NoAnimation.swift */,
+				F9FBF9221B7D5670008E1686 /* UIViewController+BSImagePicker.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F9FBF9231B7D5670008E1686 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9241B7D5670008E1686 /* AlbumCellFactory.swift */,
+				F9FBF9251B7D5670008E1686 /* PhotoCellFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F9FBF9261B7D5670008E1686 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9271B7D5670008E1686 /* AssetCollectionDataSource.swift */,
+				F9FBF9281B7D5670008E1686 /* CollectionViewDataSource.swift */,
+				F9FBF9291B7D5670008E1686 /* FetchResultsDataSource.swift */,
+				F9FBF92A1B7D5670008E1686 /* Settings.swift */,
+				F9FBF92B1B7D5670008E1686 /* TableViewDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9FBF92C1B7D5670008E1686 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF92D1B7D5670008E1686 /* BSImagePickerSettings.swift */,
+				F9FBF92E1B7D5670008E1686 /* CollectionViewCellFactory.swift */,
+				F9FBF92F1B7D5670008E1686 /* SelectableDataDelegate.swift */,
+				F9FBF9301B7D5670008E1686 /* SelectableDataSource.swift */,
+				F9FBF9311B7D5670008E1686 /* TableViewCellFactory.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F9FBF9321B7D5670008E1686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9FBF9331B7D5670008E1686 /* AlbumCell.swift */,
+				F9FBF9341B7D5670008E1686 /* AlbumTitleView.swift */,
+				F9FBF9351B7D5670008E1686 /* PhotoCell.swift */,
+				F9FBF9361B7D5670008E1686 /* SelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F9FD080F1B4F783000B57EA2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1532,6 +1691,7 @@
 				F9A829971B4BA38800D8E7B5 /* screen_01b_element@2x.png in Resources */,
 				F9E9D90E1B55E3CE0076F173 /* createScreen_1@2x.png in Resources */,
 				F9FD5A6F1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
+				F9FBF9381B7D5670008E1686 /* Albums.storyboard in Resources */,
 				F96B21281AB362AA009CC03E /* 4.png in Resources */,
 				F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */,
 				F9FD5A6B1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
@@ -1575,10 +1735,12 @@
 				F993761C1B202627005D58FE /* timelineIcon.png in Resources */,
 				F9FD5A6E1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9FC768E1B54C5C900287D3E /* user_icon.png in Resources */,
+				F9FBF93B1B7D5670008E1686 /* arrow_down@2x.png in Resources */,
 				F99FC43B1B22072C000CDCB3 /* activityIcon-lightGray@2x.png in Resources */,
 				F9EA06581AA57F99007573EC /* LaunchScreen.xib in Resources */,
 				F99FC4361B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.xib in Resources */,
 				F9A8299A1B4BA38800D8E7B5 /* screen_03_element-rays@2x.png in Resources */,
+				F9FBF93D1B7D5670008E1686 /* PhotoCell.xib in Resources */,
 				F9A8299F1B4BA38800D8E7B5 /* screen_05b_element@2x.png in Resources */,
 				F9FC76901B54D0CC00287D3E /* yosemite.jpeg in Resources */,
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
@@ -1657,6 +1819,7 @@
 				F9BEC13D19B398A800622CC9 /* airplane21.png in Resources */,
 				F96B21211AB362AA009CC03E /* 2@2x.png in Resources */,
 				F904DB321B4E311F0054E496 /* Thumbs_down.png in Resources */,
+				F9FBF9391B7D5670008E1686 /* AlbumTitleView.xib in Resources */,
 				F96801C51B0C473800756EE0 /* DTSEventsEntryDeleteView.xib in Resources */,
 				F9FD5A821AC5C57C009BDDF2 /* Icon.png in Resources */,
 				F99FC4501B220C0A000CDCB3 /* timelineIcon-lightGray@2x.png in Resources */,
@@ -1680,6 +1843,7 @@
 				F9A8299E1B4BA38800D8E7B5 /* screen_05a_element@2x.png in Resources */,
 				F9FD5A7F1AC5C57C009BDDF2 /* Icon-72@2x.png in Resources */,
 				F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */,
+				F9FBF93A1B7D5670008E1686 /* arrow_down@1x.png in Resources */,
 				F96B211F1AB362AA009CC03E /* 2-selected@2x.png in Resources */,
 				F9A829981B4BA38800D8E7B5 /* screen_02@2x.png in Resources */,
 				F9FD5A771AC5C57C009BDDF2 /* Icon-60@3x.png in Resources */,
@@ -1692,6 +1856,7 @@
 				F9A829911B4BA38800D8E7B5 /* onboarding.json in Resources */,
 				F9FD5A741AC5C57C009BDDF2 /* Icon-40@2x.png in Resources */,
 				F958150A1964850B002207A3 /* InfoPlist.strings in Resources */,
+				F9FBF93C1B7D5670008E1686 /* arrow_down@3x.png in Resources */,
 				F99FC4541B220C0A000CDCB3 /* users-lightGray@3x.png in Resources */,
 				F904DB371B4EDF240054E496 /* settings@3x.png in Resources */,
 				F9A8298F1B4BA38800D8E7B5 /* icon_phone@2x.png in Resources */,
@@ -1752,14 +1917,17 @@
 				F954E75F1964CA5A003A0B72 /* DTSTripDetailsViewController.m in Sources */,
 				F948C7F11979EC95000A2A3B /* DTSEventDateEntryTableViewCell.m in Sources */,
 				F9391DC91B0FE98A002DA264 /* DTSRequiresLoginView.m in Sources */,
+				F9FBF94D1B7D5670008E1686 /* BSImagePickerSettings.swift in Sources */,
 				F9A829A21B4BA38800D8E7B5 /* SFOnboardingElement.m in Sources */,
 				F9F012ED19B522CF00176944 /* NSMutableArray+pieEx.m in Sources */,
+				F9FBF94E1B7D5670008E1686 /* CollectionViewCellFactory.swift in Sources */,
 				F9401DB11AB9DD8000F271F5 /* DTSSegmentedViewController.m in Sources */,
 				F9F92579197C3FF800D92941 /* NSString+Utilities.m in Sources */,
 				F9401DA91AB9473400F271F5 /* UIImage+ResizeAdditions.m in Sources */,
 				F904DB2C1B4E230B0054E496 /* DKCRateFeedbackPrompt.m in Sources */,
 				F9E515FF1B576850008F757D /* CAKeyframeAnimation+Extensions.swift in Sources */,
 				F91CBD32197EFDAD00BC3021 /* DTSLocationEntryViewController.m in Sources */,
+				F9FBF94A1B7D5670008E1686 /* FetchResultsDataSource.swift in Sources */,
 				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
 				F99376281B20B5FA005D58FE /* DTSActivityFeedViewController.m in Sources */,
 				F9401DB41AB9E23C00F271F5 /* DTSFriendsTimelineCollectionViewController.m in Sources */,
@@ -1769,26 +1937,36 @@
 				F91015821AB4E279006A6FC6 /* DTSTimelineCollectionViewCell.m in Sources */,
 				F99FC4351B21729F000CDCB3 /* DTSActivityFeedCollectionViewCell.m in Sources */,
 				F9401D9E1AB91A3D00F271F5 /* DTSLogInViewController.m in Sources */,
+				F9FBF9451B7D5670008E1686 /* UIViewController+BSImagePicker.swift in Sources */,
 				F954E7681965AAF2003A0B72 /* DTSEvent.m in Sources */,
 				F9FD5A861AC5C57C009BDDF2 /* README.md in Sources */,
+				F9FBF9461B7D5670008E1686 /* AlbumCellFactory.swift in Sources */,
 				F910158C1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m in Sources */,
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F9401DA71AB9473400F271F5 /* UIImage+Alpha.m in Sources */,
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
+				F9FBF93F1B7D5670008E1686 /* AlbumsViewController.swift in Sources */,
+				F9FBF9521B7D5670008E1686 /* AlbumCell.swift in Sources */,
 				F9FD5A391AC510A8009BDDF2 /* DTSCreateTripViewController.m in Sources */,
 				F948C7EA19789643000A2A3B /* DTSEventTextEntryTableViewCell.m in Sources */,
 				F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */,
+				F9FBF94C1B7D5670008E1686 /* TableViewDataSource.swift in Sources */,
 				F96801C31B0C471E00756EE0 /* DTSEventsEntryDeleteView.m in Sources */,
+				F9FBF9471B7D5670008E1686 /* PhotoCellFactory.swift in Sources */,
 				F9B44F9819F3A3D500321E2C /* DTSTripEventsCollectionViewCell.m in Sources */,
+				F9FBF9421B7D5670008E1686 /* PreviewViewController.swift in Sources */,
 				F9F012EE19B522CF00176944 /* PieElement.m in Sources */,
 				F9401DB81AB9EC8A00F271F5 /* DTSUserRootViewController.m in Sources */,
+				F9FBF9431B7D5670008E1686 /* ZoomAnimator.swift in Sources */,
 				F9F012F319B524D900176944 /* DTSTripStoryHeaderView.m in Sources */,
 				F9C6BC0D1AB778CB00B82895 /* PFUser+DTSAdditions.m in Sources */,
 				F954E77C1966410F003A0B72 /* DTSTripStoryEventGeneralCell.m in Sources */,
 				F9401DAD1AB9D93E00F271F5 /* DTSTimelineRootViewController.m in Sources */,
+				F9FBF9441B7D5670008E1686 /* UIButton+NoAnimation.swift in Sources */,
 				F9CE11D71B168C1F00F3807A /* TripStoryIconView.m in Sources */,
 				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
+				F9FBF9531B7D5670008E1686 /* AlbumTitleView.swift in Sources */,
 				F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
@@ -1798,6 +1976,8 @@
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
 				F9401DAA1AB9473400F271F5 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				F9A829A11B4BA38800D8E7B5 /* SFOnboardingConductor.m in Sources */,
+				F9FBF94B1B7D5670008E1686 /* Settings.swift in Sources */,
+				F9FBF9411B7D5670008E1686 /* PhotosViewController.swift in Sources */,
 				F954E77719660CE0003A0B72 /* DTSTripStoryEventActivityCell.m in Sources */,
 				F9BE0D5E1B1E0EA3001F41AE /* DTSSearchRootViewController.m in Sources */,
 				F9615CCB1ABBA09F004B2ADF /* DTSUserProfileCollectionViewCell.m in Sources */,
@@ -1805,15 +1985,20 @@
 				F9615CCF1ABBDA50004B2ADF /* DTSUserFriendsViewController.m in Sources */,
 				F96801C91B0D106500756EE0 /* DTSTripStoryFooterView.m in Sources */,
 				F9A829A01B4BA38800D8E7B5 /* SFCarouselOnboardingViewController.m in Sources */,
+				F9FBF9491B7D5670008E1686 /* CollectionViewDataSource.swift in Sources */,
 				F9401DA81AB9473400F271F5 /* UIImage+AlphaAdditions.m in Sources */,
 				F954E7621964CAA1003A0B72 /* DTSTripStoryTableViewController.m in Sources */,
 				F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */,
+				F9FBF9401B7D5670008E1686 /* BSImagePickerViewController.swift in Sources */,
 				F9AE519C1AB8B84F00958707 /* DTSUtilities.m in Sources */,
 				F99EBA081A1DBC3700290D8A /* DTSTripEventDetailsViewController.m in Sources */,
 				F958150C1964850B002207A3 /* main.m in Sources */,
 				F954E78019664777003A0B72 /* UIColor+Utilities.m in Sources */,
 				F9F05D411AA18F43002C4A42 /* NSObject+DTSAdditions.m in Sources */,
+				F9FBF9511B7D5670008E1686 /* TableViewCellFactory.swift in Sources */,
 				F9CE11CC1B15A11500F3807A /* DTSLoginLogoView.m in Sources */,
+				F9FBF9541B7D5670008E1686 /* PhotoCell.swift in Sources */,
+				F9FBF9481B7D5670008E1686 /* AssetCollectionDataSource.swift in Sources */,
 				F9F05D391AA15D44002C4A42 /* DTSPlacemark.m in Sources */,
 				F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */,
 				F9C6BC0A1AB7776900B82895 /* DTSConstants.m in Sources */,
@@ -1830,9 +2015,12 @@
 				F9CE11D11B15A87500F3807A /* DTSSignUpViewController.m in Sources */,
 				F9E515F91B5766FA008F757D /* UIScrollView+PullToRefresh.swift in Sources */,
 				F99EBA0D1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.m in Sources */,
+				F9FBF9551B7D5670008E1686 /* SelectionView.swift in Sources */,
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
 				F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */,
+				F9FBF94F1B7D5670008E1686 /* SelectableDataDelegate.swift in Sources */,
+				F9FBF9501B7D5670008E1686 /* SelectableDataSource.swift in Sources */,
 				F9A829A31B4BA38800D8E7B5 /* SFOnboardingTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
