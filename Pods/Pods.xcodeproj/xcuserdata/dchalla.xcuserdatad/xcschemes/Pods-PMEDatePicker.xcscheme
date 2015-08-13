@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCB506623BF8C20CB460AFDB"
+               BlueprintIdentifier = "7409F9D0A910EEB873E00DD1"
                BuildableName = "libPods-PMEDatePicker.a"
                BlueprintName = "Pods-PMEDatePicker"
                ReferencedContainer = "container:Pods.xcodeproj">

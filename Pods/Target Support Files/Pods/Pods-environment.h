@@ -51,7 +51,7 @@
 // GoogleAnalytics
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics 3
-#define COCOAPODS_VERSION_MINOR_GoogleAnalytics 12
+#define COCOAPODS_VERSION_MINOR_GoogleAnalytics 13
 #define COCOAPODS_VERSION_PATCH_GoogleAnalytics 0
 
 // GoogleNetworkingUtilities
@@ -101,4 +101,10 @@
 #define COCOAPODS_VERSION_MAJOR_ParseUI 1
 #define COCOAPODS_VERSION_MINOR_ParseUI 1
 #define COCOAPODS_VERSION_PATCH_ParseUI 4
+
+// UIImageViewModeScaleAspect
+#define COCOAPODS_POD_AVAILABLE_UIImageViewModeScaleAspect
+#define COCOAPODS_VERSION_MAJOR_UIImageViewModeScaleAspect 1
+#define COCOAPODS_VERSION_MINOR_UIImageViewModeScaleAspect 3
+#define COCOAPODS_VERSION_PATCH_UIImageViewModeScaleAspect 0
 
