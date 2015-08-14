@@ -26,6 +26,7 @@
 @property (nonatomic) BOOL isInEditMode;
 @property (nonatomic, strong) DTSTripStoryHeaderView *headerView;
 @property (nonatomic, strong) DTSTripStoryFooterView *footerView;
+@property (nonatomic, strong) UIPopoverController *popover;
 
 @end
 
@@ -254,7 +255,7 @@
 }
 
 #pragma mark - sharing
-- (void)shareButtonTapped
+- (void)shareButtonTapped:(id)sender
 {
 	UIImage *screenshotImage = [self screenshotImageForSharing];
 	NSString *tripDescription = self.trip.tripDescription;
@@ -271,7 +272,20 @@
 	}
 	UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
 	[controller setValue:self.trip.tripName forKey:@"subject"];
-	[self presentViewController:controller animated:YES completion:nil];
+	
+	if ( [controller respondsToSelector:@selector(popoverPresentationController)] ) {
+		// iOS8
+		controller.popoverPresentationController.sourceView = self.view;
+	}
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+	{
+		[self presentViewController:controller animated:YES completion:nil];
+	} else {
+			self.popover = [[UIPopoverController alloc] initWithContentViewController:controller];
+		UIBarButtonItem *barButtonItem = dynamic_cast_oc(sender, UIBarButtonItem);
+		[self.popover presentPopoverFromBarButtonItem:barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	}
 }
 
 -(UIImage *)screenshotImageForSharing

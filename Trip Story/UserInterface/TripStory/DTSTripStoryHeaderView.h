@@ -12,7 +12,7 @@
 @protocol DTSTripStoryHeaderViewDelegate <NSObject>
 
 - (void)tripStoryHeaderViewEditButtonTapped;
-- (void)shareButtonTapped;
+- (void)shareButtonTapped:(id)sender;
 
 @end
 

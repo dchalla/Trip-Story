@@ -299,7 +299,7 @@
 #pragma mark - share
 
 - (IBAction)shareButtonTapped:(id)sender {
-	[self.delegate shareButtonTapped];
+	[self.delegate shareButtonTapped:sender];
 }
 
 
