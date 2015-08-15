@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/UserInterface/TripMap/DTSTripDetailsMapViewController.m"
-            timestampString = "461289179.811485"
+            timestampString = "461301766.704727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-trackScreenView"
             landmarkType = "5">
          </BreakpointContent>

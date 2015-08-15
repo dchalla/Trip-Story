@@ -1613,6 +1613,7 @@
 				F95814F91964850B002207A3 /* Frameworks */,
 				F95814FA1964850B002207A3 /* Resources */,
 				F3A9D86473421DB75B623D21 /* Copy Pods Resources */,
+				F9DA67A81B7EE3C60056C128 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1904,6 +1905,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9DA67A81B7EE3C60056C128 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_ID=\"55ce7ca4985ec40d0002c591\"\nAPI_KEY=\"dQxefQVU4OHHlgsdl1wyGfHFistCixqU\"\nsource \"${SRCROOT}\"/Pods/CrittercismSDK/CrittercismSDK/dsym_upload.sh";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2137,7 +2151,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
