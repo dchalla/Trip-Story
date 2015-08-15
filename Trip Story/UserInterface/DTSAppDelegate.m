@@ -12,13 +12,14 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "DTSUserAuthHelper.h"
 #import <Google/Analytics.h>
+#import <CrittercismSDK/Crittercism.h>
 
 @implementation DTSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-	
+	[Crittercism enableWithAppID:@"55ce7ca4985ec40d0002c591"];
 	[Parse setApplicationId:@"ciwtl1abDpXzKAvRXaBFaJdrR1nvOd3SWJnu5trn"
 				  clientKey:@"znMgPXhb8Fwi3Z0Cpfm41t89aIP8ZBvycsrhgfIE"];
 	[PFFacebookUtils initializeFacebook];

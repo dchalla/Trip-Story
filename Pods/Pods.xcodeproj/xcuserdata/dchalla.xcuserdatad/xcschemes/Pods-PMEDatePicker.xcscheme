@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7409F9D0A910EEB873E00DD1"
+               BlueprintIdentifier = "EF6BBC4F51C4651B34B3C775"
                BuildableName = "libPods-PMEDatePicker.a"
                BlueprintName = "Pods-PMEDatePicker"
                ReferencedContainer = "container:Pods.xcodeproj">

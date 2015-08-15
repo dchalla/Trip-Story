@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7B2F219AA35C43968F47296"
+               BlueprintIdentifier = "16338FCAE8E56F4DE566DB42"
                BuildableName = "libPods-UIImageViewModeScaleAspect.a"
                BlueprintName = "Pods-UIImageViewModeScaleAspect"
                ReferencedContainer = "container:Pods.xcodeproj">
