@@ -201,6 +201,11 @@
 		F9CE11D71B168C1F00F3807A /* TripStoryIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE11D61B168C1F00F3807A /* TripStoryIconView.m */; };
 		F9CE11DA1B16AD7800F3807A /* cycling.png in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11D81B16AD7800F3807A /* cycling.png */; };
 		F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11D91B16AD7800F3807A /* TentIcon.png */; };
+		F9D9E6C71B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6C61B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m */; };
+		F9D9E6CB1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6C91B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m */; };
+		F9D9E6CC1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */; };
+		F9D9E6D01B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6CE1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m */; };
+		F9D9E6D11B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CF1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib */; };
 		F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */; };
 		F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */; };
 		F9DF95B61ABE8E6900327C82 /* smileyLikeBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */; };
@@ -215,6 +220,10 @@
 		F9E515FF1B576850008F757D /* CAKeyframeAnimation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515FE1B576850008F757D /* CAKeyframeAnimation+Extensions.swift */; };
 		F9E516011B5768FB008F757D /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E516001B5768FB008F757D /* Image.xcassets */; };
 		F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */; };
+		F9E7DC871B8180EC007D82D5 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7DC861B8180EC007D82D5 /* Photos.framework */; };
+		F9E7DC891B8180F4007D82D5 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7DC881B8180F4007D82D5 /* PhotosUI.framework */; };
+		F9E7DC8C1B8241BF007D82D5 /* DTSTripPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E7DC8B1B8241BF007D82D5 /* DTSTripPhoto.m */; };
+		F9E7DC901B82C9BE007D82D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E7DC8F1B82C9BE007D82D5 /* CoreLocation.framework */; };
 		F9E9D9041B55E1B10076F173 /* createTripOnboarding.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D9031B55E1B10076F173 /* createTripOnboarding.json */; };
 		F9E9D90E1B55E3CE0076F173 /* createScreen_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D90B1B55E3CE0076F173 /* createScreen_1@2x.png */; };
 		F9E9D90F1B55E3CE0076F173 /* createScreen_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E9D90C1B55E3CE0076F173 /* createScreen_2@2x.png */; };
@@ -596,6 +605,14 @@
 		F9CE11D61B168C1F00F3807A /* TripStoryIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripStoryIconView.m; path = TripStoryIconView/TripStoryIconView.m; sourceTree = "<group>"; };
 		F9CE11D81B16AD7800F3807A /* cycling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycling.png; sourceTree = "<group>"; };
 		F9CE11D91B16AD7800F3807A /* TentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TentIcon.png; sourceTree = "<group>"; };
+		F9D9E6C51B7D6571005370B8 /* DTSTripPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripPhotosCollectionViewController.h; path = TripPhotos/DTSTripPhotosCollectionViewController.h; sourceTree = "<group>"; };
+		F9D9E6C61B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripPhotosCollectionViewController.m; path = TripPhotos/DTSTripPhotosCollectionViewController.m; sourceTree = "<group>"; };
+		F9D9E6C81B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripPhotosImageCollectionViewCell.h; path = TripPhotos/DTSTripPhotosImageCollectionViewCell.h; sourceTree = "<group>"; };
+		F9D9E6C91B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripPhotosImageCollectionViewCell.m; path = TripPhotos/DTSTripPhotosImageCollectionViewCell.m; sourceTree = "<group>"; };
+		F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripPhotosImageCollectionViewCell.xib; path = TripPhotos/DTSTripPhotosImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		F9D9E6CD1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripPhotosAddPhotosCollectionViewCell.h; path = TripPhotos/DTSTripPhotosAddPhotosCollectionViewCell.h; sourceTree = "<group>"; };
+		F9D9E6CE1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripPhotosAddPhotosCollectionViewCell.m; path = TripPhotos/DTSTripPhotosAddPhotosCollectionViewCell.m; sourceTree = "<group>"; };
+		F9D9E6CF1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripPhotosAddPhotosCollectionViewCell.xib; path = TripPhotos/DTSTripPhotosAddPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlue.png; sourceTree = "<group>"; };
 		F9DF95B11ABE8D0300327C82 /* smileyLikeBlueFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smileyLikeBlueFull.png; sourceTree = "<group>"; };
 		F9DF95B41ABE8E6900327C82 /* smileyLikeBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@2x.png"; sourceTree = "<group>"; };
@@ -612,6 +629,11 @@
 		F9E516001B5768FB008F757D /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		F9E563B41B39329F00748908 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLSpringFlowLayout.h; path = General/TLSpringFlowLayout.h; sourceTree = "<group>"; };
 		F9E563B51B39329F00748908 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLSpringFlowLayout.m; path = General/TLSpringFlowLayout.m; sourceTree = "<group>"; };
+		F9E7DC861B8180EC007D82D5 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		F9E7DC881B8180F4007D82D5 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F9E7DC8A1B8241BF007D82D5 /* DTSTripPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSTripPhoto.h; sourceTree = "<group>"; };
+		F9E7DC8B1B8241BF007D82D5 /* DTSTripPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSTripPhoto.m; sourceTree = "<group>"; };
+		F9E7DC8F1B82C9BE007D82D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F9E9D9031B55E1B10076F173 /* createTripOnboarding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createTripOnboarding.json; sourceTree = "<group>"; };
 		F9E9D90B1B55E3CE0076F173 /* createScreen_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createScreen_1@2x.png"; sourceTree = "<group>"; };
 		F9E9D90C1B55E3CE0076F173 /* createScreen_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createScreen_2@2x.png"; sourceTree = "<group>"; };
@@ -725,6 +747,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E7DC901B82C9BE007D82D5 /* CoreLocation.framework in Frameworks */,
+				F9E7DC891B8180F4007D82D5 /* PhotosUI.framework in Frameworks */,
+				F9E7DC871B8180EC007D82D5 /* Photos.framework in Frameworks */,
 				F9E515F51B5765C6008F757D /* QuartzCore.framework in Frameworks */,
 				F904DB351B4E3C790054E496 /* StoreKit.framework in Frameworks */,
 				F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */,
@@ -919,6 +944,7 @@
 				F954E7571964CA5A003A0B72 /* DTSAppDelegate.h */,
 				F954E7581964CA5A003A0B72 /* DTSAppDelegate.m */,
 				F954E7591964CA5A003A0B72 /* TripDetails */,
+				F9D9E6C41B7D64B0005370B8 /* TripPhotos */,
 				F954E75D1964CA5A003A0B72 /* TripStory */,
 			);
 			path = UserInterface;
@@ -1016,6 +1042,8 @@
 				F9F05D381AA15D44002C4A42 /* DTSPlacemark.m */,
 				F96B20FF1AB297FA009CC03E /* DTSActivity.h */,
 				F96B21001AB297FA009CC03E /* DTSActivity.m */,
+				F9E7DC8A1B8241BF007D82D5 /* DTSTripPhoto.h */,
+				F9E7DC8B1B8241BF007D82D5 /* DTSTripPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1049,6 +1077,9 @@
 		F95814FE1964850B002207A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9E7DC8F1B82C9BE007D82D5 /* CoreLocation.framework */,
+				F9E7DC881B8180F4007D82D5 /* PhotosUI.framework */,
+				F9E7DC861B8180EC007D82D5 /* Photos.framework */,
 				F9E515F41B5765C6008F757D /* QuartzCore.framework */,
 				F904DB341B4E3C790054E496 /* StoreKit.framework */,
 				F91CBD3B1981D7FC00BC3021 /* MapKit.framework */,
@@ -1319,6 +1350,21 @@
 				F9FEB47B1B1F5EB300346750 /* DTSSearchPeopleCollectionViewController.m */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		F9D9E6C41B7D64B0005370B8 /* TripPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				F9D9E6C51B7D6571005370B8 /* DTSTripPhotosCollectionViewController.h */,
+				F9D9E6C61B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m */,
+				F9D9E6C81B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.h */,
+				F9D9E6C91B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m */,
+				F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */,
+				F9D9E6CD1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.h */,
+				F9D9E6CE1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m */,
+				F9D9E6CF1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib */,
+			);
+			name = TripPhotos;
 			sourceTree = "<group>";
 		};
 		F9E515E71B576599008F757D /* PullToMakeFlight */ = {
@@ -1697,6 +1743,7 @@
 				F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */,
 				F9FD5A6B1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */,
+				F9D9E6D11B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
 				F99FC44C1B220C0A000CDCB3 /* searchIcon-lightGray.png in Resources */,
@@ -1731,6 +1778,7 @@
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
 				F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */,
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
+				F9D9E6CC1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib in Resources */,
 				F9A829861B4BA38800D8E7B5 /* bubble_01a@2x.png in Resources */,
 				F9FD5A411AC5BE64009BDDF2 /* airplane-white.png in Resources */,
 				F993761C1B202627005D58FE /* timelineIcon.png in Resources */,
@@ -1945,6 +1993,7 @@
 				F96B21081AB3564B009CC03E /* DTSRootViewController.m in Sources */,
 				F99376281B20B5FA005D58FE /* DTSActivityFeedViewController.m in Sources */,
 				F9401DB41AB9E23C00F271F5 /* DTSFriendsTimelineCollectionViewController.m in Sources */,
+				F9D9E6C71B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m in Sources */,
 				F9AE51941AB8A6CE00958707 /* DTSFollowFriendsViewController.m in Sources */,
 				F96B21011AB297FA009CC03E /* DTSActivity.m in Sources */,
 				F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */,
@@ -1985,6 +2034,7 @@
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
 				F9F92575197B148400D92941 /* DTSEventPickerEntryTableViewCell.m in Sources */,
 				F9E515FD1B57677F008F757D /* PullToMakeFlight.swift in Sources */,
+				F9D9E6D01B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m in Sources */,
 				F9401DBB1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m in Sources */,
 				F960AD951B50C47600AB679F /* DKCFullDatePickerView.m in Sources */,
 				F9B44F9419F3929D00321E2C /* DTSTripEventsViewController.m in Sources */,
@@ -2019,6 +2069,7 @@
 				F9E515F71B57665F008F757D /* PullToRefresh.swift in Sources */,
 				F954E76E1965C22C003A0B72 /* NSDate+Utilities.m in Sources */,
 				F954E78319664967003A0B72 /* UIView+Utilities.m in Sources */,
+				F9E7DC8C1B8241BF007D82D5 /* DTSTripPhoto.m in Sources */,
 				F9E563B61B39329F00748908 /* TLSpringFlowLayout.m in Sources */,
 				F9FD5A361AC504ED009BDDF2 /* DTSCreateEditTripView.m in Sources */,
 				F9B44F8F19F3922200321E2C /* TGLStackedLayout.m in Sources */,
@@ -2034,6 +2085,7 @@
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
 				F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */,
 				F9FBF94F1B7D5670008E1686 /* SelectableDataDelegate.swift in Sources */,
+				F9D9E6CB1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m in Sources */,
 				F9FBF9501B7D5670008E1686 /* SelectableDataSource.swift in Sources */,
 				F9A829A31B4BA38800D8E7B5 /* SFOnboardingTransition.m in Sources */,
 			);
@@ -2175,6 +2227,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";

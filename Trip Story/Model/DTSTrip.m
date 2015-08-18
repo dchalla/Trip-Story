@@ -32,6 +32,7 @@ NSString *const kDTSTripUserKey		= @"user";
 @dynamic user;
 @dynamic privacy;
 @dynamic tripTagsForSearch;
+@dynamic tripPhotosList;
 
 + (void)load {
 	[self registerSubclass];
@@ -67,6 +68,15 @@ NSString *const kDTSTripUserKey		= @"user";
 		self.originalEventsList = [NSMutableArray array];
 	}
 	return [self objectForKey:@"originalEventsList"];
+}
+
+- (NSMutableArray *)tripPhotosList
+{
+	if (![self objectForKey:@"tripPhotosList"])
+	{
+		self.tripPhotosList = [NSMutableArray array];
+	}
+	return [self objectForKey:@"tripPhotosList"];
 }
 
 - (void)setOriginalEventsList:(NSMutableArray *)originalEventsList

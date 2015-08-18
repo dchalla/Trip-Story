@@ -152,6 +152,9 @@
 	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
 	[query includeKey:@"user"];
 	[query includeKey:@"ACL"];
+	[query includeKey:@"tripPhotosList"];
+	[query includeKey:@"tripPhotosList.location"];
+	[query includeKey:@"tripPhotosList.location.dtsPlacemark"];
 	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];
 	

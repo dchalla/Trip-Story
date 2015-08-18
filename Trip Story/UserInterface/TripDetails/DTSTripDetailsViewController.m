@@ -19,6 +19,7 @@
 #import "UIColor+Utilities.h"
 #import "DTSUtilities.h"
 #import "SFCarouselOnboardingViewController.h"
+#import "DTSTripPhotosCollectionViewController.h"
 
 
 @interface DTSTripDetailsViewController ()
@@ -29,6 +30,7 @@
 @property (nonatomic, strong) NSArray *pagedViewControllers;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 @property (nonatomic, strong) DTSTripEventsViewController *tripEventsVC;
+@property (nonatomic, strong) DTSTripPhotosCollectionViewController *tripPhotosVC;
 @property (nonatomic) BOOL isInEditMode;
 
 @end
@@ -84,6 +86,15 @@
 	return _tripEventsVC;
 }
 
+- (DTSTripPhotosCollectionViewController *)tripPhotosVC
+{
+	if (!_tripPhotosVC)
+	{
+		_tripPhotosVC = [[DTSTripPhotosCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+	}
+	return _tripPhotosVC;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -100,7 +111,7 @@
 	
 	[self setupSegmentControl];
 	
-	self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC,self.tripMapVC];
+	self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC,self.tripPhotosVC, self.tripMapVC];
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;
 	self.pageVC.dataSource = self;
@@ -132,7 +143,7 @@
 
 - (void)setupSegmentControl
 {
-	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Map"]];
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Photos", @"Map"]];
 	self.segmentedControl.frame = CGRectMake(0, 0, 200, 30);
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
@@ -151,6 +162,7 @@
 	self.tripStoryVC.trip = self.trip;
 	self.tripEventsVC.trip = self.trip;
 	self.tripMapVC.trip = self.trip;
+	self.tripPhotosVC.trip = self.trip;
 	[self trackScreenView];
 }
 

@@ -28,6 +28,7 @@ extern NSString *const kDTSTripUserKey;
 @property (nonatomic, readonly) NSArray *eventsWithLocationList;
 @property (nonatomic,assign) DTSPrivacy privacy;
 @property (nonatomic, strong) PFUser *user;
+@property (nonatomic, strong) NSMutableArray *tripPhotosList;
 
 - (void)createDummyEventsList;
 - (void)addEvent:(DTSEvent *)event;
