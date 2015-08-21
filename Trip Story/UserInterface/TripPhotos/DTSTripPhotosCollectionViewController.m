@@ -17,10 +17,12 @@
 #import "DTSTripPhoto.h"
 #import "DTSLocation.h"
 #import <CoreLocation/CoreLocation.h>
+#import "DTSTripPhotoMapSectionHeaderView.h"
+#import "DTSCache.h"
 
 #define photoWidth 450
 
-@interface DTSTripPhotosCollectionViewController ()
+@interface DTSTripPhotosCollectionViewController ()<UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSArray *collectionViewDataArray;
 @property (nonatomic, strong) NSMutableDictionary *assetsDict;
@@ -76,29 +78,15 @@
 	
 	[self.collectionView registerClass:[DTSTripPhotosImageCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([DTSTripPhotosImageCollectionViewCell class])];
 	[self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTSTripPhotosImageCollectionViewCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:NSStringFromClass([DTSTripPhotosImageCollectionViewCell class])];
+	
+	[self.collectionView registerClass:[DTSTripPhotoMapSectionHeaderView class]
+			forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+				   withReuseIdentifier:NSStringFromClass([DTSTripPhotoMapSectionHeaderView class])];
+	[self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTSTripPhotoMapSectionHeaderView class]) bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([DTSTripPhotoMapSectionHeaderView class])];
+	
 	[self updateDatasourceForCollectionView:nil];
 	self.view.backgroundColor = [UIColor secondaryColor];
 	
-}
-
-- (NSArray *)lastSectionArray {
-	NSArray *lastSectionArray =[[NSArray alloc] initWithObjects:@"Add Photos", nil];
-	return lastSectionArray;
-}
-
-- (id)objectForIndexPath:(NSIndexPath *)indexPath {
-	if (self.collectionViewDataArray.count <= indexPath.section) {
-		return nil;
-	}
-	NSArray *sectionArray = dynamic_cast_oc(self.collectionViewDataArray[indexPath.section], NSArray);
-	
-	if (sectionArray.count <= indexPath.row) {
-		return nil;
-	}
-	
-	id rowObject = sectionArray[indexPath.row];
-	
-	return rowObject;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -173,7 +161,11 @@
 			cell.imageView.file = tripPhoto.image;
 			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
 				if (((NSIndexPath *)cell.imageId).section == indexPath.section && ((NSIndexPath *)cell.imageId).row == indexPath.row && !error) {
+					cell.imageView.alpha = 0;
 					cell.imageView.image = image;
+					[UIView animateWithDuration:0.2 animations:^{
+						cell.imageView.alpha = 1;
+					}];
 				}
 			}];
 		}
@@ -206,7 +198,28 @@
 	
 }
 
-#pragma mark - Photos Picker 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+	UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([DTSTripPhotoMapSectionHeaderView class]) forIndexPath:indexPath];
+	
+	if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+		DTSTripPhotoMapSectionHeaderView *sectionHeader = dynamic_cast_oc(reusableView, DTSTripPhotoMapSectionHeaderView);
+		sectionHeader.backgroundColor = [UIColor primaryColor];
+		[sectionHeader updateWithLocationList:[self locationListForSection:indexPath.section] trip:self.trip];
+		
+	}
+	
+	return reusableView;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+	if (section == self.collectionViewDataArray.count -1) {
+		return CGSizeZero;
+	}
+	return CGSizeMake(self.collectionView.frame.size.width, 200);
+}
+
+#pragma mark - Photos Picker
 
 
 - (void)showPhotosPicker {
@@ -236,15 +249,53 @@
 
 #pragma mark - dataSource
 
+- (NSArray *)lastSectionArray {
+	NSArray *lastSectionArray =[[NSArray alloc] initWithObjects:@"Add Photos", nil];
+	return lastSectionArray;
+}
+
+- (id)objectForIndexPath:(NSIndexPath *)indexPath {
+	if (self.collectionViewDataArray.count <= indexPath.section) {
+		return nil;
+	}
+	NSArray *sectionArray = dynamic_cast_oc(self.collectionViewDataArray[indexPath.section], NSArray);
+	
+	if (sectionArray.count <= indexPath.row) {
+		return nil;
+	}
+	
+	id rowObject = sectionArray[indexPath.row];
+	
+	return rowObject;
+}
+
 - (void)updateDatasourceForCollectionView:(NSArray *)assets {
 	NSMutableArray *collectionViewDataSource = [[NSMutableArray alloc] init];
-	NSMutableArray *photoSectionArray = [NSMutableArray array];
+	
 	for (PHAsset *asset in assets) {
 		DTSTripPhoto *tripPhoto = [self tripPhotoFromAsset:asset];
 		[self.trip.tripPhotosList addObject:tripPhoto];
 	}
-	for (DTSTripPhoto *tripPhoto in self.trip.tripPhotosList) {
-		[photoSectionArray addObject:tripPhoto];
+	NSMutableArray *sortedPhotosArray = [self sortedPhotosBasedOnTime:self.trip.tripPhotosList];
+	
+	NSMutableArray *photoSectionArray = [NSMutableArray array];
+	
+	for (DTSTripPhoto *tripPhoto in sortedPhotosArray) {
+		DTSTripPhoto *firstTripPhoto = [self firstPhotoWithLocationInArray:photoSectionArray];
+		if (firstTripPhoto) {
+			if ([self arePhotosInSameLocation:firstTripPhoto photo2:tripPhoto]) {
+				[photoSectionArray addObject:tripPhoto];
+			}
+			else {
+				[collectionViewDataSource addObject:photoSectionArray];
+				photoSectionArray = [NSMutableArray array];
+				[photoSectionArray addObject:tripPhoto];
+			}
+		}
+		else {
+			[photoSectionArray addObject:tripPhoto];
+		}
+		
 	}
 	[collectionViewDataSource addObject:photoSectionArray];
 	
@@ -286,6 +337,8 @@
 				tripPhoto.location = [DTSLocation object];
 			}
 			tripPhoto.location.mapItem = mapItem;
+			[tripPhoto saveInBackground];
+			NSLog(@"finished reverse geocoding");
 		} ];
 	}
 	
@@ -316,4 +369,67 @@
 - (CGSize)photoSizeFromAsset:(PHAsset *)asset {
 	return CGSizeMake(photoWidth, photoWidth*asset.pixelHeight/asset.pixelWidth);
 }
+
+- (NSMutableArray *)sortedPhotosBasedOnTime:(NSMutableArray *)tripPhotosList
+{
+	NSArray *sortedArray;
+	sortedArray = [tripPhotosList sortedArrayUsingComparator:^NSComparisonResult(DTSTripPhoto *a, DTSTripPhoto *b) {
+		NSDate *first = a.imageCreationDate;
+		NSDate *second = b.imageCreationDate;
+		return [first compare:second];
+	}];
+	return [sortedArray mutableCopy];
+}
+
+#define SameLocationMiles 20.0
+- (BOOL)arePhotosInSameLocation:(DTSTripPhoto *)photo1 photo2:(DTSTripPhoto *)photo2 {
+	
+	BOOL hasLocationForPhoto1 = [self hasCoordinatesForTripPhoto:photo1];
+	BOOL hasLocationForPhoto2 = [self hasCoordinatesForTripPhoto:photo2];
+	if (hasLocationForPhoto1 && hasLocationForPhoto2) {
+		CLLocationDistance distance = [photo1.location.mapItem.placemark.location distanceFromLocation:photo2.location.mapItem.placemark.location];
+		double disanceMiles =  distance * 0.00062137;
+		if (disanceMiles < SameLocationMiles) {
+			return YES;
+		}
+	}
+	else {
+		return YES;
+	}
+	return NO;
+}
+
+- (BOOL)hasCoordinatesForTripPhoto:(DTSTripPhoto *)tripPhoto {
+	
+	if (tripPhoto.location && tripPhoto.location.dtsPlacemark && tripPhoto.location.dtsPlacemark.latitude != 0) {
+		return YES;
+	}
+	
+	return NO;
+}
+
+- (DTSTripPhoto *)firstPhotoWithLocationInArray:(NSMutableArray *)tripPhotosList {
+	for (DTSTripPhoto *tripPhoto in tripPhotosList) {
+		if ([self hasCoordinatesForTripPhoto:tripPhoto]) {
+			return tripPhoto;
+		}
+	}
+	return nil;
+}
+
+- (NSArray *)locationListForSection:(NSInteger)section {
+	if (self.collectionViewDataArray.count <= section) {
+		return nil;
+	}
+	NSArray *sectionArray = dynamic_cast_oc(self.collectionViewDataArray[section], NSArray);
+	NSMutableArray *locationList = [NSMutableArray array];
+	
+	for (DTSTripPhoto *tripPhoto in sectionArray) {
+		if ([self hasCoordinatesForTripPhoto:tripPhoto]) {
+			[locationList addObject:tripPhoto.location];
+		}
+	}
+	return [locationList copy];
+}
+
 @end

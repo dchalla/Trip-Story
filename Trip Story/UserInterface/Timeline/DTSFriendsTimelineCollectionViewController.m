@@ -47,6 +47,9 @@
 	[query includeKey:@"originalEventsList"];
 	[query includeKey:@"originalEventsList.location"];
 	[query includeKey:@"originalEventsList.location.dtsPlacemark"];
+	[query includeKey:@"tripPhotosList"];
+	[query includeKey:@"tripPhotosList.location"];
+	[query includeKey:@"tripPhotosList.location.dtsPlacemark"];
 	[query includeKey:@"user"];
 	[query whereKey:@"privacy" equalTo:@(DTSPrivacyPublic)];
 	[query orderByDescending:@"createdAt"];

@@ -100,41 +100,48 @@
 					
 					
 					MKAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
-					UIImage *compositeImage = nil;
+					
 					UIImage *image = snapshot.image;
-					UIGraphicsBeginImageContextWithOptions(image.size, YES, image.scale);
-					{
-						[image drawAtPoint:CGPointMake(0.0f, 0.0f)];
-						
-						CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
-						for (id <MKAnnotation> annotation in eventsWithLocation) {
-							CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
-							if (CGRectContainsPoint(rect, point)) {
-								point.x = point.x + pin.centerOffset.x -
-								(pin.bounds.size.width / 2.0f);
-								point.y = point.y + pin.centerOffset.y -
-								(pin.bounds.size.height / 2.0f);
-								[pin.image drawAtPoint:point];
-							}
-						}
-						
-						compositeImage = UIGraphicsGetImageFromCurrentImageContext();
-						
-					}
-					UIGraphicsEndImageContext();
-					
-					
-					[[DTSCache sharedCache] cacheImage:compositeImage forKey:cacheKey];
-					if ([wSelf.trip.tripName isEqualToString:tripName])
-					{
-						[UIView animateWithDuration:0.4 animations:^{
-							wSelf.mapViewImage.image = compositeImage;
-							wSelf.mapViewImage.alpha = 1;
-						}];
-						
-					}
-					
-					
+					 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+						 UIImage *compositeImage = nil;
+						 UIGraphicsBeginImageContextWithOptions(image.size, YES, image.scale);
+						 {
+							 [image drawAtPoint:CGPointMake(0.0f, 0.0f)];
+							 
+							 CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+							 for (id <MKAnnotation> annotation in eventsWithLocation) {
+								 CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
+								 if (CGRectContainsPoint(rect, point)) {
+									 point.x = point.x + pin.centerOffset.x -
+									 (pin.bounds.size.width / 2.0f);
+									 point.y = point.y + pin.centerOffset.y -
+									 (pin.bounds.size.height / 2.0f);
+									 [pin.image drawAtPoint:point];
+								 }
+							 }
+							 
+							 compositeImage = UIGraphicsGetImageFromCurrentImageContext();
+							 
+						 }
+						 UIGraphicsEndImageContext();
+						 
+						 
+						 [[DTSCache sharedCache] cacheImage:compositeImage forKey:cacheKey];
+						 dispatch_async(dispatch_get_main_queue(), ^{
+							 BlockStrongSelf strongSelf = wSelf;
+							 if (strongSelf) {
+								 if ([wSelf.trip.tripName isEqualToString:tripName])
+								 {
+									 [UIView animateWithDuration:0.2 animations:^{
+										 wSelf.mapViewImage.image = compositeImage;
+										 wSelf.mapViewImage.alpha = 1;
+									 }];
+									 
+								 }
+							 }
+						 });
+						 
+					 });
 				}];
 
 			}

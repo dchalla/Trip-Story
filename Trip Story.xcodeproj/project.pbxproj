@@ -173,6 +173,8 @@
 		F9AE51961AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9AE51951AB8A8A900958707 /* DTSFollowFriendsCollectionViewCell.xib */; };
 		F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AE51981AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m */; };
 		F9AE519C1AB8B84F00958707 /* DTSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AE519B1AB8B84F00958707 /* DTSUtilities.m */; };
+		F9B11F361B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11F341B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m */; };
+		F9B11F371B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B11F351B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib */; };
 		F9B3F74019F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B3F73E19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m */; };
 		F9B3F74119F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */; };
 		F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B44F8119F20DE500321E2C /* HMSegmentedControl.m */; };
@@ -558,6 +560,9 @@
 		F9AE51981AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSFollowFriendsCollectionViewCell.m; path = FollowFriends/DTSFollowFriendsCollectionViewCell.m; sourceTree = "<group>"; };
 		F9AE519A1AB8B84F00958707 /* DTSUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSUtilities.h; sourceTree = "<group>"; };
 		F9AE519B1AB8B84F00958707 /* DTSUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSUtilities.m; sourceTree = "<group>"; };
+		F9B11F331B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripPhotoMapSectionHeaderView.h; path = TripPhotos/DTSTripPhotoMapSectionHeaderView.h; sourceTree = "<group>"; };
+		F9B11F341B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripPhotoMapSectionHeaderView.m; path = TripPhotos/DTSTripPhotoMapSectionHeaderView.m; sourceTree = "<group>"; };
+		F9B11F351B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripPhotoMapSectionHeaderView.xib; path = TripPhotos/DTSTripPhotoMapSectionHeaderView.xib; sourceTree = "<group>"; };
 		F9B3F73D19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSTripDetailsMapViewController.h; path = TripMap/DTSTripDetailsMapViewController.h; sourceTree = "<group>"; };
 		F9B3F73E19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSTripDetailsMapViewController.m; path = TripMap/DTSTripDetailsMapViewController.m; sourceTree = "<group>"; };
 		F9B3F73F19F0AF2A00BC6052 /* DTSTripDetailsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DTSTripDetailsMapViewController.xib; path = TripMap/DTSTripDetailsMapViewController.xib; sourceTree = "<group>"; };
@@ -1363,6 +1368,9 @@
 				F9D9E6CD1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.h */,
 				F9D9E6CE1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m */,
 				F9D9E6CF1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib */,
+				F9B11F331B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.h */,
+				F9B11F341B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m */,
+				F9B11F351B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib */,
 			);
 			name = TripPhotos;
 			sourceTree = "<group>";
@@ -1779,6 +1787,7 @@
 				F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */,
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
 				F9D9E6CC1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib in Resources */,
+				F9B11F371B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib in Resources */,
 				F9A829861B4BA38800D8E7B5 /* bubble_01a@2x.png in Resources */,
 				F9FD5A411AC5BE64009BDDF2 /* airplane-white.png in Resources */,
 				F993761C1B202627005D58FE /* timelineIcon.png in Resources */,
@@ -2029,6 +2038,7 @@
 				F9CE11D71B168C1F00F3807A /* TripStoryIconView.m in Sources */,
 				F9BBF9571AA774850076CD78 /* DTSUserAuthHelper.m in Sources */,
 				F954E75E1964CA5A003A0B72 /* DTSAppDelegate.m in Sources */,
+				F9B11F361B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m in Sources */,
 				F9FBF9531B7D5670008E1686 /* AlbumTitleView.swift in Sources */,
 				F96B212C1AB37B8B009CC03E /* UIViewController+DTSEmptyBackButton.m in Sources */,
 				F9B44F8219F20DE500321E2C /* HMSegmentedControl.m in Sources */,
