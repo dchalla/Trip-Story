@@ -20,6 +20,7 @@
 #import "DTSUtilities.h"
 #import "SFCarouselOnboardingViewController.h"
 #import "DTSTripPhotosCollectionViewController.h"
+#import <MPSkewed/MPSkewedParallaxLayout.h>
 
 
 @interface DTSTripDetailsViewController ()
@@ -90,7 +91,7 @@
 {
 	if (!_tripPhotosVC)
 	{
-		_tripPhotosVC = [[DTSTripPhotosCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+		_tripPhotosVC = [[DTSTripPhotosCollectionViewController alloc] initWithCollectionViewLayout:[[MPSkewedParallaxLayout alloc] init]];
 	}
 	return _tripPhotosVC;
 }

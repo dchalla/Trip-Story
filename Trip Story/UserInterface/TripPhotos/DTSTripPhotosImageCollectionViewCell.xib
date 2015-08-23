@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -12,24 +12,30 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="237" height="249"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FMZ-Gq-IZj" customClass="PFImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="237" height="249"/>
+                    <view contentMode="scaleToFill" id="DuH-eI-yyq" customClass="FBShimmeringView">
+                        <rect key="frame" x="68.5" y="89.5" width="100" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FMZ-Gq-IZj" customClass="PFImageView">
+                        <rect key="frame" x="-21" y="-13" width="73" height="84"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="FMZ-Gq-IZj" secondAttribute="bottom" id="PIA-aL-T4V"/>
-                <constraint firstItem="FMZ-Gq-IZj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d10-i7-K1a"/>
-                <constraint firstAttribute="trailing" secondItem="FMZ-Gq-IZj" secondAttribute="trailing" id="hNc-0P-Qy8"/>
-                <constraint firstItem="FMZ-Gq-IZj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pN9-Dx-jdX"/>
-            </constraints>
             <size key="customSize" width="237" height="249"/>
             <connections>
                 <outlet property="imageView" destination="FMZ-Gq-IZj" id="0Fh-sb-GUQ"/>
+                <outlet property="shimmeringView" destination="DuH-eI-yyq" id="haP-Dk-0qQ"/>
             </connections>
             <point key="canvasLocation" x="415.5" y="446.5"/>
         </collectionViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

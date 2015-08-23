@@ -39,6 +39,8 @@
 		F9401DB41AB9E23C00F271F5 /* DTSFriendsTimelineCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401DB31AB9E23C00F271F5 /* DTSFriendsTimelineCollectionViewController.m */; };
 		F9401DB81AB9EC8A00F271F5 /* DTSUserRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401DB71AB9EC8A00F271F5 /* DTSUserRootViewController.m */; };
 		F9401DBB1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401DBA1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m */; };
+		F946BDA71B8A778C0014EFEA /* Imageplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */; };
+		F946BDA81B8A78620014EFEA /* DTSTripPhotosImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */; };
 		F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */; };
 		F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */; };
 		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
@@ -205,7 +207,6 @@
 		F9CE11DB1B16AD7800F3807A /* TentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9CE11D91B16AD7800F3807A /* TentIcon.png */; };
 		F9D9E6C71B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6C61B7D6571005370B8 /* DTSTripPhotosCollectionViewController.m */; };
 		F9D9E6CB1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6C91B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m */; };
-		F9D9E6CC1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */; };
 		F9D9E6D01B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D9E6CE1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.m */; };
 		F9D9E6D11B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CF1B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib */; };
 		F9DF95B21ABE8D0300327C82 /* smileyLikeBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B01ABE8D0300327C82 /* smileyLikeBlue.png */; };
@@ -384,6 +385,7 @@
 		F9401DB71AB9EC8A00F271F5 /* DTSUserRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserRootViewController.m; path = User/DTSUserRootViewController.m; sourceTree = "<group>"; };
 		F9401DB91AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserTimelineCollectionViewController.h; path = User/DTSUserTimelineCollectionViewController.h; sourceTree = "<group>"; };
 		F9401DBA1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserTimelineCollectionViewController.m; path = User/DTSUserTimelineCollectionViewController.m; sourceTree = "<group>"; };
+		F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Imageplaceholder.png; sourceTree = "<group>"; };
 		F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryTableViewController.h; sourceTree = "<group>"; };
 		F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryTableViewController.m; sourceTree = "<group>"; };
 		F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -802,6 +804,7 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */,
 				F9FC768F1B54D0CC00287D3E /* yosemite.jpeg */,
 				F9FC768D1B54C5C900287D3E /* user_icon.png */,
 				F904DB381B4EE00A0054E496 /* settings.png */,
@@ -1755,6 +1758,7 @@
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
 				F99FC44C1B220C0A000CDCB3 /* searchIcon-lightGray.png in Resources */,
+				F946BDA71B8A778C0014EFEA /* Imageplaceholder.png in Resources */,
 				F993761E1B202627005D58FE /* timelineIcon@3x.png in Resources */,
 				F9FD5A791AC5C57C009BDDF2 /* Icon-76@2x.png in Resources */,
 				F9BEC13E19B398A800622CC9 /* boat17.png in Resources */,
@@ -1786,7 +1790,6 @@
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
 				F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */,
 				F96B213F1AB389E7009CC03E /* edit@2x.png in Resources */,
-				F9D9E6CC1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib in Resources */,
 				F9B11F371B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib in Resources */,
 				F9A829861B4BA38800D8E7B5 /* bubble_01a@2x.png in Resources */,
 				F9FD5A411AC5BE64009BDDF2 /* airplane-white.png in Resources */,
@@ -1802,6 +1805,7 @@
 				F9A8299F1B4BA38800D8E7B5 /* screen_05b_element@2x.png in Resources */,
 				F9FC76901B54D0CC00287D3E /* yosemite.jpeg in Resources */,
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
+				F946BDA81B8A78620014EFEA /* DTSTripPhotosImageCollectionViewCell.xib in Resources */,
 				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
 				F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,

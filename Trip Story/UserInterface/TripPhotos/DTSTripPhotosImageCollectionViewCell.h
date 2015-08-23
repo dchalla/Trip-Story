@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
+#import <MPSkewed/MPSkewedCell.h>
 
 @interface DTSTripPhotosImageCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
