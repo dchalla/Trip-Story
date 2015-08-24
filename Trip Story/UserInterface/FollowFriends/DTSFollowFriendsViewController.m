@@ -152,7 +152,10 @@ static NSString * const reuseIdentifier = @"DTSFollowFriendsCollectionViewCell";
 	
 	// Query for all friends you have on facebook and who are using the app
 	PFQuery *friendsQuery = [PFUser query];
-	[friendsQuery whereKey:DTSUser_Facebook_ID containedIn:facebookFriends];
+	if (facebookFriends) {
+		[friendsQuery whereKey:DTSUser_Facebook_ID containedIn:facebookFriends];
+	}
+	
 	
 	PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, nil]];
 	query.cachePolicy = kPFCachePolicyNetworkOnly;

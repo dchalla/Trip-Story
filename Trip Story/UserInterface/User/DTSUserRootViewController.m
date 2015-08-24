@@ -141,7 +141,7 @@
 
 - (NSArray *)segmentNamesList
 {
-	if ([self.user.username isEqualToString:[PFUser currentUser].username])
+	if ([self.user.username isEqualToString:[PFUser currentUser].username] && [self.user objectForKey:DTSUser_Facebook_ID])
 	{
 		return @[@"Profile", @"Liked Trips", @"Facebook Friends"];
 	}
