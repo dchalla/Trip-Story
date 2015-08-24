@@ -208,8 +208,8 @@ NSString *const BFTaskMultipleExceptionsException = @"BFMultipleExceptionsExcept
 
 - (void)setError:(NSError *)error {
     if (![self trySetError:error]) {
-        [NSException raise:NSInternalInconsistencyException
-                    format:@"Cannot set the error on a completed task."];
+       // [NSException raise:NSInternalInconsistencyException
+         //           format:@"Cannot set the error on a completed task."];
     }
 }
 

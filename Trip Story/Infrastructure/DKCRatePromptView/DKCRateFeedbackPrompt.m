@@ -36,7 +36,7 @@ NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
 
 static DKCRateFeedbackPrompt *promptView;
 
-@interface DKCRateFeedbackPrompt()
+@interface DKCRateFeedbackPrompt() <SKStoreProductViewControllerDelegate>
 
 @property (nonatomic) DKCRatePromptViewButtonTappedType buttonTappedType;
 @property (nonatomic, readonly) NSString *appId;
@@ -259,14 +259,19 @@ static DKCRateFeedbackPrompt *promptView;
 		NSLog(@"DKCRatePromptView Not set");
 		return;
 	}
-	//Use the in-app StoreKit view if available (iOS 6) and imported. This works in the simulator.
-	if (NSStringFromClass([SKStoreProductViewController class]) != nil) {
+	//Use the in-app StoreKit view if available (iOS 6) and imported. This works in the simulator. storekit doesnt allow review anymore so do no use it
+	if (0) {//NSStringFromClass([SKStoreProductViewController class]) != nil) {
 		
-		SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
-		NSNumber *appId = [NSNumber numberWithInteger:self.appId.integerValue];
-		[storeViewController loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId} completionBlock:nil];
 		
-		[[[self class] getRootViewController] presentViewController:storeViewController animated:YES completion:^{}];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+			NSNumber *appId = [NSNumber numberWithInteger:self.appId.integerValue];
+			[storeViewController loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId} completionBlock:nil];
+			storeViewController.delegate = self;
+			UIViewController *rootController = [[self class] getRootViewController];
+			[rootController presentViewController:storeViewController animated:YES completion:nil];
+		});
+		
 		
 		//Use the standard openUrl method if StoreKit is unavailable.
 	} else {
@@ -322,7 +327,10 @@ static DKCRateFeedbackPrompt *promptView;
 		}
 		
 	} while (isPresenting);
-	
+	UINavigationController *navController = dynamic_cast_oc(controller, UINavigationController);
+	if (navController) {
+		controller = [navController topViewController];
+	}
 	return controller;
 }
 
@@ -401,6 +409,15 @@ static DKCRateFeedbackPrompt *promptView;
 	}
 	
 	return view;
+}
+
+#pragma mark - SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+	if (viewController){
+		UIViewController *rootController = [[self class] getRootViewController];
+		[rootController dismissViewControllerAnimated:YES completion:nil];
+	}
 }
 
 
