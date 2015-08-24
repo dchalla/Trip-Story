@@ -25,7 +25,13 @@
 	}
 	else
 	{
-		return self.username;
+		if (self.username.length > 0) {
+			return self.username;
+		}
+		else {
+			return @"";
+		}
+		
 	}
 	
 }

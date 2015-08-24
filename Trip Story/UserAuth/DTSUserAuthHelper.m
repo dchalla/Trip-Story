@@ -113,6 +113,9 @@ shouldBeginLogInWithUsername:(NSString *)username
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
 	[[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
+	[[PFUser currentUser] setObject:[[PFUser currentUser] dts_displayName] forKey:DTSUser_Display_Name];
+	[[PFUser currentUser] setObject:[[[PFUser currentUser] dts_displayName] lowercaseString] forKey:DTSUser_Search_Name];
+	[self saveUserDetails];
 }
 
 
@@ -194,6 +197,13 @@ shouldBeginLogInWithUsername:(NSString *)username
 			}
 		}];
 	}
+	else {
+		if ([PFUser currentUser] && ![[PFUser currentUser] objectForKey:DTSUser_Search_Name]) {
+			[[PFUser currentUser] setObject:[[[PFUser currentUser] dts_displayName] lowercaseString] forKey:DTSUser_Search_Name];
+			[self saveUserDetails];
+		}
+		
+	}
 
 }
 
@@ -221,6 +231,10 @@ shouldBeginLogInWithUsername:(NSString *)username
 	}
 	_facebookResponseCount = 0;
 	[[NSNotificationCenter defaultCenter] postNotificationName:kDTSUserDataRefreshed object:nil];
+	[self saveUserDetails];
+}
+
+- (void)saveUserDetails {
 	[[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
 		if (!error) {
