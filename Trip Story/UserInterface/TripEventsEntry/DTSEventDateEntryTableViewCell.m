@@ -35,6 +35,9 @@
 	}
 	self.pickerView.dateDelegate = self;
 	self.pickerView.dateFormatTemplate = @"yyyy MMM d h mm a";
+	
+	self.backgroundColor = [UIColor clearColor];
+	self.backgroundView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setDateValue:(NSDate *)dateValue

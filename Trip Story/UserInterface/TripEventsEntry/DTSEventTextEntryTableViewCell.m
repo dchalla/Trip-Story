@@ -29,6 +29,9 @@
 				  action:@selector(textFieldDidChange:)
 		forControlEvents:UIControlEventEditingChanged];
 	self.suggestionMarkerView.backgroundColor = [UIColor dtsRedColor];
+
+	self.backgroundColor = [UIColor clearColor];
+	self.backgroundView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setPlaceHolderValue:(NSString *)placeHolderValue

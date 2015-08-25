@@ -610,6 +610,7 @@ typedef enum {
 	locationSearchVC.blurredBackgroundImage = [self.view dts_darkBlurredSnapshotImage];
 	locationSearchVC.entryDelegate = self;
 	locationSearchVC.trip = self.trip;
+	locationSearchVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	[self presentViewController:locationSearchVC animated:YES completion:^{}];
 }
 

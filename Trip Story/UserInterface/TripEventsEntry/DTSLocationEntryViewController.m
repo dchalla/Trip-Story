@@ -25,7 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-		self.transitioningDelegate = self;
+		//self.transitioningDelegate = self;
     }
     return self;
 }
@@ -44,6 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     // Do any additional setup after loading the view from its nib.
 	self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 	self.tableView.backgroundColor = [UIColor clearColor];

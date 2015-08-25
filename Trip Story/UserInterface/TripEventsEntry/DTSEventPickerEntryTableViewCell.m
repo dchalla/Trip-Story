@@ -30,6 +30,9 @@
     [self.pickerView reloadAllComponents];
 	self.suggestionMarkerView.backgroundColor = [UIColor dtsYellowColor];
 	self.suggestionMarkerView.hidden = NO;
+	
+	self.backgroundColor = [UIColor clearColor];
+	self.backgroundView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setPickerValue:(NSNumber *)pickerValue
