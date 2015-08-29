@@ -41,6 +41,11 @@
 		F9401DBB1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9401DBA1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m */; };
 		F946BDA71B8A778C0014EFEA /* Imageplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */; };
 		F946BDA81B8A78620014EFEA /* DTSTripPhotosImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D9E6CA1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.xib */; };
+		F946BDB91B91539D0014EFEA /* DTSPhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F946BDB81B91539D0014EFEA /* DTSPhotoViewModel.m */; };
+		F946BDBC1B9183500014EFEA /* DTSPhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F946BDBB1B9183500014EFEA /* DTSPhotoDetailsViewController.m */; };
+		F946BDC01B9196D70014EFEA /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = F946BDBD1B9196D70014EFEA /* delete.png */; };
+		F946BDC11B9196D70014EFEA /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F946BDBE1B9196D70014EFEA /* delete@2x.png */; };
+		F946BDC21B9196D70014EFEA /* delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F946BDBF1B9196D70014EFEA /* delete@3x.png */; };
 		F948C7DE19786D21000A2A3B /* DTSEventsEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */; };
 		F948C7E1197874A7000A2A3B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E0197874A7000A2A3B /* UIImage+ImageEffects.m */; };
 		F948C7E6197883F2000A2A3B /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F948C7E5197883F1000A2A3B /* UIViewController+Utilities.m */; };
@@ -386,6 +391,13 @@
 		F9401DB91AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSUserTimelineCollectionViewController.h; path = User/DTSUserTimelineCollectionViewController.h; sourceTree = "<group>"; };
 		F9401DBA1AB9F18800F271F5 /* DTSUserTimelineCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSUserTimelineCollectionViewController.m; path = User/DTSUserTimelineCollectionViewController.m; sourceTree = "<group>"; };
 		F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Imageplaceholder.png; sourceTree = "<group>"; };
+		F946BDB71B91539D0014EFEA /* DTSPhotoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSPhotoViewModel.h; path = TripPhotos/DTSPhotoViewModel.h; sourceTree = "<group>"; };
+		F946BDB81B91539D0014EFEA /* DTSPhotoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSPhotoViewModel.m; path = TripPhotos/DTSPhotoViewModel.m; sourceTree = "<group>"; };
+		F946BDBA1B9183500014EFEA /* DTSPhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTSPhotoDetailsViewController.h; path = TripPhotos/DTSPhotoDetailsViewController.h; sourceTree = "<group>"; };
+		F946BDBB1B9183500014EFEA /* DTSPhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTSPhotoDetailsViewController.m; path = TripPhotos/DTSPhotoDetailsViewController.m; sourceTree = "<group>"; };
+		F946BDBD1B9196D70014EFEA /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		F946BDBE1B9196D70014EFEA /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		F946BDBF1B9196D70014EFEA /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
 		F948C7DC19786D21000A2A3B /* DTSEventsEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTSEventsEntryTableViewController.h; sourceTree = "<group>"; };
 		F948C7DD19786D21000A2A3B /* DTSEventsEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTSEventsEntryTableViewController.m; sourceTree = "<group>"; };
 		F948C7DF197874A7000A2A3B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -804,6 +816,9 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F946BDBD1B9196D70014EFEA /* delete.png */,
+				F946BDBE1B9196D70014EFEA /* delete@2x.png */,
+				F946BDBF1B9196D70014EFEA /* delete@3x.png */,
 				F946BDA61B8A778C0014EFEA /* Imageplaceholder.png */,
 				F9FC768F1B54D0CC00287D3E /* yosemite.jpeg */,
 				F9FC768D1B54C5C900287D3E /* user_icon.png */,
@@ -1374,6 +1389,10 @@
 				F9B11F331B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.h */,
 				F9B11F341B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.m */,
 				F9B11F351B83FDEC003E68D2 /* DTSTripPhotoMapSectionHeaderView.xib */,
+				F946BDB71B91539D0014EFEA /* DTSPhotoViewModel.h */,
+				F946BDB81B91539D0014EFEA /* DTSPhotoViewModel.m */,
+				F946BDBA1B9183500014EFEA /* DTSPhotoDetailsViewController.h */,
+				F946BDBB1B9183500014EFEA /* DTSPhotoDetailsViewController.m */,
 			);
 			name = TripPhotos;
 			sourceTree = "<group>";
@@ -1754,6 +1773,7 @@
 				F904DB331B4E311F0054E496 /* Thumbs_up.png in Resources */,
 				F9FD5A6B1AC5C57C009BDDF2 /* ic_launcher.png in Resources */,
 				F9DF95B31ABE8D0300327C82 /* smileyLikeBlueFull.png in Resources */,
+				F946BDC11B9196D70014EFEA /* delete@2x.png in Resources */,
 				F9D9E6D11B7DB732005370B8 /* DTSTripPhotosAddPhotosCollectionViewCell.xib in Resources */,
 				F99EBA0E1A1E563700290D8A /* DTSEventDetailsInfoTableViewCell.xib in Resources */,
 				F96B213D1AB389E7009CC03E /* addTrip@2x.png in Resources */,
@@ -1786,6 +1806,7 @@
 				F9CE11CE1B15A12800F3807A /* DTSLoginLogoView.xib in Resources */,
 				F9A829871B4BA38800D8E7B5 /* bubble_01b@2x.png in Resources */,
 				F96B21241AB362AA009CC03E /* 3.png in Resources */,
+				F946BDC01B9196D70014EFEA /* delete.png in Resources */,
 				F9FD5A7A1AC5C57C009BDDF2 /* Icon-Small.png in Resources */,
 				F9FD5A7E1AC5C57C009BDDF2 /* Icon-72.png in Resources */,
 				F9A8299B1B4BA38800D8E7B5 /* screen_03_element@2x.png in Resources */,
@@ -1910,6 +1931,7 @@
 				F9A829981B4BA38800D8E7B5 /* screen_02@2x.png in Resources */,
 				F9FD5A771AC5C57C009BDDF2 /* Icon-60@3x.png in Resources */,
 				F9A8298C1B4BA38800D8E7B5 /* icon_email@2x.png in Resources */,
+				F946BDC21B9196D70014EFEA /* delete@3x.png in Resources */,
 				F9BEC14719B3A17100622CC9 /* paralympic17.png in Resources */,
 				F9BEC13F19B398A800622CC9 /* car88.png in Resources */,
 				F96B211A1AB362AA009CC03E /* 1-selected.png in Resources */,
@@ -2020,6 +2042,7 @@
 				F910158C1AB73BA8006A6FC6 /* DTSTimelineCollectionViewController.m in Sources */,
 				F9F012EF19B522CF00176944 /* PieLayer.m in Sources */,
 				F9401DA71AB9473400F271F5 /* UIImage+Alpha.m in Sources */,
+				F946BDBC1B9183500014EFEA /* DTSPhotoDetailsViewController.m in Sources */,
 				F9B44F8619F3386F00321E2C /* DTSMKPolyLine.m in Sources */,
 				F9FBF93F1B7D5670008E1686 /* AlbumsViewController.swift in Sources */,
 				F9FBF9521B7D5670008E1686 /* AlbumCell.swift in Sources */,
@@ -2098,6 +2121,7 @@
 				F9AE51991AB8AE2400958707 /* DTSFollowFriendsCollectionViewCell.m in Sources */,
 				F9401D9B1AB910DA00F271F5 /* DTSCache.m in Sources */,
 				F9FEB4791B1E7AC000346750 /* DTSSearchTripCollectionViewController.m in Sources */,
+				F946BDB91B91539D0014EFEA /* DTSPhotoViewModel.m in Sources */,
 				F9FBF94F1B7D5670008E1686 /* SelectableDataDelegate.swift in Sources */,
 				F9D9E6CB1B7D6641005370B8 /* DTSTripPhotosImageCollectionViewCell.m in Sources */,
 				F9FBF9501B7D5670008E1686 /* SelectableDataSource.swift in Sources */,

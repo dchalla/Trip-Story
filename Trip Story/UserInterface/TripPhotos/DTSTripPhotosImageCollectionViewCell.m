@@ -21,7 +21,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-	_imageView.frame = CGRectInset(self.bounds, 0, -CGRectGetHeight(self.frame) / 3);
+	_imageView.frame = CGRectInset(self.bounds, 0, -CGRectGetHeight(self.frame) / 8);
 	_imageView.backgroundColor = [UIColor clearColor];
 	_imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	_imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -48,7 +48,7 @@
 - (void)setParallaxValue:(CGFloat)parallaxValue {
 	_parallaxValue = parallaxValue;
 	CGFloat height = CGRectGetHeight(self.bounds);
-	CGFloat maxOffset = -height / 3 - height / 3;
+	CGFloat maxOffset = -height / 8 - height / 8;
 	
 	CGRect frame = self.imageView.frame;
 	frame.origin.y = maxOffset * parallaxValue;

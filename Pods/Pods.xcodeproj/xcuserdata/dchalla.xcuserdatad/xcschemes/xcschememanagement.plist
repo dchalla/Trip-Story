@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NYTPhotoViewer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PMEDatePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,62 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FBEF2835C1E6959A37F800D</key>
+		<key>069847B7EE7FC116381B0765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32E5F735863D99C1CBF5D075</key>
+		<key>0D30F117F9ACC5D6E355000F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37DE20BD3091B3DD49D871A3</key>
+		<key>1E9E5BE71B3D38928D8CAF1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EED66C18F00EC403D079B67</key>
+		<key>266CF80E3F2EB2CB9368D4F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6AE21A73071C8D2522B811DE</key>
+		<key>5A6C6661F4B48F6FEBC6276D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C37BBCA3B3F15293FF223B9</key>
+		<key>5DF01A368EEE0CFAE8022B4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D310E43199AFDFDF6E324AD</key>
+		<key>7A56DD3670183694C4CC78EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90CD4E0101E922BCB5952674</key>
+		<key>7FAA492F03B131EEEE2F23CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B064F01000EFE9177D90C871</key>
+		<key>9D7965431F2512C51355419F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF10AE9E927CAE4546DC3862</key>
+		<key>C175722CC6ADF6BC6821CE14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA7DD9C1B166B795C8CDC2EF</key>
+		<key>C63D13E726B7B032BE8F905A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE85B3C7F5CEA72C6C099EAF</key>
+		<key>EDF95B473012725901EA97BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F80DAC0ABE1BC1725D2B0CFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

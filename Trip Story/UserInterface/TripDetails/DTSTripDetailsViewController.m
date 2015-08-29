@@ -107,13 +107,12 @@
 	
 	
 	// Do any additional setup after loading the view, typically from a nib.
-	//self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 	self.view.backgroundColor = [UIColor primaryColor];
 	
 	[self setupSegmentControl];
 	
-	self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC, self.tripMapVC];
-	//self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC,self.tripPhotosVC, self.tripMapVC];
+	//self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC, self.tripMapVC];
+	self.pagedViewControllers = @[self.tripStoryVC,self.tripEventsVC,self.tripPhotosVC, self.tripMapVC];
 	self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey:@1}];
 	self.pageVC.delegate = self;
 	self.pageVC.dataSource = self;
@@ -145,8 +144,8 @@
 
 - (void)setupSegmentControl
 {
-	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Map"]];
-	//self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Photos", @"Map"]];
+	//self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Map"]];
+	self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Story", @"Events", @"Photos", @"Map"]];
 	self.segmentedControl.frame = CGRectMake(0, 0, 200, 30);
 	self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
 	[self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];

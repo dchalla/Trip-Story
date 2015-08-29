@@ -19,14 +19,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DTSTripPhotoMapSectionHeaderView.h"
 #import "DTSCache.h"
+#import "DTSPhotoDetailsViewController.h"
+#import "DTSPhotoViewModel.h"
 
 #define photoWidth 450
 
-@interface DTSTripPhotosCollectionViewController ()<UICollectionViewDelegateFlowLayout>
+@interface DTSTripPhotosCollectionViewController ()<UICollectionViewDelegateFlowLayout,DTSPhotoDetailsViewControllerDelegate>
 
 @property (nonatomic, strong) NSArray *collectionViewDataArray;
 @property (nonatomic, strong) NSMutableDictionary *assetsDict;
 @property (nonatomic, strong) NSArray *tripPhotos;
+@property (nonatomic) BOOL isEditable;
 
 @end
 
@@ -50,6 +53,13 @@
 - (void)setupTableViewInsets
 {
 	self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuideLength, 0, self.bottomLayoutGuideLength, 0);
+}
+
+- (BOOL)isEditable {
+	if ([self.trip.user.objectId isEqualToString:[PFUser currentUser].objectId]) {
+		return true;
+	}
+	return false;
 }
 
 - (NSMutableDictionary *)assetsDict {
@@ -176,6 +186,13 @@
 	if (indexPath.section == self.collectionViewDataArray.count -1) {
 		UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([DTSTripPhotosAddPhotosCollectionViewCell class]) forIndexPath:indexPath];
 		cell.backgroundColor = [UIColor primaryColor];
+		if (!self.isEditable) {
+			cell.alpha = 0;
+		}
+		else
+		{
+			cell.alpha = 1;
+		}
 		return cell;
 	}
 
@@ -192,8 +209,20 @@
 	
 	NSString *rowString = dynamic_cast_oc(rowObject, NSString);
 	
-	if ([rowString isEqualToString:@"Add Photos"]) {
+	if ([rowString isEqualToString:@"Add Photos"] && self.isEditable) {
 		[self showPhotosPicker];
+	}
+	
+	DTSTripPhoto *tripPhoto = dynamic_cast_oc(rowObject, DTSTripPhoto);
+	if (tripPhoto) {
+		DTSTripPhotosImageCollectionViewCell *cell = dynamic_cast_oc([collectionView cellForItemAtIndexPath:indexPath], DTSTripPhotosImageCollectionViewCell);
+		if (cell && cell.imageView.image) {
+			DTSPhotoViewModel *photo = [[DTSPhotoViewModel alloc] initWithTripPhoto:tripPhoto andImage:cell.imageView.image];
+			DTSPhotoDetailsViewController *photoDetailsViewController = [[DTSPhotoDetailsViewController alloc] initWithPhotos:@[photo] deleteButtonEnabled:(self.isEditable)];
+			photoDetailsViewController.deleteDelegate = self;
+			[self presentViewController:photoDetailsViewController animated:YES completion:nil];
+		}
+		
 	}
 	
 }
@@ -430,6 +459,16 @@
 		}
 	}
 	return [locationList copy];
+}
+
+#pragma mark - DTSPhotoDetailsViewControllerDelegate
+
+- (void)photosDetailsViewController:(DTSPhotoDetailsViewController *)viewController deleteButtonTappedForTripPhoto:(DTSTripPhoto *)tripPhoto {
+
+	[self.trip.tripPhotosList removeObject:tripPhoto];
+	[tripPhoto deleteInBackground];
+	[self updateDatasourceForCollectionView:nil];
+	[self.trip saveInBackground];
 }
 
 @end
