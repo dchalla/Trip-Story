@@ -22,10 +22,10 @@
 	[Crittercism enableWithAppID:@"55ce7ca4985ec40d0002c591"];
 	
 	//enable this for production //FIXBEFOREPRODUCTION
-	//[Parse setApplicationId:@"ciwtl1abDpXzKAvRXaBFaJdrR1nvOd3SWJnu5trn" clientKey:@"znMgPXhb8Fwi3Z0Cpfm41t89aIP8ZBvycsrhgfIE"];
+	[Parse setApplicationId:@"ciwtl1abDpXzKAvRXaBFaJdrR1nvOd3SWJnu5trn" clientKey:@"znMgPXhb8Fwi3Z0Cpfm41t89aIP8ZBvycsrhgfIE"];
 	
 	//testing
-	[Parse setApplicationId:@"vD1gL4YcvheVfDOdl7gk4ZPIUQ8rPkOZuHUUT6h5" clientKey:@"Nb8PDaKSm9UcKxyvFNbk2hTII6Q5SOUhCFIxZ0Fy"];
+	//[Parse setApplicationId:@"vD1gL4YcvheVfDOdl7gk4ZPIUQ8rPkOZuHUUT6h5" clientKey:@"Nb8PDaKSm9UcKxyvFNbk2hTII6Q5SOUhCFIxZ0Fy"];
 	//testing end
 	
 	[PFFacebookUtils initializeFacebook];
