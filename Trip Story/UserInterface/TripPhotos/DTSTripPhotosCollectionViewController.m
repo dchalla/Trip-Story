@@ -23,6 +23,7 @@
 #import "DTSPhotoViewModel.h"
 
 #define photoWidth 450
+#define MaxPhotosPerTrip 15
 
 @interface DTSTripPhotosCollectionViewController ()<UICollectionViewDelegateFlowLayout,DTSPhotoDetailsViewControllerDelegate>
 
@@ -129,8 +130,11 @@
 	}
 	
 	else if (indexPath.section == self.collectionViewDataArray.count -1) {
-		CGFloat cellHeight = [DTSTripPhotosAddPhotosCollectionViewCell cellHeight];
-		return CGSizeMake(self.collectionView.frame.size.width, cellHeight);
+		if ((self.isEditable && self.trip.tripPhotosList.count < MaxPhotosPerTrip) || (!self.isEditable && self.trip.tripPhotosList.count == 0)) {
+			CGFloat cellHeight = [DTSTripPhotosAddPhotosCollectionViewCell cellHeight];
+			return CGSizeMake(self.collectionView.frame.size.width, cellHeight);
+		}
+		
 	}
 	
 	return CGSizeZero;
@@ -184,14 +188,23 @@
 	}
 	
 	if (indexPath.section == self.collectionViewDataArray.count -1) {
-		UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([DTSTripPhotosAddPhotosCollectionViewCell class]) forIndexPath:indexPath];
+		DTSTripPhotosAddPhotosCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([DTSTripPhotosAddPhotosCollectionViewCell class]) forIndexPath:indexPath];
 		cell.backgroundColor = [UIColor primaryColor];
 		if (!self.isEditable) {
-			cell.alpha = 0;
+			
+			if (self.trip.tripPhotosList.count > 0) {
+				cell.titleLabel.text = @"";
+			}
+			else {
+				cell.titleLabel.text = @"No photos added to the trip";
+			}
+			cell.addImageView.hidden = YES;
+			cell.backgroundColor = [UIColor clearColor];
 		}
 		else
 		{
-			cell.alpha = 1;
+			cell.titleLabel.text = @"Add photos to your trip";
+			cell.addImageView.hidden = NO;
 		}
 		return cell;
 	}
@@ -203,6 +216,7 @@
 
 
 #pragma mark <UICollectionViewDelegate>
+#define MaxPhotosTrip 15
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	id rowObject = [self objectForIndexPath:indexPath];
@@ -253,6 +267,7 @@
 
 - (void)showPhotosPicker {
 	BSImagePickerViewController *imagePicker = [BSImagePickerViewController new];
+	imagePicker.maxNumberOfSelections = MAX(0, MaxPhotosPerTrip - self.trip.tripPhotosList.count);
 	BlockWeakSelf wSelf = self;
 	// Present image picker. Any of the blocks can be nil
 	[self bs_presentImagePickerController:imagePicker
@@ -316,7 +331,9 @@
 				[photoSectionArray addObject:tripPhoto];
 			}
 			else {
-				[collectionViewDataSource addObject:photoSectionArray];
+				if (photoSectionArray.count > 0) {
+					[collectionViewDataSource addObject:photoSectionArray];
+				}
 				photoSectionArray = [NSMutableArray array];
 				[photoSectionArray addObject:tripPhoto];
 			}
@@ -326,12 +343,12 @@
 		}
 		
 	}
-	[collectionViewDataSource addObject:photoSectionArray];
+	if (photoSectionArray.count > 0) {
+		[collectionViewDataSource addObject:photoSectionArray];
+	}
 	
 	if (self.trip && self.trip.user) {
-		if ([self.trip.user.username isEqualToString:[PFUser currentUser].username]) {
 			[collectionViewDataSource addObject:[self lastSectionArray]];
-		}
 	}
 	
 	self.collectionViewDataArray = [collectionViewDataSource copy];

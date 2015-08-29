@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Trip Story/UserInterface/TripPhotos/DTSTripPhotosCollectionViewController.m"
-            timestampString = "462531394.238393"
+            timestampString = "462575484.111471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -59,6 +59,54 @@
             endingLineNumber = "15"
             landmarkName = "-photosDetailsViewController:deleteButtonTappedForTripPhoto:"
             landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trip Story/UserInterface/TripPhotos/DTSTripPhotosCollectionViewController.m"
+            timestampString = "462575484.111471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trip Story/UserInterface/TripPhotos/DTSTripPhotosCollectionViewController.m"
+            timestampString = "462575484.111471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-updateDatasourceForCollectionView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trip Story/UserInterface/TripPhotos/DTSTripPhotosCollectionViewController.m"
+            timestampString = "462575484.111471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "-collectionView:layout:referenceSizeForHeaderInSection:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

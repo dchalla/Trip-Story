@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DTSTripPhotosAddPhotosCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView;
 
 + (CGFloat)cellHeight;
 
