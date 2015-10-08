@@ -68,9 +68,12 @@ extension CAKeyframeAnimation {
 
 extension UIView {
 	func addAnimation(animation: CAKeyframeAnimation) {
-		layer.addAnimation(animation, forKey: description + animation.keyPath)
-		layer.speed = 0
-	}
+		if (animation.keyPath != nil) {
+			layer.addAnimation(animation, forKey: description + animation.keyPath!)
+			layer.speed = 0
+
+		}
+			}
 	
 	func removeAllAnimations() {
 		layer.removeAllAnimations()

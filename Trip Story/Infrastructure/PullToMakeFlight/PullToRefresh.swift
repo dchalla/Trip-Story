@@ -107,7 +107,7 @@ public class PullToRefresh: NSObject {
 	private let contentOffsetKeyPath = "contentOffset"
 	private var previousScrollViewOffset: CGPoint = CGPointZero
 	
-	override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<()>) {
+	override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<()>) {
 		if (context == &KVOContext && keyPath == contentOffsetKeyPath && object as? UIScrollView == scrollView) {
 			let offset = previousScrollViewOffset.y + scrollViewDefaultInsets.top
 			let refreshViewHeight = refreshView.frame.size.height
@@ -154,7 +154,7 @@ public class PullToRefresh: NSObject {
 
 // MARK: - State enumeration
 
-public enum State:Equatable, Printable {
+public enum State:Equatable, CustomStringConvertible {
 	case Inital, Loading, Finished
 	case Releasing(progress: CGFloat)
 	
@@ -188,7 +188,7 @@ class DefaultRefreshView: UIView {
 		commonInit()
 	}
 	
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		commonInit()
 	}

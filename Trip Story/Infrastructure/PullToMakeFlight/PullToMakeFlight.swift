@@ -76,7 +76,7 @@ class FlightAnimator : RefreshViewAnimator {
 	private func initalLayout() {
 		
 		// clouds center
-		var random = arc4random_uniform(2)
+		let random = arc4random_uniform(2)
 		if(random == 1) {
 			refreshView.hotairballoonLeft.alpha = 1
 			refreshView.hotairballoonRight.alpha = 1
@@ -204,7 +204,7 @@ class FlightAnimator : RefreshViewAnimator {
 		refreshView.hotairballoonMiddle.layer.timeOffset = 0.0
 		
 		// hotAirballoonLeft
-		var balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
+		let balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
 		refreshView.hotairballoonLeft.layer.removeAllAnimations()
 		refreshView.hotairballoonLeft.frame = CGRectMake(balloonLeftX, 140, refreshView.hotairballoonLeft.frame.width, refreshView.hotairballoonLeft.frame.height)
 		refreshView.hotairballoonLeft.addAnimation(CAKeyframeAnimation.animationWith(
@@ -216,7 +216,7 @@ class FlightAnimator : RefreshViewAnimator {
 		refreshView.hotairballoonLeft.layer.timeOffset = 0.0
 		
 		// hotAirballoonRight
-		var balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
+		let balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
 		refreshView.hotairballoonRight.layer.removeAllAnimations()
 		refreshView.hotairballoonRight.frame = CGRectMake(balloonRightX, 140, refreshView.hotairballoonRight.frame.width, refreshView.hotairballoonRight.frame.height)
 		refreshView.hotairballoonRight.addAnimation(CAKeyframeAnimation.animationWith(
@@ -302,7 +302,7 @@ class FlightAnimator : RefreshViewAnimator {
 		refreshView.hotairballoonMiddle.layer.speed = 1
 
 		//hotairballoonLeft
-		var balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
+		let balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
 		refreshView.hotairballoonLeft.center = CGPointMake(balloonLeftX, 50)
 		
 		let hotairballoonLeftAnimation = CAKeyframeAnimation.animationWith(
@@ -321,7 +321,7 @@ class FlightAnimator : RefreshViewAnimator {
 		
 		
 		//hotairballoonRight
-		var balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
+		let balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
 		refreshView.hotairballoonRight.center = CGPointMake(balloonRightX, 50)
 		
 		let hotairballoonRightAnimation = CAKeyframeAnimation.animationWith(
@@ -376,7 +376,7 @@ class FlightAnimator : RefreshViewAnimator {
 		refreshView.hotairballoonMiddle.layer.speed = 1
 		
 		//balloonLeft
-		var balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
+		let balloonLeftX = 10 + refreshView.hotairballoonLeft.frame.size.width/2
 		refreshView.hotairballoonLeft.removeAllAnimations()
 		refreshView.hotairballoonLeft.layer.timeOffset = 0.0
 		refreshView.hotairballoonLeft.addAnimation(CAKeyframeAnimation.animationWith(
@@ -388,7 +388,7 @@ class FlightAnimator : RefreshViewAnimator {
 		refreshView.hotairballoonLeft.layer.speed = 1
 		
 		//balloonRight
-		var balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
+		let balloonRightX = refreshView.frame.width - refreshView.hotairballoonRight.frame.size.width/2 - 10
 		refreshView.hotairballoonRight.removeAllAnimations()
 		refreshView.hotairballoonRight.layer.timeOffset = 0.0
 		refreshView.hotairballoonRight.addAnimation(CAKeyframeAnimation.animationWith(

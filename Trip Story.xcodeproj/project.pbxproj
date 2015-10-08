@@ -1725,6 +1725,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DTS;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DKC;
 				TargetAttributes = {
@@ -2243,6 +2245,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
@@ -2267,6 +2270,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trip Story/Trip Story-Prefix.pch";
 				INFOPLIST_FILE = "Trip Story/Trip Story-Info.plist";
