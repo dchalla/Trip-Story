@@ -1,8 +1,8 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 
-pod 'Parse', '1.7.4'
+pod 'Parse'
 pod 'ParseUI'
-pod 'ParseFacebookUtils', '1.7.4'
+pod 'ParseFacebookUtils'
 pod 'Facebook-iOS-SDK'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'CRToast', '~> 0.0.7'
