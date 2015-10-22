@@ -17,11 +17,10 @@
 @property (nonatomic) double latitude;
 
 @property (nonatomic, strong) NSDictionary *addressDictionary;
+@property (nonatomic, readonly) MKMapItem *mapItem;
+@property (nonatomic, readonly) MKPlacemark *mkplacemark;
 
 +(NSString *)parseClassName;
-
-- (MKMapItem *)mapItem;
-- (MKPlacemark *)mkplacemark;
 - (void)updateWithMkMapItem:(MKMapItem *)mapItem;
 
 @end

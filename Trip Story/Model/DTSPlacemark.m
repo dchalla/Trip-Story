@@ -13,6 +13,8 @@
 @dynamic longitude;
 @dynamic latitude;
 @dynamic addressDictionary;
+@synthesize mapItem = _mapItem;
+@synthesize mkplacemark = _mkplacemark;
 
 + (void)load {
 	[self registerSubclass];
@@ -23,32 +25,39 @@
 }
 
 - (MKMapItem *)mapItem {
-	if (self.longitude != 0 && self.latitude != 0)
-	{
-		MKPlacemark *mkplacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.latitude, self.longitude) addressDictionary:self.addressDictionary];
-		if (mkplacemark)
+	if (!_mapItem) {
+		if (self.longitude != 0 && self.latitude != 0)
 		{
-			MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:mkplacemark];
-			return mapItem;
+			if (self.mkplacemark)
+			{
+				MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:self.mkplacemark];
+				_mapItem = mapItem;
+			}
 		}
 	}
-	return nil;
+	
+	return _mapItem;
 }
 
 - (MKPlacemark *)mkplacemark
 {
-	if (self.longitude != 0 && self.latitude != 0)
-	{
-		MKPlacemark *mkplacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.latitude, self.longitude) addressDictionary:self.addressDictionary];
-		if (mkplacemark)
+	if(!_mkplacemark) {
+		if (self.longitude != 0 && self.latitude != 0)
 		{
-			return  mkplacemark;
+			MKPlacemark *mkplacemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.latitude, self.longitude) addressDictionary:self.addressDictionary];
+			if (mkplacemark)
+			{
+				_mkplacemark =  mkplacemark;
+			}
 		}
 	}
-	return nil;
+	
+	return _mkplacemark;
 }
 
 - (void)updateWithMkMapItem:(MKMapItem *)mapItem {
+	_mapItem = nil;
+	_mkplacemark = nil;
 	if (mapItem && mapItem.placemark)
 	{
 		self.longitude = mapItem.placemark.location.coordinate.longitude;

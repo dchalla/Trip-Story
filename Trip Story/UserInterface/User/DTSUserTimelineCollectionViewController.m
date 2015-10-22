@@ -87,7 +87,10 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	else
 	{
 		DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row-1], DTSTrip);
-		[trip fillInPlaceholderEvents];
+		if (trip.eventsList == nil) {
+			[trip fillInPlaceholderEvents];
+		}
+		
 		NSArray *eventsWithLocation = trip.eventsWithLocationList;
 		CGFloat height = DTSTimelineCellHeight;
 		if (eventsWithLocation.count > 0)
@@ -113,7 +116,9 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	else
 	{
 		DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row-1], DTSTrip);
-		[trip fillInPlaceholderEvents];
+		if (trip.eventsList == nil) {
+			[trip fillInPlaceholderEvents];
+		}
 		NSArray *eventsWithLocation = trip.eventsWithLocationList;
 		DTSTimelineCollectionViewCell *cell = nil;
 		if (eventsWithLocation.count > 0)

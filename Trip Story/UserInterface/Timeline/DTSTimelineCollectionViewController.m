@@ -13,7 +13,7 @@
 #import "DKCRateFeedbackPrompt.h"
 #import "theTripStory-Swift.h"
 
-@interface DTSTimelineCollectionViewController ()
+@interface DTSTimelineCollectionViewController ()<UIViewControllerPreviewingDelegate>
 
 @property (nonatomic) BOOL pullRefreshSetupDone;
 @property (nonatomic, strong) PullToMakeFlight *pullToRefresh;
@@ -192,7 +192,9 @@
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
-	[trip fillInPlaceholderEvents];
+	if (trip.eventsList == nil) {
+		[trip fillInPlaceholderEvents];
+	}
 	NSArray *eventsWithLocation = trip.eventsWithLocationList;
 	DTSTimelineCollectionViewCell *cell = nil;
 	if (eventsWithLocation.count > 0)
@@ -214,7 +216,9 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSTrip *trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
-	[trip fillInPlaceholderEvents];
+	if (trip.eventsList == nil) {
+		[trip fillInPlaceholderEvents];
+	}
 	NSArray *eventsWithLocation = trip.eventsWithLocationList;
 	CGFloat height = DTSTimelineCellHeight;
 	if (eventsWithLocation.count > 0)
@@ -250,6 +254,37 @@
 	vc.trip = trip;
 	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
 }
+
+# pragma mark - 3D Touch Delegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+	
+	NSIndexPath *indexPath = [self.collectionView indexPathForRowAtPoint:location];
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	
+	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
+	
+	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	vc.trip = trip;
+	
+	/*
+	 Set the height of the preview by setting the preferred content size of the detail view controller.
+	 Width should be zero, because it's not used in portrait.
+	 */
+	vc.preferredContentSize = CGSizeMake(0.0, 400);
+	
+	// Set the source rect to the cell frame, so surrounding elements are blurred.
+	previewingContext.sourceRect = cell.frame;
+	
+	
+	return vc;
+
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+	[self showViewController:viewControllerToCommit sender:self];
+}
+
 
 #pragma mark -
 #pragma mark Responding to Events

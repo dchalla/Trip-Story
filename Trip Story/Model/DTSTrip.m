@@ -33,6 +33,10 @@ NSString *const kDTSTripUserKey		= @"user";
 @dynamic privacy;
 @dynamic tripTagsForSearch;
 @dynamic tripPhotosList;
+@synthesize tripTagsString = _tripTagsString;
+@synthesize tripEventTypeColorDict = _tripEventTypeColorDict;
+@synthesize eventsWithLocationList = _eventsWithLocationList;
+@synthesize tripDurationString = _tripDurationString;
 
 + (void)load {
 	[self registerSubclass];
@@ -128,7 +132,10 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (void)fillInPlaceholderEvents
 {
-	[self createTagsForSearch];
+	_tripTagsString = nil;
+	_tripEventTypeColorDict = nil;
+	_eventsWithLocationList = nil;
+	_tripDurationString = nil;
 	if (!self.user || (self.user && [[PFUser currentUser].objectId isEqualToString:self.user.objectId]))
 	{
 		[self sortOriginalList];
@@ -158,6 +165,7 @@ NSString *const kDTSTripUserKey		= @"user";
 		i++;
 	}
 	[self sortEventsList];
+	[self createTagsForSearch];
 }
 
 - (void)createTagsForSearch
@@ -308,8 +316,11 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (NSString *)tripDurationString
 {
-	NSNumber *tripHours = [self tripDurationHours];
-	return [NSString durationStringForHours:tripHours];
+	if (!_tripDurationString) {
+		NSNumber *tripHours = [self tripDurationHours];
+		_tripDurationString = [NSString durationStringForHours:tripHours];
+	}
+	return _tripDurationString;
 }
 
 - (NSNumber *)tripDurationHours
@@ -344,15 +355,18 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (NSArray *)eventsWithLocationList
 {
-	NSMutableArray *eventsWithLocationList = [NSMutableArray array];
-	for (DTSEvent *event in self.eventsList)
-	{
-		if (event.location && event.location.mapItem)
+	if (!_eventsWithLocationList) {
+		NSMutableArray *eventsWithLocationList = [NSMutableArray array];
+		for (DTSEvent *event in self.eventsList)
 		{
-			[eventsWithLocationList addObject:event];
+			if (event.location && event.location.mapItem)
+			{
+				[eventsWithLocationList addObject:event];
+			}
 		}
+		_eventsWithLocationList = [eventsWithLocationList copy];
 	}
-	return [eventsWithLocationList copy];
+	return _eventsWithLocationList;
 }
 
 - (NSArray *)startAndEndTravelEventsArray
@@ -498,17 +512,23 @@ NSString *const kDTSTripUserKey		= @"user";
 
 - (NSDictionary *)tripEventTypeColorDict
 {
-	NSMutableDictionary *eventsTypeDict = [NSMutableDictionary dictionary];
-	for (DTSEvent *event in self.eventsList)
-	{
-		[eventsTypeDict setObject:[DTSEvent topColorForEventType:event.eventType] forKey:@(event.eventType)];
+	if (!_tripEventTypeColorDict) {
+		NSMutableDictionary *eventsTypeDict = [NSMutableDictionary dictionary];
+		for (DTSEvent *event in self.eventsList)
+		{
+			[eventsTypeDict setObject:[DTSEvent topColorForEventType:event.eventType] forKey:@(event.eventType)];
+		}
+		_tripEventTypeColorDict = [eventsTypeDict copy];
 	}
-	return [eventsTypeDict copy];
+	return _tripEventTypeColorDict;
 }
 
 - (NSString *)tripTagsString
 {
-	return [[self tripTagsArray] componentsJoinedByString:@", "];
+	if (!_tripTagsString) {
+		_tripTagsString = [[self tripTagsArray] componentsJoinedByString:@", "];
+	}
+	return _tripTagsString;
 }
 
 - (NSArray *)tripTagsArray

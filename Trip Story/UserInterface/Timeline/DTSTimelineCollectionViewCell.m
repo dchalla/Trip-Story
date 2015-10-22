@@ -21,6 +21,24 @@
 
 @implementation DTSTimelineCollectionViewCell
 
+- (UIImage *)smileyLikeNotSelectedImage {
+	static UIImage *smileyLikeNotSelected;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		smileyLikeNotSelected = [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	});
+	return smileyLikeNotSelected;
+}
+
+- (UIImage *)smileyLikeSelectedImage {
+	static UIImage *smileyLikeSelected;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		smileyLikeSelected = [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	});
+	return smileyLikeSelected;
+}
+
 - (void)awakeFromNib {
 	// Initialization code
 	self.leftCircleView.layer.cornerRadius = self.leftCircleView.frame.size.width/2;
@@ -61,6 +79,7 @@
 		self.byUserLabel.text = [NSString stringWithFormat:@"by %@", [self.trip.user dts_displayName]];
 		[self updateColorViews];
 		[self updateLikesAndComment];
+		
 		
 		NSArray *eventsWithLocation = self.trip.eventsWithLocationList;
 		if (eventsWithLocation.count > 0)
@@ -173,8 +192,9 @@
 - (void)updateColorViews
 {
 	NSDictionary *eventTypeColorDict = [self.trip tripEventTypeColorDict];
-	__block int i = 0;
-	[eventTypeColorDict enumerateKeysAndObjectsUsingBlock:^(NSNumber *eventType, UIColor *color, BOOL *stop){
+	int i = 0;
+	for (NSNumber *eventType in eventTypeColorDict) {
+		UIColor *color = dynamic_cast_oc(eventTypeColorDict[eventType], UIColor);
 		if (i < self.colorViewsArray.count)
 		{
 			((UIView *)self.colorViewsArray[i]).backgroundColor = color;
@@ -183,23 +203,40 @@
 			if (eventType.integerValue == DTSEventTypeTravelByRoad)
 			{
 				((UIImageView *)self.colorImageViewsArray[i]).hidden = NO;
-				((UIImageView *)self.colorImageViewsArray[i]).image = [[UIImage imageNamed:@"car88.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				static UIImage *carImage;
+				static dispatch_once_t onceToken;
+				dispatch_once(&onceToken, ^{
+					carImage = [[UIImage imageNamed:@"car88.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				});
+				((UIImageView *)self.colorImageViewsArray[i]).image = carImage;
 			}
 			else if (eventType.integerValue == DTSEventTypeTravelByAir)
 			{
 				((UIImageView *)self.colorImageViewsArray[i]).hidden = NO;
-				((UIImageView *)self.colorImageViewsArray[i]).image = [[UIImage imageNamed:@"airplane21.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				static UIImage *airplaneImage;
+				static dispatch_once_t onceToken;
+				dispatch_once(&onceToken, ^{
+					airplaneImage = [[UIImage imageNamed:@"airplane21.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				});
+				((UIImageView *)self.colorImageViewsArray[i]).image = airplaneImage;
 			}
 			else if (eventType.integerValue == DTSEventTypeTravelByWater)
 			{
 				((UIImageView *)self.colorImageViewsArray[i]).hidden = NO;
-				((UIImageView *)self.colorImageViewsArray[i]).image = [[UIImage imageNamed:@"waterTravel.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				static UIImage *waterTravelImage;
+				static dispatch_once_t onceToken;
+				dispatch_once(&onceToken, ^{
+					waterTravelImage = [[UIImage imageNamed:@"waterTravel.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+				});
+				((UIImageView *)self.colorImageViewsArray[i]).image = waterTravelImage;
 			}
 			i = i+1;
+
 		}
-		
-	}];
+	}
 }
+	
+	
 - (IBAction)likeButtonTapped:(id)sender {
 	if ([PFUser currentUser] == nil)
 	{
@@ -207,7 +244,7 @@
 	}
 	if (self.isLikeSelected)
 	{
-		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likeSmileyImageView.image =  [self smileyLikeNotSelectedImage];
 		self.likedLabel.text = @"Like";
 		self.isLikeSelected = NO;
 		[[DTSCache sharedCache] decrementLikerCountForTrip:self.trip];
@@ -223,7 +260,7 @@
 	}
 	else
 	{
-		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likeSmileyImageView.image = [self smileyLikeSelectedImage];
 		self.likedLabel.text = @"Liked";
 		self.isLikeSelected = YES;
 		[[DTSCache sharedCache] incrementLikerCountForTrip:self.trip];
@@ -254,12 +291,12 @@
 	
 	if (!self.isLikeSelected)
 	{
-		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likeSmileyImageView.image = [self smileyLikeNotSelectedImage];
 		self.likedLabel.text = @"Like";
 	}
 	else
 	{
-		self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		self.likeSmileyImageView.image =  [self smileyLikeSelectedImage];
 		self.likedLabel.text = @"Liked";
 	}
 }
@@ -289,7 +326,7 @@
 		
 	}
 	
-	self.likeSmileyImageView.image =  [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	self.likeSmileyImageView.image = [self smileyLikeNotSelectedImage];
 	self.likedLabel.text = @"Like";
 	self.isLikeSelected = NO;
 	self.mapViewImage.image = nil;

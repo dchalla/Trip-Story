@@ -69,7 +69,9 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
-	[activity.trip fillInPlaceholderEvents];
+	if (activity.trip.eventsList == nil) {
+		[activity.trip fillInPlaceholderEvents];
+	}
 	NSArray *eventsWithLocation = activity.trip.eventsWithLocationList;
 	CGFloat height = DTSTimelineCellHeight;
 	if (eventsWithLocation.count > 0)
@@ -83,7 +85,10 @@
 - (UICollectionViewCell *)dtsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	DTSActivity *activity = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity);
-	[activity.trip fillInPlaceholderEvents];
+	if (activity.trip.eventsList == nil) {
+		[activity.trip fillInPlaceholderEvents];
+	}
+	
 	NSArray *eventsWithLocation = activity.trip.eventsWithLocationList;
 	DTSTimelineCollectionViewCell *cell = nil;
 	if (eventsWithLocation.count > 0)
