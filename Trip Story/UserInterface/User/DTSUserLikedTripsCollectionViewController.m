@@ -114,6 +114,36 @@
 	[((UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController) pushViewController:vc animated:YES];
 }
 
+# pragma mark - 3D Touch Delegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+	
+	NSIndexPath *indexPath = [self.collectionView indexPathForRowAtPoint:location];
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	
+	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity).trip;
+	
+	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	vc.trip = trip;
+	
+	/*
+	 Set the height of the preview by setting the preferred content size of the detail view controller.
+	 Width should be zero, because it's not used in portrait.
+	 */
+	vc.preferredContentSize = CGSizeMake(0.0, 400);
+	
+	// Set the source rect to the cell frame, so surrounding elements are blurred.
+	previewingContext.sourceRect = cell.frame;
+	
+	
+	return vc;
+	
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+	[self showViewController:viewControllerToCommit sender:self];
+}
+
 #pragma mark - analytics
 
 - (NSString *)dts_analyticsScreenName

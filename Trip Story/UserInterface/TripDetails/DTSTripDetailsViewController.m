@@ -386,7 +386,7 @@
 	[self.trip saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
 			// The object has been saved.
-			NSLog(@"Succeeded");
+			//NSLog(@"Succeeded");
 		} else {
 			// There was a problem, check error.description
 			NSLog(@"Failed");

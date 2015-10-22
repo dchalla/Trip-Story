@@ -153,7 +153,7 @@
 		[DTSUtilities unlikeTripInBackground:self.trip block:^(BOOL succeeded, NSError *error) {
 			if (succeeded)
 			{
-				NSLog(@"success");
+				//NSLog(@"success");
 			}
 		}];
 		
@@ -169,7 +169,7 @@
 		[DTSUtilities likeTripInBackground:self.trip block:^(BOOL succeeded, NSError *error) {
 			if (succeeded)
 			{
-				NSLog(@"success");
+				//NSLog(@"success");
 			}
 		}];
 	}

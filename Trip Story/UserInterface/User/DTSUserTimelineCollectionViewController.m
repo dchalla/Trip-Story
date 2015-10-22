@@ -153,6 +153,44 @@ static NSString * const reuseIdentifierProfile = @"DTSUserProfileCollectionViewC
 	}
 }
 
+# pragma mark - 3D Touch Delegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+	
+	
+	
+	NSIndexPath *indexPath = [self.collectionView indexPathForRowAtPoint:location];
+	if (indexPath.item == 0 && indexPath.section == 0)
+	{
+		//do nothing;
+		return nil;
+	}
+	
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	
+	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row-1], DTSTrip);
+	
+	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
+	vc.trip = trip;
+	
+	/*
+	 Set the height of the preview by setting the preferred content size of the detail view controller.
+	 Width should be zero, because it's not used in portrait.
+	 */
+	vc.preferredContentSize = CGSizeMake(0.0, 400);
+	
+	// Set the source rect to the cell frame, so surrounding elements are blurred.
+	previewingContext.sourceRect = cell.frame;
+	
+	
+	return vc;
+	
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+	[self showViewController:viewControllerToCommit sender:self];
+}
+
 #pragma mark - overrides
 - (void)showNoResultsHUD
 {

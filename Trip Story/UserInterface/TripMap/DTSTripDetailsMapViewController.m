@@ -138,16 +138,16 @@
 					if (rout && line)
 					{
 						[self.mapView addOverlay:line];
-						NSLog(@"Rout Name : %@",rout.name);
-						NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+						//NSLog(@"Rout Name : %@",rout.name);
+						//NSLog(@"Total Distance (in Meters) :%f",rout.distance);
 						
 						NSArray *steps = [rout steps];
 						
-						NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+						//NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
 						
 						[steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-							NSLog(@"Rout Instruction : %@",[obj instructions]);
-							NSLog(@"Rout Distance : %f",[obj distance]);
+							//NSLog(@"Rout Instruction : %@",[obj instructions]);
+							//NSLog(@"Rout Distance : %f",[obj distance]);
 						}];
 					}
 					
