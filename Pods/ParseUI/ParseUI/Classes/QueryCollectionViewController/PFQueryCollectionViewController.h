@@ -222,6 +222,8 @@ PFUI_ASSUME_NONNULL_BEGIN
  */
 - (PFUI_NULLABLE UICollectionReusableView *)collectionViewReusableViewForNextPageAction:(UICollectionView *)collectionView;
 
+- (void)reloadCollectionView;
+
 @end
 
 PFUI_ASSUME_NONNULL_END

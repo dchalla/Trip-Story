@@ -25,7 +25,7 @@
 	static UIImage *smileyLikeNotSelected;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		smileyLikeNotSelected = [[UIImage imageNamed:@"smileyLikeBlue.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		smileyLikeNotSelected = [UIImage imageNamed:@"smileyLikeYellow.png"];
 	});
 	return smileyLikeNotSelected;
 }
@@ -34,7 +34,7 @@
 	static UIImage *smileyLikeSelected;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		smileyLikeSelected = [[UIImage imageNamed:@"smileyLikeBlueFull.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		smileyLikeSelected = [UIImage imageNamed:@"smileyLikeYellowFull.png"];
 	});
 	return smileyLikeSelected;
 }
@@ -182,11 +182,12 @@
 	{
 		durationString = [NSString stringWithFormat:@"%@\n ",durationString];
 	}
-	NSMutableAttributedString *attributedDurationString = [[NSMutableAttributedString alloc] initWithString:durationString];
+	/*NSMutableAttributedString *attributedDurationString = [[NSMutableAttributedString alloc] initWithString:durationString];
 	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 	paragraphStyle.lineSpacing = 5.0f;
 	[attributedDurationString addAttributes:@{ NSParagraphStyleAttributeName : paragraphStyle} range:NSMakeRange(0, attributedDurationString.length)];
-	self.durationLabel.attributedText = attributedDurationString;
+	self.durationLabel.attributedText = attributedDurationString;*/
+	self.durationLabel.text = durationString;
 }
 
 - (void)updateColorViews
@@ -206,7 +207,7 @@
 				static UIImage *carImage;
 				static dispatch_once_t onceToken;
 				dispatch_once(&onceToken, ^{
-					carImage = [[UIImage imageNamed:@"car88.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+					carImage = [UIImage imageNamed:@"car-white.png"];// [[UIImage imageNamed:@"car88.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 				});
 				((UIImageView *)self.colorImageViewsArray[i]).image = carImage;
 			}
@@ -216,7 +217,7 @@
 				static UIImage *airplaneImage;
 				static dispatch_once_t onceToken;
 				dispatch_once(&onceToken, ^{
-					airplaneImage = [[UIImage imageNamed:@"airplane21.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+					airplaneImage = [UIImage imageNamed:@"airplane-white.png"];// [[UIImage imageNamed:@"airplane21.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 				});
 				((UIImageView *)self.colorImageViewsArray[i]).image = airplaneImage;
 			}
@@ -226,7 +227,7 @@
 				static UIImage *waterTravelImage;
 				static dispatch_once_t onceToken;
 				dispatch_once(&onceToken, ^{
-					waterTravelImage = [[UIImage imageNamed:@"waterTravel.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+					waterTravelImage = [UIImage imageNamed:@"waterTravel-white.png"];// [[UIImage imageNamed:@"waterTravel.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 				});
 				((UIImageView *)self.colorImageViewsArray[i]).image = waterTravelImage;
 			}

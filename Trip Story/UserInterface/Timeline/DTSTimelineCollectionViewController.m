@@ -305,6 +305,41 @@
 	
 }
 
+- (void)reloadCollectionView {
+	
+	for (id obj in self.objects) {
+		DTSTrip *trip = dynamic_cast_oc(obj, DTSTrip);
+		if (!trip) {
+			trip = dynamic_cast_oc(obj, DTSActivity).trip;
+		}
+		if (trip.eventsList == nil) {
+			[trip fillInPlaceholderEvents];
+		}
+	}
+	[self.collectionView reloadData];
+	/*
+	
+	BlockWeakSelf wSelf = self;
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		for (id obj in self.objects) {
+			DTSTrip *trip = dynamic_cast_oc(obj, DTSTrip);
+			if (!trip) {
+				trip = dynamic_cast_oc(obj, DTSActivity).trip;
+			}
+			if (trip.eventsList == nil) {
+				[trip fillInPlaceholderEvents];
+			}
+		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			BlockStrongSelf strongSelf = wSelf;
+			if (strongSelf) {
+				[strongSelf.collectionView reloadData];
+			}
+		});
+	});
+	 */
+}
+
 - (void)showNoResultsHUD
 {
 	if (!self.objects || self.objects.count ==0)

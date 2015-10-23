@@ -260,7 +260,7 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
             }
 
             [_mutableObjects addObjectsFromArray:foundObjects];
-            [self.collectionView reloadData];
+			[self reloadCollectionView];
         }
 
         [self objectsDidLoad:error];
@@ -270,6 +270,11 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
     }];
 
     return source.task;
+}
+
+
+- (void)reloadCollectionView {
+	 [self.collectionView reloadData];
 }
 
 - (void)loadNextPage {
