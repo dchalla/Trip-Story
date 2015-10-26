@@ -131,6 +131,23 @@
 	self.navigationController.navigationBarHidden = NO;
 }
 
+- (void)openSegment:(DTSRootViewControllerSegmenet)segement {
+	switch (segement) {
+		case DTSRootViewControllerSegmenetTimeline:
+		case DTSRootViewControllerSegmenetSearch:
+		case DTSRootViewControllerSegmenetCreateTrip:
+		case DTSRootViewControllerSegmenetUser:
+		case DTSRootViewControllerSegmenetActivity:
+			[self.segmentedControl setSelectedSegmentIndex:segement];
+			[self segmentedControlChangedValue:self.segmentedControl];
+			break;
+			
+		default:
+			//dont do anything
+			break;
+	}
+}
+
 #pragma mark - segmentControl
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl

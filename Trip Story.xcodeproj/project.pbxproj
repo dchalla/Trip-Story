@@ -25,12 +25,12 @@
 		F91CBD381981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD361981B82700BC3021 /* DTSEventLocationEntryTableViewCell.xib */; };
 		F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91CBD391981C23400BC3021 /* DTSLocationEntryViewController.xib */; };
 		F91CBD3C1981D7FC00BC3021 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91CBD3B1981D7FC00BC3021 /* MapKit.framework */; };
-		F923A9621BDA19340051F0E9 /* smileyLikeYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95C1BDA19340051F0E9 /* smileyLikeYellow.png */; settings = {ASSET_TAGS = (); }; };
-		F923A9631BDA19340051F0E9 /* smileyLikeYellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95D1BDA19340051F0E9 /* smileyLikeYellow@2x.png */; settings = {ASSET_TAGS = (); }; };
-		F923A9641BDA19340051F0E9 /* smileyLikeYellow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95E1BDA19340051F0E9 /* smileyLikeYellow@3x.png */; settings = {ASSET_TAGS = (); }; };
-		F923A9651BDA19340051F0E9 /* smileyLikeYellowFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95F1BDA19340051F0E9 /* smileyLikeYellowFull.png */; settings = {ASSET_TAGS = (); }; };
-		F923A9661BDA19340051F0E9 /* smileyLikeYellowFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A9601BDA19340051F0E9 /* smileyLikeYellowFull@2x.png */; settings = {ASSET_TAGS = (); }; };
-		F923A9671BDA19340051F0E9 /* smileyLikeYellowFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A9611BDA19340051F0E9 /* smileyLikeYellowFull@3x.png */; settings = {ASSET_TAGS = (); }; };
+		F923A9621BDA19340051F0E9 /* smileyLikeYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95C1BDA19340051F0E9 /* smileyLikeYellow.png */; };
+		F923A9631BDA19340051F0E9 /* smileyLikeYellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95D1BDA19340051F0E9 /* smileyLikeYellow@2x.png */; };
+		F923A9641BDA19340051F0E9 /* smileyLikeYellow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95E1BDA19340051F0E9 /* smileyLikeYellow@3x.png */; };
+		F923A9651BDA19340051F0E9 /* smileyLikeYellowFull.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A95F1BDA19340051F0E9 /* smileyLikeYellowFull.png */; };
+		F923A9661BDA19340051F0E9 /* smileyLikeYellowFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A9601BDA19340051F0E9 /* smileyLikeYellowFull@2x.png */; };
+		F923A9671BDA19340051F0E9 /* smileyLikeYellowFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F923A9611BDA19340051F0E9 /* smileyLikeYellowFull@3x.png */; };
 		F926C4371AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F926C4361AC0DC2F00994D4D /* DTSUserLikedTripsCollectionViewController.m */; };
 		F9391DC91B0FE98A002DA264 /* DTSRequiresLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9391DC81B0FE98A002DA264 /* DTSRequiresLoginView.m */; };
 		F9391DCB1B0FE99D002DA264 /* DTSRequiresLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9391DCA1B0FE99D002DA264 /* DTSRequiresLoginView.xib */; };
@@ -226,6 +226,7 @@
 		F9DF95B71ABE8E6900327C82 /* smileyLikeBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */; };
 		F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */; };
 		F9DF95BB1ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */; };
+		F9E0AB931BDD8F9E00DCE8C9 /* timelineshortcuticon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E0AB921BDD8F9E00DCE8C9 /* timelineshortcuticon.png */; };
 		F9E515F51B5765C6008F757D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E515F41B5765C6008F757D /* QuartzCore.framework */; };
 		F9E515F71B57665F008F757D /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515F61B57665F008F757D /* PullToRefresh.swift */; };
 		F9E515F91B5766FA008F757D /* UIScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E515F81B5766FA008F757D /* UIScrollView+PullToRefresh.swift */; };
@@ -650,6 +651,7 @@
 		F9DF95B51ABE8E6900327C82 /* smileyLikeBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlue@3x.png"; sourceTree = "<group>"; };
 		F9DF95B81ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@2x.png"; sourceTree = "<group>"; };
 		F9DF95B91ABE8F5F00327C82 /* smileyLikeBlueFull@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smileyLikeBlueFull@3x.png"; sourceTree = "<group>"; };
+		F9E0AB921BDD8F9E00DCE8C9 /* timelineshortcuticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timelineshortcuticon.png; sourceTree = "<group>"; };
 		F9E515C21B576392008F757D /* theTripStory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theTripStory-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9E515F41B5765C6008F757D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F9E515F61B57665F008F757D /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 		F90CEE7B19932F9F002E9CE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F9E0AB921BDD8F9E00DCE8C9 /* timelineshortcuticon.png */,
 				F923A95C1BDA19340051F0E9 /* smileyLikeYellow.png */,
 				F923A95D1BDA19340051F0E9 /* smileyLikeYellow@2x.png */,
 				F923A95E1BDA19340051F0E9 /* smileyLikeYellow@3x.png */,
@@ -1851,6 +1854,7 @@
 				F9FD5A711AC5C57C009BDDF2 /* playstore-icon.png in Resources */,
 				F946BDA81B8A78620014EFEA /* DTSTripPhotosImageCollectionViewCell.xib in Resources */,
 				F96B211D1AB362AA009CC03E /* 1@2x.png in Resources */,
+				F9E0AB931BDD8F9E00DCE8C9 /* timelineshortcuticon.png in Resources */,
 				F9DF95BA1ABE8F5F00327C82 /* smileyLikeBlueFull@2x.png in Resources */,
 				F91CBD3A1981C23400BC3021 /* DTSLocationEntryViewController.xib in Resources */,
 				F96B21421AB389E7009CC03E /* explore@3x.png in Resources */,

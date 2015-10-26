@@ -50,6 +50,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:kDTSUserAuthenticated object:nil];
 }
 
+
 - (void)setTopLayoutGuideLength:(CGFloat)topLayoutGuideLength
 {
 	_topLayoutGuideLength = topLayoutGuideLength;
@@ -85,6 +86,24 @@
 {
 	[super viewDidAppear:animated];
 	[self setupPullToRefreshView];
+	
+	// Check for force touch feature, and add force touch/previewing capability.
+	if ([self.traitCollection
+		 respondsToSelector:@selector(forceTouchCapability)] &&
+		(self.traitCollection.forceTouchCapability ==
+		 UIForceTouchCapabilityAvailable))
+	{
+		/*
+		 Register for `UIViewControllerPreviewingDelegate` to enable
+		 "Peek" and "Pop".
+		 (see: MasterViewController+UIViewControllerPreviewing.swift)
+		 
+		 The view controller will be automatically unregistered when it is
+		 deallocated.
+		 */
+		[self registerForPreviewingWithDelegate:self sourceView:self.view];
+	}
+	
 }
 
 - (void)setupPullToRefreshView {
@@ -259,19 +278,16 @@
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
 	
-	NSIndexPath *indexPath = [self.collectionView indexPathForRowAtPoint:location];
+	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
 	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
 	
 	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row], DTSTrip);
+	if (!trip) {
+		trip = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity).trip;
+	}
 	
 	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
 	vc.trip = trip;
-	
-	/*
-	 Set the height of the preview by setting the preferred content size of the detail view controller.
-	 Width should be zero, because it's not used in portrait.
-	 */
-	vc.preferredContentSize = CGSizeMake(0.0, 400);
 	
 	// Set the source rect to the cell frame, so surrounding elements are blurred.
 	previewingContext.sourceRect = cell.frame;

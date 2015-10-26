@@ -14,6 +14,16 @@
 #import <Google/Analytics.h>
 #import <CrittercismSDK/Crittercism.h>
 
+#define kShortCutItemSearch @"Search"
+#define kShortCutItemCreateTrip @"CreateTrip"
+#define kShortCutItemUserProfile @"UserProfile"
+
+@interface DTSAppDelegate()
+
+@property (nonatomic, strong) DTSRootViewController *rootVC;
+
+@end
+
 @implementation DTSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -46,17 +56,26 @@
 	
 	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	UIViewController *vc = [[DTSRootViewController alloc] init];
+	DTSRootViewController *vc = [[DTSRootViewController alloc] init];
 	UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
 	nvc.navigationBarHidden = YES;
 	self.window.rootViewController = nvc;
+	self.rootVC = vc;
 	[self.window makeKeyAndVisible];
 	
 	[self setupUIAppearance];
 	
 	[[DTSUserAuthHelper sharedManager] updateFacebookDetailsForTheUser];
 	
-    return YES;
+	if (launchOptions && launchOptions[UIApplicationLaunchOptionsShortcutItemKey]) {
+		UIApplicationShortcutItem *shortcutItem = launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
+		[self performSelectorOnMainThread:@selector(handleShortcutItem:) withObject:shortcutItem waitUntilDone:NO];
+		return NO;
+		
+	}
+	else {
+		return YES;
+	}
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -106,5 +125,41 @@
 	[[UINavigationBar appearance] setTranslucent:YES];
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
+
+#pragma mark - shortcutItem
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+	BOOL handleShortcutItem = [self handleShortcutItem:shortcutItem];
+	completionHandler(handleShortcutItem);
+	
+}
+
+- (BOOL)handleShortcutItem:(UIApplicationShortcutItem *)shortcutItem {
+	if (shortcutItem && shortcutItem.type.length > 0) {
+		NSString *bundleIdentifier =[NSBundle mainBundle].bundleIdentifier;
+		NSString *shortcutItemType = [shortcutItem.type stringByReplacingOccurrencesOfString:bundleIdentifier withString:@""];
+		if ([shortcutItemType.lowercaseString isEqualToString:@".search"])
+		{
+			[self.rootVC openSegment:DTSRootViewControllerSegmenetSearch];
+		}
+		else if ([shortcutItemType.lowercaseString isEqualToString:@".createtrip"])
+		{
+			[self.rootVC openSegment:DTSRootViewControllerSegmenetCreateTrip];
+		}
+		else if ([shortcutItemType.lowercaseString isEqualToString:@".userprofile"])
+		{
+			[self.rootVC openSegment:DTSRootViewControllerSegmenetUser];
+		}
+		else if ([shortcutItemType.lowercaseString isEqualToString:@".exploretrips"])
+		{
+			[self.rootVC openSegment:DTSRootViewControllerSegmenetTimeline];
+		}
+		
+		return YES;
+
+	}
+	return NO;
+}
+
 
 @end

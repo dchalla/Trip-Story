@@ -10,6 +10,17 @@
 #import "DTSViewLayoutProtocol.h"
 #import "DKCRateFeedbackPrompt.h"
 
+typedef enum {
+	DTSRootViewControllerSegmenetTimeline= 0,
+	DTSRootViewControllerSegmenetSearch,
+	DTSRootViewControllerSegmenetCreateTrip,
+	DTSRootViewControllerSegmenetUser,
+	DTSRootViewControllerSegmenetActivity
+}DTSRootViewControllerSegmenet;
+
 @interface DTSRootViewController : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate,DKCRateFeedbackPromptProtocol>
+
+
+- (void)openSegment:(DTSRootViewControllerSegmenet)segement;
 
 @end

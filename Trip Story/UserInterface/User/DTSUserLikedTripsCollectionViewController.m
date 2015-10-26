@@ -118,19 +118,13 @@
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
 	
-	NSIndexPath *indexPath = [self.collectionView indexPathForRowAtPoint:location];
+	NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
 	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
 	
 	DTSTrip * trip = dynamic_cast_oc(self.objects[indexPath.row], DTSActivity).trip;
 	
 	DTSTripDetailsViewController *vc = [[DTSTripDetailsViewController alloc] init];
 	vc.trip = trip;
-	
-	/*
-	 Set the height of the preview by setting the preferred content size of the detail view controller.
-	 Width should be zero, because it's not used in portrait.
-	 */
-	vc.preferredContentSize = CGSizeMake(0.0, 400);
 	
 	// Set the source rect to the cell frame, so surrounding elements are blurred.
 	previewingContext.sourceRect = cell.frame;
