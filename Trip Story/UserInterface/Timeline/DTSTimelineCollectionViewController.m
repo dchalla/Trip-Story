@@ -101,7 +101,7 @@
 		 The view controller will be automatically unregistered when it is
 		 deallocated.
 		 */
-		[self registerForPreviewingWithDelegate:self sourceView:self.view];
+		[self registerForPreviewingWithDelegate:self sourceView:self.collectionView];
 	}
 	
 }
